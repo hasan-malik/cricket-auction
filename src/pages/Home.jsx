@@ -5,16 +5,18 @@ import { useTheme } from '../contexts/ThemeContext';
 import franchises from '../data/franchises.json';
 import auctionConfig from '../data/auctionConfig.json';
 
-/** Build a cricket cap SVG cursor data URI in the franchise's primary color. */
+/**
+ * Build a side-profile cricket cap cursor (like 🧢 emoji):
+ * dome on the left, visor extending right, hotspot at visor tip.
+ */
 function buildCapCursor(color) {
-  // Slightly darken the color for the brim/band by lowering alpha
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="22" viewBox="0 0 28 22">
-    <path d="M2 15 Q2 1 14 1 Q26 1 26 15 Z" fill="${color}"/>
-    <rect x="2" y="13" width="24" height="4" rx="0" fill="${color}dd"/>
-    <ellipse cx="14" cy="18.5" rx="14" ry="3.5" fill="${color}bb"/>
-    <circle cx="14" cy="2.5" r="1.8" fill="rgba(255,255,255,0.45)"/>
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="18" viewBox="0 0 28 18">
+    <path d="M4 14 Q4 1 13 1 Q21 1 21 14 Z" fill="${color}"/>
+    <path d="M4 14 Q2 14 2 15.5 Q2 17 4 16.5 Z" fill="${color}" fill-opacity="0.7"/>
+    <rect x="3" y="13" width="25" height="3" rx="1.5" fill="${color}" fill-opacity="0.8"/>
+    <circle cx="12" cy="2.5" r="1.5" fill="rgba(255,255,255,0.5)"/>
   </svg>`;
-  return `url('data:image/svg+xml,${encodeURIComponent(svg)}') 14 19, auto`;
+  return `url('data:image/svg+xml,${encodeURIComponent(svg)}') 27 14, auto`;
 }
 
 const fadeUp = {
