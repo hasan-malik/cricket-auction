@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import auctionConfig from '../../data/auctionConfig.json';
 
 const ROLE_ICONS = {
   'batsman':       '🏏',
@@ -8,7 +9,7 @@ const ROLE_ICONS = {
 };
 
 export default function TeamPanel({ team, isUser, isLight }) {
-  const pctLeft = (team.budget / 18) * 100;
+  const pctLeft = (team.budget / auctionConfig.franchiseBudget) * 100;
   const c = {
     text:    isLight ? '#111' : '#fff',
     muted:   isLight ? '#6b7280' : 'rgba(255,255,255,0.45)',

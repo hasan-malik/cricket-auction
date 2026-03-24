@@ -2,11 +2,11 @@ import { useReducer, useEffect, useRef, useCallback } from 'react';
 import allPlayers from '../data/players.json';
 import franchises from '../data/franchises.json';
 import auctionConfig from '../data/auctionConfig.json';
-import { generateAITargets, getAIBid, AI_FRANCHISES } from '../utils/aiUtils';
+import { generateAITargets, getAIBid, getDynamicIncrement, AI_FRANCHISES } from '../utils/aiUtils';
 import { getGeminiBid } from '../services/geminiService';
 
-const TIMER_START = auctionConfig.bidTimerSeconds ?? 15;
-const BID_INCREMENTS = auctionConfig.bidIncrements ?? [0.05, 0.1, 0.25, 0.5];
+const TIMER_START    = auctionConfig.bidTimerSeconds ?? 15;
+const BID_TIERS      = auctionConfig.bidIncrementTiers;
 const CATEGORY_ORDER = auctionConfig.auctionOrder ?? ['platinum','diamond','gold','silver','emerging'];
 
 function buildQueue(players) {
@@ -38,7 +38,6 @@ function makeInitialState({ franchiseId, teamName }) {
     bidder: null,               // null | 'user' | 'ai'
     timer: TIMER_START,
     timerKey: 0,                // increment to reset timer effects
-    bidIncrements: BID_INCREMENTS,
     soldPlayers: [],            // history
 
     user: {
@@ -74,7 +73,8 @@ function reducer(state, action) {
 
     case 'USER_BID': {
       if (state.phase !== 'bidding') return state;
-      const newBid = Math.round((state.currentBid + action.increment) * 100) / 100;
+      // Round to 3dp to handle 0.025 increments correctly
+      const newBid = Math.round((state.currentBid + action.increment) * 1000) / 1000;
       if (newBid > state.user.budget) return state;
       return {
         ...state,
@@ -129,7 +129,7 @@ function resolveHammer(state) {
   const soldPlayer = { ...state.currentPlayer, soldPrice: state.currentBid, soldTo: winner };
   const updatedTeam = {
     ...state[winner],
-    budget: Math.round((state[winner].budget - state.currentBid) * 100) / 100,
+    budget: Math.round((state[winner].budget - state.currentBid) * 1000) / 1000,
     squad: [...state[winner].squad, soldPlayer],
   };
   return {
@@ -192,7 +192,7 @@ export function useAuction({ franchiseId, teamName }) {
       if (geminiDecision?.action === 'pass') return;
 
       // Fallback: rule-based
-      const bidAmount = getAIBid(state);
+      const bidAmount = getAIBid(state, BID_TIERS);
       if (bidAmount !== null) dispatch({ type: 'AI_BID', amount: bidAmount });
     }, delay);
 

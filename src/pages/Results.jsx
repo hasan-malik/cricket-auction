@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
+import auctionConfig from '../data/auctionConfig.json';
 
 const ROLE_ICONS = {
   'batsman':       '🏏',
@@ -80,7 +81,7 @@ function PlayerRow({ player, rank, isLight }) {
 
 function SquadCard({ team, isUser, isLight }) {
   const sorted = sortSquad(team.squad);
-  const spent = Math.round((18 - team.budget) * 100) / 100;
+  const spent = Math.round((auctionConfig.franchiseBudget - team.budget) * 1000) / 1000;
   const accentColor = isUser ? '#3b82f6' : '#f59e0b';
   const c = { text: isLight ? '#111' : '#fff', muted: isLight ? '#6b7280' : 'rgba(255,255,255,0.45)', border: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)' };
 
@@ -171,8 +172,8 @@ export default function Results() {
   }
 
   const { user, ai } = routeState;
-  const userSpent = Math.round((18 - user.budget) * 100) / 100;
-  const aiSpent   = Math.round((18 - ai.budget)   * 100) / 100;
+  const userSpent = Math.round((auctionConfig.franchiseBudget - user.budget) * 1000) / 1000;
+  const aiSpent   = Math.round((auctionConfig.franchiseBudget - ai.budget)   * 1000) / 1000;
   const userWon   = user.squad.length >= ai.squad.length;
 
   const c = { text: isLight ? '#111' : '#fff', muted: isLight ? '#6b7280' : 'rgba(255,255,255,0.5)' };
