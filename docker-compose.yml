@@ -1,0 +1,24 @@
+services:
+  server:
+    build: .
+    ports:
+      - "3001:3001"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - CLIENT_ORIGIN=http://localhost:5174
+      - PORT=3001
+    env_file:
+      - .env.local
+
+  # Dev-only: React frontend with hot reload
+  frontend:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "5174:5174"
+    command: npx vite --port 5174 --host
+    environment:
+      - VITE_GEMINI_PROXY_URL=http://localhost:3001

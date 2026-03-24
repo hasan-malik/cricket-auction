@@ -3,6 +3,7 @@ import allPlayers from '../data/players.json';
 import franchises from '../data/franchises.json';
 import auctionConfig from '../data/auctionConfig.json';
 import { generateAITargets, getAIBid, AI_FRANCHISES } from '../utils/aiUtils';
+import { getGeminiBid } from '../services/geminiService';
 
 const TIMER_START = auctionConfig.bidTimerSeconds ?? 15;
 const BID_INCREMENTS = auctionConfig.bidIncrements ?? [0.05, 0.1, 0.25, 0.5];
@@ -157,21 +158,42 @@ export function useAuction({ franchiseId, teamName }) {
     return () => clearInterval(timerRef.current);
   }, [state.phase, state.timerKey]);
 
-  // ── AI bidding ─────────────────────────────────────────────────────────────
+  // ── AI bidding (Gemini → rule-based fallback) ──────────────────────────────
   const aiTimeoutRef = useRef(null);
 
   useEffect(() => {
     if (state.phase !== 'bidding') return;
     if (state.bidder === 'ai') return;
 
-    // AI thinks after a short delay
     const delay = 1200 + Math.random() * 2000;
     clearTimeout(aiTimeoutRef.current);
-    aiTimeoutRef.current = setTimeout(() => {
-      const bidAmount = getAIBid(state);
-      if (bidAmount !== null) {
-        dispatch({ type: 'AI_BID', amount: bidAmount });
+
+    aiTimeoutRef.current = setTimeout(async () => {
+      // Build squad role counts for Gemini context
+      const aiSquad = state.ai.squad.reduce((acc, p) => {
+        acc[p.role] = (acc[p.role] ?? 0) + 1;
+        return acc;
+      }, {});
+
+      // Try Gemini first
+      const geminiDecision = await getGeminiBid({
+        player:      state.currentPlayer,
+        aiBudget:    state.ai.budget,
+        currentBid:  state.currentBid,
+        bidder:      state.bidder,
+        aiSquad,
+        personality: 'balanced',
+      });
+
+      if (geminiDecision?.action === 'bid' && geminiDecision.amount) {
+        dispatch({ type: 'AI_BID', amount: geminiDecision.amount });
+        return;
       }
+      if (geminiDecision?.action === 'pass') return;
+
+      // Fallback: rule-based
+      const bidAmount = getAIBid(state);
+      if (bidAmount !== null) dispatch({ type: 'AI_BID', amount: bidAmount });
     }, delay);
 
     return () => clearTimeout(aiTimeoutRef.current);
