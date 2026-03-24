@@ -1,0 +1,5303 @@
+[
+  {
+    "id": "babar-azam",
+    "name": "Babar Azam",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "platinum",
+    "basePrice": 1.7,
+    "stats": {
+      "pslMatches": 99,
+      "runs": 3792,
+      "battingAvg": 45.1,
+      "strikeRate": 124.1,
+      "highScore": 115,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "fakhar-zaman",
+    "name": "Fakhar Zaman",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "platinum",
+    "basePrice": 1.7,
+    "stats": {
+      "pslMatches": 97,
+      "runs": 2969,
+      "battingAvg": 30.6,
+      "strikeRate": 138.3,
+      "highScore": 115,
+      "wickets": 2,
+      "economy": 5.8,
+      "bowlingAvg": 29
+    }
+  },
+  {
+    "id": "shadab-khan",
+    "name": "Shadab Khan",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Right-arm leg-break",
+    "category": "platinum",
+    "basePrice": 1.7,
+    "stats": {
+      "pslMatches": 94,
+      "runs": 1413,
+      "battingAvg": 21.1,
+      "strikeRate": 138.4,
+      "highScore": 91,
+      "wickets": 105,
+      "economy": 7.7,
+      "bowlingAvg": 24.2
+    }
+  },
+  {
+    "id": "mohammad-rizwan",
+    "name": "Mohammad Rizwan",
+    "role": "wicket-keeper",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "platinum",
+    "basePrice": 1.7,
+    "stats": {
+      "pslMatches": 92,
+      "runs": 2770,
+      "battingAvg": 42.6,
+      "strikeRate": 124.7,
+      "highScore": 110,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "shaheen-shah-afridi",
+    "name": "Shaheen Shah Afridi",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Left-arm fast",
+    "category": "platinum",
+    "basePrice": 1.7,
+    "stats": {
+      "pslMatches": 84,
+      "runs": 359,
+      "battingAvg": 11.6,
+      "strikeRate": 127.3,
+      "highScore": 55,
+      "wickets": 122,
+      "economy": 8,
+      "bowlingAvg": 20.4
+    }
+  },
+  {
+    "id": "mohammad-hafeez",
+    "name": "Mohammad Hafeez",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "platinum",
+    "basePrice": 1.7,
+    "stats": {
+      "pslMatches": 77,
+      "runs": 1672,
+      "battingAvg": 27,
+      "strikeRate": 120.4,
+      "highScore": 98,
+      "wickets": 18,
+      "economy": 6.9,
+      "bowlingAvg": 28.3
+    }
+  },
+  {
+    "id": "kamran-akmal",
+    "name": "Kamran Akmal",
+    "role": "wicket-keeper",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "platinum",
+    "basePrice": 1.7,
+    "stats": {
+      "pslMatches": 74,
+      "runs": 1942,
+      "battingAvg": 27.4,
+      "strikeRate": 133.5,
+      "highScore": 107,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "haris-rauf",
+    "name": "Haris Rauf",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Right-arm fast",
+    "category": "platinum",
+    "basePrice": 1.7,
+    "stats": {
+      "pslMatches": 70,
+      "runs": 114,
+      "battingAvg": 7.1,
+      "strikeRate": 103.6,
+      "highScore": 19,
+      "wickets": 83,
+      "economy": 9.3,
+      "bowlingAvg": 28.8
+    }
+  },
+  {
+    "id": "naseem-shah",
+    "name": "Naseem Shah",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Right-arm fast",
+    "category": "platinum",
+    "basePrice": 1.7,
+    "stats": {
+      "pslMatches": 50,
+      "runs": 98,
+      "battingAvg": 7,
+      "strikeRate": 111.4,
+      "highScore": 27,
+      "wickets": 50,
+      "economy": 8.1,
+      "bowlingAvg": 30.3
+    }
+  },
+  {
+    "id": "rashid-khan",
+    "name": "Rashid Khan",
+    "role": "all-rounder",
+    "nationality": "Overseas",
+    "bowlingStyle": "Right-arm leg-break",
+    "category": "platinum",
+    "basePrice": 1.7,
+    "stats": {
+      "pslMatches": 28,
+      "runs": 203,
+      "battingAvg": 18.5,
+      "strikeRate": 132.7,
+      "highScore": 27,
+      "wickets": 44,
+      "economy": 6.1,
+      "bowlingAvg": 15.5
+    }
+  },
+  {
+    "id": "imad-wasim",
+    "name": "Imad Wasim",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Left-arm orthodox",
+    "category": "diamond",
+    "basePrice": 1,
+    "stats": {
+      "pslMatches": 99,
+      "runs": 1293,
+      "battingAvg": 26.4,
+      "strikeRate": 133.2,
+      "highScore": 92,
+      "wickets": 77,
+      "economy": 7,
+      "bowlingAvg": 29.1
+    }
+  },
+  {
+    "id": "hasan-ali",
+    "name": "Hasan Ali",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Right-arm fast-medium",
+    "category": "diamond",
+    "basePrice": 1,
+    "stats": {
+      "pslMatches": 92,
+      "runs": 309,
+      "battingAvg": 10,
+      "strikeRate": 128.8,
+      "highScore": 45,
+      "wickets": 125,
+      "economy": 8.1,
+      "bowlingAvg": 22.6
+    }
+  },
+  {
+    "id": "shoaib-malik",
+    "name": "Shoaib Malik",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Right-arm off-break",
+    "category": "diamond",
+    "basePrice": 1,
+    "stats": {
+      "pslMatches": 91,
+      "runs": 2350,
+      "battingAvg": 33.6,
+      "strikeRate": 124.1,
+      "highScore": 73,
+      "wickets": 17,
+      "economy": 7.1,
+      "bowlingAvg": 46.6
+    }
+  },
+  {
+    "id": "wahab-riaz",
+    "name": "Wahab Riaz",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Left-arm fast",
+    "category": "diamond",
+    "basePrice": 1,
+    "stats": {
+      "pslMatches": 87,
+      "runs": 359,
+      "battingAvg": 10.9,
+      "strikeRate": 121.3,
+      "highScore": 33,
+      "wickets": 111,
+      "economy": 7.7,
+      "bowlingAvg": 22.9
+    }
+  },
+  {
+    "id": "faheem-ashraf",
+    "name": "Faheem Ashraf",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Right-arm fast-medium",
+    "category": "diamond",
+    "basePrice": 1,
+    "stats": {
+      "pslMatches": 84,
+      "runs": 966,
+      "battingAvg": 22.5,
+      "strikeRate": 139,
+      "highScore": 55,
+      "wickets": 96,
+      "economy": 8.7,
+      "bowlingAvg": 23.9
+    }
+  },
+  {
+    "id": "mohammad-amir",
+    "name": "Mohammad Amir",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Left-arm fast",
+    "category": "diamond",
+    "basePrice": 1,
+    "stats": {
+      "pslMatches": 82,
+      "runs": 160,
+      "battingAvg": 8.9,
+      "strikeRate": 119.4,
+      "highScore": 30,
+      "wickets": 85,
+      "economy": 7.6,
+      "bowlingAvg": 27.3
+    }
+  },
+  {
+    "id": "iftikhar-ahmed",
+    "name": "Iftikhar Ahmed",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "diamond",
+    "basePrice": 1,
+    "stats": {
+      "pslMatches": 78,
+      "runs": 1134,
+      "battingAvg": 23.6,
+      "strikeRate": 127.8,
+      "highScore": 71,
+      "wickets": 13,
+      "economy": 8.5,
+      "bowlingAvg": 37.4
+    }
+  },
+  {
+    "id": "khushdil-shah",
+    "name": "Khushdil Shah",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Left-arm orthodox",
+    "category": "diamond",
+    "basePrice": 1,
+    "stats": {
+      "pslMatches": 70,
+      "runs": 946,
+      "battingAvg": 27,
+      "strikeRate": 137.5,
+      "highScore": 70,
+      "wickets": 31,
+      "economy": 7.7,
+      "bowlingAvg": 23.5
+    }
+  },
+  {
+    "id": "azam-khan",
+    "name": "Azam Khan",
+    "role": "wicket-keeper",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "diamond",
+    "basePrice": 1,
+    "stats": {
+      "pslMatches": 61,
+      "runs": 1206,
+      "battingAvg": 23.6,
+      "strikeRate": 137,
+      "highScore": 97,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "shan-masood",
+    "name": "Shan Masood",
+    "role": "wicket-keeper",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "diamond",
+    "basePrice": 1,
+    "stats": {
+      "pslMatches": 56,
+      "runs": 1503,
+      "battingAvg": 27.3,
+      "strikeRate": 124.5,
+      "highScore": 88,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "mohammad-wasim",
+    "name": "Mohammad Wasim",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Right-arm fast",
+    "category": "diamond",
+    "basePrice": 1,
+    "stats": {
+      "pslMatches": 41,
+      "runs": 164,
+      "battingAvg": 10.3,
+      "strikeRate": 117.1,
+      "highScore": 17,
+      "wickets": 47,
+      "economy": 9.3,
+      "bowlingAvg": 29.6
+    }
+  },
+  {
+    "id": "saim-ayub",
+    "name": "Saim Ayub",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "diamond",
+    "basePrice": 1,
+    "stats": {
+      "pslMatches": 40,
+      "runs": 974,
+      "battingAvg": 24.4,
+      "strikeRate": 138.7,
+      "highScore": 88,
+      "wickets": 14,
+      "economy": 8,
+      "bowlingAvg": 26.4
+    }
+  },
+  {
+    "id": "abdullah-shafique",
+    "name": "Abdullah Shafique",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "diamond",
+    "basePrice": 1,
+    "stats": {
+      "pslMatches": 39,
+      "runs": 1068,
+      "battingAvg": 29.7,
+      "strikeRate": 136.1,
+      "highScore": 75,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "zaman-khan",
+    "name": "Zaman Khan",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Left-arm fast",
+    "category": "diamond",
+    "basePrice": 1,
+    "stats": {
+      "pslMatches": 39,
+      "runs": 13,
+      "battingAvg": 3.3,
+      "strikeRate": 40.6,
+      "highScore": 6,
+      "wickets": 45,
+      "economy": 8.7,
+      "bowlingAvg": 25.6
+    }
+  },
+  {
+    "id": "agha-salman",
+    "name": "Agha Salman",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "diamond",
+    "basePrice": 1,
+    "stats": {
+      "pslMatches": 36,
+      "runs": 730,
+      "battingAvg": 22.8,
+      "strikeRate": 120.1,
+      "highScore": 64,
+      "wickets": 4,
+      "economy": 8.2,
+      "bowlingAvg": 49.3
+    }
+  },
+  {
+    "id": "sikandar-raza",
+    "name": "Sikandar Raza",
+    "role": "all-rounder",
+    "nationality": "Overseas",
+    "bowlingStyle": "Right-arm off-break",
+    "category": "diamond",
+    "basePrice": 1,
+    "stats": {
+      "pslMatches": 34,
+      "runs": 591,
+      "battingAvg": 28.1,
+      "strikeRate": 147,
+      "highScore": 71,
+      "wickets": 20,
+      "economy": 8,
+      "bowlingAvg": 25.1
+    }
+  },
+  {
+    "id": "mohammad-nabi",
+    "name": "Mohammad Nabi",
+    "role": "all-rounder",
+    "nationality": "Overseas",
+    "bowlingStyle": "Right-arm off-break",
+    "category": "diamond",
+    "basePrice": 1,
+    "stats": {
+      "pslMatches": 31,
+      "runs": 455,
+      "battingAvg": 22.8,
+      "strikeRate": 140.4,
+      "highScore": 67,
+      "wickets": 17,
+      "economy": 7.1,
+      "bowlingAvg": 41
+    }
+  },
+  {
+    "id": "mohammad-nawaz",
+    "name": "Mohammad Nawaz",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Left-arm orthodox",
+    "category": "diamond",
+    "basePrice": 1,
+    "stats": {
+      "pslMatches": 31,
+      "runs": 383,
+      "battingAvg": 16.7,
+      "strikeRate": 120.1,
+      "highScore": 52,
+      "wickets": 24,
+      "economy": 8.6,
+      "bowlingAvg": 32.4
+    }
+  },
+  {
+    "id": "usman-khan",
+    "name": "Usman Khan",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "diamond",
+    "basePrice": 1,
+    "stats": {
+      "pslMatches": 25,
+      "runs": 960,
+      "battingAvg": 43.6,
+      "strikeRate": 152.6,
+      "highScore": 120,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "mujeeb-ur-rahman",
+    "name": "Mujeeb Ur Rahman",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": "Right-arm off-break",
+    "category": "diamond",
+    "basePrice": 1,
+    "stats": {
+      "pslMatches": 11,
+      "runs": 3,
+      "battingAvg": 3,
+      "strikeRate": 100,
+      "highScore": 2,
+      "wickets": 6,
+      "economy": 8.7,
+      "bowlingAvg": 63.5
+    }
+  },
+  {
+    "id": "rr-rossouw",
+    "name": "RR Rossouw",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 95,
+      "runs": 2292,
+      "battingAvg": 32.3,
+      "strikeRate": 142.1,
+      "highScore": 121,
+      "wickets": 2,
+      "economy": 6.4,
+      "bowlingAvg": 8.5
+    }
+  },
+  {
+    "id": "sarfraz-ahmed",
+    "name": "Sarfraz Ahmed",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 86,
+      "runs": 1525,
+      "battingAvg": 29.3,
+      "strikeRate": 119.5,
+      "highScore": 81,
+      "wickets": 0,
+      "economy": 9,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "hussain-talat",
+    "name": "Hussain Talat",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 70,
+      "runs": 1170,
+      "battingAvg": 24.9,
+      "strikeRate": 121,
+      "highScore": 63,
+      "wickets": 20,
+      "economy": 9.2,
+      "bowlingAvg": 29.3
+    }
+  },
+  {
+    "id": "mohammad-nawaz-3-",
+    "name": "Mohammad Nawaz (3)",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 57,
+      "runs": 521,
+      "battingAvg": 19.3,
+      "strikeRate": 103.6,
+      "highScore": 42,
+      "wickets": 50,
+      "economy": 7.1,
+      "bowlingAvg": 27
+    }
+  },
+  {
+    "id": "jm-vince",
+    "name": "JM Vince",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 55,
+      "runs": 1500,
+      "battingAvg": 29.4,
+      "strikeRate": 135.6,
+      "highScore": 101,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "d-wiese",
+    "name": "D Wiese",
+    "role": "all-rounder",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 54,
+      "runs": 629,
+      "battingAvg": 24.2,
+      "strikeRate": 155.7,
+      "highScore": 48,
+      "wickets": 38,
+      "economy": 8.3,
+      "bowlingAvg": 32
+    }
+  },
+  {
+    "id": "c-munro",
+    "name": "C Munro",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 54,
+      "runs": 1633,
+      "battingAvg": 33.3,
+      "strikeRate": 146.3,
+      "highScore": 90,
+      "wickets": 2,
+      "economy": 10.1,
+      "bowlingAvg": 35.5
+    }
+  },
+  {
+    "id": "mohammad-irfan",
+    "name": "Mohammad Irfan",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Left-arm fast",
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 52,
+      "runs": 12,
+      "battingAvg": 2,
+      "strikeRate": 42.9,
+      "highScore": 6,
+      "wickets": 45,
+      "economy": 6.9,
+      "bowlingAvg": 29.8
+    }
+  },
+  {
+    "id": "shahid-afridi",
+    "name": "Shahid Afridi",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 52,
+      "runs": 458,
+      "battingAvg": 15.3,
+      "strikeRate": 142.7,
+      "highScore": 54,
+      "wickets": 46,
+      "economy": 7.2,
+      "bowlingAvg": 26.3
+    }
+  },
+  {
+    "id": "usama-mir",
+    "name": "Usama Mir",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Right-arm leg-break",
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 50,
+      "runs": 97,
+      "battingAvg": 6.5,
+      "strikeRate": 126,
+      "highScore": 17,
+      "wickets": 63,
+      "economy": 8.4,
+      "bowlingAvg": 23.3
+    }
+  },
+  {
+    "id": "rumman-raees",
+    "name": "Rumman Raees",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Left-arm fast-medium",
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 48,
+      "runs": 33,
+      "battingAvg": 5.5,
+      "strikeRate": 64.7,
+      "highScore": 11,
+      "wickets": 48,
+      "economy": 7.9,
+      "bowlingAvg": 26.9
+    }
+  },
+  {
+    "id": "umaid-asif",
+    "name": "Umaid Asif",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 47,
+      "runs": 151,
+      "battingAvg": 16.8,
+      "strikeRate": 157.3,
+      "highScore": 25,
+      "wickets": 48,
+      "economy": 8.4,
+      "bowlingAvg": 30.4
+    }
+  },
+  {
+    "id": "sr-watson",
+    "name": "SR Watson",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 46,
+      "runs": 1361,
+      "battingAvg": 32.4,
+      "strikeRate": 136.1,
+      "highScore": 91,
+      "wickets": 23,
+      "economy": 8.3,
+      "bowlingAvg": 26.6
+    }
+  },
+  {
+    "id": "ad-hales",
+    "name": "AD Hales",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 46,
+      "runs": 1268,
+      "battingAvg": 30.2,
+      "strikeRate": 140.9,
+      "highScore": 88,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "ahmed-shehzad",
+    "name": "Ahmed Shehzad",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 44,
+      "runs": 1077,
+      "battingAvg": 26.3,
+      "strikeRate": 115.4,
+      "highScore": 99,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "sohaib-maqsood",
+    "name": "Sohaib Maqsood",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 44,
+      "runs": 1045,
+      "battingAvg": 29.9,
+      "strikeRate": 125.3,
+      "highScore": 85,
+      "wickets": 0,
+      "economy": 8,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "sohail-akhtar",
+    "name": "Sohail Akhtar",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 44,
+      "runs": 808,
+      "battingAvg": 25.3,
+      "strikeRate": 120.6,
+      "highScore": 75,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "umar-akmal",
+    "name": "Umar Akmal",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 43,
+      "runs": 1036,
+      "battingAvg": 30.5,
+      "strikeRate": 140.6,
+      "highScore": 93,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "imran-tahir",
+    "name": "Imran Tahir",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 43,
+      "runs": 48,
+      "battingAvg": 6.9,
+      "strikeRate": 88.9,
+      "highScore": 14,
+      "wickets": 56,
+      "economy": 7.1,
+      "bowlingAvg": 19.6
+    }
+  },
+  {
+    "id": "jj-roy",
+    "name": "JJ Roy",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 38,
+      "runs": 1260,
+      "battingAvg": 36,
+      "strikeRate": 141.3,
+      "highScore": 145,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "sr-patel",
+    "name": "SR Patel",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 38,
+      "runs": 455,
+      "battingAvg": 28.4,
+      "strikeRate": 120.4,
+      "highScore": 71,
+      "wickets": 30,
+      "economy": 7.6,
+      "bowlingAvg": 25.6
+    }
+  },
+  {
+    "id": "mohammad-haris",
+    "name": "Mohammad Haris",
+    "role": "wicket-keeper",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 37,
+      "runs": 905,
+      "battingAvg": 26.6,
+      "strikeRate": 159.6,
+      "highScore": 87,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "mohammad-sami",
+    "name": "Mohammad Sami",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 36,
+      "runs": 39,
+      "battingAvg": 6.5,
+      "strikeRate": 95.1,
+      "highScore": 20,
+      "wickets": 43,
+      "economy": 6.9,
+      "bowlingAvg": 20.7
+    }
+  },
+  {
+    "id": "ca-ingram",
+    "name": "CA Ingram",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 36,
+      "runs": 819,
+      "battingAvg": 29.3,
+      "strikeRate": 143.2,
+      "highScore": 127,
+      "wickets": 0,
+      "economy": 8,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "sahibzada-farhan",
+    "name": "Sahibzada Farhan",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 34,
+      "runs": 906,
+      "battingAvg": 30.2,
+      "strikeRate": 129.8,
+      "highScore": 106,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "la-dawson",
+    "name": "LA Dawson",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 33,
+      "runs": 471,
+      "battingAvg": 20.5,
+      "strikeRate": 124.6,
+      "highScore": 62,
+      "wickets": 21,
+      "economy": 7.8,
+      "bowlingAvg": 31.3
+    }
+  },
+  {
+    "id": "l-ronchi",
+    "name": "L Ronchi",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 31,
+      "runs": 1020,
+      "battingAvg": 36.4,
+      "strikeRate": 161.6,
+      "highScore": 94,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "br-dunk",
+    "name": "BR Dunk",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 30,
+      "runs": 596,
+      "battingAvg": 27.1,
+      "strikeRate": 142.2,
+      "highScore": 99,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "se-rutherford",
+    "name": "SE Rutherford",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 30,
+      "runs": 599,
+      "battingAvg": 26,
+      "strikeRate": 141.6,
+      "highScore": 70,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "sw-billings",
+    "name": "SW Billings",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 29,
+      "runs": 563,
+      "battingAvg": 25.6,
+      "strikeRate": 138.3,
+      "highScore": 78,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "misbah-ul-haq",
+    "name": "Misbah-ul-Haq",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 29,
+      "runs": 507,
+      "battingAvg": 31.7,
+      "strikeRate": 110.5,
+      "highScore": 61,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "ts-mills",
+    "name": "TS Mills",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 29,
+      "runs": 18,
+      "battingAvg": 9,
+      "strikeRate": 90,
+      "highScore": 7,
+      "wickets": 37,
+      "economy": 8.3,
+      "bowlingAvg": 24.4
+    }
+  },
+  {
+    "id": "abrar-ahmed",
+    "name": "Abrar Ahmed",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Right-arm mystery spin",
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 29,
+      "runs": 33,
+      "battingAvg": 3.3,
+      "strikeRate": 84.6,
+      "highScore": 12,
+      "wickets": 39,
+      "economy": 7.6,
+      "bowlingAvg": 21.4
+    }
+  },
+  {
+    "id": "mir-hamza",
+    "name": "Mir Hamza",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 29,
+      "runs": 25,
+      "battingAvg": 12.5,
+      "strikeRate": 92.6,
+      "highScore": 12,
+      "wickets": 33,
+      "economy": 8.2,
+      "bowlingAvg": 23.6
+    }
+  },
+  {
+    "id": "dr-smith",
+    "name": "DR Smith",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 28,
+      "runs": 701,
+      "battingAvg": 33.4,
+      "strikeRate": 112.3,
+      "highScore": 73,
+      "wickets": 0,
+      "economy": 11.8,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "rahat-ali",
+    "name": "Rahat Ali",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 28,
+      "runs": 3,
+      "battingAvg": 1.5,
+      "strikeRate": 27.3,
+      "highScore": 1,
+      "wickets": 34,
+      "economy": 7.8,
+      "bowlingAvg": 23.5
+    }
+  },
+  {
+    "id": "kp-pietersen",
+    "name": "KP Pietersen",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 27,
+      "runs": 611,
+      "battingAvg": 27.8,
+      "strikeRate": 137.6,
+      "highScore": 88,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "r-powell",
+    "name": "R Powell",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 27,
+      "runs": 504,
+      "battingAvg": 25.2,
+      "strikeRate": 144.8,
+      "highScore": 64,
+      "wickets": 1,
+      "economy": 15,
+      "bowlingAvg": 45
+    }
+  },
+  {
+    "id": "dj-willey",
+    "name": "DJ Willey",
+    "role": "bowler",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 26,
+      "runs": 95,
+      "battingAvg": 10.6,
+      "strikeRate": 83.3,
+      "highScore": 28,
+      "wickets": 34,
+      "economy": 8.3,
+      "bowlingAvg": 21.2
+    }
+  },
+  {
+    "id": "dj-malan",
+    "name": "DJ Malan",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 24,
+      "runs": 619,
+      "battingAvg": 29.5,
+      "strikeRate": 117.7,
+      "highScore": 64,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "kc-sangakkara",
+    "name": "KC Sangakkara",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 23,
+      "runs": 613,
+      "battingAvg": 27.9,
+      "strikeRate": 123.1,
+      "highScore": 65,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "th-david",
+    "name": "TH David",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 22,
+      "runs": 605,
+      "battingAvg": 43.2,
+      "strikeRate": 172.4,
+      "highScore": 71,
+      "wickets": 1,
+      "economy": 9.8,
+      "bowlingAvg": 49
+    }
+  },
+  {
+    "id": "saud-shakeel",
+    "name": "Saud Shakeel",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 22,
+      "runs": 560,
+      "battingAvg": 31.1,
+      "strikeRate": 123.3,
+      "highScore": 88,
+      "wickets": 5,
+      "economy": 7.7,
+      "bowlingAvg": 18.4
+    }
+  },
+  {
+    "id": "khurram-shahzad",
+    "name": "Khurram Shahzad",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 20,
+      "runs": 28,
+      "battingAvg": 5.6,
+      "strikeRate": 50,
+      "highScore": 11,
+      "wickets": 30,
+      "economy": 8,
+      "bowlingAvg": 18.6
+    }
+  },
+  {
+    "id": "tamim-iqbal",
+    "name": "Tamim Iqbal",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 19,
+      "runs": 568,
+      "battingAvg": 37.9,
+      "strikeRate": 107,
+      "highScore": 80,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "mj-guptill",
+    "name": "MJ Guptill",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 18,
+      "runs": 519,
+      "battingAvg": 30.5,
+      "strikeRate": 135.2,
+      "highScore": 117,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "he-van-der-dussen",
+    "name": "HE van der Dussen",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "gold",
+    "basePrice": 0.7,
+    "stats": {
+      "pslMatches": 16,
+      "runs": 555,
+      "battingAvg": 39.6,
+      "strikeRate": 138.4,
+      "highScore": 104,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "asif-ali",
+    "name": "Asif Ali",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 91,
+      "runs": 1250,
+      "battingAvg": 21.2,
+      "strikeRate": 152.1,
+      "highScore": 75,
+      "wickets": 2,
+      "economy": 9,
+      "bowlingAvg": 13.5
+    }
+  },
+  {
+    "id": "sohail-tanvir",
+    "name": "Sohail Tanvir",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 59,
+      "runs": 298,
+      "battingAvg": 16.6,
+      "strikeRate": 106,
+      "highScore": 36,
+      "wickets": 56,
+      "economy": 7.9,
+      "bowlingAvg": 30
+    }
+  },
+  {
+    "id": "ka-pollard",
+    "name": "KA Pollard",
+    "role": "all-rounder",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 52,
+      "runs": 1149,
+      "battingAvg": 39.6,
+      "strikeRate": 155.7,
+      "highScore": 73,
+      "wickets": 13,
+      "economy": 8.7,
+      "bowlingAvg": 34.9
+    }
+  },
+  {
+    "id": "anwar-ali",
+    "name": "Anwar Ali",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 50,
+      "runs": 323,
+      "battingAvg": 14.7,
+      "strikeRate": 139.8,
+      "highScore": 28,
+      "wickets": 36,
+      "economy": 9.1,
+      "bowlingAvg": 36.3
+    }
+  },
+  {
+    "id": "sharjeel-khan",
+    "name": "Sharjeel Khan",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 49,
+      "runs": 1128,
+      "battingAvg": 24,
+      "strikeRate": 134.9,
+      "highScore": 117,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "haider-ali",
+    "name": "Haider Ali",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 49,
+      "runs": 846,
+      "battingAvg": 21.7,
+      "strikeRate": 131,
+      "highScore": 69,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "djg-sammy",
+    "name": "DJG Sammy",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 48,
+      "runs": 673,
+      "battingAvg": 24.9,
+      "strikeRate": 139.3,
+      "highScore": 48,
+      "wickets": 8,
+      "economy": 9.6,
+      "bowlingAvg": 30.9
+    }
+  },
+  {
+    "id": "sohail-khan",
+    "name": "Sohail Khan",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Right-arm fast-medium",
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 44,
+      "runs": 144,
+      "battingAvg": 8.5,
+      "strikeRate": 94.7,
+      "highScore": 32,
+      "wickets": 40,
+      "economy": 8.8,
+      "bowlingAvg": 34.8
+    }
+  },
+  {
+    "id": "mohammad-hasnain",
+    "name": "Mohammad Hasnain",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Right-arm fast",
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 44,
+      "runs": 56,
+      "battingAvg": 6.2,
+      "strikeRate": 78.9,
+      "highScore": 22,
+      "wickets": 54,
+      "economy": 9,
+      "bowlingAvg": 26.6
+    }
+  },
+  {
+    "id": "abbas-afridi",
+    "name": "Abbas Afridi",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Right-arm fast",
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 40,
+      "runs": 140,
+      "battingAvg": 14,
+      "strikeRate": 162.8,
+      "highScore": 34,
+      "wickets": 60,
+      "economy": 9.4,
+      "bowlingAvg": 20.8
+    }
+  },
+  {
+    "id": "cs-delport",
+    "name": "CS Delport",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 39,
+      "runs": 873,
+      "battingAvg": 24.3,
+      "strikeRate": 123.7,
+      "highScore": 117,
+      "wickets": 10,
+      "economy": 9,
+      "bowlingAvg": 28.9
+    }
+  },
+  {
+    "id": "usman-shinwari",
+    "name": "Usman Shinwari",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 38,
+      "runs": 54,
+      "battingAvg": 9,
+      "strikeRate": 100,
+      "highScore": 30,
+      "wickets": 42,
+      "economy": 8.7,
+      "bowlingAvg": 27.6
+    }
+  },
+  {
+    "id": "cj-jordan",
+    "name": "CJ Jordan",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 37,
+      "runs": 167,
+      "battingAvg": 16.7,
+      "strikeRate": 119.3,
+      "highScore": 36,
+      "wickets": 43,
+      "economy": 8.6,
+      "bowlingAvg": 26.4
+    }
+  },
+  {
+    "id": "rs-bopara",
+    "name": "RS Bopara",
+    "role": "all-rounder",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 37,
+      "runs": 710,
+      "battingAvg": 27.3,
+      "strikeRate": 110.2,
+      "highScore": 71,
+      "wickets": 13,
+      "economy": 8.8,
+      "bowlingAvg": 27.8
+    }
+  },
+  {
+    "id": "salman-irshad",
+    "name": "Salman Irshad",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Right-arm fast-medium",
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 35,
+      "runs": 19,
+      "battingAvg": 2.7,
+      "strikeRate": 48.7,
+      "highScore": 6,
+      "wickets": 47,
+      "economy": 9.5,
+      "bowlingAvg": 24.8
+    }
+  },
+  {
+    "id": "t-kohler-cadmore",
+    "name": "T Kohler-Cadmore",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 34,
+      "runs": 678,
+      "battingAvg": 21.2,
+      "strikeRate": 129.9,
+      "highScore": 92,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "aamer-yamin",
+    "name": "Aamer Yamin",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Right-arm fast-medium",
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 33,
+      "runs": 153,
+      "battingAvg": 11.8,
+      "strikeRate": 127.5,
+      "highScore": 35,
+      "wickets": 24,
+      "economy": 8.8,
+      "bowlingAvg": 34.7
+    }
+  },
+  {
+    "id": "kamran-ghulam",
+    "name": "Kamran Ghulam",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 29,
+      "runs": 578,
+      "battingAvg": 24.1,
+      "strikeRate": 118.9,
+      "highScore": 55,
+      "wickets": 1,
+      "economy": 8.8,
+      "bowlingAvg": 79
+    }
+  },
+  {
+    "id": "mohammad-ilyas",
+    "name": "Mohammad Ilyas",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 28,
+      "runs": 39,
+      "battingAvg": 6.5,
+      "strikeRate": 84.8,
+      "highScore": 9,
+      "wickets": 28,
+      "economy": 9.3,
+      "bowlingAvg": 25.4
+    }
+  },
+  {
+    "id": "yasir-shah",
+    "name": "Yasir Shah",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 27,
+      "runs": 45,
+      "battingAvg": 5,
+      "strikeRate": 84.9,
+      "highScore": 22,
+      "wickets": 26,
+      "economy": 7.3,
+      "bowlingAvg": 26.6
+    }
+  },
+  {
+    "id": "cak-walton",
+    "name": "CAK Walton",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 27,
+      "runs": 451,
+      "battingAvg": 21.5,
+      "strikeRate": 135.4,
+      "highScore": 48,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "bcj-cutting",
+    "name": "BCJ Cutting",
+    "role": "all-rounder",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 27,
+      "runs": 481,
+      "battingAvg": 22.9,
+      "strikeRate": 150.8,
+      "highScore": 53,
+      "wickets": 13,
+      "economy": 10.8,
+      "bowlingAvg": 27.4
+    }
+  },
+  {
+    "id": "shahnawaz-dhani",
+    "name": "Shahnawaz Dhani",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 27,
+      "runs": 6,
+      "battingAvg": 3,
+      "strikeRate": 54.5,
+      "highScore": 6,
+      "wickets": 39,
+      "economy": 9,
+      "bowlingAvg": 20.8
+    }
+  },
+  {
+    "id": "irfan-khan",
+    "name": "Irfan Khan",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 27,
+      "runs": 428,
+      "battingAvg": 26.8,
+      "strikeRate": 131.7,
+      "highScore": 48,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "junaid-khan",
+    "name": "Junaid Khan",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 26,
+      "runs": 7,
+      "battingAvg": 2.3,
+      "strikeRate": 43.8,
+      "highScore": 2,
+      "wickets": 26,
+      "economy": 8.4,
+      "bowlingAvg": 30
+    }
+  },
+  {
+    "id": "arshad-iqbal",
+    "name": "Arshad Iqbal",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 24,
+      "runs": 5,
+      "battingAvg": 5,
+      "strikeRate": 41.7,
+      "highScore": 2,
+      "wickets": 25,
+      "economy": 9.1,
+      "bowlingAvg": 30.8
+    }
+  },
+  {
+    "id": "sameen-gul",
+    "name": "Sameen Gul",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 23,
+      "runs": 10,
+      "battingAvg": 10,
+      "strikeRate": 58.8,
+      "highScore": 7,
+      "wickets": 26,
+      "economy": 8.7,
+      "bowlingAvg": 27.3
+    }
+  },
+  {
+    "id": "ls-livingstone",
+    "name": "LS Livingstone",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 23,
+      "runs": 468,
+      "battingAvg": 24.6,
+      "strikeRate": 129.6,
+      "highScore": 82,
+      "wickets": 2,
+      "economy": 8.7,
+      "bowlingAvg": 61
+    }
+  },
+  {
+    "id": "fawad-ahmed",
+    "name": "Fawad Ahmed",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 23,
+      "runs": 22,
+      "battingAvg": 5.5,
+      "strikeRate": 56.4,
+      "highScore": 14,
+      "wickets": 23,
+      "economy": 7.4,
+      "bowlingAvg": 28.5
+    }
+  },
+  {
+    "id": "imam-ul-haq",
+    "name": "Imam-ul-Haq",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 22,
+      "runs": 542,
+      "battingAvg": 24.6,
+      "strikeRate": 119.4,
+      "highScore": 59,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "muhammad-musa",
+    "name": "Muhammad Musa",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 22,
+      "runs": 59,
+      "battingAvg": 29.5,
+      "strikeRate": 113.5,
+      "highScore": 26,
+      "wickets": 22,
+      "economy": 9.6,
+      "bowlingAvg": 29.2
+    }
+  },
+  {
+    "id": "umar-amin",
+    "name": "Umar Amin",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 21,
+      "runs": 332,
+      "battingAvg": 23.7,
+      "strikeRate": 104.1,
+      "highScore": 61,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "yasir-khan",
+    "name": "Yasir Khan",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 21,
+      "runs": 496,
+      "battingAvg": 24.8,
+      "strikeRate": 138.2,
+      "highScore": 87,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "mohammad-irfan-4-",
+    "name": "Mohammad Irfan (4)",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 20,
+      "runs": 21,
+      "battingAvg": 4.2,
+      "strikeRate": 87.5,
+      "highScore": 16,
+      "wickets": 22,
+      "economy": 9.1,
+      "bowlingAvg": 26.8
+    }
+  },
+  {
+    "id": "mohammad-asghar",
+    "name": "Mohammad Asghar",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 20,
+      "runs": 1,
+      "battingAvg": 1,
+      "strikeRate": 16.7,
+      "highScore": 1,
+      "wickets": 20,
+      "economy": 7.7,
+      "bowlingAvg": 23.3
+    }
+  },
+  {
+    "id": "waqas-maqsood",
+    "name": "Waqas Maqsood",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 20,
+      "runs": 21,
+      "battingAvg": 5.3,
+      "strikeRate": 84,
+      "highScore": 12,
+      "wickets": 27,
+      "economy": 8.6,
+      "bowlingAvg": 22.4
+    }
+  },
+  {
+    "id": "l-wood",
+    "name": "L Wood",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 20,
+      "runs": 51,
+      "battingAvg": 8.5,
+      "strikeRate": 121.4,
+      "highScore": 17,
+      "wickets": 24,
+      "economy": 7.9,
+      "bowlingAvg": 25.1
+    }
+  },
+  {
+    "id": "ad-russell",
+    "name": "AD Russell",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 19,
+      "runs": 184,
+      "battingAvg": 12.3,
+      "strikeRate": 131.4,
+      "highScore": 35,
+      "wickets": 21,
+      "economy": 8.7,
+      "bowlingAvg": 23
+    }
+  },
+  {
+    "id": "pd-salt",
+    "name": "PD Salt",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 19,
+      "runs": 204,
+      "battingAvg": 12,
+      "strikeRate": 116.6,
+      "highScore": 46,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "ahsan-ali",
+    "name": "Ahsan Ali",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 19,
+      "runs": 444,
+      "battingAvg": 26.1,
+      "strikeRate": 128.7,
+      "highScore": 73,
+      "wickets": 1,
+      "economy": 9,
+      "bowlingAvg": 9
+    }
+  },
+  {
+    "id": "akif-javed",
+    "name": "Akif Javed",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 19,
+      "runs": 7,
+      "battingAvg": 7,
+      "strikeRate": 58.3,
+      "highScore": 7,
+      "wickets": 22,
+      "economy": 9.1,
+      "bowlingAvg": 25.3
+    }
+  },
+  {
+    "id": "bb-mccullum",
+    "name": "BB McCullum",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 18,
+      "runs": 323,
+      "battingAvg": 19,
+      "strikeRate": 112.2,
+      "highScore": 44,
+      "wickets": 0,
+      "economy": 13,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "j-charles",
+    "name": "J Charles",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 18,
+      "runs": 435,
+      "battingAvg": 29,
+      "strikeRate": 148.5,
+      "highScore": 57,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "bj-haddin",
+    "name": "BJ Haddin",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 17,
+      "runs": 327,
+      "battingAvg": 25.2,
+      "strikeRate": 129.2,
+      "highScore": 73,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "sp-narine",
+    "name": "SP Narine",
+    "role": "all-rounder",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 17,
+      "runs": 214,
+      "battingAvg": 16.5,
+      "strikeRate": 155.1,
+      "highScore": 28,
+      "wickets": 21,
+      "economy": 6.3,
+      "bowlingAvg": 20
+    }
+  },
+  {
+    "id": "asad-shafiq",
+    "name": "Asad Shafiq",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 17,
+      "runs": 280,
+      "battingAvg": 18.7,
+      "strikeRate": 103.3,
+      "highScore": 51,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "tl-seifert",
+    "name": "TL Seifert",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 17,
+      "runs": 424,
+      "battingAvg": 24.9,
+      "strikeRate": 138.1,
+      "highScore": 49,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "ch-gayle",
+    "name": "CH Gayle",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 16,
+      "runs": 370,
+      "battingAvg": 23.1,
+      "strikeRate": 128.9,
+      "highScore": 68,
+      "wickets": 0,
+      "economy": 5,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "zeeshan-ashraf",
+    "name": "Zeeshan Ashraf",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 16,
+      "runs": 226,
+      "battingAvg": 16.1,
+      "strikeRate": 122.2,
+      "highScore": 52,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "mohammad-ali",
+    "name": "Mohammad Ali",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 16,
+      "runs": 8,
+      "battingAvg": 4,
+      "strikeRate": 38.1,
+      "highScore": 4,
+      "wickets": 22,
+      "economy": 9,
+      "bowlingAvg": 23.1
+    }
+  },
+  {
+    "id": "rahmanullah-gurbaz",
+    "name": "Rahmanullah Gurbaz",
+    "role": "wicket-keeper",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 15,
+      "runs": 318,
+      "battingAvg": 22.7,
+      "strikeRate": 155.1,
+      "highScore": 62,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "b-muzarabani",
+    "name": "B Muzarabani",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 15,
+      "runs": 0,
+      "battingAvg": 0,
+      "strikeRate": 0,
+      "highScore": 0,
+      "wickets": 21,
+      "economy": 7.8,
+      "bowlingAvg": 20.3
+    }
+  },
+  {
+    "id": "hassan-nawaz",
+    "name": "Hassan Nawaz",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 15,
+      "runs": 427,
+      "battingAvg": 42.7,
+      "strikeRate": 150.9,
+      "highScore": 100,
+      "wickets": 0,
+      "economy": 11,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "ihsanullah",
+    "name": "Ihsanullah",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Right-arm fast",
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 14,
+      "runs": 0,
+      "battingAvg": 0,
+      "strikeRate": 0,
+      "highScore": 0,
+      "wickets": 23,
+      "economy": 7.4,
+      "bowlingAvg": 16.1
+    }
+  },
+  {
+    "id": "tayyab-tahir",
+    "name": "Tayyab Tahir",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 14,
+      "runs": 280,
+      "battingAvg": 31.1,
+      "strikeRate": 138.6,
+      "highScore": 65,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "jl-denly",
+    "name": "JL Denly",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 13,
+      "runs": 354,
+      "battingAvg": 29.5,
+      "strikeRate": 120,
+      "highScore": 79,
+      "wickets": 0,
+      "economy": 7.5,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "jm-clarke",
+    "name": "JM Clarke",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 13,
+      "runs": 295,
+      "battingAvg": 26.8,
+      "strikeRate": 134.1,
+      "highScore": 54,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "ca-lynn",
+    "name": "CA Lynn",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 12,
+      "runs": 318,
+      "battingAvg": 28.9,
+      "strikeRate": 171,
+      "highScore": 113,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "hazratullah",
+    "name": "Hazratullah",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 12,
+      "runs": 382,
+      "battingAvg": 31.8,
+      "strikeRate": 145.2,
+      "highScore": 77,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "mirza-baig",
+    "name": "Mirza Baig",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 12,
+      "runs": 260,
+      "battingAvg": 21.7,
+      "strikeRate": 120.4,
+      "highScore": 54,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "khawaja-nafay",
+    "name": "Khawaja Nafay",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 12,
+      "runs": 234,
+      "battingAvg": 23.4,
+      "strikeRate": 125.1,
+      "highScore": 60,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "muhammad-naeem",
+    "name": "Muhammad Naeem",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 12,
+      "runs": 314,
+      "battingAvg": 26.2,
+      "strikeRate": 155.4,
+      "highScore": 65,
+      "wickets": 1,
+      "economy": 5,
+      "bowlingAvg": 15
+    }
+  },
+  {
+    "id": "da-miller",
+    "name": "DA Miller",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 11,
+      "runs": 235,
+      "battingAvg": 29.4,
+      "strikeRate": 140.7,
+      "highScore": 73,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "fh-allen",
+    "name": "FH Allen",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 11,
+      "runs": 213,
+      "battingAvg": 23.7,
+      "strikeRate": 169,
+      "highScore": 53,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "da-warner",
+    "name": "DA Warner",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 11,
+      "runs": 368,
+      "battingAvg": 33.5,
+      "strikeRate": 145.5,
+      "highScore": 86,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "jp-duminy",
+    "name": "JP Duminy",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 10,
+      "runs": 251,
+      "battingAvg": 35.9,
+      "strikeRate": 98.4,
+      "highScore": 73,
+      "wickets": 1,
+      "economy": 7.8,
+      "bowlingAvg": 70
+    }
+  },
+  {
+    "id": "ap-devcich",
+    "name": "AP Devcich",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 10,
+      "runs": 280,
+      "battingAvg": 28,
+      "strikeRate": 130.8,
+      "highScore": 70,
+      "wickets": 0,
+      "economy": 15.5,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "pr-stirling",
+    "name": "PR Stirling",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 10,
+      "runs": 266,
+      "battingAvg": 26.6,
+      "strikeRate": 165.2,
+      "highScore": 58,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "wcf-smeed",
+    "name": "WCF Smeed",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 10,
+      "runs": 315,
+      "battingAvg": 31.5,
+      "strikeRate": 131.3,
+      "highScore": 99,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "hc-brook",
+    "name": "HC Brook",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 10,
+      "runs": 267,
+      "battingAvg": 53.4,
+      "strikeRate": 167.9,
+      "highScore": 102,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "ms-wade",
+    "name": "MS Wade",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 9,
+      "runs": 224,
+      "battingAvg": 28,
+      "strikeRate": 115.5,
+      "highScore": 53,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "dj-mitchell",
+    "name": "DJ Mitchell",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 9,
+      "runs": 241,
+      "battingAvg": 26.8,
+      "strikeRate": 150.6,
+      "highScore": 75,
+      "wickets": 3,
+      "economy": 10.1,
+      "bowlingAvg": 32
+    }
+  },
+  {
+    "id": "khalid-latif",
+    "name": "Khalid Latif",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 9,
+      "runs": 206,
+      "battingAvg": 34.3,
+      "strikeRate": 117,
+      "highScore": 59,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "rr-hendricks",
+    "name": "RR Hendricks",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 8,
+      "runs": 304,
+      "battingAvg": 43.4,
+      "strikeRate": 128.3,
+      "highScore": 79,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "lmp-simmons",
+    "name": "LMP Simmons",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 7,
+      "runs": 203,
+      "battingAvg": 33.8,
+      "strikeRate": 110.9,
+      "highScore": 62,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "ab-de-villiers",
+    "name": "AB de Villiers",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 7,
+      "runs": 218,
+      "battingAvg": 54.5,
+      "strikeRate": 129,
+      "highScore": 52,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "ut-khawaja",
+    "name": "UT Khawaja",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "silver",
+    "basePrice": 0.4,
+    "stats": {
+      "pslMatches": 7,
+      "runs": 246,
+      "battingAvg": 49.2,
+      "strikeRate": 150,
+      "highScore": 105,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "hassan-khan",
+    "name": "Hassan Khan",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 28,
+      "runs": 137,
+      "battingAvg": 15.2,
+      "strikeRate": 107.9,
+      "highScore": 24,
+      "wickets": 16,
+      "economy": 7.5,
+      "bowlingAvg": 36.4
+    }
+  },
+  {
+    "id": "amad-butt",
+    "name": "Amad Butt",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 22,
+      "runs": 127,
+      "battingAvg": 14.1,
+      "strikeRate": 136.6,
+      "highScore": 27,
+      "wickets": 18,
+      "economy": 9.5,
+      "bowlingAvg": 32.6
+    }
+  },
+  {
+    "id": "aamer-jamal",
+    "name": "Aamer Jamal",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 21,
+      "runs": 192,
+      "battingAvg": 17.5,
+      "strikeRate": 137.1,
+      "highScore": 87,
+      "wickets": 19,
+      "economy": 10.4,
+      "bowlingAvg": 34.7
+    }
+  },
+  {
+    "id": "zulfiqar-babar",
+    "name": "Zulfiqar Babar",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 18,
+      "runs": 23,
+      "battingAvg": 7.7,
+      "strikeRate": 135.3,
+      "highScore": 20,
+      "wickets": 15,
+      "economy": 6.9,
+      "bowlingAvg": 33.3
+    }
+  },
+  {
+    "id": "cr-brathwaite",
+    "name": "CR Brathwaite",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 18,
+      "runs": 111,
+      "battingAvg": 18.5,
+      "strikeRate": 137,
+      "highScore": 22,
+      "wickets": 12,
+      "economy": 8.7,
+      "bowlingAvg": 35.4
+    }
+  },
+  {
+    "id": "zafar-gohar",
+    "name": "Zafar Gohar",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 17,
+      "runs": 40,
+      "battingAvg": 10,
+      "strikeRate": 87,
+      "highScore": 13,
+      "wickets": 18,
+      "economy": 8.4,
+      "bowlingAvg": 21.6
+    }
+  },
+  {
+    "id": "umer-khan",
+    "name": "Umer Khan",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 17,
+      "runs": 3,
+      "battingAvg": 1,
+      "strikeRate": 33.3,
+      "highScore": 3,
+      "wickets": 19,
+      "economy": 7.8,
+      "bowlingAvg": 20.9
+    }
+  },
+  {
+    "id": "shakib-al-hasan",
+    "name": "Shakib Al Hasan",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 16,
+      "runs": 180,
+      "battingAvg": 15,
+      "strikeRate": 102.9,
+      "highScore": 51,
+      "wickets": 9,
+      "economy": 7.5,
+      "bowlingAvg": 33.2
+    }
+  },
+  {
+    "id": "zahid-mahmood",
+    "name": "Zahid Mahmood",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 15,
+      "runs": 30,
+      "battingAvg": 10,
+      "strikeRate": 62.5,
+      "highScore": 19,
+      "wickets": 15,
+      "economy": 8.5,
+      "bowlingAvg": 30.6
+    }
+  },
+  {
+    "id": "usman-qadir",
+    "name": "Usman Qadir",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": "Right-arm leg-break",
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 15,
+      "runs": 36,
+      "battingAvg": 12,
+      "strikeRate": 144,
+      "highScore": 12,
+      "wickets": 16,
+      "economy": 9.1,
+      "bowlingAvg": 29.6
+    }
+  },
+  {
+    "id": "mohammad-imran",
+    "name": "Mohammad Imran",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 15,
+      "runs": 9,
+      "battingAvg": 4.5,
+      "strikeRate": 128.6,
+      "highScore": 8,
+      "wickets": 11,
+      "economy": 8.6,
+      "bowlingAvg": 42
+    }
+  },
+  {
+    "id": "haseebullah-khan",
+    "name": "Haseebullah Khan",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 15,
+      "runs": 184,
+      "battingAvg": 15.3,
+      "strikeRate": 138.3,
+      "highScore": 50,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "dj-bravo",
+    "name": "DJ Bravo",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 14,
+      "runs": 134,
+      "battingAvg": 19.1,
+      "strikeRate": 95,
+      "highScore": 32,
+      "wickets": 11,
+      "economy": 8.3,
+      "bowlingAvg": 38.6
+    }
+  },
+  {
+    "id": "ahmed-daniyal",
+    "name": "Ahmed Daniyal",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 14,
+      "runs": 34,
+      "battingAvg": 17,
+      "strikeRate": 100,
+      "highScore": 24,
+      "wickets": 12,
+      "economy": 9.2,
+      "bowlingAvg": 38.7
+    }
+  },
+  {
+    "id": "mubasir-khan",
+    "name": "Mubasir Khan",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 14,
+      "runs": 49,
+      "battingAvg": 8.2,
+      "strikeRate": 89.1,
+      "highScore": 21,
+      "wickets": 2,
+      "economy": 8.7,
+      "bowlingAvg": 69.5
+    }
+  },
+  {
+    "id": "asif-afridi",
+    "name": "Asif Afridi",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 14,
+      "runs": 19,
+      "battingAvg": 9.5,
+      "strikeRate": 73.1,
+      "highScore": 6,
+      "wickets": 15,
+      "economy": 7,
+      "bowlingAvg": 19.8
+    }
+  },
+  {
+    "id": "aj-hosein",
+    "name": "AJ Hosein",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 14,
+      "runs": 128,
+      "battingAvg": 18.3,
+      "strikeRate": 116.4,
+      "highScore": 31,
+      "wickets": 18,
+      "economy": 8.1,
+      "bowlingAvg": 24.8
+    }
+  },
+  {
+    "id": "gd-elliott",
+    "name": "GD Elliott",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 13,
+      "runs": 139,
+      "battingAvg": 13.9,
+      "strikeRate": 100.7,
+      "highScore": 40,
+      "wickets": 15,
+      "economy": 7.3,
+      "bowlingAvg": 16.6
+    }
+  },
+  {
+    "id": "dt-christian",
+    "name": "DT Christian",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 13,
+      "runs": 152,
+      "battingAvg": 21.7,
+      "strikeRate": 143.4,
+      "highScore": 27,
+      "wickets": 9,
+      "economy": 10.8,
+      "bowlingAvg": 27.4
+    }
+  },
+  {
+    "id": "l-gregory",
+    "name": "L Gregory",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 13,
+      "runs": 189,
+      "battingAvg": 23.6,
+      "strikeRate": 126.8,
+      "highScore": 49,
+      "wickets": 7,
+      "economy": 9.4,
+      "bowlingAvg": 39
+    }
+  },
+  {
+    "id": "sd-hope",
+    "name": "SD Hope",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 13,
+      "runs": 198,
+      "battingAvg": 15.2,
+      "strikeRate": 112.5,
+      "highScore": 47,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "imran-khalid",
+    "name": "Imran Khalid",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 12,
+      "runs": 39,
+      "battingAvg": 7.8,
+      "strikeRate": 88.6,
+      "highScore": 18,
+      "wickets": 10,
+      "economy": 7.1,
+      "bowlingAvg": 19.9
+    }
+  },
+  {
+    "id": "hammad-azam",
+    "name": "Hammad Azam",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 12,
+      "runs": 94,
+      "battingAvg": 11.8,
+      "strikeRate": 97.9,
+      "highScore": 29,
+      "wickets": 0,
+      "economy": 10.7,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "dilbar-hussain",
+    "name": "Dilbar Hussain",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 12,
+      "runs": 16,
+      "battingAvg": 16,
+      "strikeRate": 100,
+      "highScore": 8,
+      "wickets": 15,
+      "economy": 8.2,
+      "bowlingAvg": 21.1
+    }
+  },
+  {
+    "id": "jp-faulkner",
+    "name": "JP Faulkner",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 12,
+      "runs": 139,
+      "battingAvg": 27.8,
+      "strikeRate": 167.5,
+      "highScore": 33,
+      "wickets": 19,
+      "economy": 8,
+      "bowlingAvg": 18.5
+    }
+  },
+  {
+    "id": "haris-sohail",
+    "name": "Haris Sohail",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 11,
+      "runs": 153,
+      "battingAvg": 17,
+      "strikeRate": 83.6,
+      "highScore": 43,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "ghulam-mudassar",
+    "name": "Ghulam Mudassar",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 11,
+      "runs": 1,
+      "battingAvg": 1,
+      "strikeRate": 33.3,
+      "highScore": 1,
+      "wickets": 11,
+      "economy": 10.2,
+      "bowlingAvg": 35.1
+    }
+  },
+  {
+    "id": "muhammad-akhlaq",
+    "name": "Muhammad Akhlaq",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 11,
+      "runs": 128,
+      "battingAvg": 14.2,
+      "strikeRate": 123.1,
+      "highScore": 51,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "jahandad-khan",
+    "name": "Jahandad Khan",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 11,
+      "runs": 88,
+      "battingAvg": 17.6,
+      "strikeRate": 160,
+      "highScore": 45,
+      "wickets": 5,
+      "economy": 10.1,
+      "bowlingAvg": 56.4
+    }
+  },
+  {
+    "id": "ubaid-shah",
+    "name": "Ubaid Shah",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 11,
+      "runs": 21,
+      "battingAvg": 5.3,
+      "strikeRate": 56.8,
+      "highScore": 14,
+      "wickets": 12,
+      "economy": 10.2,
+      "bowlingAvg": 29.3
+    }
+  },
+  {
+    "id": "hunain-shah",
+    "name": "Hunain Shah",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 11,
+      "runs": 9,
+      "battingAvg": 3,
+      "strikeRate": 56.3,
+      "highScore": 4,
+      "wickets": 8,
+      "economy": 9.5,
+      "bowlingAvg": 29.8
+    }
+  },
+  {
+    "id": "saeed-ajmal",
+    "name": "Saeed Ajmal",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 10,
+      "runs": 20,
+      "battingAvg": 20,
+      "strikeRate": 117.6,
+      "highScore": 10,
+      "wickets": 9,
+      "economy": 8.1,
+      "bowlingAvg": 30.3
+    }
+  },
+  {
+    "id": "nltc-perera",
+    "name": "NLTC Perera",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 10,
+      "runs": 89,
+      "battingAvg": 12.7,
+      "strikeRate": 127.1,
+      "highScore": 37,
+      "wickets": 11,
+      "economy": 8.9,
+      "bowlingAvg": 21.4
+    }
+  },
+  {
+    "id": "umar-gul",
+    "name": "Umar Gul",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 10,
+      "runs": 12,
+      "battingAvg": 3,
+      "strikeRate": 100,
+      "highScore": 10,
+      "wickets": 13,
+      "economy": 7.9,
+      "bowlingAvg": 20.2
+    }
+  },
+  {
+    "id": "mohammad-umar",
+    "name": "Mohammad Umar",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 10,
+      "runs": 4,
+      "battingAvg": 1.3,
+      "strikeRate": 30.8,
+      "highScore": 3,
+      "wickets": 10,
+      "economy": 9.4,
+      "bowlingAvg": 33
+    }
+  },
+  {
+    "id": "naveen-ul-haq",
+    "name": "Naveen-ul-Haq",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 10,
+      "runs": 33,
+      "battingAvg": 33,
+      "strikeRate": 157.1,
+      "highScore": 17,
+      "wickets": 13,
+      "economy": 9.7,
+      "bowlingAvg": 28.5
+    }
+  },
+  {
+    "id": "usman-tariq",
+    "name": "Usman Tariq",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 10,
+      "runs": 7,
+      "battingAvg": 7,
+      "strikeRate": 63.6,
+      "highScore": 5,
+      "wickets": 12,
+      "economy": 7.6,
+      "bowlingAvg": 25.2
+    }
+  },
+  {
+    "id": "ejg-morgan",
+    "name": "EJG Morgan",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 9,
+      "runs": 164,
+      "battingAvg": 20.5,
+      "strikeRate": 100.6,
+      "highScore": 80,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "mahmudullah",
+    "name": "Mahmudullah",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 9,
+      "runs": 71,
+      "battingAvg": 23.7,
+      "strikeRate": 118.3,
+      "highScore": 29,
+      "wickets": 8,
+      "economy": 7.8,
+      "bowlingAvg": 17.1
+    }
+  },
+  {
+    "id": "saif-badar",
+    "name": "Saif Badar",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 9,
+      "runs": 21,
+      "battingAvg": 5.3,
+      "strikeRate": 91.3,
+      "highScore": 13,
+      "wickets": 1,
+      "economy": 7.5,
+      "bowlingAvg": 15
+    }
+  },
+  {
+    "id": "ads-fletcher",
+    "name": "ADS Fletcher",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 9,
+      "runs": 158,
+      "battingAvg": 17.6,
+      "strikeRate": 112.9,
+      "highScore": 34,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "danish-aziz",
+    "name": "Danish Aziz",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 9,
+      "runs": 111,
+      "battingAvg": 18.5,
+      "strikeRate": 119.4,
+      "highScore": 45,
+      "wickets": 0,
+      "economy": 11,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "rizwan-hussain",
+    "name": "Rizwan Hussain",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 9,
+      "runs": 82,
+      "battingAvg": 10.3,
+      "strikeRate": 103.8,
+      "highScore": 22,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "lj-evans",
+    "name": "LJ Evans",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 9,
+      "runs": 103,
+      "battingAvg": 11.4,
+      "strikeRate": 86.6,
+      "highScore": 49,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "t-banton",
+    "name": "T Banton",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 9,
+      "runs": 83,
+      "battingAvg": 10.4,
+      "strikeRate": 120.3,
+      "highScore": 34,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "mm-ali",
+    "name": "MM Ali",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 9,
+      "runs": 138,
+      "battingAvg": 17.3,
+      "strikeRate": 129,
+      "highScore": 65,
+      "wickets": 5,
+      "economy": 10,
+      "bowlingAvg": 22
+    }
+  },
+  {
+    "id": "rohail-nazir",
+    "name": "Rohail Nazir",
+    "role": "wicket-keeper",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 9,
+      "runs": 128,
+      "battingAvg": 16,
+      "strikeRate": 120.8,
+      "highScore": 34,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "imran-khan",
+    "name": "Imran Khan",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 9,
+      "runs": 3,
+      "battingAvg": 3,
+      "strikeRate": 75,
+      "highScore": 3,
+      "wickets": 12,
+      "economy": 7.9,
+      "bowlingAvg": 21.2
+    }
+  },
+  {
+    "id": "qasim-akram",
+    "name": "Qasim Akram",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 9,
+      "runs": 126,
+      "battingAvg": 18,
+      "strikeRate": 137,
+      "highScore": 51,
+      "wickets": 1,
+      "economy": 8.7,
+      "bowlingAvg": 52
+    }
+  },
+  {
+    "id": "jds-neesham",
+    "name": "JDS Neesham",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 9,
+      "runs": 96,
+      "battingAvg": 12,
+      "strikeRate": 118.5,
+      "highScore": 38,
+      "wickets": 7,
+      "economy": 9,
+      "bowlingAvg": 34.6
+    }
+  },
+  {
+    "id": "arif-yaqoob",
+    "name": "Arif Yaqoob",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 9,
+      "runs": 11,
+      "battingAvg": 11,
+      "strikeRate": 122.2,
+      "highScore": 9,
+      "wickets": 14,
+      "economy": 7.8,
+      "bowlingAvg": 16.6
+    }
+  },
+  {
+    "id": "ali-raza",
+    "name": "Ali Raza",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 9,
+      "runs": 1,
+      "battingAvg": 1,
+      "strikeRate": 11.1,
+      "highScore": 1,
+      "wickets": 12,
+      "economy": 8.9,
+      "bowlingAvg": 25.3
+    }
+  },
+  {
+    "id": "bilawal-bhatti",
+    "name": "Bilawal Bhatti",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 8,
+      "runs": 18,
+      "battingAvg": 9,
+      "strikeRate": 105.9,
+      "highScore": 15,
+      "wickets": 6,
+      "economy": 7.7,
+      "bowlingAvg": 33.8
+    }
+  },
+  {
+    "id": "zohaib-khan",
+    "name": "Zohaib Khan",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 8,
+      "runs": 18,
+      "battingAvg": 18,
+      "strikeRate": 138.5,
+      "highScore": 10,
+      "wickets": 3,
+      "economy": 8.5,
+      "bowlingAvg": 65.3
+    }
+  },
+  {
+    "id": "saad-nasim",
+    "name": "Saad Nasim",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 8,
+      "runs": 83,
+      "battingAvg": 11.9,
+      "strikeRate": 127.7,
+      "highScore": 35,
+      "wickets": 0,
+      "economy": 9,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "ibtisam-sheikh",
+    "name": "Ibtisam Sheikh",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 8,
+      "runs": 2,
+      "battingAvg": 2,
+      "strikeRate": 33.3,
+      "highScore": 2,
+      "wickets": 9,
+      "economy": 7.4,
+      "bowlingAvg": 19.8
+    }
+  },
+  {
+    "id": "mh-wessels",
+    "name": "MH Wessels",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 8,
+      "runs": 96,
+      "battingAvg": 13.7,
+      "strikeRate": 97,
+      "highScore": 31,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "muhammad-faizan",
+    "name": "Muhammad Faizan",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 8,
+      "runs": 23,
+      "battingAvg": 5.8,
+      "strikeRate": 56.1,
+      "highScore": 9,
+      "wickets": 3,
+      "economy": 10.3,
+      "bowlingAvg": 24
+    }
+  },
+  {
+    "id": "s-mahmood",
+    "name": "S Mahmood",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 8,
+      "runs": 13,
+      "battingAvg": 13,
+      "strikeRate": 81.3,
+      "highScore": 11,
+      "wickets": 17,
+      "economy": 9.2,
+      "bowlingAvg": 15.7
+    }
+  },
+  {
+    "id": "noor-ahmad",
+    "name": "Noor Ahmad",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 8,
+      "runs": 21,
+      "battingAvg": 10.5,
+      "strikeRate": 161.5,
+      "highScore": 13,
+      "wickets": 6,
+      "economy": 8.1,
+      "bowlingAvg": 41.8
+    }
+  },
+  {
+    "id": "pbb-rajapaksa",
+    "name": "PBB Rajapaksa",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 8,
+      "runs": 156,
+      "battingAvg": 26,
+      "strikeRate": 143.1,
+      "highScore": 41,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "sufiyan-muqeem",
+    "name": "Sufiyan Muqeem",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 8,
+      "runs": 16,
+      "battingAvg": 5.3,
+      "strikeRate": 66.7,
+      "highScore": 6,
+      "wickets": 5,
+      "economy": 9.1,
+      "bowlingAvg": 44
+    }
+  },
+  {
+    "id": "tk-curran",
+    "name": "TK Curran",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 8,
+      "runs": 21,
+      "battingAvg": 10.5,
+      "strikeRate": 190.9,
+      "highScore": 10,
+      "wickets": 10,
+      "economy": 8.4,
+      "bowlingAvg": 22.9
+    }
+  },
+  {
+    "id": "t-shamsi",
+    "name": "T Shamsi",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 8,
+      "runs": 0,
+      "battingAvg": 0,
+      "strikeRate": 0,
+      "highScore": 0,
+      "wickets": 10,
+      "economy": 8.3,
+      "bowlingAvg": 26
+    }
+  },
+  {
+    "id": "omair-yousuf",
+    "name": "Omair Yousuf",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 8,
+      "runs": 184,
+      "battingAvg": 26.3,
+      "strikeRate": 131.4,
+      "highScore": 67,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "jo-holder",
+    "name": "JO Holder",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 8,
+      "runs": 69,
+      "battingAvg": 34.5,
+      "strikeRate": 156.8,
+      "highScore": 32,
+      "wickets": 15,
+      "economy": 9.1,
+      "bowlingAvg": 18.7
+    }
+  },
+  {
+    "id": "bkg-mendis",
+    "name": "BKG Mendis",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 8,
+      "runs": 143,
+      "battingAvg": 35.8,
+      "strikeRate": 162.5,
+      "highScore": 36,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "mj-owen",
+    "name": "MJ Owen",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 8,
+      "runs": 102,
+      "battingAvg": 14.6,
+      "strikeRate": 182.1,
+      "highScore": 34,
+      "wickets": 2,
+      "economy": 7.1,
+      "bowlingAvg": 10
+    }
+  },
+  {
+    "id": "as-joseph",
+    "name": "AS Joseph",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 8,
+      "runs": 31,
+      "battingAvg": 10.3,
+      "strikeRate": 140.9,
+      "highScore": 24,
+      "wickets": 12,
+      "economy": 8.8,
+      "bowlingAvg": 22
+    }
+  },
+  {
+    "id": "mg-bracewell",
+    "name": "MG Bracewell",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 8,
+      "runs": 83,
+      "battingAvg": 13.8,
+      "strikeRate": 145.6,
+      "highScore": 44,
+      "wickets": 6,
+      "economy": 10.3,
+      "bowlingAvg": 37.7
+    }
+  },
+  {
+    "id": "shahid-yousuf",
+    "name": "Shahid Yousuf",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 8,
+      "runs": 99,
+      "battingAvg": 19.8,
+      "strikeRate": 99,
+      "highScore": 27,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "sw-tait",
+    "name": "SW Tait",
+    "role": "bowler",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 8,
+      "runs": 0,
+      "battingAvg": 0,
+      "strikeRate": 0,
+      "highScore": 0,
+      "wickets": 9,
+      "economy": 7,
+      "bowlingAvg": 24.1
+    }
+  },
+  {
+    "id": "s-badree",
+    "name": "S Badree",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 7,
+      "runs": 2,
+      "battingAvg": 2,
+      "strikeRate": 100,
+      "highScore": 2,
+      "wickets": 4,
+      "economy": 7.4,
+      "bowlingAvg": 48
+    }
+  },
+  {
+    "id": "lj-wright",
+    "name": "LJ Wright",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 7,
+      "runs": 181,
+      "battingAvg": 30.2,
+      "strikeRate": 124.8,
+      "highScore": 86,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "khurram-manzoor",
+    "name": "Khurram Manzoor",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 7,
+      "runs": 184,
+      "battingAvg": 26.3,
+      "strikeRate": 111.5,
+      "highScore": 63,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "umar-siddiq",
+    "name": "Umar Siddiq",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 7,
+      "runs": 169,
+      "battingAvg": 24.1,
+      "strikeRate": 109,
+      "highScore": 53,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "s-lamichhane",
+    "name": "S Lamichhane",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 7,
+      "runs": 11,
+      "battingAvg": 11,
+      "strikeRate": 73.3,
+      "highScore": 6,
+      "wickets": 11,
+      "economy": 7.7,
+      "bowlingAvg": 17.2
+    }
+  },
+  {
+    "id": "dw-steyn",
+    "name": "DW Steyn",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 7,
+      "runs": 0,
+      "battingAvg": 0,
+      "strikeRate": 0,
+      "highScore": 0,
+      "wickets": 6,
+      "economy": 8.3,
+      "bowlingAvg": 30.3
+    }
+  },
+  {
+    "id": "najibullah-zadran",
+    "name": "Najibullah Zadran",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 7,
+      "runs": 171,
+      "battingAvg": 28.5,
+      "strikeRate": 131.5,
+      "highScore": 71,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "aamer-azmat",
+    "name": "Aamer Azmat",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 7,
+      "runs": 67,
+      "battingAvg": 16.8,
+      "strikeRate": 109.8,
+      "highScore": 33,
+      "wickets": 0,
+      "economy": 3,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "saad-baig",
+    "name": "Saad Baig",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 7,
+      "runs": 70,
+      "battingAvg": 11.7,
+      "strikeRate": 118.6,
+      "highScore": 25,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "rishad-hossain",
+    "name": "Rishad Hossain",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 7,
+      "runs": 23,
+      "battingAvg": 5.8,
+      "strikeRate": 95.8,
+      "highScore": 13,
+      "wickets": 13,
+      "economy": 9.3,
+      "bowlingAvg": 17.2
+    }
+  },
+  {
+    "id": "bj-dwarshuis",
+    "name": "BJ Dwarshuis",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 7,
+      "runs": 102,
+      "battingAvg": 51,
+      "strikeRate": 167.2,
+      "highScore": 33,
+      "wickets": 6,
+      "economy": 10.3,
+      "bowlingAvg": 36
+    }
+  },
+  {
+    "id": "akbar-ur-rehman",
+    "name": "Akbar-ur-Rehman",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 7,
+      "runs": 15,
+      "battingAvg": 5,
+      "strikeRate": 71.4,
+      "highScore": 11,
+      "wickets": 0,
+      "economy": 7.3,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "azhar-ali",
+    "name": "Azhar Ali",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 7,
+      "runs": 183,
+      "battingAvg": 26.1,
+      "strikeRate": 103.4,
+      "highScore": 61,
+      "wickets": 0,
+      "economy": 6,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "kk-cooper",
+    "name": "KK Cooper",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 7,
+      "runs": 10,
+      "battingAvg": 5,
+      "strikeRate": 83.3,
+      "highScore": 10,
+      "wickets": 6,
+      "economy": 9.1,
+      "bowlingAvg": 26.2
+    }
+  },
+  {
+    "id": "bm-duckett",
+    "name": "BM Duckett",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 6,
+      "runs": 90,
+      "battingAvg": 15,
+      "strikeRate": 105.9,
+      "highScore": 47,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "mohammad-amir-khan",
+    "name": "Mohammad Amir Khan",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 6,
+      "runs": 7,
+      "battingAvg": 7,
+      "strikeRate": 70,
+      "highScore": 7,
+      "wickets": 3,
+      "economy": 8.8,
+      "bowlingAvg": 41.3
+    }
+  },
+  {
+    "id": "f-du-plessis",
+    "name": "F du Plessis",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 6,
+      "runs": 107,
+      "battingAvg": 21.4,
+      "strikeRate": 118.9,
+      "highScore": 37,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "qais-ahmad",
+    "name": "Qais Ahmad",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": "Right-arm leg-break",
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 6,
+      "runs": 44,
+      "battingAvg": 22,
+      "strikeRate": 141.9,
+      "highScore": 17,
+      "wickets": 9,
+      "economy": 10.7,
+      "bowlingAvg": 27.4
+    }
+  },
+  {
+    "id": "salman-mirza",
+    "name": "Salman Mirza",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 6,
+      "runs": 0,
+      "battingAvg": 0,
+      "strikeRate": 0,
+      "highScore": 0,
+      "wickets": 11,
+      "economy": 9.6,
+      "bowlingAvg": 17.9
+    }
+  },
+  {
+    "id": "of-smith",
+    "name": "OF Smith",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 6,
+      "runs": 50,
+      "battingAvg": 16.7,
+      "strikeRate": 119,
+      "highScore": 25,
+      "wickets": 5,
+      "economy": 10.3,
+      "bowlingAvg": 42.4
+    }
+  },
+  {
+    "id": "fazalhaq-farooqi",
+    "name": "Fazalhaq Farooqi",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 6,
+      "runs": 0,
+      "battingAvg": 0,
+      "strikeRate": 0,
+      "highScore": 0,
+      "wickets": 11,
+      "economy": 7.9,
+      "bowlingAvg": 16.6
+    }
+  },
+  {
+    "id": "azmatullah-omarzai",
+    "name": "Azmatullah Omarzai",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 6,
+      "runs": 26,
+      "battingAvg": 13,
+      "strikeRate": 185.7,
+      "highScore": 16,
+      "wickets": 10,
+      "economy": 9.8,
+      "bowlingAvg": 22.9
+    }
+  },
+  {
+    "id": "ahsan-hafeez",
+    "name": "Ahsan Hafeez",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 6,
+      "runs": 56,
+      "battingAvg": 11.2,
+      "strikeRate": 127.3,
+      "highScore": 20,
+      "wickets": 3,
+      "economy": 10,
+      "bowlingAvg": 26.7
+    }
+  },
+  {
+    "id": "jm-cox",
+    "name": "JM Cox",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 6,
+      "runs": 106,
+      "battingAvg": 26.5,
+      "strikeRate": 117.8,
+      "highScore": 41,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "ags-gous",
+    "name": "AGS Gous",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 6,
+      "runs": 142,
+      "battingAvg": 28.4,
+      "strikeRate": 143.4,
+      "highScore": 80,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "muhammad-shahzad",
+    "name": "Muhammad Shahzad",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 6,
+      "runs": 24,
+      "battingAvg": 8,
+      "strikeRate": 133.3,
+      "highScore": 24,
+      "wickets": 1,
+      "economy": 12.3,
+      "bowlingAvg": 43
+    }
+  },
+  {
+    "id": "ms-chapman",
+    "name": "MS Chapman",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 6,
+      "runs": 52,
+      "battingAvg": 17.3,
+      "strikeRate": 118.2,
+      "highScore": 33,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "mn-samuels",
+    "name": "MN Samuels",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 81,
+      "battingAvg": 20.3,
+      "strikeRate": 120.9,
+      "highScore": 37,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "gc-viljoen",
+    "name": "GC Viljoen",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 48,
+      "battingAvg": 16,
+      "strikeRate": 141.2,
+      "highScore": 37,
+      "wickets": 4,
+      "economy": 9.3,
+      "bowlingAvg": 34.8
+    }
+  },
+  {
+    "id": "mustafizur-rahman",
+    "name": "Mustafizur Rahman",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 1,
+      "battingAvg": 1,
+      "strikeRate": 11.1,
+      "highScore": 1,
+      "wickets": 4,
+      "economy": 7.2,
+      "bowlingAvg": 30.5
+    }
+  },
+  {
+    "id": "gulraiz-sadaf",
+    "name": "Gulraiz Sadaf",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 110,
+      "battingAvg": 36.7,
+      "strikeRate": 89.4,
+      "highScore": 42,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "st-finn",
+    "name": "ST Finn",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 0,
+      "battingAvg": 0,
+      "strikeRate": 0,
+      "highScore": 0,
+      "wickets": 5,
+      "economy": 7.8,
+      "bowlingAvg": 24.8
+    }
+  },
+  {
+    "id": "khalid-usman",
+    "name": "Khalid Usman",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 43,
+      "battingAvg": 43,
+      "strikeRate": 116.2,
+      "highScore": 19,
+      "wickets": 3,
+      "economy": 7.6,
+      "bowlingAvg": 38
+    }
+  },
+  {
+    "id": "rameez-raja-2-",
+    "name": "Rameez Raja (2)",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 40,
+      "battingAvg": 10,
+      "strikeRate": 117.6,
+      "highScore": 22,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "mj-mcclenaghan",
+    "name": "MJ McClenaghan",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 4,
+      "battingAvg": 4,
+      "strikeRate": 200,
+      "highScore": 4,
+      "wickets": 2,
+      "economy": 9.2,
+      "bowlingAvg": 78
+    }
+  },
+  {
+    "id": "cj-green",
+    "name": "CJ Green",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 27,
+      "battingAvg": 13.5,
+      "strikeRate": 87.1,
+      "highScore": 18,
+      "wickets": 4,
+      "economy": 6.5,
+      "bowlingAvg": 27.8
+    }
+  },
+  {
+    "id": "aizaz-cheema",
+    "name": "Aizaz Cheema",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 0,
+      "battingAvg": 0,
+      "strikeRate": 0,
+      "highScore": 0,
+      "wickets": 6,
+      "economy": 7.8,
+      "bowlingAvg": 22.7
+    }
+  },
+  {
+    "id": "dj-vilas",
+    "name": "DJ Vilas",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 24,
+      "battingAvg": 8,
+      "strikeRate": 104.3,
+      "highScore": 19,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "j-weatherald",
+    "name": "J Weatherald",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 148,
+      "battingAvg": 29.6,
+      "strikeRate": 122.3,
+      "highScore": 48,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "mohammad-taha",
+    "name": "Mohammad Taha",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 6,
+      "battingAvg": 3,
+      "strikeRate": 50,
+      "highScore": 6,
+      "wickets": 0,
+      "economy": 8,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "m-de-lange",
+    "name": "M de Lange",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 9,
+      "battingAvg": 9,
+      "strikeRate": 75,
+      "highScore": 7,
+      "wickets": 2,
+      "economy": 10.2,
+      "bowlingAvg": 76.5
+    }
+  },
+  {
+    "id": "abdul-bangalzai",
+    "name": "Abdul Bangalzai",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 15,
+      "battingAvg": 3.8,
+      "strikeRate": 62.5,
+      "highScore": 14,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "aimal-khan",
+    "name": "Aimal Khan",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 0,
+      "battingAvg": 0,
+      "strikeRate": 0,
+      "highScore": 0,
+      "wickets": 3,
+      "economy": 11.9,
+      "bowlingAvg": 59.3
+    }
+  },
+  {
+    "id": "dr-sams",
+    "name": "DR Sams",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 33,
+      "battingAvg": 16.5,
+      "strikeRate": 137.5,
+      "highScore": 26,
+      "wickets": 6,
+      "economy": 9.6,
+      "bowlingAvg": 30.3
+    }
+  },
+  {
+    "id": "gf-linde",
+    "name": "GF Linde",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 31,
+      "battingAvg": 15.5,
+      "strikeRate": 124,
+      "highScore": 26,
+      "wickets": 1,
+      "economy": 9,
+      "bowlingAvg": 126
+    }
+  },
+  {
+    "id": "pi-walter",
+    "name": "PI Walter",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 84,
+      "battingAvg": 28,
+      "strikeRate": 123.5,
+      "highScore": 33,
+      "wickets": 2,
+      "economy": 9.8,
+      "bowlingAvg": 54
+    }
+  },
+  {
+    "id": "mehran-mumtaz",
+    "name": "Mehran Mumtaz",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 0,
+      "battingAvg": 0,
+      "strikeRate": 0,
+      "highScore": 0,
+      "wickets": 5,
+      "economy": 6.6,
+      "bowlingAvg": 25.2
+    }
+  },
+  {
+    "id": "m-bryant",
+    "name": "M Bryant",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 49,
+      "battingAvg": 16.3,
+      "strikeRate": 163.3,
+      "highScore": 38,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "fawad-ali",
+    "name": "Fawad Ali",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 2,
+      "battingAvg": 2,
+      "strikeRate": 100,
+      "highScore": 2,
+      "wickets": 2,
+      "economy": 8.8,
+      "bowlingAvg": 54
+    }
+  },
+  {
+    "id": "abdul-samad",
+    "name": "Abdul Samad",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 61,
+      "battingAvg": 15.3,
+      "strikeRate": 169.4,
+      "highScore": 40,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "e-chigumbura",
+    "name": "E Chigumbura",
+    "role": "batsman",
+    "nationality": "Overseas",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 10,
+      "battingAvg": 5,
+      "strikeRate": 71.4,
+      "highScore": 7,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "naved-yasin",
+    "name": "Naved Yasin",
+    "role": "batsman",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 27,
+      "battingAvg": 13.5,
+      "strikeRate": 77.1,
+      "highScore": 25,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    }
+  },
+  {
+    "id": "ehsan-adil",
+    "name": "Ehsan Adil",
+    "role": "bowler",
+    "nationality": "Pakistani",
+    "bowlingStyle": null,
+    "category": "emerging",
+    "basePrice": 0.2,
+    "stats": {
+      "pslMatches": 5,
+      "runs": 0,
+      "battingAvg": 0,
+      "strikeRate": 0,
+      "highScore": 0,
+      "wickets": 7,
+      "economy": 8.6,
+      "bowlingAvg": 24.3
+    }
+  }
+]

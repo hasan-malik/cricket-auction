@@ -1,0 +1,56 @@
+[
+  {
+    "id": "islamabad-united",
+    "name": "Islamabad United",
+    "shortName": "IU",
+    "city": "Islamabad",
+    "primaryColor": "#D01818",
+    "secondaryColor": "#1A1A2E",
+    "logo": "🔴"
+  },
+  {
+    "id": "lahore-qalandars",
+    "name": "Lahore Qalandars",
+    "shortName": "LQ",
+    "city": "Lahore",
+    "primaryColor": "#00A651",
+    "secondaryColor": "#1A1A2E",
+    "logo": "🟢"
+  },
+  {
+    "id": "karachi-kings",
+    "name": "Karachi Kings",
+    "shortName": "KK",
+    "city": "Karachi",
+    "primaryColor": "#00AEEF",
+    "secondaryColor": "#1A1A2E",
+    "logo": "🔵"
+  },
+  {
+    "id": "peshawar-zalmi",
+    "name": "Peshawar Zalmi",
+    "shortName": "PZ",
+    "city": "Peshawar",
+    "primaryColor": "#F7941D",
+    "secondaryColor": "#1A1A2E",
+    "logo": "🟠"
+  },
+  {
+    "id": "quetta-gladiators",
+    "name": "Quetta Gladiators",
+    "shortName": "QG",
+    "city": "Quetta",
+    "primaryColor": "#662D91",
+    "secondaryColor": "#1A1A2E",
+    "logo": "🟣"
+  },
+  {
+    "id": "multan-sultans",
+    "name": "Multan Sultans",
+    "shortName": "MS",
+    "city": "Multan",
+    "primaryColor": "#D4A017",
+    "secondaryColor": "#1A1A2E",
+    "logo": "🟡"
+  }
+]
