@@ -1,24 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors */
-  --color-bg:          #0a0a0f;
+  /* Colors — #29: brighter bg, stronger borders, more vibrant accent */
+  --color-bg:          #0f1117;
   --color-bg-light:    #f0f2f8;
-  --color-surface:     rgba(255 255 255 / 0.04);
-  --color-surface-light: rgba(255 255 255 / 0.85);
-  --color-border:      rgba(255 255 255 / 0.08);
-  --color-border-light: rgba(0 0 0 / 0.08);
+  --color-surface:     rgba(255 255 255 / 0.07);
+  --color-surface-light: rgba(255 255 255 / 0.88);
+  --color-border:      rgba(255 255 255 / 0.12);
+  --color-border-light: rgba(0 0 0 / 0.10);
 
-  --color-blue:        #3b82f6;
-  --color-blue-light:  #60a5fa;
+  --color-blue:        #4f8ef7;
+  --color-blue-light:  #76aaff;
   --color-green:       #22c55e;
   --color-gold:        #f59e0b;
-  --color-violet:      #8b5cf6;
+  --color-violet:      #a78bfa;
 
   --color-text:        #ffffff;
-  --color-text-muted:  #6b7280;
+  --color-text-muted:  #8b949e;
   --color-text-light:  #111827;
-  --color-text-muted-light: #6b7280;
+  --color-text-muted-light: #555f6e;
 
   /* Typography */
   --font-sans: system-ui, -apple-system, 'SF Pro Display', 'Segoe UI', sans-serif;
@@ -52,8 +52,8 @@ body.light {
 /* ─── Scrollbar ─────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(255 255 255 / 0.1); border-radius: 3px; }
-body.light ::-webkit-scrollbar-thumb { background: rgba(0 0 0 / 0.15); }
+::-webkit-scrollbar-thumb { background: rgba(255 255 255 / 0.15); border-radius: 3px; }
+body.light ::-webkit-scrollbar-thumb { background: rgba(0 0 0 / 0.18); }
 
 /* ─── Animated background orbs ─────────────────── */
 .bg-orbs {
@@ -70,7 +70,7 @@ body.light ::-webkit-scrollbar-thumb { background: rgba(0 0 0 / 0.15); }
   position: absolute;
   border-radius: 50%;
   filter: blur(120px);
-  opacity: 0.15;
+  opacity: 0.22;
   animation: drift 20s ease-in-out infinite alternate;
 }
 
@@ -258,4 +258,53 @@ body.light .badge {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px;
+}
+
+/* ─── Cricket bat cursor ────────────────────────── */
+/* Upright bat SVG — hotspot at blade tip (9, 0) */
+body {
+  cursor: url('data:image/svg+xml,%3Csvg xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width%3D"18" height%3D"28" viewBox%3D"0 0 18 28"%3E%3Crect x%3D"3" y%3D"0" width%3D"12" height%3D"18" rx%3D"4" fill%3D"%23D2691E"/%3E%3Crect x%3D"7" y%3D"16" width%3D"4" height%3D"12" rx%3D"2" fill%3D"%238B4513"/%3E%3Cline x1%3D"7" y1%3D"19" x2%3D"11" y2%3D"19" stroke%3D"%235C3317" stroke-width%3D"1.2"/%3E%3Cline x1%3D"7" y1%3D"22" x2%3D"11" y2%3D"22" stroke%3D"%235C3317" stroke-width%3D"1.2"/%3E%3Cline x1%3D"7" y1%3D"25" x2%3D"11" y2%3D"25" stroke%3D"%235C3317" stroke-width%3D"1.2"/%3E%3C%2Fsvg%3E') 9 0, auto;
+}
+
+button, a, [role="button"], label, select { cursor: pointer; }
+input, textarea                           { cursor: text; }
+
+/* ─── Floating cricket ambient layer ────────────── */
+.cricket-float {
+  position: absolute;
+  font-size: 22px;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  filter: blur(0.3px);
+  animation: float-cricket var(--dur, 16s) ease-in-out var(--del, 0s) infinite alternate;
+}
+
+@keyframes float-cricket {
+  0%   { transform: translate(0, 0) rotate(0deg);   opacity: 0.06; }
+  30%  { transform: translate(14px, -20px) rotate(10deg); opacity: 0.10; }
+  65%  { transform: translate(-10px, 12px) rotate(-6deg); opacity: 0.05; }
+  100% { transform: translate(8px, -10px) rotate(4deg);   opacity: 0.08; }
+}
+
+body.light .cricket-float { opacity: 0; animation: none; }
+
+/* ─── Perspective card hover ────────────────────── */
+.glass {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.glass:hover {
+  transform: perspective(900px) rotateX(1.5deg) translateY(-3px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+}
+
+/* ─── Reduced motion ────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .cricket-float          { animation: none; opacity: 0.05; }
+  .bg-orbs::before,
+  .bg-orbs::after         { animation: none; }
+  .stars                  { animation: none; }
+  .glass:hover            { transform: none; box-shadow: none; }
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }

@@ -1,36 +1,23 @@
 {
-  "franchiseBudget": 18.0,
+  "franchiseBudget": 45.0,
   "currency": "PKR Crore",
-  "maxSquadSize": 18,
-  "maxOverseasPlayers": 8,
+  "minSquadSize": 16,
+  "maxSquadSize": 20,
+  "minOverseasPlayers": 5,
+  "maxOverseasPlayers": 7,
   "categories": {
-    "platinum": {
-      "label": "Platinum",
-      "basePrice": 1.7,
-      "color": "#E5E4E2"
-    },
-    "diamond": {
-      "label": "Diamond",
-      "basePrice": 1.0,
-      "color": "#B9F2FF"
-    },
-    "gold": {
-      "label": "Gold",
-      "basePrice": 0.7,
-      "color": "#FFD700"
-    },
-    "silver": {
-      "label": "Silver",
-      "basePrice": 0.4,
-      "color": "#C0C0C0"
-    },
-    "emerging": {
-      "label": "Emerging",
-      "basePrice": 0.2,
-      "color": "#A8E6CF"
-    }
+    "platinum": { "label": "Platinum", "basePrice": 4.2, "color": "#E5E4E2" },
+    "diamond":  { "label": "Diamond",  "basePrice": 2.2, "color": "#B9F2FF" },
+    "gold":     { "label": "Gold",     "basePrice": 1.1, "color": "#FFD700" },
+    "silver":   { "label": "Silver",   "basePrice": 0.6, "color": "#C0C0C0" },
+    "emerging": { "label": "Emerging", "basePrice": 0.6, "color": "#A8E6CF" }
   },
-  "bidIncrements": [0.05, 0.1, 0.25, 0.5],
+  "bidIncrementTiers": [
+    { "upTo": 1.1,  "increment": 0.025 },
+    { "upTo": 2.2,  "increment": 0.050 },
+    { "upTo": 4.2,  "increment": 0.100 },
+    { "upTo": null, "increment": 0.150 }
+  ],
   "bidTimerSeconds": 15,
   "auctionOrder": ["platinum", "diamond", "gold", "silver", "emerging"]
 }

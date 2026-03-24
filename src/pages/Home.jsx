@@ -91,7 +91,7 @@ export default function Home() {
               { label: '279 Players', sub: 'From Cricsheet data' },
               { label: '314 Matches', sub: 'Ball-by-ball stats' },
               { label: '6 Franchises', sub: 'Full PSL roster' },
-              { label: '18 CR Budget', sub: 'Per franchise' },
+              { label: `${auctionConfig.franchiseBudget} CR Budget`, sub: 'Per franchise' },
             ].map(({ label, sub }) => (
               <div key={label} className="badge">
                 <span style={{ color: c.text, fontWeight: 600 }}>{label}</span>
@@ -266,8 +266,8 @@ export default function Home() {
                   marginTop: '14px',
                 }}>
                   Budget: <strong style={{ color: c.text }}>{auctionConfig.franchiseBudget} {auctionConfig.currency}</strong>
-                  {' · '}Max squad: <strong style={{ color: c.text }}>{auctionConfig.maxSquadSize}</strong>
-                  {' · '}Max overseas: <strong style={{ color: c.text }}>{auctionConfig.maxOverseasPlayers}</strong>
+                  {' · '}Squad: <strong style={{ color: c.text }}>{auctionConfig.minSquadSize}–{auctionConfig.maxSquadSize}</strong>
+                  {' · '}Overseas: <strong style={{ color: c.text }}>{auctionConfig.minOverseasPlayers}–{auctionConfig.maxOverseasPlayers}</strong>
                 </p>
               </motion.div>
             )}

@@ -1,7 +1,19 @@
 /**
- * Rule-based AI bidding logic (placeholder until Gemini integration).
+ * Rule-based AI bidding logic.
  * AI "personalities" determine aggression and squad-building strategy.
  */
+
+/**
+ * PSL Season 11 dynamic bid increment: amount rises with the current bid tier.
+ * @param {number} currentBid
+ * @param {Array<{upTo: number|null, increment: number}>} tiers
+ */
+export function getDynamicIncrement(currentBid, tiers) {
+  for (const tier of tiers) {
+    if (tier.upTo === null || currentBid < tier.upTo) return tier.increment;
+  }
+  return tiers[tiers.length - 1].increment;
+}
 
 export const AI_FRANCHISES = [
   'islamabad-united',
@@ -9,12 +21,12 @@ export const AI_FRANCHISES = [
   'quetta-gladiators',
 ];
 
-// How many of each role the AI wants in its final squad
+// How many of each role the AI wants in its final squad (targeting 18 of 20 max)
 const IDEAL_SQUAD = {
-  batsman:        5,
+  batsman:         6,
   'wicket-keeper': 2,
-  'all-rounder':  4,
-  bowler:         5,
+  'all-rounder':   5,
+  bowler:          6,
 };
 
 // Stat weights for player valuation (higher = more important to AI)
@@ -72,11 +84,11 @@ export function generateAITargets(players, franchiseBudget, personality = 'balan
     // Better players get a higher multiplier (up to max)
     const t = 0.5 + quality * 0.5; // remap to 0.5–1.0
     const multiplier = multiplierRange.min + t * (multiplierRange.max - multiplierRange.min);
-    // Cap: don't bid more than 20% of budget on a single player
+    // Cap: don't bid more than 20% of budget on a single player (9 CR with 45 CR budget)
     const maxAllowed = franchiseBudget * 0.20;
     const raw = player.basePrice * multiplier;
-    // Round to nearest 0.05 CR
-    targets[player.id] = Math.round(Math.min(raw, maxAllowed) * 20) / 20;
+    // Round to nearest 0.025 CR (smallest PSL S11 increment)
+    targets[player.id] = Math.round(Math.min(raw, maxAllowed) * 40) / 40;
   }
 
   return targets;
@@ -84,33 +96,31 @@ export function generateAITargets(players, franchiseBudget, personality = 'balan
 
 /**
  * Decide whether AI should bid on the current state.
+ * @param {object} state - auction state
+ * @param {Array<{upTo: number|null, increment: number}>} tiers - bid increment tiers
  * Returns the new bid amount (in CR) or null if AI passes.
  */
-export function getAIBid(state) {
-  const { currentPlayer, currentBid, ai, bidIncrements } = state;
+export function getAIBid(state, tiers) {
+  const { currentPlayer, currentBid, ai } = state;
   if (!currentPlayer) return null;
 
   const target = ai.targets[currentPlayer.id] ?? 0;
   const squadSize = ai.squad.length;
   const roleCount = ai.squad.filter(p => p.role === currentPlayer.role).length;
-  const rolesNeeded = IDEAL_SQUAD[currentPlayer.role] ?? 3;
+  const rolesNeeded = IDEAL_SQUAD[currentPlayer.role] ?? 4;
 
   // Hard pass: AI already winning, squad full, out of budget, or past target
   if (state.bidder === 'ai') return null;
-  if (squadSize >= 18) return null;
+  if (squadSize >= 20) return null;
 
   // Desperately needs this role → willing to go 20% over target
   const urgencyBonus = roleCount < rolesNeeded * 0.5 ? 1.2 : 1.0;
   const effectiveTarget = target * urgencyBonus;
 
-  const nextBid = currentBid + (bidIncrements[0] ?? 0.05);
+  const inc = getDynamicIncrement(currentBid, tiers);
+  const nextBid = Math.round((currentBid + inc) * 1000) / 1000;
   if (nextBid > effectiveTarget) return null;
   if (nextBid > ai.budget) return null;
 
-  // Choose smallest increment that keeps AI above user
-  const increment = bidIncrements.find(inc => currentBid + inc <= effectiveTarget) ?? bidIncrements[0];
-  const bid = Math.round((currentBid + increment) * 20) / 20;
-  if (bid > ai.budget) return null;
-
-  return bid;
+  return nextBid;
 }

@@ -2,6 +2,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
 import { useAuction } from '../hooks/useAuction';
+import { getDynamicIncrement } from '../utils/aiUtils';
+import auctionConfig from '../data/auctionConfig.json';
 import PlayerCard from '../components/auction/PlayerCard';
 import BidTimer from '../components/auction/BidTimer';
 import TeamPanel from '../components/auction/TeamPanel';
@@ -16,7 +18,11 @@ export default function Auction() {
   const teamName    = routeState?.teamName    ?? 'My Team';
 
   const { state, userBid, nextPlayer } = useAuction({ franchiseId, teamName });
-  const { phase, currentPlayer, currentBid, bidder, timer, user, ai, bidIncrements, queue } = state;
+  const { phase, currentPlayer, currentBid, bidder, timer, user, ai, queue } = state;
+
+  // PSL S11 dynamic increment — changes with the current bid tier
+  const inc = getDynamicIncrement(currentBid, auctionConfig.bidIncrementTiers);
+  const bidOptions = [1, 2, 5, 10].map(m => Math.round(inc * m * 1000) / 1000);
 
   const c = {
     text:   isLight ? '#111' : '#fff',
@@ -45,7 +51,7 @@ export default function Auction() {
           <p style={{ color: c.muted, marginBottom: '32px', fontSize: '16px' }}>
             You acquired <strong style={{ color: c.text }}>{user.squad.length} players</strong> for{' '}
             <strong style={{ color: '#3b82f6' }}>
-              {(18 - user.budget).toFixed(2)} CR
+              {(auctionConfig.franchiseBudget - user.budget).toFixed(2)} CR
             </strong>
           </p>
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -155,22 +161,30 @@ export default function Auction() {
               padding: '16px',
               backdropFilter: 'blur(16px)',
             }}>
-              {/* Raise buttons */}
+              {/* Dynamic bid raise buttons — increment tier updates automatically */}
+              <div style={{ marginBottom: '6px', fontSize: '10px', color: c.muted, textAlign: 'center', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                Increment tier: +{inc} CR
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px', marginBottom: '10px' }}>
-                {bidIncrements.map(inc => {
-                  const newBid = currentBid + inc;
+                {bidOptions.map((amount, i) => {
+                  const newBid = Math.round((currentBid + amount) * 1000) / 1000;
                   const canBid = newBid <= user.budget && bidder !== 'user';
+                  const isStandard = i === 0;
                   return (
                     <motion.button
-                      key={inc}
+                      key={amount}
                       whileTap={{ scale: 0.95 }}
-                      onClick={() => userBid(inc)}
+                      onClick={() => userBid(amount)}
                       disabled={!canBid}
                       style={{
                         padding: '12px 8px',
                         borderRadius: '10px',
-                        border: canBid ? '1px solid rgba(59,130,246,0.4)' : '1px solid rgba(255,255,255,0.06)',
-                        background: canBid ? 'rgba(59,130,246,0.12)' : 'rgba(255,255,255,0.03)',
+                        border: canBid
+                          ? isStandard ? '1px solid rgba(59,130,246,0.6)' : '1px solid rgba(59,130,246,0.3)'
+                          : '1px solid rgba(255,255,255,0.06)',
+                        background: canBid
+                          ? isStandard ? 'rgba(59,130,246,0.18)' : 'rgba(59,130,246,0.08)'
+                          : 'rgba(255,255,255,0.03)',
                         color: canBid ? '#60a5fa' : c.muted,
                         fontWeight: 700,
                         fontSize: '13px',
@@ -179,7 +193,7 @@ export default function Auction() {
                         letterSpacing: '-0.01em',
                       }}
                     >
-                      +{inc} CR
+                      +{amount.toFixed(3).replace(/\.?0+$/, '')} CR
                     </motion.button>
                   );
                 })}

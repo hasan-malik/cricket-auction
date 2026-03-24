@@ -31,12 +31,13 @@ app.post('/api/bid', async (req, res) => {
     return res.status(400).json({ error: 'Missing required fields' });
   }
 
-  // Fallback: if no API key, return a rule-based decision
+  // Fallback: if no API key, return a rule-based decision (PSL S11 min increment = 0.025 CR)
   if (!process.env.GEMINI_API_KEY) {
-    const shouldBid = currentBid < player.basePrice * 1.5 && currentBid + 0.05 <= aiBudget;
+    const minInc = currentBid < 1.1 ? 0.025 : currentBid < 2.2 ? 0.050 : currentBid < 4.2 ? 0.100 : 0.150;
+    const shouldBid = currentBid < player.basePrice * 1.5 && currentBid + minInc <= aiBudget;
     return res.json(
       shouldBid
-        ? { action: 'bid', amount: Math.round((currentBid + 0.05) * 100) / 100 }
+        ? { action: 'bid', amount: Math.round((currentBid + minInc) * 1000) / 1000 }
         : { action: 'pass' }
     );
   }
@@ -44,12 +45,14 @@ app.post('/api/bid', async (req, res) => {
   try {
     const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
-    const systemPrompt = `You are an AI team manager in a PSL cricket auction with a ${personality} bidding strategy.
+    const minInc = currentBid < 1.1 ? 0.025 : currentBid < 2.2 ? 0.050 : currentBid < 4.2 ? 0.100 : 0.150;
+    const systemPrompt = `You are an AI team manager in a PSL Season 11 cricket auction (budget: 45 CR, squad: 16-20 players) with a ${personality} bidding strategy.
 - aggressive: bid up to 2.5x base price on quality players, prioritise filling squad
 - balanced: bid up to 1.8x base price, balance quality vs budget
 - value: bid up to 1.3x base price, only buy players at a discount
+PSL S11 bid increment at current price: ${minInc} CR minimum.
 You must respond with ONLY valid JSON: {"action":"bid","amount":X} or {"action":"pass"}
-Amount must be in PKR Crore, rounded to 2 decimal places, and must be currentBid + 0.05 minimum.`;
+Amount must be in PKR Crore, rounded to 3 decimal places, minimum currentBid + ${minInc}.`;
 
     const squadDesc = Object.entries(aiSquad ?? {})
       .map(([role, count]) => `${count} ${role}`)
@@ -77,8 +80,8 @@ Should I bid? Respond with JSON only.`;
     // Validate
     if (!['bid', 'pass'].includes(decision.action)) throw new Error('Invalid action');
     if (decision.action === 'bid') {
-      const minBid = Math.round((currentBid + 0.05) * 100) / 100;
-      decision.amount = Math.max(minBid, Math.round((decision.amount ?? minBid) * 100) / 100);
+      const minBid = Math.round((currentBid + minInc) * 1000) / 1000;
+      decision.amount = Math.max(minBid, Math.round((decision.amount ?? minBid) * 1000) / 1000);
       if (decision.amount > aiBudget) return res.json({ action: 'pass' });
     }
 
@@ -86,7 +89,8 @@ Should I bid? Respond with JSON only.`;
   } catch (err) {
     console.error('Gemini error:', err.message);
     // Graceful fallback to rule-based
-    const minBid = Math.round((currentBid + 0.05) * 100) / 100;
+    const inc = currentBid < 1.1 ? 0.025 : currentBid < 2.2 ? 0.050 : currentBid < 4.2 ? 0.100 : 0.150;
+    const minBid = Math.round((currentBid + inc) * 1000) / 1000;
     const shouldBid = minBid <= aiBudget && currentBid < player.basePrice * 1.5;
     res.json(shouldBid ? { action: 'bid', amount: minBid } : { action: 'pass' });
   }
