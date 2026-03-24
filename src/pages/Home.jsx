@@ -1,9 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
 import franchises from '../data/franchises.json';
 import auctionConfig from '../data/auctionConfig.json';
+
+/** Build a cricket cap SVG cursor data URI in the franchise's primary color. */
+function buildCapCursor(color) {
+  // Slightly darken the color for the brim/band by lowering alpha
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="22" viewBox="0 0 28 22">
+    <path d="M2 15 Q2 1 14 1 Q26 1 26 15 Z" fill="${color}"/>
+    <rect x="2" y="13" width="24" height="4" rx="0" fill="${color}dd"/>
+    <ellipse cx="14" cy="18.5" rx="14" ry="3.5" fill="${color}bb"/>
+    <circle cx="14" cy="2.5" r="1.8" fill="rgba(255,255,255,0.45)"/>
+  </svg>`;
+  return `url('data:image/svg+xml,${encodeURIComponent(svg)}') 14 19, auto`;
+}
 
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
@@ -21,6 +33,17 @@ export default function Home() {
 
   const [selected, setSelected] = useState(null);
   const [teamName, setTeamName] = useState('');
+
+  // Switch to team-colored cap cursor on franchise select, restore bat on deselect
+  useEffect(() => {
+    if (selected) {
+      const f = franchises.find(fr => fr.id === selected);
+      if (f) document.body.style.cursor = buildCapCursor(f.primaryColor);
+    } else {
+      document.body.style.cursor = '';
+    }
+    return () => { document.body.style.cursor = ''; };
+  }, [selected]);
 
   const handleStart = () => {
     if (!selected) return;
