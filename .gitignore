@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Cricsheet raw match data (large, regeneratable via scripts/processCricsheet.js)
+scripts/cricsheet-raw/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
