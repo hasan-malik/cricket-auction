@@ -82,7 +82,7 @@ function PlayerRow({ player, rank, isLight }) {
 function SquadCard({ team, isUser, isLight }) {
   const sorted = sortSquad(team.squad);
   const spent = Math.round((auctionConfig.franchiseBudget - team.budget) * 1000) / 1000;
-  const accentColor = isUser ? '#3b82f6' : '#f59e0b';
+  const accentColor = isUser ? '#3b82f6' : (team.franchise?.primaryColor ?? '#f59e0b');
   const c = { text: isLight ? '#111' : '#fff', muted: isLight ? '#6b7280' : 'rgba(255,255,255,0.45)', border: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)' };
 
   const roleCounts = ROLE_ORDER.reduce((acc, role) => {
@@ -107,7 +107,7 @@ function SquadCard({ team, isUser, isLight }) {
       {/* Header */}
       <div style={{ marginBottom: '20px' }}>
         <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: accentColor, marginBottom: '4px' }}>
-          {isUser ? 'Your Squad' : 'AI Squad'}
+          {isUser ? 'Your Squad' : `AI · ${team.franchise?.shortName ?? 'AI'}`}
         </div>
         <div style={{ fontSize: '22px', fontWeight: 800, color: c.text, letterSpacing: '-0.03em', marginBottom: '16px' }}>
           {team.name}
@@ -171,10 +171,10 @@ export default function Results() {
     );
   }
 
-  const { user, ai } = routeState;
-  const userSpent = Math.round((auctionConfig.franchiseBudget - user.budget) * 1000) / 1000;
-  const aiSpent   = Math.round((auctionConfig.franchiseBudget - ai.budget)   * 1000) / 1000;
-  const userWon   = user.squad.length >= ai.squad.length;
+  const { user, aiTeams } = routeState;
+  const aiTeamList = Object.values(aiTeams ?? {});
+  const bestAI = aiTeamList.reduce((best, t) => (!best || t.squad.length > best.squad.length ? t : best), null);
+  const userWon = !bestAI || user.squad.length >= bestAI.squad.length;
 
   const c = { text: isLight ? '#111' : '#fff', muted: isLight ? '#6b7280' : 'rgba(255,255,255,0.5)' };
 
@@ -203,11 +203,10 @@ export default function Results() {
               <>The AI <span style={{ color: '#f59e0b' }}>outbid</span> you.</>
             )}
           </h1>
-          <p style={{ fontSize: '17px', color: c.muted, maxWidth: '480px', margin: '0 auto 32px' }}>
-            You spent <strong style={{ color: '#60a5fa' }}>{userSpent} CR</strong> on{' '}
-            <strong style={{ color: c.text }}>{user.squad.length} players</strong>.
-            The AI spent <strong style={{ color: '#f59e0b' }}>{aiSpent} CR</strong> on{' '}
-            <strong style={{ color: c.text }}>{ai.squad.length} players</strong>.
+          <p style={{ fontSize: '17px', color: c.muted, maxWidth: '520px', margin: '0 auto 32px' }}>
+            You spent <strong style={{ color: '#60a5fa' }}>{Math.round((auctionConfig.franchiseBudget - user.budget) * 1000) / 1000} CR</strong> on{' '}
+            <strong style={{ color: c.text }}>{user.squad.length} players</strong>.{' '}
+            {bestAI && <>Best AI ({bestAI.name}) got <strong style={{ color: c.text }}>{bestAI.squad.length} players</strong>.</>}
           </p>
 
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -220,14 +219,16 @@ export default function Results() {
           </div>
         </motion.div>
 
-        {/* Squad comparison */}
+        {/* Squad comparison — user + all AI teams */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
           gap: '24px',
         }}>
           <SquadCard team={user} isUser isLight={isLight} />
-          <SquadCard team={ai} isUser={false} isLight={isLight} />
+          {aiTeamList.map(team => (
+            <SquadCard key={team.id} team={team} isUser={false} isLight={isLight} />
+          ))}
         </div>
       </div>
     </div>

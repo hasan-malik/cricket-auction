@@ -7,6 +7,7 @@ import auctionConfig from '../data/auctionConfig.json';
 import PlayerCard from '../components/auction/PlayerCard';
 import BidTimer from '../components/auction/BidTimer';
 import TeamPanel from '../components/auction/TeamPanel';
+import AIPanel from '../components/auction/AIPanel';
 
 export default function Auction() {
   const { state: routeState } = useLocation();
@@ -17,8 +18,8 @@ export default function Auction() {
   const franchiseId = routeState?.franchiseId ?? 'lahore-qalandars';
   const teamName    = routeState?.teamName    ?? 'My Team';
 
-  const { state, userBid, nextPlayer } = useAuction({ franchiseId, teamName });
-  const { phase, currentPlayer, currentBid, bidder, timer, user, ai, queue } = state;
+  const { state, userBid, userPass, nextPlayer } = useAuction({ franchiseId, teamName });
+  const { phase, currentPlayer, currentBid, bidder, timer, user, aiTeams, queue } = state;
 
   // PSL S11 dynamic increment — changes with the current bid tier
   const inc = getDynamicIncrement(currentBid, auctionConfig.bidIncrementTiers);
@@ -31,8 +32,9 @@ export default function Auction() {
     surface: isLight ? 'rgba(0,0,0,0.04)' : 'rgba(255,255,255,0.04)',
   };
 
-  const bidderLabel = bidder === 'user' ? user.name : bidder === 'ai' ? ai.name : null;
-  const bidderColor = bidder === 'user' ? '#3b82f6' : bidder === 'ai' ? '#f59e0b' : c.muted;
+  const bidderTeam = bidder && bidder !== 'user' ? aiTeams[bidder] : null;
+  const bidderLabel = bidder === 'user' ? user.name : bidderTeam?.name ?? null;
+  const bidderColor = bidder === 'user' ? '#3b82f6' : bidderTeam?.franchise?.primaryColor ?? c.muted;
 
   // ── Done screen ──────────────────────────────────────────────────────────
   if (phase === 'done') {
@@ -57,7 +59,7 @@ export default function Auction() {
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <button
               className="btn-primary"
-              onClick={() => navigate('/results', { state: { user, ai } })}
+              onClick={() => navigate('/results', { state: { user, aiTeams } })}
             >
               See Full Results →
             </button>
@@ -199,19 +201,39 @@ export default function Auction() {
                 })}
               </div>
 
-              {/* Status hint */}
-              <div style={{ textAlign: 'center', fontSize: '12px', color: c.muted }}>
-                {bidder === 'user'
-                  ? '✅ You are winning — wait for the hammer'
-                  : bidder === 'ai'
-                  ? '🤖 AI is winning — raise to outbid'
-                  : '👆 Place the first bid'}
+              {/* Status hint + Pass button */}
+              <div style={{ textAlign: 'center', fontSize: '12px', color: c.muted, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
+                <span>
+                  {bidder === 'user'
+                    ? '✅ You are winning — wait for the hammer'
+                    : bidder !== null
+                    ? '🔨 AI is leading — raise to outbid'
+                    : '👆 Place the first bid'}
+                </span>
+                {bidder !== null && bidder !== 'user' && (
+                  <button
+                    onClick={userPass}
+                    style={{
+                      fontSize: '11px',
+                      fontWeight: 600,
+                      padding: '4px 12px',
+                      borderRadius: '9999px',
+                      border: '1px solid rgba(255,255,255,0.15)',
+                      background: 'transparent',
+                      color: 'rgba(255,255,255,0.45)',
+                      cursor: 'pointer',
+                      transition: 'all 0.15s',
+                    }}
+                  >
+                    Pass →
+                  </button>
+                )}
               </div>
             </div>
           </div>
 
-          {/* Right: AI team */}
-          <TeamPanel team={ai} isUser={false} isLight={isLight} />
+          {/* Right: all AI franchises */}
+          <AIPanel aiTeams={aiTeams} bidder={bidder} isLight={isLight} />
         </div>
       </div>
 
@@ -249,13 +271,13 @@ export default function Auction() {
                     SOLD!
                   </h2>
                   <p style={{ fontSize: '20px', color: 'rgba(255,255,255,0.7)', margin: '0 0 8px' }}>
-                    <strong style={{ color: bidder === 'user' ? '#3b82f6' : '#f59e0b' }}>
-                      {bidder === 'user' ? user.name : ai.name}
+                    <strong style={{ color: bidderColor }}>
+                      {bidderLabel}
                     </strong>{' '}
                     won{' '}
                     <strong style={{ color: '#fff' }}>{currentPlayer?.name}</strong>
                   </p>
-                  <p style={{ fontSize: '32px', fontWeight: 800, color: bidder === 'user' ? '#3b82f6' : '#f59e0b', letterSpacing: '-0.03em' }}>
+                  <p style={{ fontSize: '32px', fontWeight: 800, color: bidderColor, letterSpacing: '-0.03em' }}>
                     {currentBid.toFixed(2)} CR
                   </p>
                 </>

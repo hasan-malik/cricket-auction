@@ -17,9 +17,21 @@ export function getDynamicIncrement(currentBid, tiers) {
 
 export const AI_FRANCHISES = [
   'islamabad-united',
+  'lahore-qalandars',
   'karachi-kings',
+  'peshawar-zalmi',
   'quetta-gladiators',
+  'multan-sultans',
 ];
+
+export const AI_PERSONALITIES = {
+  'islamabad-united':  'aggressive',
+  'lahore-qalandars':  'balanced',
+  'karachi-kings':     'value',
+  'peshawar-zalmi':    'aggressive',
+  'quetta-gladiators': 'balanced',
+  'multan-sultans':    'value',
+};
 
 // How many of each role the AI wants in its final squad (targeting 18 of 20 max)
 const IDEAL_SQUAD = {
@@ -95,22 +107,26 @@ export function generateAITargets(players, franchiseBudget, personality = 'balan
 }
 
 /**
- * Decide whether AI should bid on the current state.
- * @param {object} state - auction state
- * @param {Array<{upTo: number|null, increment: number}>} tiers - bid increment tiers
+ * Decide whether a specific AI franchise should bid.
+ * @param {string} franchiseId - the AI franchise making the decision
+ * @param {object} aiTeam - { budget, squad, targets }
+ * @param {object} currentPlayer
+ * @param {number} currentBid
+ * @param {string|null} bidder - current leading bidder
+ * @param {Array} tiers - bid increment tiers
  * Returns the new bid amount (in CR) or null if AI passes.
  */
-export function getAIBid(state, tiers) {
-  const { currentPlayer, currentBid, ai } = state;
+export function getAIBid(franchiseId, aiTeam, currentPlayer, currentBid, bidder, tiers) {
   if (!currentPlayer) return null;
 
-  const target = ai.targets[currentPlayer.id] ?? 0;
-  const squadSize = ai.squad.length;
-  const roleCount = ai.squad.filter(p => p.role === currentPlayer.role).length;
+  // Hard pass: this AI is already winning
+  if (bidder === franchiseId) return null;
+
+  const target = aiTeam.targets[currentPlayer.id] ?? 0;
+  const squadSize = aiTeam.squad.length;
+  const roleCount = aiTeam.squad.filter(p => p.role === currentPlayer.role).length;
   const rolesNeeded = IDEAL_SQUAD[currentPlayer.role] ?? 4;
 
-  // Hard pass: AI already winning, squad full, out of budget, or past target
-  if (state.bidder === 'ai') return null;
   if (squadSize >= 20) return null;
 
   // Desperately needs this role → willing to go 20% over target
@@ -120,7 +136,7 @@ export function getAIBid(state, tiers) {
   const inc = getDynamicIncrement(currentBid, tiers);
   const nextBid = Math.round((currentBid + inc) * 1000) / 1000;
   if (nextBid > effectiveTarget) return null;
-  if (nextBid > ai.budget) return null;
+  if (nextBid > aiTeam.budget) return null;
 
   return nextBid;
 }

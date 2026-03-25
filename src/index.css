@@ -260,12 +260,6 @@ body.light .badge {
   padding: 0 24px;
 }
 
-/* ─── Cricket bat cursor (diagonal, like 🏏 emoji) ─ */
-/* Blade: top-right quadrilateral. Handle: bottom-left thin strip. Ball: red circle.
-   Hotspot at blade tip (21, 3). */
-body {
-  cursor: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpolygon points="18,1 23,6 11,18 6,13" fill="%23D4A56A"/%3E%3Cpolygon points="11,18 6,13 2,21 4,23" fill="%238B5E3C"/%3E%3Ccircle cx="3" cy="20" r="2.5" fill="%23CC2200"/%3E%3C/svg%3E') 21 3, auto;
-}
 
 button, a, [role="button"], label, select { cursor: pointer; }
 input, textarea                           { cursor: text; }
