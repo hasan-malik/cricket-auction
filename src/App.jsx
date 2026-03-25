@@ -4,6 +4,7 @@ import Navbar from './components/layout/Navbar';
 import Home from './pages/Home';
 import Auction from './pages/Auction';
 import Results from './pages/Results';
+import Players from './pages/Players';
 import './App.css';
 
 // Fixed positions + animation params for ambient cricket icons
@@ -54,6 +55,7 @@ export default function App() {
 
         <Routes>
           <Route path="/"        element={<Home />} />
+          <Route path="/players" element={<Players />} />
           <Route path="/auction" element={<Auction />} />
           <Route path="/results" element={<Results />} />
         </Routes>

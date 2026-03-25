@@ -47,6 +47,29 @@ export default function Navbar() {
 
       {/* Right: nav links + toggle */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        {/* Scout link — home and players pages only */}
+        {(pathname === '/' || pathname === '/players') && (
+          <Link
+            to="/players"
+            style={{
+              fontSize: '13px',
+              fontWeight: 500,
+              color: pathname === '/players'
+                ? (isLight ? '#111' : '#fff')
+                : (isLight ? 'rgba(0,0,0,0.5)' : 'rgba(255,255,255,0.5)'),
+              textDecoration: 'none',
+              padding: '6px 14px',
+              borderRadius: '9999px',
+              background: pathname === '/players'
+                ? (isLight ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.08)')
+                : 'transparent',
+              transition: 'color 0.2s, background 0.2s',
+            }}
+          >
+            Scout
+          </Link>
+        )}
+
         {pathname === '/auction' && (
           <Link to="/" style={{
             fontSize: '13px',
