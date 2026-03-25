@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
 import franchises from '../data/franchises.json';
@@ -106,6 +106,30 @@ export default function Home() {
             Pick a franchise, set your strategy, and outbid the AI to assemble the
             ultimate PSL squad — powered by real Cricsheet match data.
           </motion.p>
+
+          {/* Scout CTA */}
+          <motion.div variants={fadeUp} style={{ marginBottom: '28px' }}>
+            <Link
+              to="/players"
+              style={{ textDecoration: 'none' }}
+            >
+              <motion.span
+                whileHover={{ x: 3, transition: { duration: 0.18 } }}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '7px',
+                  fontSize: '14px',
+                  fontWeight: 500,
+                  color: '#4f8ef7',
+                  cursor: 'pointer',
+                }}
+              >
+                Scout all 279 players
+                <span style={{ fontSize: '13px', opacity: 0.7 }}>→</span>
+              </motion.span>
+            </Link>
+          </motion.div>
 
           {/* Stats strip */}
           <motion.div
