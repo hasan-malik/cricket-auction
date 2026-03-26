@@ -272,6 +272,136 @@ function UpcomingModal({ currentPlayer, queue, isLight, onClose }) {
   );
 }
 
+// ── Player Detail Modal (Up Next) ────────────────────────────────────────────
+const STAT_ROLES = {
+  batsman: ['pslMatches', 'runs', 'battingAvg', 'strikeRate'],
+  'wicket-keeper': ['pslMatches', 'runs', 'battingAvg', 'strikeRate', 'highScore'],
+  bowler: ['pslMatches', 'wickets', 'economy', 'bowlingAvg'],
+  'all-rounder': ['pslMatches', 'runs', 'battingAvg', 'wickets', 'economy'],
+};
+const STAT_LABELS = {
+  pslMatches: 'Matches', runs: 'Runs', battingAvg: 'Avg', strikeRate: 'SR',
+  wickets: 'Wkts', economy: 'Econ', bowlingAvg: 'Avg', highScore: 'HS',
+};
+
+function PlayerDetailModal({ player, isLight, onClose }) {
+  if (!player) return null;
+  const c = {
+    text:   isLight ? '#111' : '#fff',
+    muted:  isLight ? '#6b7280' : 'rgba(255,255,255,0.5)',
+    surface: isLight ? '#fff' : '#1a1a2e',
+    border: isLight ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)',
+  };
+  const catColor = CATEGORY_COLORS[player.category] ?? '#888';
+  const statKeys = STAT_ROLES[player.role] ?? ['pslMatches'];
+  const s = player.stats ?? {};
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      onClick={onClose}
+      style={{
+        position: 'fixed', inset: 0, zIndex: 200,
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(6px)',
+      }}
+    >
+      <motion.div
+        initial={{ scale: 0.92, y: 20 }}
+        animate={{ scale: 1, y: 0 }}
+        exit={{ scale: 0.95, opacity: 0 }}
+        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        onClick={e => e.stopPropagation()}
+        style={{
+          background: c.surface,
+          border: `1px solid ${catColor}44`,
+          borderRadius: '20px',
+          padding: '24px',
+          width: '340px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '16px',
+          boxShadow: `0 0 40px ${catColor}22`,
+        }}
+      >
+        {/* Category + rating */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <span style={{
+            fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em',
+            color: catColor, background: `${catColor}22`, border: `1px solid ${catColor}44`,
+            padding: '3px 10px', borderRadius: '9999px',
+          }}>
+            {player.category}
+          </span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            {player.rating != null && (
+              <span style={{ fontSize: '12px', fontWeight: 700, color: catColor }}>★ {player.rating}</span>
+            )}
+            <span style={{ fontSize: '12px', color: c.muted }}>
+              {player.nationality === 'Overseas' ? '🌍' : '🇵🇰'}
+            </span>
+          </div>
+        </div>
+
+        {/* Name + role */}
+        <div>
+          <div style={{ fontSize: '22px', fontWeight: 800, color: c.text, letterSpacing: '-0.03em', lineHeight: 1.1 }}>
+            {player.name}
+          </div>
+          <div style={{ fontSize: '13px', color: c.muted, marginTop: '4px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <span>{ROLE_ICONS[player.role]}</span>
+            <span style={{ textTransform: 'capitalize' }}>
+              {player.role.replace('-', ' ')}
+              {player.bowlingStyle ? ` · ${player.bowlingStyle}` : ''}
+            </span>
+          </div>
+        </div>
+
+        {/* Stats grid */}
+        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          {statKeys.map(key => (
+            <div key={key} style={{
+              flex: '1 1 60px',
+              display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px',
+              padding: '10px 8px',
+              background: 'rgba(255,255,255,0.04)',
+              border: `1px solid ${c.border}`,
+              borderRadius: '10px',
+            }}>
+              <span style={{ fontSize: '16px', fontWeight: 700, color: c.text }}>
+                {s[key] != null ? (typeof s[key] === 'number' && s[key] > 999 ? s[key].toLocaleString() : s[key]) : '—'}
+              </span>
+              <span style={{ fontSize: '9px', color: c.muted, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                {STAT_LABELS[key]}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* Base price */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: c.muted, borderTop: `1px solid ${c.border}`, paddingTop: '12px' }}>
+          <span>Base Price</span>
+          <span style={{ fontWeight: 700, color: c.text }}>{player.basePrice?.toFixed(2)} CR</span>
+        </div>
+
+        <button
+          onClick={onClose}
+          style={{
+            padding: '10px', borderRadius: '10px', border: `1px solid ${c.border}`,
+            background: 'transparent', color: c.muted, cursor: 'pointer',
+            fontSize: '13px', fontWeight: 600,
+          }}
+        >
+          Close
+        </button>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 export default function Auction() {
   const { state: routeState } = useLocation();
   const navigate = useNavigate();
@@ -297,6 +427,7 @@ export default function Auction() {
   // Modal state
   const [squadModal, setSquadModal] = useState(null); // team object or null
   const [upcomingModal, setUpcomingModal] = useState(false);
+  const [upNextPlayer, setUpNextPlayer] = useState(null);
 
   // PSL S11 dynamic increment — changes with the current bid tier
   const inc = getDynamicIncrement(currentBid, auctionConfig.bidIncrementTiers);
@@ -338,8 +469,15 @@ export default function Auction() {
     return () => clearTimeout(autoAdvanceRef.current);
   }, [phase, isBlitz, nextPlayer]);
 
-  // Next 5 upcoming players
-  const nextFive = queue.slice(0, 5);
+  // Rating totals (used for blitz dual-display)
+  const userRatingTotal = user.squad.reduce((s, p) => s + (p.rating ?? 0), 0);
+  const aiRatingTotals = {};
+  for (const [id, team] of Object.entries(aiTeams)) {
+    aiRatingTotals[id] = team.squad.reduce((s, p) => s + (p.rating ?? 0), 0);
+  }
+
+  // All upcoming players (for scrollable strip)
+  const upNextQueue = queue;
 
   // ── Done screen ──────────────────────────────────────────────────────────
   if (phase === 'done') {
@@ -423,21 +561,6 @@ export default function Auction() {
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            {/* Players remaining — clickable */}
-            <button
-              onClick={() => setUpcomingModal(true)}
-              style={{
-                fontSize: '13px', color: c.muted,
-                background: 'transparent', border: 'none', cursor: 'pointer',
-                padding: '4px 8px', borderRadius: '8px',
-                transition: 'background 0.15s',
-              }}
-              onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.07)'}
-              onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
-            >
-              {queue.length + 1} players remaining ↗
-            </button>
-
             {/* Pause / Resume button */}
             {phase === 'bidding' && (
               <motion.button
@@ -468,23 +591,42 @@ export default function Auction() {
           gap: '16px',
           alignItems: 'start',
         }}>
-          {/* Left: user team */}
-          <TeamPanel
-            team={user}
-            isUser
-            isLight={isLight}
-            score={userScore}
-            isBlitz={isBlitz}
-            onViewSquad={() => setSquadModal(user)}
-          />
+          {/* Left: user team + score formula */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <TeamPanel
+              team={user}
+              isUser
+              isLight={isLight}
+              score={userScore}
+              ratingTotal={userRatingTotal}
+              isBlitz={isBlitz}
+              onViewSquad={() => setSquadModal(user)}
+            />
+            {/* Score formula — bottom-left */}
+            <div style={{
+              background: c.surface,
+              border: `1px solid ${c.border}`,
+              borderRadius: '10px',
+              padding: '8px 12px',
+              backdropFilter: 'blur(16px)',
+              fontSize: '10px',
+              color: c.muted,
+              lineHeight: 1.5,
+            }}>
+              {isBlitz
+                ? <>Score = <strong style={{ color: c.text }}>Σ (rating − max(0, overpay × 10))</strong><br />overpay = (soldPrice − base) / base</>
+                : <>Win: <strong style={{ color: c.text }}>highest total rating</strong><br />rating = weighted batting + bowling (0–100)</>
+              }
+            </div>
+          </div>
 
           {/* Centre: player + bid */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {/* Player card */}
             <PlayerCard player={currentPlayer} isNew key={currentPlayer?.id} />
 
-            {/* Next 5 incoming strip */}
-            {nextFive.length > 0 && (
+            {/* Up Next — all remaining players, horizontally scrollable */}
+            {upNextQueue.length > 0 && (
               <div style={{
                 background: c.surface,
                 border: `1px solid ${c.border}`,
@@ -492,23 +634,41 @@ export default function Auction() {
                 padding: '10px 14px',
                 backdropFilter: 'blur(16px)',
               }}>
-                <div style={{ fontSize: '10px', fontWeight: 700, color: c.muted, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>
-                  Up Next
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                  <div style={{ fontSize: '10px', fontWeight: 700, color: c.muted, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                    Up Next
+                  </div>
+                  <div style={{ fontSize: '10px', color: c.muted }}>
+                    {upNextQueue.length} remaining
+                  </div>
                 </div>
-                <div style={{ display: 'flex', gap: '6px', overflowX: 'auto' }}>
-                  {nextFive.map((p, i) => {
+                <div style={{ display: 'flex', gap: '6px', overflowX: 'auto', paddingBottom: '2px' }}>
+                  {upNextQueue.map((p) => {
                     const catColor = CATEGORY_COLORS[p.category] ?? '#888';
                     return (
-                      <div key={p.id} style={{
-                        flexShrink: 0,
-                        display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3px',
-                        padding: '6px 8px',
-                        borderRadius: '8px',
-                        background: 'rgba(255,255,255,0.03)',
-                        border: `1px solid rgba(255,255,255,0.06)`,
-                        minWidth: '64px',
-                        opacity: 1 - i * 0.12,
-                      }}>
+                      <div
+                        key={p.id}
+                        onClick={() => setUpNextPlayer(p)}
+                        style={{
+                          flexShrink: 0,
+                          display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3px',
+                          padding: '6px 8px',
+                          borderRadius: '8px',
+                          background: 'rgba(255,255,255,0.03)',
+                          border: `1px solid rgba(255,255,255,0.06)`,
+                          minWidth: '64px',
+                          cursor: 'pointer',
+                          transition: 'background 0.15s, border-color 0.15s',
+                        }}
+                        onMouseEnter={e => {
+                          e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
+                          e.currentTarget.style.borderColor = `${catColor}55`;
+                        }}
+                        onMouseLeave={e => {
+                          e.currentTarget.style.background = 'rgba(255,255,255,0.03)';
+                          e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)';
+                        }}
+                      >
                         <span style={{ fontSize: '14px' }}>{ROLE_ICONS[p.role]}</span>
                         <span style={{
                           fontSize: '9px', fontWeight: 700,
@@ -530,24 +690,6 @@ export default function Auction() {
                 </div>
               </div>
             )}
-
-            {/* Score formula */}
-            <div style={{
-              background: c.surface,
-              border: `1px solid ${c.border}`,
-              borderRadius: '10px',
-              padding: '8px 14px',
-              backdropFilter: 'blur(16px)',
-              fontSize: '11px',
-              color: c.muted,
-              textAlign: 'center',
-              lineHeight: 1.5,
-            }}>
-              {isBlitz
-                ? <>Score = <strong style={{ color: c.text }}>Σ (rating − max(0, overpay × 10))</strong> &nbsp;·&nbsp; overpay = (soldPrice − base) / base</>
-                : <>Win condition: <strong style={{ color: c.text }}>highest total rating</strong> &nbsp;·&nbsp; rating = weighted batting + bowling stats (0–100)</>
-              }
-            </div>
 
             {/* Current bid display */}
             <div style={{
@@ -675,6 +817,7 @@ export default function Auction() {
             bidder={bidder}
             isLight={isLight}
             aiScores={aiScores}
+            aiRatings={aiRatingTotals}
             isBlitz={isBlitz}
           />
         </div>
@@ -762,6 +905,17 @@ export default function Auction() {
             queue={queue}
             isLight={isLight}
             onClose={() => setUpcomingModal(false)}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* ── Up Next player detail modal ── */}
+      <AnimatePresence>
+        {upNextPlayer && (
+          <PlayerDetailModal
+            player={upNextPlayer}
+            isLight={isLight}
+            onClose={() => setUpNextPlayer(null)}
           />
         )}
       </AnimatePresence>
