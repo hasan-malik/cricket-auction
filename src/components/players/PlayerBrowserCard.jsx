@@ -86,19 +86,33 @@ export default function PlayerBrowserCard({ player, index = 0, isStarred, onTogg
     >
       {/* ── Header ── */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '14px' }}>
-        <span style={{
-          fontSize: '10px',
-          fontWeight: 700,
-          letterSpacing: '0.12em',
-          textTransform: 'uppercase',
-          color: cat.text,
-          background: cat.bg,
-          padding: '3px 9px',
-          borderRadius: '9999px',
-          border: `1px solid ${cat.glow}44`,
-        }}>
-          {player.category}
-        </span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <span style={{
+            fontSize: '10px',
+            fontWeight: 700,
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+            color: cat.text,
+            background: cat.bg,
+            padding: '3px 9px',
+            borderRadius: '9999px',
+            border: `1px solid ${cat.glow}44`,
+          }}>
+            {player.category}
+          </span>
+          <span style={{
+            fontSize: '10px',
+            fontWeight: 700,
+            color: cat.text,
+            background: cat.bg,
+            padding: '3px 8px',
+            borderRadius: '9999px',
+            border: `1px solid ${cat.glow}44`,
+            letterSpacing: '0.04em',
+          }}>
+            ★ {player.rating}
+          </span>
+        </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <span style={{ fontSize: '13px', opacity: 0.55 }}>

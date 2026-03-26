@@ -82,6 +82,7 @@ function PlayerRow({ player, rank, isLight }) {
 function SquadCard({ team, isUser, isLight }) {
   const sorted = sortSquad(team.squad);
   const spent = Math.round((auctionConfig.franchiseBudget - team.budget) * 1000) / 1000;
+  const rating = team.squad.reduce((sum, p) => sum + (p.rating ?? 0), 0);
   const accentColor = isUser ? '#3b82f6' : (team.franchise?.primaryColor ?? '#f59e0b');
   const c = { text: isLight ? '#111' : '#fff', muted: isLight ? '#6b7280' : 'rgba(255,255,255,0.45)', border: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)' };
 
@@ -116,6 +117,7 @@ function SquadCard({ team, isUser, isLight }) {
         {/* Summary stats */}
         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
           <StatChip label="Players" value={sorted.length} accent />
+          <StatChip label="Rating" value={`★ ${rating}`} accent />
           <StatChip label="Spent" value={`${spent}CR`} />
           <StatChip label="Remaining" value={`${team.budget.toFixed(2)}CR`} />
         </div>
@@ -173,8 +175,9 @@ export default function Results() {
 
   const { user, aiTeams } = routeState;
   const aiTeamList = Object.values(aiTeams ?? {});
-  const bestAI = aiTeamList.reduce((best, t) => (!best || t.squad.length > best.squad.length ? t : best), null);
-  const userWon = !bestAI || user.squad.length >= bestAI.squad.length;
+  const totalRating = (team) => team.squad.reduce((sum, p) => sum + (p.rating ?? 0), 0);
+  const bestAI = aiTeamList.reduce((best, t) => (!best || totalRating(t) > totalRating(best) ? t : best), null);
+  const userWon = !bestAI || totalRating(user) >= totalRating(bestAI);
 
   const c = { text: isLight ? '#111' : '#fff', muted: isLight ? '#6b7280' : 'rgba(255,255,255,0.5)' };
 
@@ -206,7 +209,7 @@ export default function Results() {
           <p style={{ fontSize: '17px', color: c.muted, maxWidth: '520px', margin: '0 auto 32px' }}>
             You spent <strong style={{ color: '#60a5fa' }}>{Math.round((auctionConfig.franchiseBudget - user.budget) * 1000) / 1000} CR</strong> on{' '}
             <strong style={{ color: c.text }}>{user.squad.length} players</strong>.{' '}
-            {bestAI && <>Best AI ({bestAI.name}) got <strong style={{ color: c.text }}>{bestAI.squad.length} players</strong>.</>}
+            {bestAI && <>Best AI ({bestAI.name}) got <strong style={{ color: c.text }}>{bestAI.squad.length} players</strong> with rating <strong style={{ color: '#f59e0b' }}>★ {totalRating(bestAI)}</strong>.</>}
           </p>
 
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>

@@ -65,6 +65,9 @@ export default function TeamPanel({ team, isUser, isLight }) {
               <span style={{ fontSize: '10px', fontWeight: 600, color: c.muted, marginLeft: '2px' }}>CR</span>
             </div>
             <div style={{ fontSize: '10px', color: c.muted }}>{team.squad.length} players</div>
+            <div style={{ fontSize: '11px', fontWeight: 700, color: accentColor, marginTop: '2px' }}>
+              ★ {team.squad.reduce((sum, p) => sum + (p.rating ?? 0), 0)}
+            </div>
           </div>
         </div>
 

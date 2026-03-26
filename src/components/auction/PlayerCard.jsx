@@ -84,9 +84,25 @@ export default function PlayerCard({ player, isNew }) {
         }}>
           {player.category}
         </span>
-        <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)' }}>
-          {player.nationality === 'Overseas' ? '🌍 Overseas' : '🇵🇰 Pakistani'}
-        </span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          {player.rating != null && (
+            <span style={{
+              fontSize: '11px',
+              fontWeight: 700,
+              color: cat.text,
+              background: cat.bg,
+              padding: '3px 8px',
+              borderRadius: '9999px',
+              border: `1px solid ${cat.glow}44`,
+              letterSpacing: '0.04em',
+            }}>
+              ★ {player.rating}
+            </span>
+          )}
+          <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)' }}>
+            {player.nationality === 'Overseas' ? '🌍 Overseas' : '🇵🇰 Pakistani'}
+          </span>
+        </div>
       </div>
 
       {/* Player name */}
