@@ -59,6 +59,7 @@ function makeInitialState({ franchiseId, teamName, mode, blitzSize }) {
     queue: rest,
     currentBid: currentPlayer.basePrice,
     bidder: null,
+    userPassed: false,
     timer: timerSeconds,
     timerKey: 0,
     soldPlayers: [],
@@ -128,6 +129,7 @@ function reducer(state, action) {
 
     case 'USER_BID': {
       if (state.phase !== 'bidding') return state;
+      if (state.userPassed) return state;
       const newBid = Math.round((state.currentBid + action.increment) * 1000) / 1000;
       if (newBid > state.user.budget) return state;
       return {
@@ -141,8 +143,8 @@ function reducer(state, action) {
 
     case 'USER_PASS': {
       if (state.phase !== 'bidding') return state;
-      if (state.bidder === null) return state;
-      return resolveHammer(state);
+      if (state.userPassed) return state;
+      return { ...state, userPassed: true };
     }
 
     case 'AI_BID': {
@@ -171,6 +173,7 @@ function reducer(state, action) {
         queue: rest,
         currentBid: currentPlayer.basePrice,
         bidder: null,
+        userPassed: false,
         timer: timerSeconds,
         timerKey: state.timerKey + 1,
       };

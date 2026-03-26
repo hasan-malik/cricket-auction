@@ -42,7 +42,7 @@ export default function Auction() {
   }, [franchiseId]);
 
   const { state, userBid, userPass, nextPlayer } = useAuction({ franchiseId, teamName, mode, blitzSize });
-  const { phase, currentPlayer, currentBid, bidder, timer, user, aiTeams, queue } = state;
+  const { phase, currentPlayer, currentBid, bidder, userPassed, timer, user, aiTeams, queue } = state;
 
   // PSL S11 dynamic increment — changes with the current bid tier
   const inc = getDynamicIncrement(currentBid, auctionConfig.bidIncrementTiers);
@@ -226,7 +226,7 @@ export default function Auction() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px', marginBottom: '10px' }}>
                 {bidOptions.map((amount, i) => {
                   const newBid = Math.round((currentBid + amount) * 1000) / 1000;
-                  const canBid = newBid <= user.budget && bidder !== 'user';
+                  const canBid = newBid <= user.budget && bidder !== 'user' && !userPassed;
                   const isStandard = i === 0;
                   return (
                     <motion.button
@@ -260,13 +260,15 @@ export default function Auction() {
               {/* Status hint + Pass button */}
               <div style={{ textAlign: 'center', fontSize: '12px', color: c.muted, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
                 <span>
-                  {bidder === 'user'
+                  {userPassed
+                    ? '👀 You passed — watching AIs compete'
+                    : bidder === 'user'
                     ? '✅ You are winning — wait for the hammer'
                     : bidder !== null
                     ? '🔨 AI is leading — raise to outbid'
                     : '👆 Place the first bid'}
                 </span>
-                {bidder !== null && bidder !== 'user' && (
+                {!userPassed && bidder !== null && bidder !== 'user' && (
                   <button
                     onClick={userPass}
                     style={{
