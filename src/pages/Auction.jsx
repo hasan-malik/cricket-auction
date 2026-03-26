@@ -1,13 +1,26 @@
+import { useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
 import { useAuction } from '../hooks/useAuction';
-import { getDynamicIncrement } from '../utils/aiUtils';
+import { getDynamicIncrement, scoreBlitzSquad } from '../utils/aiUtils';
 import auctionConfig from '../data/auctionConfig.json';
+import blitzConfig from '../data/blitzConfig.json';
+import franchises from '../data/franchises.json';
 import PlayerCard from '../components/auction/PlayerCard';
 import BidTimer from '../components/auction/BidTimer';
 import TeamPanel from '../components/auction/TeamPanel';
 import AIPanel from '../components/auction/AIPanel';
+
+function buildCapCursor(color) {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="18" viewBox="0 0 28 18">
+    <path d="M4 14 Q4 1 13 1 Q21 1 21 14 Z" fill="${color}"/>
+    <path d="M4 14 Q2 14 2 15.5 Q2 17 4 16.5 Z" fill="${color}" fill-opacity="0.7"/>
+    <rect x="3" y="13" width="25" height="3" rx="1.5" fill="${color}" fill-opacity="0.8"/>
+    <circle cx="12" cy="2.5" r="1.5" fill="rgba(255,255,255,0.5)"/>
+  </svg>`;
+  return `url('data:image/svg+xml,${encodeURIComponent(svg)}') 27 14, auto`;
+}
 
 export default function Auction() {
   const { state: routeState } = useLocation();
@@ -17,8 +30,18 @@ export default function Auction() {
 
   const franchiseId = routeState?.franchiseId ?? 'lahore-qalandars';
   const teamName    = routeState?.teamName    ?? 'My Team';
+  const mode        = routeState?.mode        ?? 'full';
+  const blitzSize   = routeState?.blitzSize   ?? 30;
+  const isBlitz     = mode === 'blitz';
 
-  const { state, userBid, userPass, nextPlayer } = useAuction({ franchiseId, teamName });
+  // Apply team-colored cap cursor for the entire auction page
+  useEffect(() => {
+    const f = franchises.find(fr => fr.id === franchiseId);
+    if (f) document.body.style.cursor = buildCapCursor(f.primaryColor);
+    return () => { document.body.style.cursor = ''; };
+  }, [franchiseId]);
+
+  const { state, userBid, userPass, nextPlayer } = useAuction({ franchiseId, teamName, mode, blitzSize });
   const { phase, currentPlayer, currentBid, bidder, timer, user, aiTeams, queue } = state;
 
   // PSL S11 dynamic increment — changes with the current bid tier
@@ -35,6 +58,19 @@ export default function Auction() {
   const bidderTeam = bidder && bidder !== 'user' ? aiTeams[bidder] : null;
   const bidderLabel = bidder === 'user' ? user.name : bidderTeam?.name ?? null;
   const bidderColor = bidder === 'user' ? '#3b82f6' : bidderTeam?.franchise?.primaryColor ?? c.muted;
+
+  // Blitz live score
+  const blitzScore = isBlitz ? scoreBlitzSquad(user.squad).total : null;
+
+  // Blitz: auto-advance overlay after autoAdvanceMs
+  const autoAdvanceRef = useRef(null);
+  useEffect(() => {
+    if (!isBlitz) return;
+    if (phase === 'sold' || phase === 'unsold') {
+      autoAdvanceRef.current = setTimeout(nextPlayer, blitzConfig.autoAdvanceMs);
+    }
+    return () => clearTimeout(autoAdvanceRef.current);
+  }, [phase, isBlitz, nextPlayer]);
 
   // ── Done screen ──────────────────────────────────────────────────────────
   if (phase === 'done') {
@@ -59,9 +95,13 @@ export default function Auction() {
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <button
               className="btn-primary"
-              onClick={() => navigate('/results', { state: { user, aiTeams } })}
+              style={isBlitz ? { background: '#d97706' } : {}}
+              onClick={() => isBlitz
+                ? navigate('/blitz-results', { state: { user, aiTeams, blitzSize } })
+                : navigate('/results', { state: { user, aiTeams } })
+              }
             >
-              See Full Results →
+              {isBlitz ? '⚡ See Scores →' : 'See Full Results →'}
             </button>
             <button className="btn-ghost" onClick={() => navigate('/')}>
               Play Again
@@ -85,16 +125,32 @@ export default function Auction() {
           gap: '16px',
           flexWrap: 'wrap',
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{
-              width: '8px', height: '8px', borderRadius: '50%', background: '#22c55e',
-              boxShadow: '0 0 8px #22c55e',
-              display: 'inline-block',
-              animation: 'pulse 1.5s ease-in-out infinite',
-            }} />
-            <span style={{ fontSize: '12px', fontWeight: 600, color: c.muted, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-              Live Auction
-            </span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span style={{
+                width: '8px', height: '8px', borderRadius: '50%',
+                background: isBlitz ? '#f59e0b' : '#22c55e',
+                boxShadow: isBlitz ? '0 0 8px #f59e0b' : '0 0 8px #22c55e',
+                display: 'inline-block',
+                animation: 'pulse 1.5s ease-in-out infinite',
+              }} />
+              <span style={{ fontSize: '12px', fontWeight: 600, color: c.muted, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                {isBlitz ? `⚡ Blitz ${blitzSize}` : 'Live Auction'}
+              </span>
+            </div>
+            {isBlitz && blitzScore !== null && (
+              <div style={{
+                padding: '3px 10px',
+                borderRadius: '9999px',
+                background: 'rgba(245,158,11,0.12)',
+                border: '1px solid rgba(245,158,11,0.3)',
+                fontSize: '12px',
+                fontWeight: 700,
+                color: '#fbbf24',
+              }}>
+                Score: {blitzScore}
+              </div>
+            )}
           </div>
           <span style={{ fontSize: '13px', color: c.muted }}>
             {queue.length + 1} players remaining
@@ -255,7 +311,7 @@ export default function Auction() {
               background: 'rgba(0,0,0,0.75)',
               backdropFilter: 'blur(8px)',
             }}
-            onClick={nextPlayer}
+            onClick={isBlitz ? undefined : nextPlayer}
           >
             <motion.div
               initial={{ scale: 0.8, y: 24 }}
@@ -293,7 +349,7 @@ export default function Auction() {
                 </>
               )}
               <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.35)', marginTop: '24px' }}>
-                Tap anywhere to continue
+                {isBlitz ? 'Next player incoming…' : 'Tap anywhere to continue'}
               </p>
             </motion.div>
           </motion.div>

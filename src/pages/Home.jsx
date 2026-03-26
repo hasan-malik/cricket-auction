@@ -35,6 +35,7 @@ export default function Home() {
 
   const [selected, setSelected] = useState(null);
   const [teamName, setTeamName] = useState('');
+  const [mode, setMode] = useState('full'); // 'full' | 'blitz30' | 'blitz50'
 
   // Switch to team-colored cap cursor on franchise select, restore bat on deselect
   useEffect(() => {
@@ -49,10 +50,13 @@ export default function Home() {
 
   const handleStart = () => {
     if (!selected) return;
+    const isBlitz = mode !== 'full';
     navigate('/auction', {
       state: {
         franchiseId: selected,
         teamName: teamName.trim() || franchises.find(f => f.id === selected)?.name,
+        mode: isBlitz ? 'blitz' : 'full',
+        blitzSize: mode === 'blitz50' ? 50 : 30,
       },
     });
   };
@@ -148,6 +152,62 @@ export default function Home() {
               </div>
             ))}
           </motion.div>
+        </motion.div>
+      </section>
+
+      {/* ── Mode picker ───────────────────────────── */}
+      <section className="section container" style={{ paddingBottom: '32px' }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <p style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: c.muted, marginBottom: '14px' }}>
+            Game Mode
+          </p>
+          <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '14px' }}>
+            {[
+              { id: 'full',    label: 'Full Auction',  sub: `279 players · ${auctionConfig.franchiseBudget} CR · 20 squad · 15s` },
+              { id: 'blitz30', label: '⚡ Blitz 30',   sub: '30 players · 15 CR · 6 squad · 8s · scored' },
+              { id: 'blitz50', label: '⚡ Blitz 50',   sub: '50 players · 25 CR · 9 squad · 8s · scored' },
+            ].map(m => {
+              const active = mode === m.id;
+              const isBlitz = m.id !== 'full';
+              return (
+                <motion.button
+                  key={m.id}
+                  whileTap={{ scale: 0.97 }}
+                  onClick={() => setMode(m.id)}
+                  style={{
+                    padding: '10px 20px',
+                    borderRadius: '9999px',
+                    border: active
+                      ? `1px solid ${isBlitz ? 'rgba(245,158,11,0.7)' : 'rgba(59,130,246,0.7)'}`
+                      : `1px solid ${c.cardBorder}`,
+                    background: active
+                      ? isBlitz ? 'rgba(245,158,11,0.12)' : 'rgba(59,130,246,0.12)'
+                      : c.cardBg,
+                    color: active
+                      ? isBlitz ? '#fbbf24' : '#60a5fa'
+                      : c.muted,
+                    fontWeight: 700,
+                    fontSize: '14px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s',
+                    backdropFilter: 'blur(16px)',
+                  }}
+                >
+                  {m.label}
+                </motion.button>
+              );
+            })}
+          </div>
+          {/* Mode info strip */}
+          <p style={{ fontSize: '12px', color: c.muted }}>
+            {mode === 'full'    && `279 players · ${auctionConfig.franchiseBudget} CR budget · up to 20 players · 15s timer`}
+            {mode === 'blitz30' && '⚡ 30 top-rated players · 15 CR budget · 6 player cap · 8s timer · value-scored results'}
+            {mode === 'blitz50' && '⚡ 50 top-rated players · 25 CR budget · 9 player cap · 8s timer · value-scored results'}
+          </p>
         </motion.div>
       </section>
 
@@ -303,20 +363,30 @@ export default function Home() {
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
                     onClick={handleStart}
-                    style={{ padding: '12px 32px', fontSize: '15px' }}
+                    style={{ padding: '12px 32px', fontSize: '15px', background: mode !== 'full' ? '#d97706' : undefined }}
                   >
-                    Start Auction →
+                    {mode === 'full' ? 'Start Auction →' : mode === 'blitz30' ? '⚡ Start Blitz 30 →' : '⚡ Start Blitz 50 →'}
                   </motion.button>
                 </div>
 
-                <p style={{
-                  fontSize: '13px',
-                  color: c.muted,
-                  marginTop: '14px',
-                }}>
-                  Budget: <strong style={{ color: c.text }}>{auctionConfig.franchiseBudget} {auctionConfig.currency}</strong>
-                  {' · '}Squad: <strong style={{ color: c.text }}>{auctionConfig.minSquadSize}–{auctionConfig.maxSquadSize}</strong>
-                  {' · '}Overseas: <strong style={{ color: c.text }}>{auctionConfig.minOverseasPlayers}–{auctionConfig.maxOverseasPlayers}</strong>
+                <p style={{ fontSize: '13px', color: c.muted, marginTop: '14px' }}>
+                  {mode === 'full' && <>
+                    Budget: <strong style={{ color: c.text }}>{auctionConfig.franchiseBudget} {auctionConfig.currency}</strong>
+                    {' · '}Squad: <strong style={{ color: c.text }}>{auctionConfig.minSquadSize}–{auctionConfig.maxSquadSize}</strong>
+                    {' · '}Overseas: <strong style={{ color: c.text }}>{auctionConfig.minOverseasPlayers}–{auctionConfig.maxOverseasPlayers}</strong>
+                  </>}
+                  {mode === 'blitz30' && <>
+                    Budget: <strong style={{ color: '#fbbf24' }}>15 CR</strong>
+                    {' · '}Players: <strong style={{ color: c.text }}>30</strong>
+                    {' · '}Squad cap: <strong style={{ color: c.text }}>6</strong>
+                    {' · '}Timer: <strong style={{ color: c.text }}>8s</strong>
+                  </>}
+                  {mode === 'blitz50' && <>
+                    Budget: <strong style={{ color: '#fbbf24' }}>25 CR</strong>
+                    {' · '}Players: <strong style={{ color: c.text }}>50</strong>
+                    {' · '}Squad cap: <strong style={{ color: c.text }}>9</strong>
+                    {' · '}Timer: <strong style={{ color: c.text }}>8s</strong>
+                  </>}
                 </p>
               </motion.div>
             )}

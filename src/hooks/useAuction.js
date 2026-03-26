@@ -2,9 +2,9 @@ import { useReducer, useEffect, useRef, useCallback } from 'react';
 import allPlayers from '../data/players.json';
 import franchises from '../data/franchises.json';
 import auctionConfig from '../data/auctionConfig.json';
-import { generateAITargets, getAIBid, getDynamicIncrement, AI_FRANCHISES, AI_PERSONALITIES } from '../utils/aiUtils';
+import blitzConfig from '../data/blitzConfig.json';
+import { generateAITargets, getAIBid, getDynamicIncrement, buildBlitzQueue, AI_FRANCHISES, AI_PERSONALITIES } from '../utils/aiUtils';
 
-const TIMER_START    = auctionConfig.bidTimerSeconds ?? 15;
 const BID_TIERS      = auctionConfig.bidIncrementTiers;
 const CATEGORY_ORDER = auctionConfig.auctionOrder ?? ['platinum','diamond','gold','silver','emerging'];
 
@@ -16,50 +16,60 @@ function buildQueue(players) {
   );
 }
 
-function makeAITeam(franchiseId, players) {
+function makeAITeam(franchiseId, players, budget, maxFraction) {
   const franchise = franchises.find(f => f.id === franchiseId);
   const personality = AI_PERSONALITIES[franchiseId] ?? 'balanced';
   return {
     id: franchiseId,
     name: franchise?.name ?? franchiseId,
     franchise,
-    budget: auctionConfig.franchiseBudget,
+    budget,
     squad: [],
-    targets: generateAITargets(players, auctionConfig.franchiseBudget, personality),
+    targets: generateAITargets(players, budget, personality, maxFraction),
     personality,
   };
 }
 
-function makeInitialState({ franchiseId, teamName }) {
-  const queue = buildQueue(allPlayers);
+function makeInitialState({ franchiseId, teamName, mode, blitzSize }) {
+  const isBlitz = mode === 'blitz';
+  const sizeKey  = String(blitzSize ?? 30);
+
+  const budget       = isBlitz ? blitzConfig.budgets[sizeKey]      : auctionConfig.franchiseBudget;
+  const timerSeconds = isBlitz ? blitzConfig.timerSeconds           : (auctionConfig.bidTimerSeconds ?? 15);
+  const maxSquadSize = isBlitz ? blitzConfig.maxSquadSize[sizeKey]  : auctionConfig.maxSquadSize;
+  const maxFraction  = isBlitz ? 0.30 : 0.20;
+
+  const queue = isBlitz ? buildBlitzQueue(allPlayers, blitzSize ?? 30) : buildQueue(allPlayers);
   const [currentPlayer, ...rest] = queue;
   const userFranchise = franchises.find(f => f.id === franchiseId);
 
   const aiTeams = {};
   for (const id of AI_FRANCHISES) {
     if (id !== franchiseId) {
-      aiTeams[id] = makeAITeam(id, allPlayers);
+      aiTeams[id] = makeAITeam(id, allPlayers, budget, maxFraction);
     }
   }
 
   return {
+    mode: mode ?? 'full',
+    blitzSize: blitzSize ?? 30,
+    config: { timerSeconds, maxSquadSize, budget },
     phase: 'bidding',
     currentPlayer,
     queue: rest,
     currentBid: currentPlayer.basePrice,
-    bidder: null,          // null | 'user' | franchiseId string
-    timer: TIMER_START,
+    bidder: null,
+    timer: timerSeconds,
     timerKey: 0,
     soldPlayers: [],
-
     user: {
       id: 'user',
       name: teamName,
       franchise: userFranchise,
-      budget: auctionConfig.franchiseBudget,
+      budget,
       squad: [],
     },
-    aiTeams,  // { [franchiseId]: aiTeam }
+    aiTeams,
   };
 }
 
@@ -67,7 +77,7 @@ function resolveHammer(state) {
   if (state.bidder === null) {
     return { ...state, phase: 'unsold' };
   }
-  const winner = state.bidder; // 'user' | franchiseId
+  const winner = state.bidder;
   const soldPlayer = { ...state.currentPlayer, soldPrice: state.currentBid, soldTo: winner };
 
   if (winner === 'user') {
@@ -99,6 +109,8 @@ function resolveHammer(state) {
 }
 
 function reducer(state, action) {
+  const { timerSeconds, maxSquadSize } = state.config;
+
   switch (action.type) {
 
     case 'TICK': {
@@ -122,7 +134,7 @@ function reducer(state, action) {
         ...state,
         currentBid: newBid,
         bidder: 'user',
-        timer: TIMER_START,
+        timer: timerSeconds,
         timerKey: state.timerKey + 1,
       };
     }
@@ -130,21 +142,21 @@ function reducer(state, action) {
     case 'USER_PASS': {
       if (state.phase !== 'bidding') return state;
       if (state.bidder === null) return state;
-      // Immediately hammer — user concedes
       return resolveHammer(state);
     }
 
     case 'AI_BID': {
       if (state.phase !== 'bidding') return state;
       const { franchiseId, amount } = action;
-      // Don't let the current leader re-bid
       if (state.bidder === franchiseId) return state;
       if (amount > (state.aiTeams[franchiseId]?.budget ?? 0)) return state;
+      // In blitz mode, also enforce AI squad cap
+      if ((state.aiTeams[franchiseId]?.squad.length ?? 0) >= maxSquadSize) return state;
       return {
         ...state,
         currentBid: amount,
         bidder: franchiseId,
-        timer: TIMER_START,
+        timer: timerSeconds,
         timerKey: state.timerKey + 1,
       };
     }
@@ -159,7 +171,7 @@ function reducer(state, action) {
         queue: rest,
         currentBid: currentPlayer.basePrice,
         bidder: null,
-        timer: TIMER_START,
+        timer: timerSeconds,
         timerKey: state.timerKey + 1,
       };
     }
@@ -169,12 +181,11 @@ function reducer(state, action) {
   }
 }
 
-export function useAuction({ franchiseId, teamName }) {
+export function useAuction({ franchiseId, teamName, mode = 'full', blitzSize = 30 }) {
   const [state, dispatch] = useReducer(reducer, null, () =>
-    makeInitialState({ franchiseId, teamName })
+    makeInitialState({ franchiseId, teamName, mode, blitzSize })
   );
 
-  // Always-fresh ref so async callbacks don't close over stale state
   const stateRef = useRef(state);
   useEffect(() => { stateRef.current = state; });
 
@@ -191,7 +202,7 @@ export function useAuction({ franchiseId, teamName }) {
   }, [state.phase, state.timerKey]);
 
   // ── 5-AI bidding ─────────────────────────────────────────────────────────
-  const aiTimeouts = useRef({});  // { [franchiseId]: timeoutId }
+  const aiTimeouts = useRef({});
 
   useEffect(() => {
     if (state.phase !== 'bidding') return;
@@ -199,14 +210,9 @@ export function useAuction({ franchiseId, teamName }) {
     const currentState = state;
     const aiIds = Object.keys(currentState.aiTeams);
 
-    // Clear existing timeouts
-    for (const id of aiIds) {
-      clearTimeout(aiTimeouts.current[id]);
-    }
+    for (const id of aiIds) clearTimeout(aiTimeouts.current[id]);
 
-    // Schedule each AI with a unique random delay (staggered 1–4s)
     for (const id of aiIds) {
-      // Skip if this AI is the current leader
       if (currentState.bidder === id) continue;
 
       const delay = 1000 + Math.random() * 3000;
@@ -226,6 +232,7 @@ export function useAuction({ franchiseId, teamName }) {
           s.currentBid,
           s.bidder,
           BID_TIERS,
+          s.config.maxSquadSize,
         );
 
         if (bidAmount !== null) {
@@ -234,8 +241,6 @@ export function useAuction({ franchiseId, teamName }) {
       }, delay);
     }
 
-    // Quick hammer: if someone is already bidding, drop hammer at ~5s
-    // (gives other AIs a chance to counterbid first)
     const quickHammerTimeout = setTimeout(() => {
       const s = stateRef.current;
       if (s.phase === 'bidding' && s.bidder !== null) {
@@ -250,7 +255,6 @@ export function useAuction({ franchiseId, teamName }) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.currentBid, state.bidder, state.phase, state.currentPlayer?.id]);
 
-  // ── Public actions ────────────────────────────────────────────────────────
   const userBid = useCallback((increment) => {
     dispatch({ type: 'USER_BID', increment });
   }, []);

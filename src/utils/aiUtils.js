@@ -82,8 +82,9 @@ function scorePlayer(player) {
 /**
  * Generate AI target prices for every player before auction starts.
  * Returns a map: { [playerId]: maxBidInCrore }
+ * @param {number} maxFraction - max fraction of budget to spend on one player (default 0.20)
  */
-export function generateAITargets(players, franchiseBudget, personality = 'balanced') {
+export function generateAITargets(players, franchiseBudget, personality = 'balanced', maxFraction = 0.20) {
   const targets = {};
   const multiplierRange = {
     aggressive:   { min: 1.3, max: 2.8 },
@@ -93,13 +94,10 @@ export function generateAITargets(players, franchiseBudget, personality = 'balan
 
   for (const player of players) {
     const quality = scorePlayer(player); // 0–1
-    // Better players get a higher multiplier (up to max)
     const t = 0.5 + quality * 0.5; // remap to 0.5–1.0
     const multiplier = multiplierRange.min + t * (multiplierRange.max - multiplierRange.min);
-    // Cap: don't bid more than 20% of budget on a single player (9 CR with 45 CR budget)
-    const maxAllowed = franchiseBudget * 0.20;
+    const maxAllowed = franchiseBudget * maxFraction;
     const raw = player.basePrice * multiplier;
-    // Round to nearest 0.025 CR (smallest PSL S11 increment)
     targets[player.id] = Math.round(Math.min(raw, maxAllowed) * 40) / 40;
   }
 
@@ -116,7 +114,7 @@ export function generateAITargets(players, franchiseBudget, personality = 'balan
  * @param {Array} tiers - bid increment tiers
  * Returns the new bid amount (in CR) or null if AI passes.
  */
-export function getAIBid(franchiseId, aiTeam, currentPlayer, currentBid, bidder, tiers) {
+export function getAIBid(franchiseId, aiTeam, currentPlayer, currentBid, bidder, tiers, maxSquadSize = 20) {
   if (!currentPlayer) return null;
 
   // Hard pass: this AI is already winning
@@ -127,7 +125,7 @@ export function getAIBid(franchiseId, aiTeam, currentPlayer, currentBid, bidder,
   const roleCount = aiTeam.squad.filter(p => p.role === currentPlayer.role).length;
   const rolesNeeded = IDEAL_SQUAD[currentPlayer.role] ?? 4;
 
-  if (squadSize >= 20) return null;
+  if (squadSize >= maxSquadSize) return null;
 
   // Desperately needs this role → willing to go 20% over target
   const urgencyBonus = roleCount < rolesNeeded * 0.5 ? 1.2 : 1.0;
@@ -139,4 +137,45 @@ export function getAIBid(franchiseId, aiTeam, currentPlayer, currentBid, bidder,
   if (nextBid > aiTeam.budget) return null;
 
   return nextBid;
+}
+
+/**
+ * Build a blitz auction queue: top-N players by rating per category, shuffled within each.
+ * @param {Array} players - full player pool
+ * @param {number} count - 30 or 50
+ */
+export function buildBlitzQueue(players, count) {
+  const dist = count === 30
+    ? { platinum: 5, diamond: 10, gold: 10, silver: 5, emerging: 0 }
+    : { platinum: 5, diamond: 15, gold: 15, silver: 10, emerging: 5 };
+
+  const queue = [];
+  for (const cat of ['platinum', 'diamond', 'gold', 'silver', 'emerging']) {
+    const n = dist[cat];
+    if (!n) continue;
+    const top = players
+      .filter(p => p.category === cat)
+      .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0))
+      .slice(0, n)
+      .sort(() => Math.random() - 0.5);
+    queue.push(...top);
+  }
+  return queue;
+}
+
+/**
+ * Score a squad for blitz results.
+ * Formula: rating - max(0, (soldPrice/basePrice - 1) * 10)
+ * Buying at base = full rating points. Overpaying 2× base = −10 pts.
+ * Returns { players: [{...player, pts}], total }
+ */
+export function scoreBlitzSquad(squad) {
+  const players = squad.map(p => {
+    const markup = p.basePrice > 0 ? (p.soldPrice - p.basePrice) / p.basePrice : 0;
+    const penalty = Math.max(0, markup * 10);
+    const pts = Math.round(((p.rating ?? 0) - penalty) * 10) / 10;
+    return { ...p, pts };
+  });
+  const total = Math.round(players.reduce((s, p) => s + p.pts, 0) * 10) / 10;
+  return { players, total };
 }

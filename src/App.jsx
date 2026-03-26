@@ -4,6 +4,7 @@ import Navbar from './components/layout/Navbar';
 import Home from './pages/Home';
 import Auction from './pages/Auction';
 import Results from './pages/Results';
+import BlitzResults from './pages/BlitzResults';
 import Players from './pages/Players';
 import './App.css';
 
@@ -56,8 +57,9 @@ export default function App() {
         <Routes>
           <Route path="/"        element={<Home />} />
           <Route path="/players" element={<Players />} />
-          <Route path="/auction" element={<Auction />} />
-          <Route path="/results" element={<Results />} />
+          <Route path="/auction"       element={<Auction />} />
+          <Route path="/results"       element={<Results />} />
+          <Route path="/blitz-results" element={<BlitzResults />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
