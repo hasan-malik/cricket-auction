@@ -91,7 +91,7 @@ export default function BlitzResults() {
               className="btn-ghost"
               onClick={() => navigate('/auction', { state: { franchiseId: user.franchise?.id, teamName: user.name, mode: 'blitz', blitzSize: blitzSize ?? 30 } })}
             >
-              ⚡ Blitz Again
+              {blitzSize === 15 ? '🔫 Bullet Again' : blitzSize === 30 ? '⚡ Blitz Again' : '🚀 Rapid Again'}
             </button>
             <button
               className="btn-ghost"

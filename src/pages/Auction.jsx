@@ -542,7 +542,7 @@ export default function Auction() {
                 animation: paused ? 'none' : 'pulse 1.5s ease-in-out infinite',
               }} />
               <span style={{ fontSize: '12px', fontWeight: 600, color: c.muted, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                {paused ? 'Paused' : isBlitz ? `⚡ Blitz ${blitzSize}` : 'Live Auction'}
+                {paused ? 'Paused' : !isBlitz ? 'Live Auction' : blitzSize === 15 ? '🔫 Bullet' : blitzSize === 30 ? '⚡ Blitz' : '🚀 Rapid 30'}
               </span>
             </div>
             {isBlitz && blitzScore !== null && (

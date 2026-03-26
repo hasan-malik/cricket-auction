@@ -35,7 +35,7 @@ export default function Home() {
 
   const [selected, setSelected] = useState(null);
   const [teamName, setTeamName] = useState('');
-  const [mode, setMode] = useState('full'); // 'full' | 'blitz30' | 'blitz50'
+  const [mode, setMode] = useState('full'); // 'full' | 'bullet' | 'blitz30' | 'rapid'
 
   // Switch to team-colored cap cursor on franchise select, restore bat on deselect
   useEffect(() => {
@@ -56,7 +56,7 @@ export default function Home() {
         franchiseId: selected,
         teamName: teamName.trim() || franchises.find(f => f.id === selected)?.name,
         mode: isBlitz ? 'blitz' : 'full',
-        blitzSize: mode === 'blitz50' ? 50 : 30,
+        blitzSize: mode === 'rapid' ? 50 : mode === 'bullet' ? 15 : 30,
       },
     });
   };
@@ -168,8 +168,9 @@ export default function Home() {
           <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '14px' }}>
             {[
               { id: 'full',    label: 'Full Auction',  sub: `279 players · ${auctionConfig.franchiseBudget} CR · 20 squad · 15s` },
-              { id: 'blitz30', label: '⚡ Blitz 30',   sub: '30 players · 15 CR · 6 squad · 8s · scored' },
-              { id: 'blitz50', label: '⚡ Blitz 50',   sub: '50 players · 25 CR · 9 squad · 8s · scored' },
+              { id: 'bullet',  label: '🔫 Bullet',     sub: '15 players · 8 CR · 3 squad · 8s · scored' },
+              { id: 'blitz30', label: '⚡ Blitz',       sub: '30 players · 15 CR · 6 squad · 8s · scored' },
+              { id: 'rapid',   label: '🚀 Rapid 30',   sub: '50 players · 25 CR · 9 squad · 8s · scored' },
             ].map(m => {
               const active = mode === m.id;
               const isBlitz = m.id !== 'full';
@@ -205,8 +206,9 @@ export default function Home() {
           {/* Mode info strip */}
           <p style={{ fontSize: '12px', color: c.muted }}>
             {mode === 'full'    && `279 players · ${auctionConfig.franchiseBudget} CR budget · up to 20 players · 15s timer`}
+            {mode === 'bullet'  && '🔫 15 top-rated players · 8 CR budget · 3 player cap · 8s timer · value-scored results'}
             {mode === 'blitz30' && '⚡ 30 top-rated players · 15 CR budget · 6 player cap · 8s timer · value-scored results'}
-            {mode === 'blitz50' && '⚡ 50 top-rated players · 25 CR budget · 9 player cap · 8s timer · value-scored results'}
+            {mode === 'rapid'   && '🚀 50 top-rated players · 25 CR budget · 9 player cap · 8s timer · value-scored results'}
           </p>
         </motion.div>
       </section>
