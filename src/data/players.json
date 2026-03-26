@@ -16,7 +16,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 90
   },
   {
     "id": "fakhar-zaman",
@@ -35,7 +36,8 @@
       "wickets": 2,
       "economy": 5.8,
       "bowlingAvg": 29
-    }
+    },
+    "rating": 90
   },
   {
     "id": "shadab-khan",
@@ -54,7 +56,8 @@
       "wickets": 105,
       "economy": 7.7,
       "bowlingAvg": 24.2
-    }
+    },
+    "rating": 90
   },
   {
     "id": "mohammad-rizwan",
@@ -73,7 +76,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 90
   },
   {
     "id": "shaheen-shah-afridi",
@@ -92,7 +96,8 @@
       "wickets": 122,
       "economy": 8,
       "bowlingAvg": 20.4
-    }
+    },
+    "rating": 90
   },
   {
     "id": "mohammad-hafeez",
@@ -111,7 +116,8 @@
       "wickets": 18,
       "economy": 6.9,
       "bowlingAvg": 28.3
-    }
+    },
+    "rating": 90
   },
   {
     "id": "kamran-akmal",
@@ -130,7 +136,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 90
   },
   {
     "id": "haris-rauf",
@@ -149,7 +156,8 @@
       "wickets": 83,
       "economy": 9.3,
       "bowlingAvg": 28.8
-    }
+    },
+    "rating": 90
   },
   {
     "id": "naseem-shah",
@@ -168,7 +176,8 @@
       "wickets": 50,
       "economy": 8.1,
       "bowlingAvg": 30.3
-    }
+    },
+    "rating": 90
   },
   {
     "id": "rashid-khan",
@@ -187,7 +196,8 @@
       "wickets": 44,
       "economy": 6.1,
       "bowlingAvg": 15.5
-    }
+    },
+    "rating": 90
   },
   {
     "id": "imad-wasim",
@@ -206,7 +216,8 @@
       "wickets": 77,
       "economy": 7,
       "bowlingAvg": 29.1
-    }
+    },
+    "rating": 80
   },
   {
     "id": "hasan-ali",
@@ -225,7 +236,8 @@
       "wickets": 125,
       "economy": 8.1,
       "bowlingAvg": 22.6
-    }
+    },
+    "rating": 80
   },
   {
     "id": "shoaib-malik",
@@ -244,7 +256,8 @@
       "wickets": 17,
       "economy": 7.1,
       "bowlingAvg": 46.6
-    }
+    },
+    "rating": 80
   },
   {
     "id": "wahab-riaz",
@@ -263,7 +276,8 @@
       "wickets": 111,
       "economy": 7.7,
       "bowlingAvg": 22.9
-    }
+    },
+    "rating": 80
   },
   {
     "id": "faheem-ashraf",
@@ -282,7 +296,8 @@
       "wickets": 96,
       "economy": 8.7,
       "bowlingAvg": 23.9
-    }
+    },
+    "rating": 80
   },
   {
     "id": "mohammad-amir",
@@ -301,7 +316,8 @@
       "wickets": 85,
       "economy": 7.6,
       "bowlingAvg": 27.3
-    }
+    },
+    "rating": 80
   },
   {
     "id": "iftikhar-ahmed",
@@ -320,7 +336,8 @@
       "wickets": 13,
       "economy": 8.5,
       "bowlingAvg": 37.4
-    }
+    },
+    "rating": 80
   },
   {
     "id": "khushdil-shah",
@@ -339,7 +356,8 @@
       "wickets": 31,
       "economy": 7.7,
       "bowlingAvg": 23.5
-    }
+    },
+    "rating": 80
   },
   {
     "id": "azam-khan",
@@ -358,7 +376,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 80
   },
   {
     "id": "shan-masood",
@@ -377,7 +396,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 80
   },
   {
     "id": "mohammad-wasim",
@@ -396,7 +416,8 @@
       "wickets": 47,
       "economy": 9.3,
       "bowlingAvg": 29.6
-    }
+    },
+    "rating": 80
   },
   {
     "id": "saim-ayub",
@@ -415,7 +436,8 @@
       "wickets": 14,
       "economy": 8,
       "bowlingAvg": 26.4
-    }
+    },
+    "rating": 80
   },
   {
     "id": "abdullah-shafique",
@@ -434,7 +456,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 80
   },
   {
     "id": "zaman-khan",
@@ -453,7 +476,8 @@
       "wickets": 45,
       "economy": 8.7,
       "bowlingAvg": 25.6
-    }
+    },
+    "rating": 80
   },
   {
     "id": "agha-salman",
@@ -472,7 +496,8 @@
       "wickets": 4,
       "economy": 8.2,
       "bowlingAvg": 49.3
-    }
+    },
+    "rating": 80
   },
   {
     "id": "sikandar-raza",
@@ -491,7 +516,8 @@
       "wickets": 20,
       "economy": 8,
       "bowlingAvg": 25.1
-    }
+    },
+    "rating": 80
   },
   {
     "id": "mohammad-nabi",
@@ -510,7 +536,8 @@
       "wickets": 17,
       "economy": 7.1,
       "bowlingAvg": 41
-    }
+    },
+    "rating": 80
   },
   {
     "id": "mohammad-nawaz",
@@ -529,7 +556,8 @@
       "wickets": 24,
       "economy": 8.6,
       "bowlingAvg": 32.4
-    }
+    },
+    "rating": 80
   },
   {
     "id": "usman-khan",
@@ -548,7 +576,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 80
   },
   {
     "id": "mujeeb-ur-rahman",
@@ -567,7 +596,8 @@
       "wickets": 6,
       "economy": 8.7,
       "bowlingAvg": 63.5
-    }
+    },
+    "rating": 80
   },
   {
     "id": "rr-rossouw",
@@ -586,7 +616,8 @@
       "wickets": 2,
       "economy": 6.4,
       "bowlingAvg": 8.5
-    }
+    },
+    "rating": 70
   },
   {
     "id": "sarfraz-ahmed",
@@ -605,7 +636,8 @@
       "wickets": 0,
       "economy": 9,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "hussain-talat",
@@ -624,7 +656,8 @@
       "wickets": 20,
       "economy": 9.2,
       "bowlingAvg": 29.3
-    }
+    },
+    "rating": 70
   },
   {
     "id": "mohammad-nawaz-3-",
@@ -643,7 +676,8 @@
       "wickets": 50,
       "economy": 7.1,
       "bowlingAvg": 27
-    }
+    },
+    "rating": 70
   },
   {
     "id": "jm-vince",
@@ -662,7 +696,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "d-wiese",
@@ -681,7 +716,8 @@
       "wickets": 38,
       "economy": 8.3,
       "bowlingAvg": 32
-    }
+    },
+    "rating": 70
   },
   {
     "id": "c-munro",
@@ -700,7 +736,8 @@
       "wickets": 2,
       "economy": 10.1,
       "bowlingAvg": 35.5
-    }
+    },
+    "rating": 70
   },
   {
     "id": "mohammad-irfan",
@@ -719,7 +756,8 @@
       "wickets": 45,
       "economy": 6.9,
       "bowlingAvg": 29.8
-    }
+    },
+    "rating": 70
   },
   {
     "id": "shahid-afridi",
@@ -738,7 +776,8 @@
       "wickets": 46,
       "economy": 7.2,
       "bowlingAvg": 26.3
-    }
+    },
+    "rating": 70
   },
   {
     "id": "usama-mir",
@@ -757,7 +796,8 @@
       "wickets": 63,
       "economy": 8.4,
       "bowlingAvg": 23.3
-    }
+    },
+    "rating": 70
   },
   {
     "id": "rumman-raees",
@@ -776,7 +816,8 @@
       "wickets": 48,
       "economy": 7.9,
       "bowlingAvg": 26.9
-    }
+    },
+    "rating": 70
   },
   {
     "id": "umaid-asif",
@@ -795,7 +836,8 @@
       "wickets": 48,
       "economy": 8.4,
       "bowlingAvg": 30.4
-    }
+    },
+    "rating": 70
   },
   {
     "id": "sr-watson",
@@ -814,7 +856,8 @@
       "wickets": 23,
       "economy": 8.3,
       "bowlingAvg": 26.6
-    }
+    },
+    "rating": 70
   },
   {
     "id": "ad-hales",
@@ -833,7 +876,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "ahmed-shehzad",
@@ -852,7 +896,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "sohaib-maqsood",
@@ -871,7 +916,8 @@
       "wickets": 0,
       "economy": 8,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "sohail-akhtar",
@@ -890,7 +936,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "umar-akmal",
@@ -909,7 +956,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "imran-tahir",
@@ -928,7 +976,8 @@
       "wickets": 56,
       "economy": 7.1,
       "bowlingAvg": 19.6
-    }
+    },
+    "rating": 70
   },
   {
     "id": "jj-roy",
@@ -947,7 +996,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "sr-patel",
@@ -966,7 +1016,8 @@
       "wickets": 30,
       "economy": 7.6,
       "bowlingAvg": 25.6
-    }
+    },
+    "rating": 70
   },
   {
     "id": "mohammad-haris",
@@ -985,7 +1036,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "mohammad-sami",
@@ -1004,7 +1056,8 @@
       "wickets": 43,
       "economy": 6.9,
       "bowlingAvg": 20.7
-    }
+    },
+    "rating": 70
   },
   {
     "id": "ca-ingram",
@@ -1023,7 +1076,8 @@
       "wickets": 0,
       "economy": 8,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "sahibzada-farhan",
@@ -1042,7 +1096,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "la-dawson",
@@ -1061,7 +1116,8 @@
       "wickets": 21,
       "economy": 7.8,
       "bowlingAvg": 31.3
-    }
+    },
+    "rating": 70
   },
   {
     "id": "l-ronchi",
@@ -1080,7 +1136,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "br-dunk",
@@ -1099,7 +1156,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "se-rutherford",
@@ -1118,7 +1176,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "sw-billings",
@@ -1137,7 +1196,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "misbah-ul-haq",
@@ -1156,7 +1216,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "ts-mills",
@@ -1175,7 +1236,8 @@
       "wickets": 37,
       "economy": 8.3,
       "bowlingAvg": 24.4
-    }
+    },
+    "rating": 70
   },
   {
     "id": "abrar-ahmed",
@@ -1194,7 +1256,8 @@
       "wickets": 39,
       "economy": 7.6,
       "bowlingAvg": 21.4
-    }
+    },
+    "rating": 70
   },
   {
     "id": "mir-hamza",
@@ -1213,7 +1276,8 @@
       "wickets": 33,
       "economy": 8.2,
       "bowlingAvg": 23.6
-    }
+    },
+    "rating": 70
   },
   {
     "id": "dr-smith",
@@ -1232,7 +1296,8 @@
       "wickets": 0,
       "economy": 11.8,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "rahat-ali",
@@ -1251,7 +1316,8 @@
       "wickets": 34,
       "economy": 7.8,
       "bowlingAvg": 23.5
-    }
+    },
+    "rating": 70
   },
   {
     "id": "kp-pietersen",
@@ -1270,7 +1336,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "r-powell",
@@ -1289,7 +1356,8 @@
       "wickets": 1,
       "economy": 15,
       "bowlingAvg": 45
-    }
+    },
+    "rating": 70
   },
   {
     "id": "dj-willey",
@@ -1308,7 +1376,8 @@
       "wickets": 34,
       "economy": 8.3,
       "bowlingAvg": 21.2
-    }
+    },
+    "rating": 70
   },
   {
     "id": "dj-malan",
@@ -1327,7 +1396,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "kc-sangakkara",
@@ -1346,7 +1416,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "th-david",
@@ -1365,7 +1436,8 @@
       "wickets": 1,
       "economy": 9.8,
       "bowlingAvg": 49
-    }
+    },
+    "rating": 70
   },
   {
     "id": "saud-shakeel",
@@ -1384,7 +1456,8 @@
       "wickets": 5,
       "economy": 7.7,
       "bowlingAvg": 18.4
-    }
+    },
+    "rating": 70
   },
   {
     "id": "khurram-shahzad",
@@ -1403,7 +1476,8 @@
       "wickets": 30,
       "economy": 8,
       "bowlingAvg": 18.6
-    }
+    },
+    "rating": 70
   },
   {
     "id": "tamim-iqbal",
@@ -1422,7 +1496,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "mj-guptill",
@@ -1441,7 +1516,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "he-van-der-dussen",
@@ -1460,7 +1536,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 70
   },
   {
     "id": "asif-ali",
@@ -1479,7 +1556,8 @@
       "wickets": 2,
       "economy": 9,
       "bowlingAvg": 13.5
-    }
+    },
+    "rating": 60
   },
   {
     "id": "sohail-tanvir",
@@ -1498,7 +1576,8 @@
       "wickets": 56,
       "economy": 7.9,
       "bowlingAvg": 30
-    }
+    },
+    "rating": 60
   },
   {
     "id": "ka-pollard",
@@ -1517,7 +1596,8 @@
       "wickets": 13,
       "economy": 8.7,
       "bowlingAvg": 34.9
-    }
+    },
+    "rating": 60
   },
   {
     "id": "anwar-ali",
@@ -1536,7 +1616,8 @@
       "wickets": 36,
       "economy": 9.1,
       "bowlingAvg": 36.3
-    }
+    },
+    "rating": 60
   },
   {
     "id": "sharjeel-khan",
@@ -1555,7 +1636,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "haider-ali",
@@ -1574,7 +1656,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "djg-sammy",
@@ -1593,7 +1676,8 @@
       "wickets": 8,
       "economy": 9.6,
       "bowlingAvg": 30.9
-    }
+    },
+    "rating": 60
   },
   {
     "id": "sohail-khan",
@@ -1612,7 +1696,8 @@
       "wickets": 40,
       "economy": 8.8,
       "bowlingAvg": 34.8
-    }
+    },
+    "rating": 60
   },
   {
     "id": "mohammad-hasnain",
@@ -1631,7 +1716,8 @@
       "wickets": 54,
       "economy": 9,
       "bowlingAvg": 26.6
-    }
+    },
+    "rating": 60
   },
   {
     "id": "abbas-afridi",
@@ -1650,7 +1736,8 @@
       "wickets": 60,
       "economy": 9.4,
       "bowlingAvg": 20.8
-    }
+    },
+    "rating": 60
   },
   {
     "id": "cs-delport",
@@ -1669,7 +1756,8 @@
       "wickets": 10,
       "economy": 9,
       "bowlingAvg": 28.9
-    }
+    },
+    "rating": 60
   },
   {
     "id": "usman-shinwari",
@@ -1688,7 +1776,8 @@
       "wickets": 42,
       "economy": 8.7,
       "bowlingAvg": 27.6
-    }
+    },
+    "rating": 60
   },
   {
     "id": "cj-jordan",
@@ -1707,7 +1796,8 @@
       "wickets": 43,
       "economy": 8.6,
       "bowlingAvg": 26.4
-    }
+    },
+    "rating": 60
   },
   {
     "id": "rs-bopara",
@@ -1726,7 +1816,8 @@
       "wickets": 13,
       "economy": 8.8,
       "bowlingAvg": 27.8
-    }
+    },
+    "rating": 60
   },
   {
     "id": "salman-irshad",
@@ -1745,7 +1836,8 @@
       "wickets": 47,
       "economy": 9.5,
       "bowlingAvg": 24.8
-    }
+    },
+    "rating": 60
   },
   {
     "id": "t-kohler-cadmore",
@@ -1764,7 +1856,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "aamer-yamin",
@@ -1783,7 +1876,8 @@
       "wickets": 24,
       "economy": 8.8,
       "bowlingAvg": 34.7
-    }
+    },
+    "rating": 60
   },
   {
     "id": "kamran-ghulam",
@@ -1802,7 +1896,8 @@
       "wickets": 1,
       "economy": 8.8,
       "bowlingAvg": 79
-    }
+    },
+    "rating": 60
   },
   {
     "id": "mohammad-ilyas",
@@ -1821,7 +1916,8 @@
       "wickets": 28,
       "economy": 9.3,
       "bowlingAvg": 25.4
-    }
+    },
+    "rating": 60
   },
   {
     "id": "yasir-shah",
@@ -1840,7 +1936,8 @@
       "wickets": 26,
       "economy": 7.3,
       "bowlingAvg": 26.6
-    }
+    },
+    "rating": 60
   },
   {
     "id": "cak-walton",
@@ -1859,7 +1956,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "bcj-cutting",
@@ -1878,7 +1976,8 @@
       "wickets": 13,
       "economy": 10.8,
       "bowlingAvg": 27.4
-    }
+    },
+    "rating": 60
   },
   {
     "id": "shahnawaz-dhani",
@@ -1897,7 +1996,8 @@
       "wickets": 39,
       "economy": 9,
       "bowlingAvg": 20.8
-    }
+    },
+    "rating": 60
   },
   {
     "id": "irfan-khan",
@@ -1916,7 +2016,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "junaid-khan",
@@ -1935,7 +2036,8 @@
       "wickets": 26,
       "economy": 8.4,
       "bowlingAvg": 30
-    }
+    },
+    "rating": 60
   },
   {
     "id": "arshad-iqbal",
@@ -1954,7 +2056,8 @@
       "wickets": 25,
       "economy": 9.1,
       "bowlingAvg": 30.8
-    }
+    },
+    "rating": 60
   },
   {
     "id": "sameen-gul",
@@ -1973,7 +2076,8 @@
       "wickets": 26,
       "economy": 8.7,
       "bowlingAvg": 27.3
-    }
+    },
+    "rating": 60
   },
   {
     "id": "ls-livingstone",
@@ -1992,7 +2096,8 @@
       "wickets": 2,
       "economy": 8.7,
       "bowlingAvg": 61
-    }
+    },
+    "rating": 60
   },
   {
     "id": "fawad-ahmed",
@@ -2011,7 +2116,8 @@
       "wickets": 23,
       "economy": 7.4,
       "bowlingAvg": 28.5
-    }
+    },
+    "rating": 60
   },
   {
     "id": "imam-ul-haq",
@@ -2030,7 +2136,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "muhammad-musa",
@@ -2049,7 +2156,8 @@
       "wickets": 22,
       "economy": 9.6,
       "bowlingAvg": 29.2
-    }
+    },
+    "rating": 60
   },
   {
     "id": "umar-amin",
@@ -2068,7 +2176,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "yasir-khan",
@@ -2087,7 +2196,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "mohammad-irfan-4-",
@@ -2106,7 +2216,8 @@
       "wickets": 22,
       "economy": 9.1,
       "bowlingAvg": 26.8
-    }
+    },
+    "rating": 60
   },
   {
     "id": "mohammad-asghar",
@@ -2125,7 +2236,8 @@
       "wickets": 20,
       "economy": 7.7,
       "bowlingAvg": 23.3
-    }
+    },
+    "rating": 60
   },
   {
     "id": "waqas-maqsood",
@@ -2144,7 +2256,8 @@
       "wickets": 27,
       "economy": 8.6,
       "bowlingAvg": 22.4
-    }
+    },
+    "rating": 60
   },
   {
     "id": "l-wood",
@@ -2163,7 +2276,8 @@
       "wickets": 24,
       "economy": 7.9,
       "bowlingAvg": 25.1
-    }
+    },
+    "rating": 60
   },
   {
     "id": "ad-russell",
@@ -2182,7 +2296,8 @@
       "wickets": 21,
       "economy": 8.7,
       "bowlingAvg": 23
-    }
+    },
+    "rating": 60
   },
   {
     "id": "pd-salt",
@@ -2201,7 +2316,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "ahsan-ali",
@@ -2220,7 +2336,8 @@
       "wickets": 1,
       "economy": 9,
       "bowlingAvg": 9
-    }
+    },
+    "rating": 60
   },
   {
     "id": "akif-javed",
@@ -2239,7 +2356,8 @@
       "wickets": 22,
       "economy": 9.1,
       "bowlingAvg": 25.3
-    }
+    },
+    "rating": 60
   },
   {
     "id": "bb-mccullum",
@@ -2258,7 +2376,8 @@
       "wickets": 0,
       "economy": 13,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "j-charles",
@@ -2277,7 +2396,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "bj-haddin",
@@ -2296,7 +2416,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "sp-narine",
@@ -2315,7 +2436,8 @@
       "wickets": 21,
       "economy": 6.3,
       "bowlingAvg": 20
-    }
+    },
+    "rating": 60
   },
   {
     "id": "asad-shafiq",
@@ -2334,7 +2456,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "tl-seifert",
@@ -2353,7 +2476,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "ch-gayle",
@@ -2372,7 +2496,8 @@
       "wickets": 0,
       "economy": 5,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "zeeshan-ashraf",
@@ -2391,7 +2516,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "mohammad-ali",
@@ -2410,7 +2536,8 @@
       "wickets": 22,
       "economy": 9,
       "bowlingAvg": 23.1
-    }
+    },
+    "rating": 60
   },
   {
     "id": "rahmanullah-gurbaz",
@@ -2429,7 +2556,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "b-muzarabani",
@@ -2448,7 +2576,8 @@
       "wickets": 21,
       "economy": 7.8,
       "bowlingAvg": 20.3
-    }
+    },
+    "rating": 60
   },
   {
     "id": "hassan-nawaz",
@@ -2467,7 +2596,8 @@
       "wickets": 0,
       "economy": 11,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "ihsanullah",
@@ -2486,7 +2616,8 @@
       "wickets": 23,
       "economy": 7.4,
       "bowlingAvg": 16.1
-    }
+    },
+    "rating": 60
   },
   {
     "id": "tayyab-tahir",
@@ -2505,7 +2636,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "jl-denly",
@@ -2524,7 +2656,8 @@
       "wickets": 0,
       "economy": 7.5,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "jm-clarke",
@@ -2543,7 +2676,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "ca-lynn",
@@ -2562,7 +2696,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "hazratullah",
@@ -2581,7 +2716,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "mirza-baig",
@@ -2600,7 +2736,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "khawaja-nafay",
@@ -2619,7 +2756,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "muhammad-naeem",
@@ -2638,7 +2776,8 @@
       "wickets": 1,
       "economy": 5,
       "bowlingAvg": 15
-    }
+    },
+    "rating": 60
   },
   {
     "id": "da-miller",
@@ -2657,7 +2796,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "fh-allen",
@@ -2676,7 +2816,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "da-warner",
@@ -2695,7 +2836,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "jp-duminy",
@@ -2714,7 +2856,8 @@
       "wickets": 1,
       "economy": 7.8,
       "bowlingAvg": 70
-    }
+    },
+    "rating": 60
   },
   {
     "id": "ap-devcich",
@@ -2733,7 +2876,8 @@
       "wickets": 0,
       "economy": 15.5,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "pr-stirling",
@@ -2752,7 +2896,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "wcf-smeed",
@@ -2771,7 +2916,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "hc-brook",
@@ -2790,7 +2936,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "ms-wade",
@@ -2809,7 +2956,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "dj-mitchell",
@@ -2828,7 +2976,8 @@
       "wickets": 3,
       "economy": 10.1,
       "bowlingAvg": 32
-    }
+    },
+    "rating": 60
   },
   {
     "id": "khalid-latif",
@@ -2847,7 +2996,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "rr-hendricks",
@@ -2866,7 +3016,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "lmp-simmons",
@@ -2885,7 +3036,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "ab-de-villiers",
@@ -2904,7 +3056,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "ut-khawaja",
@@ -2923,7 +3076,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 60
   },
   {
     "id": "hassan-khan",
@@ -2942,7 +3096,8 @@
       "wickets": 16,
       "economy": 7.5,
       "bowlingAvg": 36.4
-    }
+    },
+    "rating": 50
   },
   {
     "id": "amad-butt",
@@ -2961,7 +3116,8 @@
       "wickets": 18,
       "economy": 9.5,
       "bowlingAvg": 32.6
-    }
+    },
+    "rating": 50
   },
   {
     "id": "aamer-jamal",
@@ -2980,7 +3136,8 @@
       "wickets": 19,
       "economy": 10.4,
       "bowlingAvg": 34.7
-    }
+    },
+    "rating": 50
   },
   {
     "id": "zulfiqar-babar",
@@ -2999,7 +3156,8 @@
       "wickets": 15,
       "economy": 6.9,
       "bowlingAvg": 33.3
-    }
+    },
+    "rating": 50
   },
   {
     "id": "cr-brathwaite",
@@ -3018,7 +3176,8 @@
       "wickets": 12,
       "economy": 8.7,
       "bowlingAvg": 35.4
-    }
+    },
+    "rating": 50
   },
   {
     "id": "zafar-gohar",
@@ -3037,7 +3196,8 @@
       "wickets": 18,
       "economy": 8.4,
       "bowlingAvg": 21.6
-    }
+    },
+    "rating": 50
   },
   {
     "id": "umer-khan",
@@ -3056,7 +3216,8 @@
       "wickets": 19,
       "economy": 7.8,
       "bowlingAvg": 20.9
-    }
+    },
+    "rating": 50
   },
   {
     "id": "shakib-al-hasan",
@@ -3075,7 +3236,8 @@
       "wickets": 9,
       "economy": 7.5,
       "bowlingAvg": 33.2
-    }
+    },
+    "rating": 50
   },
   {
     "id": "zahid-mahmood",
@@ -3094,7 +3256,8 @@
       "wickets": 15,
       "economy": 8.5,
       "bowlingAvg": 30.6
-    }
+    },
+    "rating": 50
   },
   {
     "id": "usman-qadir",
@@ -3113,7 +3276,8 @@
       "wickets": 16,
       "economy": 9.1,
       "bowlingAvg": 29.6
-    }
+    },
+    "rating": 50
   },
   {
     "id": "mohammad-imran",
@@ -3132,7 +3296,8 @@
       "wickets": 11,
       "economy": 8.6,
       "bowlingAvg": 42
-    }
+    },
+    "rating": 50
   },
   {
     "id": "haseebullah-khan",
@@ -3151,7 +3316,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "dj-bravo",
@@ -3170,7 +3336,8 @@
       "wickets": 11,
       "economy": 8.3,
       "bowlingAvg": 38.6
-    }
+    },
+    "rating": 50
   },
   {
     "id": "ahmed-daniyal",
@@ -3189,7 +3356,8 @@
       "wickets": 12,
       "economy": 9.2,
       "bowlingAvg": 38.7
-    }
+    },
+    "rating": 50
   },
   {
     "id": "mubasir-khan",
@@ -3208,7 +3376,8 @@
       "wickets": 2,
       "economy": 8.7,
       "bowlingAvg": 69.5
-    }
+    },
+    "rating": 50
   },
   {
     "id": "asif-afridi",
@@ -3227,7 +3396,8 @@
       "wickets": 15,
       "economy": 7,
       "bowlingAvg": 19.8
-    }
+    },
+    "rating": 50
   },
   {
     "id": "aj-hosein",
@@ -3246,7 +3416,8 @@
       "wickets": 18,
       "economy": 8.1,
       "bowlingAvg": 24.8
-    }
+    },
+    "rating": 50
   },
   {
     "id": "gd-elliott",
@@ -3265,7 +3436,8 @@
       "wickets": 15,
       "economy": 7.3,
       "bowlingAvg": 16.6
-    }
+    },
+    "rating": 50
   },
   {
     "id": "dt-christian",
@@ -3284,7 +3456,8 @@
       "wickets": 9,
       "economy": 10.8,
       "bowlingAvg": 27.4
-    }
+    },
+    "rating": 50
   },
   {
     "id": "l-gregory",
@@ -3303,7 +3476,8 @@
       "wickets": 7,
       "economy": 9.4,
       "bowlingAvg": 39
-    }
+    },
+    "rating": 50
   },
   {
     "id": "sd-hope",
@@ -3322,7 +3496,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "imran-khalid",
@@ -3341,7 +3516,8 @@
       "wickets": 10,
       "economy": 7.1,
       "bowlingAvg": 19.9
-    }
+    },
+    "rating": 50
   },
   {
     "id": "hammad-azam",
@@ -3360,7 +3536,8 @@
       "wickets": 0,
       "economy": 10.7,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "dilbar-hussain",
@@ -3379,7 +3556,8 @@
       "wickets": 15,
       "economy": 8.2,
       "bowlingAvg": 21.1
-    }
+    },
+    "rating": 50
   },
   {
     "id": "jp-faulkner",
@@ -3398,7 +3576,8 @@
       "wickets": 19,
       "economy": 8,
       "bowlingAvg": 18.5
-    }
+    },
+    "rating": 50
   },
   {
     "id": "haris-sohail",
@@ -3417,7 +3596,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "ghulam-mudassar",
@@ -3436,7 +3616,8 @@
       "wickets": 11,
       "economy": 10.2,
       "bowlingAvg": 35.1
-    }
+    },
+    "rating": 50
   },
   {
     "id": "muhammad-akhlaq",
@@ -3455,7 +3636,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "jahandad-khan",
@@ -3474,7 +3656,8 @@
       "wickets": 5,
       "economy": 10.1,
       "bowlingAvg": 56.4
-    }
+    },
+    "rating": 50
   },
   {
     "id": "ubaid-shah",
@@ -3493,7 +3676,8 @@
       "wickets": 12,
       "economy": 10.2,
       "bowlingAvg": 29.3
-    }
+    },
+    "rating": 50
   },
   {
     "id": "hunain-shah",
@@ -3512,7 +3696,8 @@
       "wickets": 8,
       "economy": 9.5,
       "bowlingAvg": 29.8
-    }
+    },
+    "rating": 50
   },
   {
     "id": "saeed-ajmal",
@@ -3531,7 +3716,8 @@
       "wickets": 9,
       "economy": 8.1,
       "bowlingAvg": 30.3
-    }
+    },
+    "rating": 50
   },
   {
     "id": "nltc-perera",
@@ -3550,7 +3736,8 @@
       "wickets": 11,
       "economy": 8.9,
       "bowlingAvg": 21.4
-    }
+    },
+    "rating": 50
   },
   {
     "id": "umar-gul",
@@ -3569,7 +3756,8 @@
       "wickets": 13,
       "economy": 7.9,
       "bowlingAvg": 20.2
-    }
+    },
+    "rating": 50
   },
   {
     "id": "mohammad-umar",
@@ -3588,7 +3776,8 @@
       "wickets": 10,
       "economy": 9.4,
       "bowlingAvg": 33
-    }
+    },
+    "rating": 50
   },
   {
     "id": "naveen-ul-haq",
@@ -3607,7 +3796,8 @@
       "wickets": 13,
       "economy": 9.7,
       "bowlingAvg": 28.5
-    }
+    },
+    "rating": 50
   },
   {
     "id": "usman-tariq",
@@ -3626,7 +3816,8 @@
       "wickets": 12,
       "economy": 7.6,
       "bowlingAvg": 25.2
-    }
+    },
+    "rating": 50
   },
   {
     "id": "ejg-morgan",
@@ -3645,7 +3836,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "mahmudullah",
@@ -3664,7 +3856,8 @@
       "wickets": 8,
       "economy": 7.8,
       "bowlingAvg": 17.1
-    }
+    },
+    "rating": 50
   },
   {
     "id": "saif-badar",
@@ -3683,7 +3876,8 @@
       "wickets": 1,
       "economy": 7.5,
       "bowlingAvg": 15
-    }
+    },
+    "rating": 50
   },
   {
     "id": "ads-fletcher",
@@ -3702,7 +3896,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "danish-aziz",
@@ -3721,7 +3916,8 @@
       "wickets": 0,
       "economy": 11,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "rizwan-hussain",
@@ -3740,7 +3936,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "lj-evans",
@@ -3759,7 +3956,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "t-banton",
@@ -3778,7 +3976,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "mm-ali",
@@ -3797,7 +3996,8 @@
       "wickets": 5,
       "economy": 10,
       "bowlingAvg": 22
-    }
+    },
+    "rating": 50
   },
   {
     "id": "rohail-nazir",
@@ -3816,7 +4016,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "imran-khan",
@@ -3835,7 +4036,8 @@
       "wickets": 12,
       "economy": 7.9,
       "bowlingAvg": 21.2
-    }
+    },
+    "rating": 50
   },
   {
     "id": "qasim-akram",
@@ -3854,7 +4056,8 @@
       "wickets": 1,
       "economy": 8.7,
       "bowlingAvg": 52
-    }
+    },
+    "rating": 50
   },
   {
     "id": "jds-neesham",
@@ -3873,7 +4076,8 @@
       "wickets": 7,
       "economy": 9,
       "bowlingAvg": 34.6
-    }
+    },
+    "rating": 50
   },
   {
     "id": "arif-yaqoob",
@@ -3892,7 +4096,8 @@
       "wickets": 14,
       "economy": 7.8,
       "bowlingAvg": 16.6
-    }
+    },
+    "rating": 50
   },
   {
     "id": "ali-raza",
@@ -3911,7 +4116,8 @@
       "wickets": 12,
       "economy": 8.9,
       "bowlingAvg": 25.3
-    }
+    },
+    "rating": 50
   },
   {
     "id": "bilawal-bhatti",
@@ -3930,7 +4136,8 @@
       "wickets": 6,
       "economy": 7.7,
       "bowlingAvg": 33.8
-    }
+    },
+    "rating": 50
   },
   {
     "id": "zohaib-khan",
@@ -3949,7 +4156,8 @@
       "wickets": 3,
       "economy": 8.5,
       "bowlingAvg": 65.3
-    }
+    },
+    "rating": 50
   },
   {
     "id": "saad-nasim",
@@ -3968,7 +4176,8 @@
       "wickets": 0,
       "economy": 9,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "ibtisam-sheikh",
@@ -3987,7 +4196,8 @@
       "wickets": 9,
       "economy": 7.4,
       "bowlingAvg": 19.8
-    }
+    },
+    "rating": 50
   },
   {
     "id": "mh-wessels",
@@ -4006,7 +4216,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "muhammad-faizan",
@@ -4025,7 +4236,8 @@
       "wickets": 3,
       "economy": 10.3,
       "bowlingAvg": 24
-    }
+    },
+    "rating": 50
   },
   {
     "id": "s-mahmood",
@@ -4044,7 +4256,8 @@
       "wickets": 17,
       "economy": 9.2,
       "bowlingAvg": 15.7
-    }
+    },
+    "rating": 50
   },
   {
     "id": "noor-ahmad",
@@ -4063,7 +4276,8 @@
       "wickets": 6,
       "economy": 8.1,
       "bowlingAvg": 41.8
-    }
+    },
+    "rating": 50
   },
   {
     "id": "pbb-rajapaksa",
@@ -4082,7 +4296,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "sufiyan-muqeem",
@@ -4101,7 +4316,8 @@
       "wickets": 5,
       "economy": 9.1,
       "bowlingAvg": 44
-    }
+    },
+    "rating": 50
   },
   {
     "id": "tk-curran",
@@ -4120,7 +4336,8 @@
       "wickets": 10,
       "economy": 8.4,
       "bowlingAvg": 22.9
-    }
+    },
+    "rating": 50
   },
   {
     "id": "t-shamsi",
@@ -4139,7 +4356,8 @@
       "wickets": 10,
       "economy": 8.3,
       "bowlingAvg": 26
-    }
+    },
+    "rating": 50
   },
   {
     "id": "omair-yousuf",
@@ -4158,7 +4376,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "jo-holder",
@@ -4177,7 +4396,8 @@
       "wickets": 15,
       "economy": 9.1,
       "bowlingAvg": 18.7
-    }
+    },
+    "rating": 50
   },
   {
     "id": "bkg-mendis",
@@ -4196,7 +4416,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "mj-owen",
@@ -4215,7 +4436,8 @@
       "wickets": 2,
       "economy": 7.1,
       "bowlingAvg": 10
-    }
+    },
+    "rating": 50
   },
   {
     "id": "as-joseph",
@@ -4234,7 +4456,8 @@
       "wickets": 12,
       "economy": 8.8,
       "bowlingAvg": 22
-    }
+    },
+    "rating": 50
   },
   {
     "id": "mg-bracewell",
@@ -4253,7 +4476,8 @@
       "wickets": 6,
       "economy": 10.3,
       "bowlingAvg": 37.7
-    }
+    },
+    "rating": 50
   },
   {
     "id": "shahid-yousuf",
@@ -4272,7 +4496,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "sw-tait",
@@ -4291,7 +4516,8 @@
       "wickets": 9,
       "economy": 7,
       "bowlingAvg": 24.1
-    }
+    },
+    "rating": 50
   },
   {
     "id": "s-badree",
@@ -4310,7 +4536,8 @@
       "wickets": 4,
       "economy": 7.4,
       "bowlingAvg": 48
-    }
+    },
+    "rating": 50
   },
   {
     "id": "lj-wright",
@@ -4329,7 +4556,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "khurram-manzoor",
@@ -4348,7 +4576,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "umar-siddiq",
@@ -4367,7 +4596,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "s-lamichhane",
@@ -4386,7 +4616,8 @@
       "wickets": 11,
       "economy": 7.7,
       "bowlingAvg": 17.2
-    }
+    },
+    "rating": 50
   },
   {
     "id": "dw-steyn",
@@ -4405,7 +4636,8 @@
       "wickets": 6,
       "economy": 8.3,
       "bowlingAvg": 30.3
-    }
+    },
+    "rating": 50
   },
   {
     "id": "najibullah-zadran",
@@ -4424,7 +4656,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "aamer-azmat",
@@ -4443,7 +4676,8 @@
       "wickets": 0,
       "economy": 3,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "saad-baig",
@@ -4462,7 +4696,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "rishad-hossain",
@@ -4481,7 +4716,8 @@
       "wickets": 13,
       "economy": 9.3,
       "bowlingAvg": 17.2
-    }
+    },
+    "rating": 50
   },
   {
     "id": "bj-dwarshuis",
@@ -4500,7 +4736,8 @@
       "wickets": 6,
       "economy": 10.3,
       "bowlingAvg": 36
-    }
+    },
+    "rating": 50
   },
   {
     "id": "akbar-ur-rehman",
@@ -4519,7 +4756,8 @@
       "wickets": 0,
       "economy": 7.3,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "azhar-ali",
@@ -4538,7 +4776,8 @@
       "wickets": 0,
       "economy": 6,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "kk-cooper",
@@ -4557,7 +4796,8 @@
       "wickets": 6,
       "economy": 9.1,
       "bowlingAvg": 26.2
-    }
+    },
+    "rating": 50
   },
   {
     "id": "bm-duckett",
@@ -4576,7 +4816,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "mohammad-amir-khan",
@@ -4595,7 +4836,8 @@
       "wickets": 3,
       "economy": 8.8,
       "bowlingAvg": 41.3
-    }
+    },
+    "rating": 50
   },
   {
     "id": "f-du-plessis",
@@ -4614,7 +4856,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "qais-ahmad",
@@ -4633,7 +4876,8 @@
       "wickets": 9,
       "economy": 10.7,
       "bowlingAvg": 27.4
-    }
+    },
+    "rating": 50
   },
   {
     "id": "salman-mirza",
@@ -4652,7 +4896,8 @@
       "wickets": 11,
       "economy": 9.6,
       "bowlingAvg": 17.9
-    }
+    },
+    "rating": 50
   },
   {
     "id": "of-smith",
@@ -4671,7 +4916,8 @@
       "wickets": 5,
       "economy": 10.3,
       "bowlingAvg": 42.4
-    }
+    },
+    "rating": 50
   },
   {
     "id": "fazalhaq-farooqi",
@@ -4690,7 +4936,8 @@
       "wickets": 11,
       "economy": 7.9,
       "bowlingAvg": 16.6
-    }
+    },
+    "rating": 50
   },
   {
     "id": "azmatullah-omarzai",
@@ -4709,7 +4956,8 @@
       "wickets": 10,
       "economy": 9.8,
       "bowlingAvg": 22.9
-    }
+    },
+    "rating": 50
   },
   {
     "id": "ahsan-hafeez",
@@ -4728,7 +4976,8 @@
       "wickets": 3,
       "economy": 10,
       "bowlingAvg": 26.7
-    }
+    },
+    "rating": 50
   },
   {
     "id": "jm-cox",
@@ -4747,7 +4996,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "ags-gous",
@@ -4766,7 +5016,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "muhammad-shahzad",
@@ -4785,7 +5036,8 @@
       "wickets": 1,
       "economy": 12.3,
       "bowlingAvg": 43
-    }
+    },
+    "rating": 50
   },
   {
     "id": "ms-chapman",
@@ -4804,7 +5056,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "mn-samuels",
@@ -4823,7 +5076,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "gc-viljoen",
@@ -4842,7 +5096,8 @@
       "wickets": 4,
       "economy": 9.3,
       "bowlingAvg": 34.8
-    }
+    },
+    "rating": 50
   },
   {
     "id": "mustafizur-rahman",
@@ -4861,7 +5116,8 @@
       "wickets": 4,
       "economy": 7.2,
       "bowlingAvg": 30.5
-    }
+    },
+    "rating": 50
   },
   {
     "id": "gulraiz-sadaf",
@@ -4880,7 +5136,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "st-finn",
@@ -4899,7 +5156,8 @@
       "wickets": 5,
       "economy": 7.8,
       "bowlingAvg": 24.8
-    }
+    },
+    "rating": 50
   },
   {
     "id": "khalid-usman",
@@ -4918,7 +5176,8 @@
       "wickets": 3,
       "economy": 7.6,
       "bowlingAvg": 38
-    }
+    },
+    "rating": 50
   },
   {
     "id": "rameez-raja-2-",
@@ -4937,7 +5196,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "mj-mcclenaghan",
@@ -4956,7 +5216,8 @@
       "wickets": 2,
       "economy": 9.2,
       "bowlingAvg": 78
-    }
+    },
+    "rating": 50
   },
   {
     "id": "cj-green",
@@ -4975,7 +5236,8 @@
       "wickets": 4,
       "economy": 6.5,
       "bowlingAvg": 27.8
-    }
+    },
+    "rating": 50
   },
   {
     "id": "aizaz-cheema",
@@ -4994,7 +5256,8 @@
       "wickets": 6,
       "economy": 7.8,
       "bowlingAvg": 22.7
-    }
+    },
+    "rating": 50
   },
   {
     "id": "dj-vilas",
@@ -5013,7 +5276,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "j-weatherald",
@@ -5032,7 +5296,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "mohammad-taha",
@@ -5051,7 +5316,8 @@
       "wickets": 0,
       "economy": 8,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "m-de-lange",
@@ -5070,7 +5336,8 @@
       "wickets": 2,
       "economy": 10.2,
       "bowlingAvg": 76.5
-    }
+    },
+    "rating": 50
   },
   {
     "id": "abdul-bangalzai",
@@ -5089,7 +5356,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "aimal-khan",
@@ -5108,7 +5376,8 @@
       "wickets": 3,
       "economy": 11.9,
       "bowlingAvg": 59.3
-    }
+    },
+    "rating": 50
   },
   {
     "id": "dr-sams",
@@ -5127,7 +5396,8 @@
       "wickets": 6,
       "economy": 9.6,
       "bowlingAvg": 30.3
-    }
+    },
+    "rating": 50
   },
   {
     "id": "gf-linde",
@@ -5146,7 +5416,8 @@
       "wickets": 1,
       "economy": 9,
       "bowlingAvg": 126
-    }
+    },
+    "rating": 50
   },
   {
     "id": "pi-walter",
@@ -5165,7 +5436,8 @@
       "wickets": 2,
       "economy": 9.8,
       "bowlingAvg": 54
-    }
+    },
+    "rating": 50
   },
   {
     "id": "mehran-mumtaz",
@@ -5184,7 +5456,8 @@
       "wickets": 5,
       "economy": 6.6,
       "bowlingAvg": 25.2
-    }
+    },
+    "rating": 50
   },
   {
     "id": "m-bryant",
@@ -5203,7 +5476,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "fawad-ali",
@@ -5222,7 +5496,8 @@
       "wickets": 2,
       "economy": 8.8,
       "bowlingAvg": 54
-    }
+    },
+    "rating": 50
   },
   {
     "id": "abdul-samad",
@@ -5241,7 +5516,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "e-chigumbura",
@@ -5260,7 +5536,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "naved-yasin",
@@ -5279,7 +5556,8 @@
       "wickets": 0,
       "economy": null,
       "bowlingAvg": null
-    }
+    },
+    "rating": 50
   },
   {
     "id": "ehsan-adil",
@@ -5298,6 +5576,7 @@
       "wickets": 7,
       "economy": 8.6,
       "bowlingAvg": 24.3
-    }
+    },
+    "rating": 50
   }
 ]
