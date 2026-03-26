@@ -8,7 +8,7 @@ const ROLE_ICONS = {
   'bowler':        '🎳',
 };
 
-export default function TeamPanel({ team, isUser, isLight, score, isBlitz, onViewSquad }) {
+export default function TeamPanel({ team, isUser, isLight, score, ratingTotal, isBlitz, onViewSquad }) {
   const pctLeft = (team.budget / auctionConfig.franchiseBudget) * 100;
   const c = {
     text:    isLight ? '#111' : '#fff',
@@ -70,7 +70,7 @@ export default function TeamPanel({ team, isUser, isLight, score, isBlitz, onVie
             <div style={{ fontSize: '10px', color: c.muted }}>{team.squad.length} players</div>
             <div style={{ fontSize: '11px', fontWeight: 700, color: accentColor, marginTop: '2px' }}>
               {isBlitz
-                ? <>⚡ {score ?? 0} pts</>
+                ? <>★ {ratingTotal ?? team.squad.reduce((sum, p) => sum + (p.rating ?? 0), 0)} &nbsp;·&nbsp; ⚡ {score ?? 0} pts</>
                 : <>★ {score ?? team.squad.reduce((sum, p) => sum + (p.rating ?? 0), 0)}</>
               }
             </div>

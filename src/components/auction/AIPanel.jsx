@@ -9,7 +9,7 @@ const ROLE_ICONS = {
   'bowler':        '🎳',
 };
 
-export default function AIPanel({ aiTeams, bidder, isLight, aiScores, isBlitz }) {
+export default function AIPanel({ aiTeams, bidder, isLight, aiScores, aiRatings, isBlitz }) {
   const [openTeamId, setOpenTeamId] = useState(null);
 
   const c = {
@@ -112,7 +112,10 @@ export default function AIPanel({ aiTeams, bidder, isLight, aiScores, isBlitz })
                 </div>
                 {aiScores && (
                   <div style={{ fontSize: '10px', fontWeight: 700, color: isBidding ? color : c.muted }}>
-                    {isBlitz ? `⚡ ${aiScores[team.id] ?? 0} pts` : `★ ${aiScores[team.id] ?? 0}`}
+                    {isBlitz
+                      ? <>★ {aiRatings?.[team.id] ?? 0} · ⚡ {aiScores[team.id] ?? 0} pts</>
+                      : `★ ${aiScores[team.id] ?? 0}`
+                    }
                   </div>
                 )}
               </div>
