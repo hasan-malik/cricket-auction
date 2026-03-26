@@ -8,7 +8,7 @@ const ROLE_ICONS = {
   'bowler':        '🎳',
 };
 
-export default function TeamPanel({ team, isUser, isLight }) {
+export default function TeamPanel({ team, isUser, isLight, score, isBlitz, onViewSquad }) {
   const pctLeft = (team.budget / auctionConfig.franchiseBudget) * 100;
   const c = {
     text:    isLight ? '#111' : '#fff',
@@ -31,7 +31,10 @@ export default function TeamPanel({ team, isUser, isLight }) {
       gap: '12px',
       minWidth: 0,
       maxHeight: '560px',
-    }}>
+      cursor: onViewSquad ? 'pointer' : 'default',
+    }}
+    onClick={onViewSquad}
+    >
       {/* Header */}
       <div>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
@@ -66,7 +69,10 @@ export default function TeamPanel({ team, isUser, isLight }) {
             </div>
             <div style={{ fontSize: '10px', color: c.muted }}>{team.squad.length} players</div>
             <div style={{ fontSize: '11px', fontWeight: 700, color: accentColor, marginTop: '2px' }}>
-              ★ {team.squad.reduce((sum, p) => sum + (p.rating ?? 0), 0)}
+              {isBlitz
+                ? <>⚡ {score ?? 0} pts</>
+                : <>★ {score ?? team.squad.reduce((sum, p) => sum + (p.rating ?? 0), 0)}</>
+              }
             </div>
           </div>
         </div>
