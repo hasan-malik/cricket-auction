@@ -145,7 +145,9 @@ export function getAIBid(franchiseId, aiTeam, currentPlayer, currentBid, bidder,
  * @param {number} count - 30 or 50
  */
 export function buildBlitzQueue(players, count) {
-  const dist = count === 30
+  const dist = count === 15
+    ? { platinum: 3, diamond: 5, gold: 5, silver: 2, emerging: 0 }
+    : count === 30
     ? { platinum: 5, diamond: 10, gold: 10, silver: 5, emerging: 0 }
     : { platinum: 5, diamond: 15, gold: 15, silver: 10, emerging: 5 };
 

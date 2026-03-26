@@ -1,9 +1,10 @@
 {
   "timerSeconds": 8,
-  "budgets":      { "30": 15.0, "50": 25.0 },
-  "maxSquadSize": { "30": 6,    "50": 9    },
+  "budgets":      { "15": 8.0, "30": 15.0, "50": 25.0 },
+  "maxSquadSize": { "15": 3,   "30": 6,    "50": 9    },
   "autoAdvanceMs": 1500,
   "distribution": {
+    "15": { "platinum": 3, "diamond": 5, "gold": 5, "silver": 2, "emerging": 0 },
     "30": { "platinum": 5, "diamond": 10, "gold": 10, "silver": 5, "emerging": 0 },
     "50": { "platinum": 5, "diamond": 15, "gold": 15, "silver": 10, "emerging": 5 }
   }
