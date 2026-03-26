@@ -62,6 +62,7 @@ function makeInitialState({ franchiseId, teamName, mode, blitzSize }) {
     userPassed: false,
     timer: timerSeconds,
     timerKey: 0,
+    paused: false,
     soldPlayers: [],
     user: {
       id: 'user',
@@ -114,8 +115,14 @@ function reducer(state, action) {
 
   switch (action.type) {
 
+    case 'PAUSE':
+      return { ...state, paused: true };
+
+    case 'RESUME':
+      return { ...state, paused: false };
+
     case 'TICK': {
-      if (state.phase !== 'bidding') return state;
+      if (state.phase !== 'bidding' || state.paused) return state;
       const next = state.timer - 1;
       if (next <= 0) return resolveHammer(state);
       return { ...state, timer: next };
@@ -195,20 +202,20 @@ export function useAuction({ franchiseId, teamName, mode = 'full', blitzSize = 3
   // ── Timer ────────────────────────────────────────────────────────────────
   const timerRef = useRef(null);
   useEffect(() => {
-    if (state.phase !== 'bidding') {
+    if (state.phase !== 'bidding' || state.paused) {
       clearInterval(timerRef.current);
       return;
     }
     clearInterval(timerRef.current);
     timerRef.current = setInterval(() => dispatch({ type: 'TICK' }), 1000);
     return () => clearInterval(timerRef.current);
-  }, [state.phase, state.timerKey]);
+  }, [state.phase, state.timerKey, state.paused]);
 
   // ── 5-AI bidding ─────────────────────────────────────────────────────────
   const aiTimeouts = useRef({});
 
   useEffect(() => {
-    if (state.phase !== 'bidding') return;
+    if (state.phase !== 'bidding' || state.paused) return;
 
     const currentState = state;
     const aiIds = Object.keys(currentState.aiTeams);
@@ -227,6 +234,8 @@ export function useAuction({ franchiseId, teamName, mode = 'full', blitzSize = 3
 
         const aiTeam = s.aiTeams[id];
         if (!aiTeam) return;
+
+        if (s.paused) return;
 
         const bidAmount = getAIBid(
           id,
@@ -256,7 +265,7 @@ export function useAuction({ franchiseId, teamName, mode = 'full', blitzSize = 3
       clearTimeout(quickHammerTimeout);
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state.currentBid, state.bidder, state.phase, state.currentPlayer?.id]);
+  }, [state.currentBid, state.bidder, state.phase, state.currentPlayer?.id, state.paused]);
 
   const userBid = useCallback((increment) => {
     dispatch({ type: 'USER_BID', increment });
@@ -270,5 +279,9 @@ export function useAuction({ franchiseId, teamName, mode = 'full', blitzSize = 3
     dispatch({ type: 'NEXT_PLAYER' });
   }, []);
 
-  return { state, userBid, userPass, nextPlayer };
+  const togglePause = useCallback(() => {
+    dispatch({ type: stateRef.current.paused ? 'RESUME' : 'PAUSE' });
+  }, []);
+
+  return { state, userBid, userPass, nextPlayer, togglePause };
 }
