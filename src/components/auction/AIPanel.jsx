@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import auctionConfig from '../../data/auctionConfig.json';
 
-export default function AIPanel({ aiTeams, bidder, isLight }) {
+export default function AIPanel({ aiTeams, bidder, isLight, onClickTeam, aiScores, isBlitz }) {
   const c = {
     text:    isLight ? '#111' : '#fff',
     muted:   isLight ? '#6b7280' : 'rgba(255,255,255,0.45)',
@@ -45,12 +45,14 @@ export default function AIPanel({ aiTeams, bidder, isLight }) {
             key={team.id}
             animate={isBidding ? { scale: 1.02 } : { scale: 1 }}
             transition={{ duration: 0.2 }}
+            onClick={() => onClickTeam?.(team)}
             style={{
               padding: '9px 11px',
               borderRadius: '10px',
               background: isBidding ? `${color}18` : 'rgba(255,255,255,0.025)',
               border: isBidding ? `1px solid ${color}55` : '1px solid rgba(255,255,255,0.05)',
               transition: 'background 0.2s, border-color 0.2s',
+              cursor: onClickTeam ? 'pointer' : 'default',
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
@@ -85,8 +87,15 @@ export default function AIPanel({ aiTeams, bidder, isLight }) {
               />
             </div>
 
-            <div style={{ fontSize: '10px', color: c.muted, marginTop: '4px' }}>
-              {team.squad.length} players
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '4px' }}>
+              <div style={{ fontSize: '10px', color: c.muted }}>
+                {team.squad.length} players
+              </div>
+              {aiScores && (
+                <div style={{ fontSize: '10px', fontWeight: 700, color: isBidding ? color : c.muted }}>
+                  {isBlitz ? `⚡ ${aiScores[team.id] ?? 0} pts` : `★ ${aiScores[team.id] ?? 0}`}
+                </div>
+              )}
             </div>
           </motion.div>
         );
