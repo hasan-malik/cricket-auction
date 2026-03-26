@@ -676,7 +676,6 @@ export default function Auction() {
             isLight={isLight}
             aiScores={aiScores}
             isBlitz={isBlitz}
-            onClickTeam={team => setSquadModal(team)}
           />
         </div>
       </div>
