@@ -65,7 +65,7 @@ export default function BlitzResults() {
           style={{ textAlign: 'center', marginBottom: '56px' }}
         >
           <p className="overline" style={{ marginBottom: '16px', color: '#f59e0b' }}>
-            ⚡ Blitz {blitzSize ?? 30} Complete
+            {blitzSize === 15 ? 'Bullet' : blitzSize === 30 ? 'Blitz' : 'Rapid'} Complete
           </p>
           <h1 style={{
             fontSize: 'clamp(40px, 6vw, 72px)',
@@ -91,7 +91,7 @@ export default function BlitzResults() {
               className="btn-ghost"
               onClick={() => navigate('/auction', { state: { franchiseId: user.franchise?.id, teamName: user.name, mode: 'blitz', blitzSize: blitzSize ?? 30 } })}
             >
-              {blitzSize === 15 ? '🔫 Bullet Again' : blitzSize === 30 ? '⚡ Blitz Again' : '🚀 Rapid Again'}
+              {blitzSize === 15 ? 'Bullet Again' : blitzSize === 30 ? 'Blitz Again' : 'Rapid Again'}
             </button>
             <button
               className="btn-ghost"

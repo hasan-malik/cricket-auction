@@ -508,7 +508,7 @@ export default function Auction() {
                 : navigate('/results', { state: { user, aiTeams } })
               }
             >
-              {isBlitz ? '⚡ See Scores →' : 'See Full Results →'}
+              {isBlitz ? 'See Scores →' : 'See Full Results →'}
             </button>
             <button className="btn-ghost" onClick={() => navigate('/')}>
               Play Again
@@ -542,7 +542,7 @@ export default function Auction() {
                 animation: paused ? 'none' : 'pulse 1.5s ease-in-out infinite',
               }} />
               <span style={{ fontSize: '12px', fontWeight: 600, color: c.muted, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                {paused ? 'Paused' : !isBlitz ? 'Live Auction' : blitzSize === 15 ? '🔫 Bullet' : blitzSize === 30 ? '⚡ Blitz' : '🚀 Rapid 30'}
+                {paused ? 'Paused' : !isBlitz ? 'Live Auction' : blitzSize === 15 ? 'Bullet' : blitzSize === 30 ? 'Blitz' : 'Rapid'}
               </span>
             </div>
             {isBlitz && blitzScore !== null && (
