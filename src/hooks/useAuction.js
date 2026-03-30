@@ -2,22 +2,23 @@ import { useReducer, useEffect, useRef, useCallback } from 'react';
 import allPlayers from '../data/players.json';
 import franchises from '../data/franchises.json';
 import auctionConfig from '../data/auctionConfig.json';
-import blitzConfig from '../data/blitzConfig.json';
-import { generateAITargets, getAIBid, getDynamicIncrement, buildBlitzQueue, AI_FRANCHISES, AI_PERSONALITIES } from '../utils/aiUtils';
+import { MODE_CONFIGS } from '../data/modeConfig.js';
+import {
+  generateAITargets, getAIBid, getDynamicIncrement,
+  buildBlitzQueue, AI_FRANCHISES, AI_PERSONALITIES,
+} from '../utils/aiUtils';
 
 const BID_TIERS      = auctionConfig.bidIncrementTiers;
-const CATEGORY_ORDER = auctionConfig.auctionOrder ?? ['platinum','diamond','gold','silver','emerging'];
+const CATEGORY_ORDER = auctionConfig.auctionOrder ?? ['platinum', 'diamond', 'gold', 'silver', 'emerging'];
 
-function buildQueue(players) {
+function buildFullQueue(players) {
   return CATEGORY_ORDER.flatMap(cat =>
-    players
-      .filter(p => p.category === cat)
-      .sort(() => Math.random() - 0.5)
+    players.filter(p => p.category === cat).sort(() => Math.random() - 0.5)
   );
 }
 
 function makeAITeam(franchiseId, players, budget, maxFraction) {
-  const franchise = franchises.find(f => f.id === franchiseId);
+  const franchise   = franchises.find(f => f.id === franchiseId);
   const personality = AI_PERSONALITIES[franchiseId] ?? 'balanced';
   return {
     id: franchiseId,
@@ -30,16 +31,24 @@ function makeAITeam(franchiseId, players, budget, maxFraction) {
   };
 }
 
-function makeInitialState({ franchiseId, teamName, mode, blitzSize }) {
+function makeInitialState({ franchiseId, teamName, mode, blitzMode }) {
   const isBlitz = mode === 'blitz';
-  const sizeKey  = String(blitzSize ?? 30);
+  const modeCfg = isBlitz ? MODE_CONFIGS[blitzMode] : null;
 
-  const budget       = isBlitz ? blitzConfig.budgets[sizeKey]      : auctionConfig.franchiseBudget;
-  const timerSeconds = isBlitz ? blitzConfig.timerSeconds[sizeKey]  : (auctionConfig.bidTimerSeconds ?? 15);
-  const maxSquadSize = isBlitz ? blitzConfig.maxSquadSize[sizeKey]  : auctionConfig.maxSquadSize;
-  const maxFraction  = !isBlitz ? 0.20 : blitzSize === 15 ? 0.45 : blitzSize === 30 ? 0.35 : 0.30;
+  const budget            = isBlitz ? modeCfg.budget            : auctionConfig.franchiseBudget;
+  const timerSeconds      = isBlitz ? modeCfg.timerSeconds      : (auctionConfig.bidTimerSeconds ?? 15);
+  const squadCap          = isBlitz ? modeCfg.exactSquadSize     : auctionConfig.maxSquadSize;
+  const requiredSlots     = isBlitz ? modeCfg.requiredSlots      : null;
+  const wkCountsAsBatsman = isBlitz ? modeCfg.wkCountsAsBatsman : false;
+  const autoAdvanceMs     = isBlitz ? modeCfg.autoAdvanceMs      : null;
 
-  const queue = isBlitz ? buildBlitzQueue(allPlayers, blitzSize ?? 30) : buildQueue(allPlayers);
+  // Per-mode maxFraction: small modes need higher cap so AI personalities still differentiate
+  const maxFraction = !isBlitz         ? 0.20
+    : blitzMode === 'bullet'           ? 0.45
+    : blitzMode === 'blitz'            ? 0.35
+    : /* rapid */                        0.30;
+
+  const queue = isBlitz ? buildBlitzQueue(allPlayers, blitzMode) : buildFullQueue(allPlayers);
   const [currentPlayer, ...rest] = queue;
   const userFranchise = franchises.find(f => f.id === franchiseId);
 
@@ -51,18 +60,25 @@ function makeInitialState({ franchiseId, teamName, mode, blitzSize }) {
   }
 
   return {
-    mode: mode ?? 'full',
-    blitzSize: blitzSize ?? 30,
-    config: { timerSeconds, maxSquadSize, budget },
-    phase: 'bidding',
+    mode:      mode      ?? 'full',
+    blitzMode: blitzMode ?? null,
+    config: {
+      timerSeconds,
+      squadCap,
+      budget,
+      requiredSlots,
+      wkCountsAsBatsman,
+      autoAdvanceMs,
+    },
+    phase:       'bidding',
     currentPlayer,
-    queue: rest,
-    currentBid: currentPlayer.basePrice,
-    bidder: null,
-    userPassed: false,
-    timer: timerSeconds,
-    timerKey: 0,
-    paused: false,
+    queue:       rest,
+    currentBid:  currentPlayer.basePrice,
+    bidder:      null,
+    userPassed:  false,
+    timer:       timerSeconds,
+    timerKey:    0,
+    paused:      false,
     soldPlayers: [],
     user: {
       id: 'user',
@@ -79,7 +95,7 @@ function resolveHammer(state) {
   if (state.bidder === null) {
     return { ...state, phase: 'unsold' };
   }
-  const winner = state.bidder;
+  const winner     = state.bidder;
   const soldPlayer = { ...state.currentPlayer, soldPrice: state.currentBid, soldTo: winner };
 
   if (winner === 'user') {
@@ -89,7 +105,7 @@ function resolveHammer(state) {
       user: {
         ...state.user,
         budget: Math.round((state.user.budget - state.currentBid) * 1000) / 1000,
-        squad: [...state.user.squad, soldPlayer],
+        squad:  [...state.user.squad, soldPlayer],
       },
       soldPlayers: [...state.soldPlayers, soldPlayer],
     };
@@ -103,7 +119,7 @@ function resolveHammer(state) {
       [winner]: {
         ...state.aiTeams[winner],
         budget: Math.round((state.aiTeams[winner].budget - state.currentBid) * 1000) / 1000,
-        squad: [...state.aiTeams[winner].squad, soldPlayer],
+        squad:  [...state.aiTeams[winner].squad, soldPlayer],
       },
     },
     soldPlayers: [...state.soldPlayers, soldPlayer],
@@ -111,15 +127,12 @@ function resolveHammer(state) {
 }
 
 function reducer(state, action) {
-  const { timerSeconds, maxSquadSize } = state.config;
+  const { timerSeconds, squadCap } = state.config;
 
   switch (action.type) {
 
-    case 'PAUSE':
-      return { ...state, paused: true };
-
-    case 'RESUME':
-      return { ...state, paused: false };
+    case 'PAUSE':  return { ...state, paused: true  };
+    case 'RESUME': return { ...state, paused: false };
 
     case 'TICK': {
       if (state.phase !== 'bidding' || state.paused) return state;
@@ -130,27 +143,27 @@ function reducer(state, action) {
 
     case 'QUICK_HAMMER': {
       if (state.phase !== 'bidding') return state;
-      if (state.bidder === null) return state;
+      if (state.bidder === null)     return state;
       return resolveHammer(state);
     }
 
     case 'USER_BID': {
       if (state.phase !== 'bidding') return state;
-      if (state.userPassed) return state;
+      if (state.userPassed)          return state;
       const newBid = Math.round((state.currentBid + action.increment) * 1000) / 1000;
       if (newBid > state.user.budget) return state;
       return {
         ...state,
         currentBid: newBid,
-        bidder: 'user',
-        timer: timerSeconds,
-        timerKey: state.timerKey + 1,
+        bidder:     'user',
+        timer:      timerSeconds,
+        timerKey:   state.timerKey + 1,
       };
     }
 
     case 'USER_PASS': {
       if (state.phase !== 'bidding') return state;
-      if (state.userPassed) return state;
+      if (state.userPassed)          return state;
       return { ...state, userPassed: true };
     }
 
@@ -159,14 +172,13 @@ function reducer(state, action) {
       const { franchiseId, amount } = action;
       if (state.bidder === franchiseId) return state;
       if (amount > (state.aiTeams[franchiseId]?.budget ?? 0)) return state;
-      // In blitz mode, also enforce AI squad cap
-      if ((state.aiTeams[franchiseId]?.squad.length ?? 0) >= maxSquadSize) return state;
+      if ((state.aiTeams[franchiseId]?.squad.length ?? 0) >= squadCap) return state;
       return {
         ...state,
         currentBid: amount,
-        bidder: franchiseId,
-        timer: timerSeconds,
-        timerKey: state.timerKey + 1,
+        bidder:     franchiseId,
+        timer:      timerSeconds,
+        timerKey:   state.timerKey + 1,
       };
     }
 
@@ -175,14 +187,14 @@ function reducer(state, action) {
       const [currentPlayer, ...rest] = state.queue;
       return {
         ...state,
-        phase: 'bidding',
+        phase:         'bidding',
         currentPlayer,
-        queue: rest,
-        currentBid: currentPlayer.basePrice,
-        bidder: null,
-        userPassed: false,
-        timer: timerSeconds,
-        timerKey: state.timerKey + 1,
+        queue:         rest,
+        currentBid:    currentPlayer.basePrice,
+        bidder:        null,
+        userPassed:    false,
+        timer:         timerSeconds,
+        timerKey:      state.timerKey + 1,
       };
     }
 
@@ -191,9 +203,9 @@ function reducer(state, action) {
   }
 }
 
-export function useAuction({ franchiseId, teamName, mode = 'full', blitzSize = 30 }) {
+export function useAuction({ franchiseId, teamName, mode = 'full', blitzMode = null }) {
   const [state, dispatch] = useReducer(reducer, null, () =>
-    makeInitialState({ franchiseId, teamName, mode, blitzSize })
+    makeInitialState({ franchiseId, teamName, mode, blitzMode })
   );
 
   const stateRef = useRef(state);
@@ -211,7 +223,7 @@ export function useAuction({ franchiseId, teamName, mode = 'full', blitzSize = 3
     return () => clearInterval(timerRef.current);
   }, [state.phase, state.timerKey, state.paused]);
 
-  // ── 5-AI bidding ─────────────────────────────────────────────────────────
+  // ── AI bidding ───────────────────────────────────────────────────────────
   const aiTimeouts = useRef({});
 
   useEffect(() => {
@@ -225,18 +237,16 @@ export function useAuction({ franchiseId, teamName, mode = 'full', blitzSize = 3
     for (const id of aiIds) {
       if (currentState.bidder === id) continue;
 
+      // Delay scales with timer so fast modes feel snappy
       const timerMs = currentState.config.timerSeconds * 1000;
-      const delay = timerMs * 0.07 + Math.random() * timerMs * 0.20;
+      const delay   = timerMs * 0.07 + Math.random() * timerMs * 0.20;
 
       aiTimeouts.current[id] = setTimeout(() => {
         const s = stateRef.current;
-        if (s.phase !== 'bidding') return;
-        if (s.bidder === id) return;
+        if (s.phase !== 'bidding' || s.bidder === id || s.paused) return;
 
         const aiTeam = s.aiTeams[id];
         if (!aiTeam) return;
-
-        if (s.paused) return;
 
         const bidAmount = getAIBid(
           id,
@@ -245,7 +255,9 @@ export function useAuction({ franchiseId, teamName, mode = 'full', blitzSize = 3
           s.currentBid,
           s.bidder,
           BID_TIERS,
-          s.config.maxSquadSize,
+          s.config.squadCap,
+          s.config.requiredSlots,
+          s.config.wkCountsAsBatsman,
         );
 
         if (bidAmount !== null) {
@@ -268,21 +280,10 @@ export function useAuction({ franchiseId, teamName, mode = 'full', blitzSize = 3
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.currentBid, state.bidder, state.phase, state.currentPlayer?.id, state.paused]);
 
-  const userBid = useCallback((increment) => {
-    dispatch({ type: 'USER_BID', increment });
-  }, []);
-
-  const userPass = useCallback(() => {
-    dispatch({ type: 'USER_PASS' });
-  }, []);
-
-  const nextPlayer = useCallback(() => {
-    dispatch({ type: 'NEXT_PLAYER' });
-  }, []);
-
-  const togglePause = useCallback(() => {
-    dispatch({ type: stateRef.current.paused ? 'RESUME' : 'PAUSE' });
-  }, []);
+  const userBid     = useCallback((increment) => dispatch({ type: 'USER_BID', increment }), []);
+  const userPass    = useCallback(() => dispatch({ type: 'USER_PASS' }), []);
+  const nextPlayer  = useCallback(() => dispatch({ type: 'NEXT_PLAYER' }), []);
+  const togglePause = useCallback(() => dispatch({ type: stateRef.current.paused ? 'RESUME' : 'PAUSE' }), []);
 
   return { state, userBid, userPass, nextPlayer, togglePause };
 }
