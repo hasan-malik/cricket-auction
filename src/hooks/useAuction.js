@@ -225,7 +225,8 @@ export function useAuction({ franchiseId, teamName, mode = 'full', blitzSize = 3
     for (const id of aiIds) {
       if (currentState.bidder === id) continue;
 
-      const delay = 1000 + Math.random() * 3000;
+      const timerMs = currentState.config.timerSeconds * 1000;
+      const delay = timerMs * 0.07 + Math.random() * timerMs * 0.20;
 
       aiTimeouts.current[id] = setTimeout(() => {
         const s = stateRef.current;
