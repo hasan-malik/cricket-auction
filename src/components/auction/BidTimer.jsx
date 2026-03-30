@@ -4,12 +4,11 @@ const SIZE = 80;
 const STROKE = 6;
 const R = (SIZE - STROKE) / 2;
 const CIRC = 2 * Math.PI * R;
-const TIMER_START = 15;
 
-export default function BidTimer({ timer }) {
-  const pct = timer / TIMER_START;
+export default function BidTimer({ timer, timerMax }) {
+  const pct = timer / timerMax;
   const dash = pct * CIRC;
-  const color = timer > 8 ? '#22c55e' : timer > 4 ? '#f59e0b' : '#ef4444';
+  const color = timer > timerMax * 0.53 ? '#22c55e' : timer > timerMax * 0.27 ? '#f59e0b' : '#ef4444';
 
   return (
     <div style={{ position: 'relative', width: SIZE, height: SIZE, flexShrink: 0 }}>
