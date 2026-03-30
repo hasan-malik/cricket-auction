@@ -35,7 +35,7 @@ function makeInitialState({ franchiseId, teamName, mode, blitzSize }) {
   const sizeKey  = String(blitzSize ?? 30);
 
   const budget       = isBlitz ? blitzConfig.budgets[sizeKey]      : auctionConfig.franchiseBudget;
-  const timerSeconds = isBlitz ? blitzConfig.timerSeconds           : (auctionConfig.bidTimerSeconds ?? 15);
+  const timerSeconds = isBlitz ? blitzConfig.timerSeconds[sizeKey]  : (auctionConfig.bidTimerSeconds ?? 15);
   const maxSquadSize = isBlitz ? blitzConfig.maxSquadSize[sizeKey]  : auctionConfig.maxSquadSize;
   const maxFraction  = isBlitz ? 0.30 : 0.20;
 

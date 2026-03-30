@@ -1,5 +1,5 @@
 {
-  "timerSeconds": 8,
+  "timerSeconds": { "15": 6, "30": 8, "50": 10 },
   "budgets":      { "15": 8.0, "30": 15.0, "50": 25.0 },
   "maxSquadSize": { "15": 3,   "30": 6,    "50": 9    },
   "autoAdvanceMs": 1500,
