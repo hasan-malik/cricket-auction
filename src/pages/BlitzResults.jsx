@@ -1,6 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useTheme } from '../contexts/ThemeContext';
 import { scoreBlitzSquad } from '../utils/aiUtils';
 
 const ROLE_ICONS = {
@@ -25,8 +24,6 @@ function allTeamScores(user, aiTeams) {
 export default function BlitzResults() {
   const { state: routeState } = useLocation();
   const navigate = useNavigate();
-  const { theme } = useTheme();
-  const isLight = theme === 'light';
 
   if (!routeState?.user) {
     return (
@@ -45,10 +42,10 @@ export default function BlitzResults() {
   const biggestOP  = [...scoredPlayers].sort((a, b) => a.pts - b.pts)[0];
 
   const c = {
-    text:   isLight ? '#111' : '#fff',
-    muted:  isLight ? '#6b7280' : 'rgba(255,255,255,0.5)',
-    border: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)',
-    surface: isLight ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.04)',
+    text:    '#fff',
+    muted:   'rgba(255,255,255,0.5)',
+    border:  'rgba(255,255,255,0.08)',
+    surface: 'rgba(255,255,255,0.04)',
   };
 
   const userWon = userRank === 1;
