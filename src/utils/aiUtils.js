@@ -123,7 +123,8 @@ export function getAIBid(franchiseId, aiTeam, currentPlayer, currentBid, bidder,
   const target = aiTeam.targets[currentPlayer.id] ?? 0;
   const squadSize = aiTeam.squad.length;
   const roleCount = aiTeam.squad.filter(p => p.role === currentPlayer.role).length;
-  const rolesNeeded = IDEAL_SQUAD[currentPlayer.role] ?? 4;
+  const baseRolesNeeded = IDEAL_SQUAD[currentPlayer.role] ?? 4;
+  const rolesNeeded = Math.max(1, Math.round(baseRolesNeeded * maxSquadSize / 19));
 
   if (squadSize >= maxSquadSize) return null;
 
