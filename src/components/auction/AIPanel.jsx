@@ -187,13 +187,19 @@ export default function AIPanel({ sortedTeams, rankings, bidder, aiScores, aiRat
                 </div>
               ) : (
                 [...team.squad].reverse().map(p => (
-                  <div key={p.id} style={{
-                    display: 'flex', alignItems: 'center', gap: '7px',
-                    padding: '5px 8px',
-                    background: 'rgba(255,255,255,0.04)',
-                    border: `1px solid ${c.dropBorder}`,
-                    borderRadius: '7px',
-                  }}>
+                  <motion.div
+                    key={p.id}
+                    initial={{ opacity: 0, y: -14, scale: 0.88 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    style={{
+                      display: 'flex', alignItems: 'center', gap: '7px',
+                      padding: '5px 8px',
+                      background: 'rgba(255,255,255,0.04)',
+                      border: `1px solid ${c.dropBorder}`,
+                      borderRadius: '7px',
+                    }}
+                  >
                     <span style={{ fontSize: '13px', flexShrink: 0 }}>{ROLE_ICONS[p.role]}</span>
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ fontSize: '11px', fontWeight: 600, color: c.text, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
@@ -206,7 +212,7 @@ export default function AIPanel({ sortedTeams, rankings, bidder, aiScores, aiRat
                     <div style={{ fontSize: '11px', fontWeight: 700, color: teamColor, flexShrink: 0 }}>
                       {p.soldPrice?.toFixed(2)} CR
                     </div>
-                  </div>
+                  </motion.div>
                 ))
               )}
             </div>
