@@ -16,26 +16,30 @@ const c = {
   border:  'rgba(255,255,255,0.08)',
 };
 
-// Gold palette for #1 team — mirrors AIPanel
-const GOLD = {
-  border: 'rgba(251,191,36,0.55)',
-  bg:     'rgba(251,191,36,0.07)',
-  glow:   '0 0 18px rgba(251,191,36,0.18)',
-  text:   '#fbbf24',
+// Regal gold treatment for #1 — only background / border / glow.
+// accentColor (used for budget bar, score, etc.) is never overridden.
+const FIRST_PLACE = {
+  cardBg:  'linear-gradient(160deg, rgba(251,191,36,0.10) 0%, rgba(180,120,10,0.05) 100%)',
+  border:  'rgba(212,175,55,0.55)',
+  glow:    '0 0 24px rgba(251,191,36,0.20), 0 0 0 1px rgba(251,191,36,0.06)',
+  rankColor:  '#fbbf24',
+  rankBg:     'rgba(251,191,36,0.14)',
+  rankBorder: 'rgba(251,191,36,0.35)',
 };
 
 export default function TeamPanel({ team, isUser, rank, score, ratingTotal, isBlitz, totalBudget, requiredSlots, wkCountsAsBatsman, onViewSquad }) {
-  const pctLeft   = (team.budget / totalBudget) * 100;
-  const isFirst   = rank === 1;
-  const accentColor = isFirst ? GOLD.text : isUser ? '#3b82f6' : '#f59e0b';
+  const pctLeft     = (team.budget / totalBudget) * 100;
+  const isFirst     = rank === 1;
+  // accentColor drives budget bar, score text, etc. — always franchise/user color
+  const accentColor = isUser ? '#3b82f6' : '#f59e0b';
 
   return (
     <div
       onClick={onViewSquad}
       style={{
-        background: isFirst ? GOLD.bg : c.surface,
-        border: `1px solid ${isFirst ? GOLD.border : c.border}`,
-        boxShadow: isFirst ? GOLD.glow : undefined,
+        background: isFirst ? FIRST_PLACE.cardBg : c.surface,
+        border:     `1px solid ${isFirst ? FIRST_PLACE.border : c.border}`,
+        boxShadow:  isFirst ? FIRST_PLACE.glow : undefined,
         borderRadius: '16px',
         padding: '16px',
         backdropFilter: 'blur(16px)',
@@ -72,9 +76,9 @@ export default function TeamPanel({ team, isUser, rank, score, ratingTotal, isBl
                   style={{
                     fontSize: '10px',
                     fontWeight: 800,
-                    color: isFirst ? GOLD.text : c.muted,
-                    background: isFirst ? 'rgba(251,191,36,0.15)' : 'rgba(255,255,255,0.06)',
-                    border: `1px solid ${isFirst ? 'rgba(251,191,36,0.35)' : 'rgba(255,255,255,0.1)'}`,
+                    color:      isFirst ? FIRST_PLACE.rankColor  : c.muted,
+                    background: isFirst ? FIRST_PLACE.rankBg     : 'rgba(255,255,255,0.06)',
+                    border:     `1px solid ${isFirst ? FIRST_PLACE.rankBorder : 'rgba(255,255,255,0.1)'}`,
                     borderRadius: '9999px',
                     padding: '1px 6px',
                   }}

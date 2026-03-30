@@ -16,12 +16,16 @@ const c = {
   dropBorder: 'rgba(255,255,255,0.12)',
 };
 
-// Gold palette for #1 team
-const GOLD = {
-  border:  'rgba(251,191,36,0.55)',
-  bg:      'rgba(251,191,36,0.07)',
-  glow:    '0 0 18px rgba(251,191,36,0.18)',
-  text:    '#fbbf24',
+// Regal gold treatment for the #1 team.
+// Applied ONLY to background / border / glow — never to team identity colors
+// (name text, budget bar) so teams stay recognizable by their franchise color.
+const FIRST_PLACE = {
+  cardBg:     'linear-gradient(160deg, rgba(251,191,36,0.10) 0%, rgba(180,120,10,0.05) 100%)',
+  border:     'rgba(212,175,55,0.55)',   // antique gold
+  glow:       '0 0 24px rgba(251,191,36,0.20), 0 0 0 1px rgba(251,191,36,0.06)',
+  rankColor:  '#fbbf24',
+  rankBg:     'rgba(251,191,36,0.14)',
+  rankBorder: 'rgba(251,191,36,0.35)',
 };
 
 export default function AIPanel({ sortedTeams, rankings, bidder, aiScores, aiRatings, isBlitz, totalBudget }) {
@@ -54,26 +58,28 @@ export default function AIPanel({ sortedTeams, rankings, bidder, aiScores, aiRat
         const rank      = rankings?.[team.id] ?? null;
         const isFirst   = rank === 1;
         const pctLeft   = (team.budget / totalBudget) * 100;
-        const color     = team.franchise?.primaryColor ?? '#f59e0b';
+
+        // Team identity color — NEVER overridden by gold
+        const teamColor = team.franchise?.primaryColor ?? '#f59e0b';
 
         const headerBg = isFirst
-          ? GOLD.bg
+          ? FIRST_PLACE.cardBg
           : isBidding
-            ? `${color}18`
+            ? `${teamColor}18`
             : 'rgba(255,255,255,0.07)';
         const headerBorder = isFirst
-          ? GOLD.border
+          ? FIRST_PLACE.border
           : isBidding
-            ? `${color}55`
+            ? `${teamColor}55`
             : c.dropBorder;
 
         return (
-          // layout prop animates the card smoothly as standings reorder
+          // layout animates the card as standings reorder
           <motion.div
             key={team.id}
             layout
             transition={{ layout: { duration: 0.45, ease: [0.22, 1, 0.36, 1] } }}
-            style={isFirst ? { boxShadow: GOLD.glow, borderRadius: '10px' } : undefined}
+            style={isFirst ? { boxShadow: FIRST_PLACE.glow, borderRadius: '10px' } : undefined}
           >
             {/* Team header */}
             <motion.div
@@ -85,7 +91,7 @@ export default function AIPanel({ sortedTeams, rankings, bidder, aiScores, aiRat
                 background: headerBg,
                 border: `1px solid ${headerBorder}`,
                 borderBottom: 'none',
-                transition: 'background 0.2s, border-color 0.2s',
+                transition: 'background 0.3s, border-color 0.3s',
               }}
             >
               {/* Name row */}
@@ -101,9 +107,9 @@ export default function AIPanel({ sortedTeams, rankings, bidder, aiScores, aiRat
                       style={{
                         fontSize: '10px',
                         fontWeight: 800,
-                        color: isFirst ? GOLD.text : c.muted,
-                        background: isFirst ? 'rgba(251,191,36,0.15)' : 'rgba(255,255,255,0.06)',
-                        border: `1px solid ${isFirst ? 'rgba(251,191,36,0.35)' : 'rgba(255,255,255,0.1)'}`,
+                        color:      isFirst ? FIRST_PLACE.rankColor  : c.muted,
+                        background: isFirst ? FIRST_PLACE.rankBg     : 'rgba(255,255,255,0.06)',
+                        border:     `1px solid ${isFirst ? FIRST_PLACE.rankBorder : 'rgba(255,255,255,0.1)'}`,
                         borderRadius: '9999px',
                         padding: '1px 6px',
                         flexShrink: 0,
@@ -112,10 +118,11 @@ export default function AIPanel({ sortedTeams, rankings, bidder, aiScores, aiRat
                       #{rank}
                     </motion.span>
                   )}
+                  {/* Team name — always franchise color */}
                   <div style={{
                     fontSize: '12px',
                     fontWeight: 700,
-                    color: isFirst ? GOLD.text : isBidding ? color : c.text,
+                    color: isBidding ? teamColor : c.text,
                     overflow: 'hidden',
                     textOverflow: 'ellipsis',
                     whiteSpace: 'nowrap',
@@ -126,19 +133,20 @@ export default function AIPanel({ sortedTeams, rankings, bidder, aiScores, aiRat
                     {team.franchise?.shortName ?? team.name}
                   </div>
                 </div>
-                <div style={{ fontSize: '11px', fontWeight: 700, color: isFirst ? GOLD.text : isBidding ? color : c.muted, flexShrink: 0 }}>
+                {/* Budget CR — team color when bidding, muted otherwise */}
+                <div style={{ fontSize: '11px', fontWeight: 700, color: isBidding ? teamColor : c.muted, flexShrink: 0 }}>
                   {team.budget.toFixed(1)}CR
                 </div>
               </div>
 
-              {/* Budget bar */}
+              {/* Budget bar — always franchise color */}
               <div style={{ height: '2px', background: 'rgba(255,255,255,0.07)', borderRadius: '9999px', overflow: 'hidden' }}>
                 <motion.div
                   animate={{ width: `${pctLeft}%` }}
                   transition={{ duration: 0.5, ease: 'easeOut' }}
                   style={{
                     height: '100%',
-                    background: isFirst ? GOLD.text : pctLeft > 50 ? color : pctLeft > 25 ? '#f59e0b' : '#ef4444',
+                    background: pctLeft > 50 ? teamColor : pctLeft > 25 ? '#f59e0b' : '#ef4444',
                     borderRadius: '9999px',
                   }}
                 />
@@ -150,7 +158,7 @@ export default function AIPanel({ sortedTeams, rankings, bidder, aiScores, aiRat
                   {team.squad.length} players
                 </div>
                 {aiScores && (
-                  <div style={{ fontSize: '10px', fontWeight: 700, color: isFirst ? GOLD.text : isBidding ? color : c.muted }}>
+                  <div style={{ fontSize: '10px', fontWeight: 700, color: isBidding ? teamColor : c.muted }}>
                     {isBlitz
                       ? <>★ {aiRatings?.[team.id] ?? 0} · ⚡ <motion.span key={aiScores[team.id]} initial={{ opacity: 0, y: 3 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>{aiScores[team.id] ?? 0}</motion.span> pts</>
                       : <>★ <motion.span key={aiScores[team.id]} initial={{ opacity: 0, y: 3 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>{aiScores[team.id] ?? 0}</motion.span></>
@@ -160,10 +168,10 @@ export default function AIPanel({ sortedTeams, rankings, bidder, aiScores, aiRat
               </div>
             </motion.div>
 
-            {/* Squad list — always visible */}
+            {/* Squad list */}
             <div style={{
               background: c.dropBg,
-              border: `1px solid ${isFirst ? GOLD.border : c.dropBorder}`,
+              border: `1px solid ${isFirst ? FIRST_PLACE.border : c.dropBorder}`,
               borderTop: 'none',
               borderRadius: '0 0 10px 10px',
               padding: '8px',
@@ -195,7 +203,7 @@ export default function AIPanel({ sortedTeams, rankings, bidder, aiScores, aiRat
                         {p.role} · ★ {p.rating ?? '—'}
                       </div>
                     </div>
-                    <div style={{ fontSize: '11px', fontWeight: 700, color, flexShrink: 0 }}>
+                    <div style={{ fontSize: '11px', fontWeight: 700, color: teamColor, flexShrink: 0 }}>
                       {p.soldPrice?.toFixed(2)} CR
                     </div>
                   </div>
