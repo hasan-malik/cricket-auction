@@ -644,8 +644,10 @@ export default function Auction() {
 
           {/* Centre: player + bid */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            {/* Player card */}
-            <PlayerCard player={currentPlayer} isNew key={currentPlayer?.id} />
+            {/* Player card — AnimatePresence lets outgoing card exit before new one enters */}
+            <AnimatePresence mode="wait">
+              <PlayerCard player={currentPlayer} isNew key={currentPlayer?.id} />
+            </AnimatePresence>
 
             {/* Up Next — all remaining players, horizontally scrollable */}
             {upNextQueue.length > 0 && (
