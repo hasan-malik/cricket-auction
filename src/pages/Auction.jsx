@@ -496,6 +496,21 @@ export default function Auction() {
     aiRatingTotals[id] = team.squad.reduce((s, p) => s + (p.rating ?? 0), 0);
   }
 
+  // Live rankings — all 6 teams sorted by score desc, tie-broken by id (stable at 0-0-0)
+  const allScoreEntries = [['user', userScore], ...Object.entries(aiScores)];
+  const sortedByScore   = [...allScoreEntries].sort(([aId, aScore], [bId, bScore]) =>
+    bScore !== aScore ? bScore - aScore : aId.localeCompare(bId)
+  );
+  const rankings  = Object.fromEntries(sortedByScore.map(([id], i) => [id, i + 1]));
+  const userRank  = rankings['user'];
+
+  // AI teams sorted by score for the right-panel standings
+  const sortedAITeams = Object.values(aiTeams).sort((a, b) => {
+    const sa = aiScores[a.id] ?? 0;
+    const sb = aiScores[b.id] ?? 0;
+    return sb !== sa ? sb - sa : a.id.localeCompare(b.id);
+  });
+
   // All upcoming players (for scrollable strip)
   const upNextQueue = queue;
 
@@ -616,6 +631,7 @@ export default function Auction() {
             <TeamPanel
               team={user}
               isUser
+              rank={userRank}
               score={userScore}
               ratingTotal={userRatingTotal}
               isBlitz={isBlitz}
@@ -835,9 +851,10 @@ export default function Auction() {
             </div>
           </div>
 
-          {/* Right: all AI franchises */}
+          {/* Right: AI standings — sorted live by score */}
           <AIPanel
-            aiTeams={aiTeams}
+            sortedTeams={sortedAITeams}
+            rankings={rankings}
             bidder={bidder}
             aiScores={aiScores}
             aiRatings={aiRatingTotals}
