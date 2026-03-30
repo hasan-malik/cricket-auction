@@ -23,8 +23,8 @@ Backend needs a `.env` with `GEMINI_API_KEY`. Without it, the proxy gracefully f
 ## Git Workflow
 
 - Push directly to `main` — GitHub Actions auto-deploys to Pages on every push
-- Make **many small, logical commits** — split by file or sub-feature, never batch everything into one
-- **Never** add `Co-Authored-By: Claude` to commits
+- Make **TONS of commits** — split by file or sub-feature, never batch everything into one
+- **NEVER** add `Co-Authored-By: Claude` to commits — Hasan must be the sole author of every commit
 - Run all git/curl commands yourself — never ask Hasan to run them
 - GitHub token is in Claude's memory (not stored here)
 
