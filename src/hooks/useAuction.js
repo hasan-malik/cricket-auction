@@ -234,12 +234,32 @@ export function useAuction({ franchiseId, teamName, mode = 'full', blitzMode = n
 
     for (const id of aiIds) clearTimeout(aiTimeouts.current[id]);
 
+    const timerMs     = currentState.config.timerSeconds * 1000;
+    const bidderIsUser = currentState.bidder === 'user';
+
+    // When the user is the current high bidder, AIs use a personality-driven window
+    // that spans most of the countdown — creating "will anyone outbid me?" suspense.
+    // When an AI is leading (or nobody has bid yet), keep the snappy early timing
+    // so AI-vs-AI exchanges don't drag out.
+    const DRAMATIC_WINDOWS = {
+      aggressive: [0.08, 0.55], // eager — bids in the first half
+      balanced:   [0.12, 0.72], // moderate — comfortable middle window
+      value:      [0.18, 0.90], // deliberate — can wait until nearly time's up
+    };
+
     for (const id of aiIds) {
       if (currentState.bidder === id) continue;
 
-      // Delay scales with timer so fast modes feel snappy
-      const timerMs = currentState.config.timerSeconds * 1000;
-      const delay   = timerMs * 0.07 + Math.random() * timerMs * 0.20;
+      let delay;
+      if (!bidderIsUser) {
+        // Snappy AI-vs-AI / opening bid timing (unchanged behaviour)
+        delay = Math.max(900, timerMs * 0.07 + Math.random() * timerMs * 0.20);
+      } else {
+        // Dramatic: spread across the countdown based on personality
+        const { personality } = currentState.aiTeams[id];
+        const [lo, hi] = DRAMATIC_WINDOWS[personality] ?? [0.12, 0.72];
+        delay = Math.max(900, (lo + Math.random() * (hi - lo)) * timerMs);
+      }
 
       aiTimeouts.current[id] = setTimeout(() => {
         const s = stateRef.current;
