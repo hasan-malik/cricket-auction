@@ -5,7 +5,7 @@ import auctionConfig from '../data/auctionConfig.json';
 import { MODE_CONFIGS } from '../data/modeConfig.js';
 import {
   generateAITargets, getAIBid, getDynamicIncrement,
-  buildBlitzQueue, AI_FRANCHISES, AI_PERSONALITIES,
+  buildBlitzQueue, AI_FRANCHISES, shufflePersonalities,
 } from '../utils/aiUtils';
 
 const BID_TIERS      = auctionConfig.bidIncrementTiers;
@@ -17,9 +17,8 @@ function buildFullQueue(players) {
   );
 }
 
-function makeAITeam(franchiseId, players, budget, maxFraction) {
-  const franchise   = franchises.find(f => f.id === franchiseId);
-  const personality = AI_PERSONALITIES[franchiseId] ?? 'balanced';
+function makeAITeam(franchiseId, players, budget, maxFraction, personality) {
+  const franchise = franchises.find(f => f.id === franchiseId);
   return {
     id: franchiseId,
     name: franchise?.name ?? franchiseId,
@@ -52,10 +51,11 @@ function makeInitialState({ franchiseId, teamName, mode, blitzMode }) {
   const [currentPlayer, ...rest] = queue;
   const userFranchise = franchises.find(f => f.id === franchiseId);
 
+  const personalityMap = shufflePersonalities(AI_FRANCHISES);
   const aiTeams = {};
   for (const id of AI_FRANCHISES) {
     if (id !== franchiseId) {
-      aiTeams[id] = makeAITeam(id, allPlayers, budget, maxFraction);
+      aiTeams[id] = makeAITeam(id, allPlayers, budget, maxFraction, personalityMap[id]);
     }
   }
 
