@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuction } from '../hooks/useAuction';
-import { getDynamicIncrement, scoreBlitzSquad } from '../utils/aiUtils';
+import { getDynamicIncrement, scoreBlitzSquad, canBuyPlayer, getBidBlockReason } from '../utils/aiUtils';
 import auctionConfig from '../data/auctionConfig.json';
-import blitzConfig from '../data/blitzConfig.json';
+import { MODE_CONFIGS } from '../data/modeConfig.js';
 import franchises from '../data/franchises.json';
 import PlayerCard from '../components/auction/PlayerCard';
 import BidTimer from '../components/auction/BidTimer';
@@ -407,7 +407,7 @@ export default function Auction() {
   const franchiseId = routeState?.franchiseId ?? 'lahore-qalandars';
   const teamName    = routeState?.teamName    ?? 'My Team';
   const mode        = routeState?.mode        ?? 'full';
-  const blitzSize   = routeState?.blitzSize   ?? 30;
+  const blitzMode   = routeState?.blitzMode   ?? null;
   const isBlitz     = mode === 'blitz';
 
   // Apply team-colored cap cursor for the entire auction page
@@ -417,7 +417,7 @@ export default function Auction() {
     return () => { document.body.style.cursor = ''; };
   }, [franchiseId]);
 
-  const { state, userBid, userPass, nextPlayer, togglePause } = useAuction({ franchiseId, teamName, mode, blitzSize });
+  const { state, userBid, userPass, nextPlayer, togglePause } = useAuction({ franchiseId, teamName, mode, blitzMode });
   const { phase, currentPlayer, currentBid, bidder, userPassed, timer, user, aiTeams, queue, paused, config } = state;
 
   // Modal state
@@ -460,10 +460,19 @@ export default function Auction() {
   useEffect(() => {
     if (!isBlitz) return;
     if (phase === 'sold' || phase === 'unsold') {
-      autoAdvanceRef.current = setTimeout(nextPlayer, blitzConfig.autoAdvanceMs);
+      autoAdvanceRef.current = setTimeout(nextPlayer, config.autoAdvanceMs ?? 1500);
     }
     return () => clearTimeout(autoAdvanceRef.current);
   }, [phase, isBlitz, nextPlayer]);
+
+  // Role enforcement: can the user legally bid on the current player?
+  const userCanBidOnCurrent = !isBlitz || !currentPlayer
+    ? true
+    : canBuyPlayer(user.squad, currentPlayer, config.requiredSlots, config.squadCap, config.wkCountsAsBatsman);
+
+  const bidBlockReason = !userCanBidOnCurrent && currentPlayer
+    ? getBidBlockReason(user.squad, currentPlayer, config.requiredSlots, config.squadCap, config.wkCountsAsBatsman)
+    : null;
 
   // Rating totals (used for blitz dual-display)
   const userRatingTotal = user.squad.reduce((s, p) => s + (p.rating ?? 0), 0);
@@ -500,7 +509,7 @@ export default function Auction() {
               className="btn-primary"
               style={isBlitz ? { background: '#d97706' } : {}}
               onClick={() => isBlitz
-                ? navigate('/blitz-results', { state: { user, aiTeams, blitzSize } })
+                ? navigate('/blitz-results', { state: { user, aiTeams, blitzMode } })
                 : navigate('/results', { state: { user, aiTeams } })
               }
             >
@@ -538,7 +547,7 @@ export default function Auction() {
                 animation: paused ? 'none' : 'pulse 1.5s ease-in-out infinite',
               }} />
               <span style={{ fontSize: '12px', fontWeight: 600, color: c.muted, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                {paused ? 'Paused' : !isBlitz ? 'Live Auction' : blitzSize === 15 ? 'Bullet' : blitzSize === 30 ? 'Blitz' : 'Rapid'}
+                {paused ? 'Paused' : !isBlitz ? 'Live Auction' : (MODE_CONFIGS[blitzMode]?.label ?? 'Blitz')}
               </span>
             </div>
             {isBlitz && blitzScore !== null && (
@@ -596,6 +605,8 @@ export default function Auction() {
               ratingTotal={userRatingTotal}
               isBlitz={isBlitz}
               totalBudget={config.budget}
+              requiredSlots={config.requiredSlots}
+              wkCountsAsBatsman={config.wkCountsAsBatsman}
               onViewSquad={() => setSquadModal(user)}
             />
             {/* Score formula — bottom-left */}
@@ -741,7 +752,7 @@ export default function Auction() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px', marginBottom: '10px' }}>
                 {bidOptions.map((amount, i) => {
                   const newBid = Math.round((currentBid + amount) * 1000) / 1000;
-                  const canBid = newBid <= user.budget && bidder !== 'user' && !userPassed && !paused;
+                  const canBid = userCanBidOnCurrent && newBid <= user.budget && bidder !== 'user' && !userPassed && !paused;
                   const isStandard = i === 0;
                   return (
                     <motion.button
@@ -777,6 +788,8 @@ export default function Auction() {
                 <span>
                   {paused
                     ? '⏸ Auction paused'
+                    : bidBlockReason
+                    ? `🚫 ${bidBlockReason}`
                     : userPassed
                     ? '👀 You passed'
                     : bidder === 'user'
