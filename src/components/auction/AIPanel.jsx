@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const ROLE_ICONS = {
   'batsman':       '🏏',
@@ -18,8 +17,6 @@ const c = {
 };
 
 export default function AIPanel({ aiTeams, bidder, aiScores, aiRatings, isBlitz, totalBudget }) {
-  const [openTeamId, setOpenTeamId] = useState(null);
-
   const teams = Object.values(aiTeams);
 
   return (
@@ -48,24 +45,22 @@ export default function AIPanel({ aiTeams, bidder, aiScores, aiRatings, isBlitz,
 
       {teams.map(team => {
         const isBidding = bidder === team.id;
-        const isOpen = openTeamId === team.id;
-        const pctLeft = (team.budget / totalBudget) * 100;
-        const color = team.franchise?.primaryColor ?? '#f59e0b';
+        const pctLeft   = (team.budget / totalBudget) * 100;
+        const color     = team.franchise?.primaryColor ?? '#f59e0b';
 
         return (
-          <div key={team.id} style={{ position: 'relative' }}>
+          <div key={team.id}>
+            {/* Team header — always open, no click toggle */}
             <motion.div
               animate={isBidding ? { scale: 1.02 } : { scale: 1 }}
               transition={{ duration: 0.2 }}
-              onClick={() => setOpenTeamId(isOpen ? null : team.id)}
               style={{
                 padding: '9px 11px',
-                borderRadius: isOpen ? '10px 10px 0 0' : '10px',
-                background: isBidding ? `${color}18` : isOpen ? 'rgba(255,255,255,0.07)' : 'rgba(255,255,255,0.025)',
-                border: isBidding ? `1px solid ${color}55` : isOpen ? `1px solid ${c.dropBorder}` : '1px solid rgba(255,255,255,0.05)',
-                borderBottom: isOpen ? 'none' : undefined,
+                borderRadius: '10px 10px 0 0',
+                background: isBidding ? `${color}18` : 'rgba(255,255,255,0.07)',
+                border: isBidding ? `1px solid ${color}55` : `1px solid ${c.dropBorder}`,
+                borderBottom: 'none',
                 transition: 'background 0.2s, border-color 0.2s',
-                cursor: 'pointer',
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
@@ -82,13 +77,8 @@ export default function AIPanel({ aiTeams, bidder, aiScores, aiRatings, isBlitz,
                   {isBidding && <span style={{ marginRight: '4px' }}>🔨</span>}
                   {team.franchise?.shortName ?? team.name}
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexShrink: 0 }}>
-                  <div style={{ fontSize: '11px', fontWeight: 700, color: isBidding ? color : c.muted }}>
-                    {team.budget.toFixed(1)}CR
-                  </div>
-                  <div style={{ fontSize: '9px', color: c.muted, transition: 'transform 0.2s', transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
-                    ▾
-                  </div>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: isBidding ? color : c.muted, flexShrink: 0 }}>
+                  {team.budget.toFixed(1)}CR
                 </div>
               </div>
 
@@ -120,60 +110,48 @@ export default function AIPanel({ aiTeams, bidder, aiScores, aiRatings, isBlitz,
               </div>
             </motion.div>
 
-            {/* Inline squad dropdown */}
-            <AnimatePresence>
-              {isOpen && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.2, ease: 'easeInOut' }}
-                  style={{ overflow: 'hidden' }}
-                >
-                  <div style={{
-                    background: c.dropBg,
+            {/* Squad list — always visible */}
+            <div style={{
+              background: c.dropBg,
+              border: `1px solid ${c.dropBorder}`,
+              borderTop: 'none',
+              borderRadius: '0 0 10px 10px',
+              padding: '8px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '4px',
+              maxHeight: '220px',
+              overflowY: 'auto',
+            }}>
+              {team.squad.length === 0 ? (
+                <div style={{ fontSize: '11px', color: c.muted, textAlign: 'center', padding: '10px 0' }}>
+                  No players yet
+                </div>
+              ) : (
+                [...team.squad].reverse().map(p => (
+                  <div key={p.id} style={{
+                    display: 'flex', alignItems: 'center', gap: '7px',
+                    padding: '5px 8px',
+                    background: 'rgba(255,255,255,0.04)',
                     border: `1px solid ${c.dropBorder}`,
-                    borderTop: 'none',
-                    borderRadius: '0 0 10px 10px',
-                    padding: '8px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '4px',
-                    maxHeight: '220px',
-                    overflowY: 'auto',
+                    borderRadius: '7px',
                   }}>
-                    {team.squad.length === 0 ? (
-                      <div style={{ fontSize: '11px', color: c.muted, textAlign: 'center', padding: '10px 0' }}>
-                        No players yet
+                    <span style={{ fontSize: '13px', flexShrink: 0 }}>{ROLE_ICONS[p.role]}</span>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontSize: '11px', fontWeight: 600, color: c.text, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                        {p.name}
                       </div>
-                    ) : (
-                      [...team.squad].reverse().map(p => (
-                        <div key={p.id} style={{
-                          display: 'flex', alignItems: 'center', gap: '7px',
-                          padding: '5px 8px',
-                          background: 'rgba(255,255,255,0.04)',
-                          border: `1px solid ${c.dropBorder}`,
-                          borderRadius: '7px',
-                        }}>
-                          <span style={{ fontSize: '13px', flexShrink: 0 }}>{ROLE_ICONS[p.role]}</span>
-                          <div style={{ flex: 1, minWidth: 0 }}>
-                            <div style={{ fontSize: '11px', fontWeight: 600, color: c.text, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                              {p.name}
-                            </div>
-                            <div style={{ fontSize: '10px', color: c.muted }}>
-                              {p.role} · ★ {p.rating ?? '—'}
-                            </div>
-                          </div>
-                          <div style={{ fontSize: '11px', fontWeight: 700, color, flexShrink: 0 }}>
-                            {p.soldPrice?.toFixed(2)} CR
-                          </div>
-                        </div>
-                      ))
-                    )}
+                      <div style={{ fontSize: '10px', color: c.muted }}>
+                        {p.role} · ★ {p.rating ?? '—'}
+                      </div>
+                    </div>
+                    <div style={{ fontSize: '11px', fontWeight: 700, color, flexShrink: 0 }}>
+                      {p.soldPrice?.toFixed(2)} CR
+                    </div>
                   </div>
-                </motion.div>
+                ))
               )}
-            </AnimatePresence>
+            </div>
           </div>
         );
       })}
