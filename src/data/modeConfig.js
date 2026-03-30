@@ -87,4 +87,30 @@ export const MODE_CONFIGS = {
     requiredSlots:     { bat: 2, bowl: 3, ar: 2, wk: 1 },
     poolRoles:         { bat: 12, bowl: 18, ar: 12, wk: 6 },  // requiredSlots × 6 teams
   },
+
+  // ── Full formats (larger squads, value-score win condition) ─────────────────
+
+  fullXI: {
+    label:             'Full XI',
+    exactSquadSize:    11,
+    budget:            28.0,
+    timerSeconds:      8,
+    autoAdvanceMs:     1500,
+    wkCountsAsBatsman: false,
+    categories:        ['platinum', 'diamond', 'gold', 'silver'],
+    requiredSlots:     { bat: 4, bowl: 4, ar: 2, wk: 1 },
+    poolRoles:         { bat: 24, bowl: 24, ar: 12, wk: 6 },  // requiredSlots × 6 teams = 66
+  },
+
+  fullXV: {
+    label:             'Full XV',
+    exactSquadSize:    15,
+    budget:            38.0,
+    timerSeconds:      9,
+    autoAdvanceMs:     1500,
+    wkCountsAsBatsman: false,
+    categories:        ['platinum', 'diamond', 'gold', 'silver'],
+    requiredSlots:     { bat: 5, bowl: 5, ar: 3, wk: 2 },
+    poolRoles:         { bat: 30, bowl: 30, ar: 18, wk: 12 }, // requiredSlots × 6 teams = 90
+  },
 };
