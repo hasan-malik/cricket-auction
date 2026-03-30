@@ -474,6 +474,13 @@ export default function Auction() {
     ? getBidBlockReason(user.squad, currentPlayer, config.requiredSlots, config.squadCap, config.wkCountsAsBatsman)
     : null;
 
+  // Auto-pass when the current player's slot is already filled — no action needed from the user.
+  useEffect(() => {
+    if (!userCanBidOnCurrent && phase === 'bidding' && !userPassed) {
+      userPass();
+    }
+  }, [currentPlayer?.id, userCanBidOnCurrent]);
+
   // Rating totals (used for blitz dual-display)
   const userRatingTotal = user.squad.reduce((s, p) => s + (p.rating ?? 0), 0);
   const aiRatingTotals = {};
