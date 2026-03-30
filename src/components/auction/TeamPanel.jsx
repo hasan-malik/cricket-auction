@@ -71,10 +71,34 @@ export default function TeamPanel({ team, isUser, score, ratingTotal, isBlitz, t
             </div>
             <div style={{ fontSize: '10px', color: c.muted }}>{team.squad.length} players</div>
             <div style={{ fontSize: '11px', fontWeight: 700, color: accentColor, marginTop: '2px' }}>
-              {isBlitz
-                ? <>★ {ratingTotal ?? team.squad.reduce((sum, p) => sum + (p.rating ?? 0), 0)} &nbsp;·&nbsp; ⚡ {score ?? 0} pts</>
-                : <>★ {score ?? team.squad.reduce((sum, p) => sum + (p.rating ?? 0), 0)}</>
-              }
+              {isBlitz ? (
+                <>
+                  ★ {ratingTotal ?? team.squad.reduce((sum, p) => sum + (p.rating ?? 0), 0)}
+                  {' '}·{' '}
+                  ⚡{' '}
+                  <motion.span
+                    key={score}
+                    initial={{ opacity: 0, y: 4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, ease: 'easeOut' }}
+                  >
+                    {score ?? 0}
+                  </motion.span>
+                  {' '}pts
+                </>
+              ) : (
+                <>
+                  ★{' '}
+                  <motion.span
+                    key={score}
+                    initial={{ opacity: 0, y: 4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, ease: 'easeOut' }}
+                  >
+                    {score ?? team.squad.reduce((sum, p) => sum + (p.rating ?? 0), 0)}
+                  </motion.span>
+                </>
+              )}
             </div>
           </div>
         </div>
