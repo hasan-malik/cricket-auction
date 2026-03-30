@@ -167,10 +167,10 @@ export default function Home() {
           </p>
           <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '14px' }}>
             {[
-              { id: 'full',   label: 'Full Auction', sub: `279 players · ${auctionConfig.franchiseBudget} CR · 20 squad · 15s` },
-              { id: 'bullet', label: 'Bullet',        sub: '15 players · 8 CR · 3 squad · 6s · scored' },
-              { id: 'blitz',  label: 'Blitz',         sub: '30 players · 15 CR · 6 squad · 8s · scored' },
-              { id: 'rapid',  label: 'Rapid',         sub: '50 players · 25 CR · 9 squad · 10s · scored' },
+              { id: 'bullet', label: '🔥 Bullet',      sub: '15 players · 8 CR · 3 squad · 6s · scored' },
+              { id: 'blitz',  label: '⚡ Blitz',       sub: '30 players · 15 CR · 6 squad · 8s · scored' },
+              { id: 'rapid',  label: '🐇 Rapid',       sub: '50 players · 25 CR · 9 squad · 10s · scored' },
+              { id: 'full',   label: 'Full Auction',  sub: `279 players · ${auctionConfig.franchiseBudget} CR · 20 squad · 15s` },
             ].map(m => {
               const active = mode === m.id;
               const isBlitz = m.id !== 'full';
@@ -367,7 +367,7 @@ export default function Home() {
                     onClick={handleStart}
                     style={{ padding: '12px 32px', fontSize: '15px', background: mode !== 'full' ? '#d97706' : undefined }}
                   >
-                    {mode === 'full' ? 'Start Auction →' : `Start ${mode.charAt(0).toUpperCase() + mode.slice(1)} →`}
+                    {mode === 'full' ? 'Start Auction →' : mode === 'bullet' ? '🔥 Start Bullet →' : mode === 'blitz' ? '⚡ Start Blitz →' : '🐇 Start Rapid →'}
                   </motion.button>
                 </div>
 
