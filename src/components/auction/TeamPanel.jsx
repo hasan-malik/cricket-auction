@@ -1,4 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import { SLOT_ICON, SLOT_LABEL } from '../../data/modeConfig.js';
+import { countFilledSlots } from '../../utils/aiUtils';
 
 const ROLE_ICONS = {
   'batsman':       '🏏',
@@ -14,7 +16,7 @@ const c = {
   border:  'rgba(255,255,255,0.08)',
 };
 
-export default function TeamPanel({ team, isUser, score, ratingTotal, isBlitz, totalBudget, onViewSquad }) {
+export default function TeamPanel({ team, isUser, score, ratingTotal, isBlitz, totalBudget, requiredSlots, wkCountsAsBatsman, onViewSquad }) {
   const pctLeft = (team.budget / totalBudget) * 100;
   const accentColor = isUser ? '#3b82f6' : '#f59e0b';
 
@@ -96,6 +98,47 @@ export default function TeamPanel({ team, isUser, score, ratingTotal, isBlitz, t
           />
         </div>
       </div>
+
+      {/* Required slot template — blitz modes only */}
+      {requiredSlots && (() => {
+        const filled = countFilledSlots(team.squad, wkCountsAsBatsman ?? false);
+        return (
+          <div style={{
+            display: 'flex',
+            gap: '6px',
+            flexWrap: 'wrap',
+          }}>
+            {Object.entries(requiredSlots).map(([slot, count]) => {
+              const filledCount = filled[slot] ?? 0;
+              return Array.from({ length: count }, (_, i) => {
+                const done = i < filledCount;
+                return (
+                  <div
+                    key={`${slot}-${i}`}
+                    title={`${SLOT_LABEL[slot]}${done ? ' (filled)' : ' (needed)'}`}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '3px',
+                      padding: '3px 7px',
+                      borderRadius: '6px',
+                      fontSize: '11px',
+                      fontWeight: 600,
+                      background: done ? 'rgba(34,197,94,0.12)' : 'rgba(255,255,255,0.04)',
+                      border: `1px solid ${done ? 'rgba(34,197,94,0.3)' : 'rgba(255,255,255,0.08)'}`,
+                      color: done ? '#4ade80' : c.muted,
+                      transition: 'all 0.3s',
+                    }}
+                  >
+                    <span>{SLOT_ICON[slot]}</span>
+                    <span>{done ? '✓' : '□'}</span>
+                  </div>
+                );
+              });
+            })}
+          </div>
+        );
+      })()}
 
       {/* Squad list */}
       <div style={{
