@@ -264,6 +264,11 @@ body.light .badge {
 button, a, [role="button"], label, select { cursor: pointer; }
 input, textarea                           { cursor: text; }
 
+/* When a franchise cap cursor is active, propagate it to all descendants
+   so interactive elements (buttons, links) don't revert to the default pointer. */
+body.custom-cursor,
+body.custom-cursor * { cursor: inherit !important; }
+
 /* ─── Floating cricket ambient layer ────────────── */
 .cricket-float {
   position: absolute;

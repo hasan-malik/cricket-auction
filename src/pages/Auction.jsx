@@ -410,11 +410,19 @@ export default function Auction() {
   const blitzMode   = routeState?.blitzMode   ?? null;
   const isBlitz     = mode === 'blitz';
 
-  // Apply team-colored cap cursor for the entire auction page
+  // Apply team-colored cap cursor for the entire auction page.
+  // The 'custom-cursor' class forces all child elements to inherit the body cursor
+  // so buttons and links don't revert to the default pointer.
   useEffect(() => {
     const f = franchises.find(fr => fr.id === franchiseId);
-    if (f) document.body.style.cursor = buildCapCursor(f.primaryColor);
-    return () => { document.body.style.cursor = ''; };
+    if (f) {
+      document.body.style.cursor = buildCapCursor(f.primaryColor);
+      document.body.classList.add('custom-cursor');
+    }
+    return () => {
+      document.body.style.cursor = '';
+      document.body.classList.remove('custom-cursor');
+    };
   }, [franchiseId]);
 
   const { state, userBid, userPass, nextPlayer, togglePause } = useAuction({ franchiseId, teamName, mode, blitzMode });

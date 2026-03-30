@@ -35,15 +35,24 @@ export default function Home() {
   const [teamName, setTeamName] = useState('');
   const [mode, setMode] = useState('fullXV'); // 'bullet' | 'blitz' | 'rapid' | 'fullXI' | 'fullXV'
 
-  // Switch to team-colored cap cursor on franchise select, restore bat on deselect
+  // Switch to team-colored cap cursor on franchise select, restore default on deselect.
+  // The 'custom-cursor' class forces all child elements to inherit the body cursor
+  // so buttons and links don't revert to the default pointer.
   useEffect(() => {
     if (selected) {
       const f = franchises.find(fr => fr.id === selected);
-      if (f) document.body.style.cursor = buildCapCursor(f.primaryColor);
+      if (f) {
+        document.body.style.cursor = buildCapCursor(f.primaryColor);
+        document.body.classList.add('custom-cursor');
+      }
     } else {
       document.body.style.cursor = '';
+      document.body.classList.remove('custom-cursor');
     }
-    return () => { document.body.style.cursor = ''; };
+    return () => {
+      document.body.style.cursor = '';
+      document.body.classList.remove('custom-cursor');
+    };
   }, [selected]);
 
   const handleStart = () => {
