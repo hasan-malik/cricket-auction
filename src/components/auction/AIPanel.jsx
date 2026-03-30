@@ -16,9 +16,15 @@ const c = {
   dropBorder: 'rgba(255,255,255,0.12)',
 };
 
-export default function AIPanel({ aiTeams, bidder, aiScores, aiRatings, isBlitz, totalBudget }) {
-  const teams = Object.values(aiTeams);
+// Gold palette for #1 team
+const GOLD = {
+  border:  'rgba(251,191,36,0.55)',
+  bg:      'rgba(251,191,36,0.07)',
+  glow:    '0 0 18px rgba(251,191,36,0.18)',
+  text:    '#fbbf24',
+};
 
+export default function AIPanel({ sortedTeams, rankings, bidder, aiScores, aiRatings, isBlitz, totalBudget }) {
   return (
     <div style={{
       background: c.surface,
@@ -40,44 +46,87 @@ export default function AIPanel({ aiTeams, bidder, aiScores, aiRatings, isBlitz,
         color: c.muted,
         marginBottom: '2px',
       }}>
-        AI Franchises
+        Standings
       </div>
 
-      {teams.map(team => {
+      {sortedTeams.map(team => {
         const isBidding = bidder === team.id;
+        const rank      = rankings?.[team.id] ?? null;
+        const isFirst   = rank === 1;
         const pctLeft   = (team.budget / totalBudget) * 100;
         const color     = team.franchise?.primaryColor ?? '#f59e0b';
 
+        const headerBg = isFirst
+          ? GOLD.bg
+          : isBidding
+            ? `${color}18`
+            : 'rgba(255,255,255,0.07)';
+        const headerBorder = isFirst
+          ? GOLD.border
+          : isBidding
+            ? `${color}55`
+            : c.dropBorder;
+
         return (
-          <div key={team.id}>
-            {/* Team header — always open, no click toggle */}
+          // layout prop animates the card smoothly as standings reorder
+          <motion.div
+            key={team.id}
+            layout
+            transition={{ layout: { duration: 0.45, ease: [0.22, 1, 0.36, 1] } }}
+            style={isFirst ? { boxShadow: GOLD.glow, borderRadius: '10px' } : undefined}
+          >
+            {/* Team header */}
             <motion.div
               animate={isBidding ? { scale: 1.02 } : { scale: 1 }}
               transition={{ duration: 0.2 }}
               style={{
                 padding: '9px 11px',
                 borderRadius: '10px 10px 0 0',
-                background: isBidding ? `${color}18` : 'rgba(255,255,255,0.07)',
-                border: isBidding ? `1px solid ${color}55` : `1px solid ${c.dropBorder}`,
+                background: headerBg,
+                border: `1px solid ${headerBorder}`,
                 borderBottom: 'none',
                 transition: 'background 0.2s, border-color 0.2s',
               }}
             >
+              {/* Name row */}
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
-                <div style={{
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  color: isBidding ? color : c.text,
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  whiteSpace: 'nowrap',
-                  maxWidth: '100px',
-                  transition: 'color 0.2s',
-                }}>
-                  {isBidding && <span style={{ marginRight: '4px' }}>🔨</span>}
-                  {team.franchise?.shortName ?? team.name}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '5px', overflow: 'hidden' }}>
+                  {/* Rank badge */}
+                  {rank != null && (
+                    <motion.span
+                      key={rank}
+                      initial={{ opacity: 0, scale: 0.7 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.25 }}
+                      style={{
+                        fontSize: '10px',
+                        fontWeight: 800,
+                        color: isFirst ? GOLD.text : c.muted,
+                        background: isFirst ? 'rgba(251,191,36,0.15)' : 'rgba(255,255,255,0.06)',
+                        border: `1px solid ${isFirst ? 'rgba(251,191,36,0.35)' : 'rgba(255,255,255,0.1)'}`,
+                        borderRadius: '9999px',
+                        padding: '1px 6px',
+                        flexShrink: 0,
+                      }}
+                    >
+                      #{rank}
+                    </motion.span>
+                  )}
+                  <div style={{
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    color: isFirst ? GOLD.text : isBidding ? color : c.text,
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    whiteSpace: 'nowrap',
+                    maxWidth: '90px',
+                    transition: 'color 0.2s',
+                  }}>
+                    {isBidding && <span style={{ marginRight: '4px' }}>🔨</span>}
+                    {team.franchise?.shortName ?? team.name}
+                  </div>
                 </div>
-                <div style={{ fontSize: '11px', fontWeight: 700, color: isBidding ? color : c.muted, flexShrink: 0 }}>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: isFirst ? GOLD.text : isBidding ? color : c.muted, flexShrink: 0 }}>
                   {team.budget.toFixed(1)}CR
                 </div>
               </div>
@@ -89,21 +138,22 @@ export default function AIPanel({ aiTeams, bidder, aiScores, aiRatings, isBlitz,
                   transition={{ duration: 0.5, ease: 'easeOut' }}
                   style={{
                     height: '100%',
-                    background: pctLeft > 50 ? color : pctLeft > 25 ? '#f59e0b' : '#ef4444',
+                    background: isFirst ? GOLD.text : pctLeft > 50 ? color : pctLeft > 25 ? '#f59e0b' : '#ef4444',
                     borderRadius: '9999px',
                   }}
                 />
               </div>
 
+              {/* Stats row */}
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '4px' }}>
                 <div style={{ fontSize: '10px', color: c.muted }}>
                   {team.squad.length} players
                 </div>
                 {aiScores && (
-                  <div style={{ fontSize: '10px', fontWeight: 700, color: isBidding ? color : c.muted }}>
+                  <div style={{ fontSize: '10px', fontWeight: 700, color: isFirst ? GOLD.text : isBidding ? color : c.muted }}>
                     {isBlitz
-                      ? <>★ {aiRatings?.[team.id] ?? 0} · ⚡ {aiScores[team.id] ?? 0} pts</>
-                      : `★ ${aiScores[team.id] ?? 0}`
+                      ? <>★ {aiRatings?.[team.id] ?? 0} · ⚡ <motion.span key={aiScores[team.id]} initial={{ opacity: 0, y: 3 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>{aiScores[team.id] ?? 0}</motion.span> pts</>
+                      : <>★ <motion.span key={aiScores[team.id]} initial={{ opacity: 0, y: 3 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>{aiScores[team.id] ?? 0}</motion.span></>
                     }
                   </div>
                 )}
@@ -113,14 +163,14 @@ export default function AIPanel({ aiTeams, bidder, aiScores, aiRatings, isBlitz,
             {/* Squad list — always visible */}
             <div style={{
               background: c.dropBg,
-              border: `1px solid ${c.dropBorder}`,
+              border: `1px solid ${isFirst ? GOLD.border : c.dropBorder}`,
               borderTop: 'none',
               borderRadius: '0 0 10px 10px',
               padding: '8px',
               display: 'flex',
               flexDirection: 'column',
               gap: '4px',
-              maxHeight: '220px',
+              maxHeight: '200px',
               overflowY: 'auto',
             }}>
               {team.squad.length === 0 ? (
@@ -152,7 +202,7 @@ export default function AIPanel({ aiTeams, bidder, aiScores, aiRatings, isBlitz,
                 ))
               )}
             </div>
-          </div>
+          </motion.div>
         );
       })}
     </div>
