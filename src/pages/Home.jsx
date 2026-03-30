@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import franchises from '../data/franchises.json';
 import auctionConfig from '../data/auctionConfig.json';
+import { MODE_CONFIGS, SLOT_ICON, SLOT_LABEL } from '../data/modeConfig.js';
 
 /**
  * Build a side-profile cricket cap cursor (like 🧢 emoji):
@@ -51,9 +52,9 @@ export default function Home() {
     navigate('/auction', {
       state: {
         franchiseId: selected,
-        teamName: teamName.trim() || franchises.find(f => f.id === selected)?.name,
-        mode: isBlitz ? 'blitz' : 'full',
-        blitzSize: mode === 'rapid' ? 50 : mode === 'bullet' ? 15 : 30, // blitz → 30
+        teamName:    teamName.trim() || franchises.find(f => f.id === selected)?.name,
+        mode:        isBlitz ? 'blitz' : 'full',
+        blitzMode:   isBlitz ? mode : null, // 'bullet' | 'blitz' | 'rapid' | null
       },
     });
   };
@@ -164,10 +165,10 @@ export default function Home() {
           </p>
           <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '14px' }}>
             {[
-              { id: 'bullet', label: '🔥 Bullet',      sub: '15 players · 8 CR · 3 squad · 6s · scored' },
-              { id: 'blitz',  label: '⚡ Blitz',       sub: '30 players · 15 CR · 6 squad · 8s · scored' },
-              { id: 'rapid',  label: '🐇 Rapid',       sub: '50 players · 25 CR · 9 squad · 10s · scored' },
-              { id: 'full',   label: 'Full Auction',  sub: `279 players · ${auctionConfig.franchiseBudget} CR · 20 squad · 15s` },
+              { id: 'bullet', label: '🔥 Bullet',     sub: `${MODE_CONFIGS.bullet.poolRoles.bat + MODE_CONFIGS.bullet.poolRoles.bowl + MODE_CONFIGS.bullet.poolRoles.ar} players · ${MODE_CONFIGS.bullet.budget} CR · ${MODE_CONFIGS.bullet.exactSquadSize} squad · ${MODE_CONFIGS.bullet.timerSeconds}s` },
+              { id: 'blitz',  label: '⚡ Blitz',      sub: `${MODE_CONFIGS.blitz.poolRoles.bat + MODE_CONFIGS.blitz.poolRoles.bowl + MODE_CONFIGS.blitz.poolRoles.ar} players · ${MODE_CONFIGS.blitz.budget} CR · ${MODE_CONFIGS.blitz.exactSquadSize} squad · ${MODE_CONFIGS.blitz.timerSeconds}s` },
+              { id: 'rapid',  label: '🐇 Rapid',      sub: `${MODE_CONFIGS.rapid.poolRoles.bat + MODE_CONFIGS.rapid.poolRoles.bowl + MODE_CONFIGS.rapid.poolRoles.ar + MODE_CONFIGS.rapid.poolRoles.wk} players · ${MODE_CONFIGS.rapid.budget} CR · ${MODE_CONFIGS.rapid.exactSquadSize} squad · ${MODE_CONFIGS.rapid.timerSeconds}s` },
+              { id: 'full',   label: 'Full Auction', sub: `279 players · ${auctionConfig.franchiseBudget} CR · 20 squad · 15s` },
             ].map(m => {
               const active = mode === m.id;
               const isBlitz = m.id !== 'full';
@@ -202,10 +203,15 @@ export default function Home() {
           </div>
           {/* Mode info strip */}
           <p style={{ fontSize: '12px', color: c.muted }}>
-            {mode === 'full'   && `279 players · ${auctionConfig.franchiseBudget} CR budget · up to 20 players · 15s timer`}
-            {mode === 'bullet' && '15 top-rated players · 8 CR budget · 3 player cap · 6s timer · value-scored results'}
-            {mode === 'blitz'  && '30 top-rated players · 15 CR budget · 6 player cap · 8s timer · value-scored results'}
-            {mode === 'rapid'  && '50 top-rated players · 25 CR budget · 9 player cap · 10s timer · value-scored results'}
+            {mode === 'full' && `279 players · ${auctionConfig.franchiseBudget} CR budget · up to 20 players · 15s timer`}
+            {mode !== 'full' && (() => {
+              const cfg = MODE_CONFIGS[mode];
+              const total = Object.values(cfg.poolRoles).reduce((a, b) => a + b, 0);
+              const comp  = Object.entries(cfg.requiredSlots)
+                .map(([s, n]) => `${n} ${SLOT_LABEL[s].toLowerCase()}${n > 1 ? 's' : ''}`)
+                .join(' · ');
+              return `${total} players · ${cfg.budget} CR budget · ${cfg.exactSquadSize} players each · ${cfg.timerSeconds}s timer · required: ${comp}`;
+            })()}
           </p>
         </motion.div>
       </section>
@@ -369,29 +375,30 @@ export default function Home() {
                 </div>
 
                 <p style={{ fontSize: '13px', color: c.muted, marginTop: '14px' }}>
-                  {mode === 'full' && <>
+                  {mode === 'full' ? <>
                     Budget: <strong style={{ color: c.text }}>{auctionConfig.franchiseBudget} {auctionConfig.currency}</strong>
                     {' · '}Squad: <strong style={{ color: c.text }}>{auctionConfig.minSquadSize}–{auctionConfig.maxSquadSize}</strong>
                     {' · '}Overseas: <strong style={{ color: c.text }}>{auctionConfig.minOverseasPlayers}–{auctionConfig.maxOverseasPlayers}</strong>
-                  </>}
-                  {mode === 'bullet' && <>
-                    Budget: <strong style={{ color: '#fbbf24' }}>8 CR</strong>
-                    {' · '}Players: <strong style={{ color: c.text }}>15</strong>
-                    {' · '}Squad cap: <strong style={{ color: c.text }}>3</strong>
-                    {' · '}Timer: <strong style={{ color: c.text }}>6s</strong>
-                  </>}
-                  {mode === 'blitz' && <>
-                    Budget: <strong style={{ color: '#fbbf24' }}>15 CR</strong>
-                    {' · '}Players: <strong style={{ color: c.text }}>30</strong>
-                    {' · '}Squad cap: <strong style={{ color: c.text }}>6</strong>
-                    {' · '}Timer: <strong style={{ color: c.text }}>8s</strong>
-                  </>}
-                  {mode === 'rapid' && <>
-                    Budget: <strong style={{ color: '#fbbf24' }}>25 CR</strong>
-                    {' · '}Players: <strong style={{ color: c.text }}>50</strong>
-                    {' · '}Squad cap: <strong style={{ color: c.text }}>9</strong>
-                    {' · '}Timer: <strong style={{ color: c.text }}>10s</strong>
-                  </>}
+                  </> : (() => {
+                    const cfg   = MODE_CONFIGS[mode];
+                    const total = Object.values(cfg.poolRoles).reduce((a, b) => a + b, 0);
+                    return <>
+                      Budget: <strong style={{ color: '#fbbf24' }}>{cfg.budget} CR</strong>
+                      {' · '}Pool: <strong style={{ color: c.text }}>{total} players</strong>
+                      {' · '}Squad: exactly <strong style={{ color: c.text }}>{cfg.exactSquadSize}</strong>
+                      {' · '}Timer: <strong style={{ color: c.text }}>{cfg.timerSeconds}s</strong>
+                      <br />
+                      <span style={{ marginTop: '4px', display: 'inline-block' }}>
+                        Required: {Object.entries(cfg.requiredSlots).map(([s, n], i) => (
+                          <span key={s}>
+                            {i > 0 && ' · '}
+                            <strong style={{ color: c.text }}>{SLOT_ICON[s]} {n} {SLOT_LABEL[s].toLowerCase()}{n > 1 ? 's' : ''}</strong>
+                          </span>
+                        ))}
+                        {cfg.wkCountsAsBatsman && <span style={{ color: c.muted }}> (WK counts as batsman)</span>}
+                      </span>
+                    </>;
+                  })()}
                 </p>
               </motion.div>
             )}
