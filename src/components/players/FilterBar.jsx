@@ -1,5 +1,4 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTheme } from '../../contexts/ThemeContext';
 
 const CATEGORIES = ['all', 'platinum', 'diamond', 'gold', 'silver', 'emerging'];
 const ROLES      = ['all', 'batsman', 'bowler', 'all-rounder', 'wicket-keeper'];
@@ -68,9 +67,6 @@ function PillGroup({ options, selected, onChange, colorMap, iconMap }) {
 }
 
 export default function FilterBar({ filters, onChange, total, shown }) {
-  const { theme } = useTheme();
-  const isLight = theme === 'light';
-
   const hasActive = filters.category !== 'all'
     || filters.role !== 'all'
     || filters.origin !== 'all'
@@ -78,16 +74,14 @@ export default function FilterBar({ filters, onChange, total, shown }) {
 
   const clearAll = () => onChange({ search: '', category: 'all', role: 'all', origin: 'all' });
 
-  const inputBorder = `1px solid ${isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)'}`;
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.28, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       style={{
-        background: isLight ? 'rgba(255,255,255,0.72)' : 'rgba(255,255,255,0.032)',
-        border: `1px solid ${isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)'}`,
+        background: 'rgba(255,255,255,0.032)',
+        border: '1px solid rgba(255,255,255,0.08)',
         borderRadius: '20px',
         padding: '22px 24px',
         backdropFilter: 'blur(24px)',
@@ -117,17 +111,17 @@ export default function FilterBar({ filters, onChange, total, shown }) {
           style={{
             width: '100%',
             padding: '11px 16px 11px 44px',
-            background: isLight ? 'rgba(0,0,0,0.04)' : 'rgba(255,255,255,0.05)',
-            border: inputBorder,
+            background: 'rgba(255,255,255,0.05)',
+            border: '1px solid rgba(255,255,255,0.08)',
             borderRadius: '12px',
             fontSize: '14px',
-            color: isLight ? '#111' : '#fff',
+            color: '#fff',
             outline: 'none',
             transition: 'border-color 0.2s',
             boxSizing: 'border-box',
           }}
-          onFocus={e  => { e.target.style.borderColor = 'rgba(79,142,247,0.55)'; }}
-          onBlur={e   => { e.target.style.borderColor = isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)'; }}
+          onFocus={e => { e.target.style.borderColor = 'rgba(79,142,247,0.55)'; }}
+          onBlur={e  => { e.target.style.borderColor = 'rgba(255,255,255,0.08)'; }}
         />
       </div>
 
