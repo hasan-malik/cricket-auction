@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import auctionConfig from '../../data/auctionConfig.json';
 
 const ROLE_ICONS = {
   'batsman':       '🏏',
@@ -18,7 +17,7 @@ const c = {
   dropBorder: 'rgba(255,255,255,0.12)',
 };
 
-export default function AIPanel({ aiTeams, bidder, aiScores, aiRatings, isBlitz }) {
+export default function AIPanel({ aiTeams, bidder, aiScores, aiRatings, isBlitz, totalBudget }) {
   const [openTeamId, setOpenTeamId] = useState(null);
 
   const teams = Object.values(aiTeams);
@@ -50,7 +49,7 @@ export default function AIPanel({ aiTeams, bidder, aiScores, aiRatings, isBlitz 
       {teams.map(team => {
         const isBidding = bidder === team.id;
         const isOpen = openTeamId === team.id;
-        const pctLeft = (team.budget / auctionConfig.franchiseBudget) * 100;
+        const pctLeft = (team.budget / totalBudget) * 100;
         const color = team.franchise?.primaryColor ?? '#f59e0b';
 
         return (
