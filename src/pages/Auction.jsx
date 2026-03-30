@@ -847,6 +847,24 @@ export default function Auction() {
         </div>
       </div>
 
+      {/* ── Screen-edge flash on sold/unsold (fades out on its own, never blocks) ── */}
+      <AnimatePresence>
+        {(phase === 'sold' || phase === 'unsold') && (
+          <motion.div
+            key={`flash-${currentPlayer?.id}-${phase}`}
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+            style={{
+              position: 'fixed', inset: 0, zIndex: 99, pointerEvents: 'none',
+              boxShadow: phase === 'sold'
+                ? 'inset 0 0 80px 20px rgba(34,197,94,0.25)'
+                : 'inset 0 0 80px 20px rgba(239,68,68,0.18)',
+            }}
+          />
+        )}
+      </AnimatePresence>
+
       {/* ── Sold / Unsold overlay ── */}
       <AnimatePresence>
         {(phase === 'sold' || phase === 'unsold') && (
@@ -877,19 +895,27 @@ export default function Auction() {
               {phase === 'sold' ? (
                 <>
                   <div style={{ fontSize: '72px', marginBottom: '8px' }}>🔨</div>
-                  <h2 style={{ fontSize: '52px', fontWeight: 800, letterSpacing: '-0.04em', margin: '0 0 8px', color: '#fff' }}>
+                  <motion.h2
+                    initial={{ scale: 1.3, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                    style={{ fontSize: '52px', fontWeight: 800, letterSpacing: '-0.04em', margin: '0 0 8px', color: '#fff' }}
+                  >
                     SOLD!
-                  </h2>
+                  </motion.h2>
                   <p style={{ fontSize: '20px', color: 'rgba(255,255,255,0.7)', margin: '0 0 8px' }}>
-                    <strong style={{ color: bidderColor }}>
-                      {bidderLabel}
-                    </strong>{' '}
-                    won{' '}
+                    <strong style={{ color: bidderColor }}>{bidderLabel}</strong>
+                    {' '}won{' '}
                     <strong style={{ color: '#fff' }}>{currentPlayer?.name}</strong>
                   </p>
-                  <p style={{ fontSize: '32px', fontWeight: 800, color: bidderColor, letterSpacing: '-0.03em' }}>
+                  <motion.p
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.15, duration: 0.3 }}
+                    style={{ fontSize: '32px', fontWeight: 800, color: bidderColor, letterSpacing: '-0.03em' }}
+                  >
                     {currentBid.toFixed(2)} CR
-                  </p>
+                  </motion.p>
                 </>
               ) : (
                 <>
