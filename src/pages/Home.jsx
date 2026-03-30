@@ -35,7 +35,7 @@ export default function Home() {
 
   const [selected, setSelected] = useState(null);
   const [teamName, setTeamName] = useState('');
-  const [mode, setMode] = useState('full'); // 'full' | 'bullet' | 'blitz30' | 'rapid'
+  const [mode, setMode] = useState('full'); // 'full' | 'bullet' | 'blitz' | 'rapid'
 
   // Switch to team-colored cap cursor on franchise select, restore bat on deselect
   useEffect(() => {
@@ -56,7 +56,7 @@ export default function Home() {
         franchiseId: selected,
         teamName: teamName.trim() || franchises.find(f => f.id === selected)?.name,
         mode: isBlitz ? 'blitz' : 'full',
-        blitzSize: mode === 'rapid' ? 50 : mode === 'bullet' ? 15 : 30,
+        blitzSize: mode === 'rapid' ? 50 : mode === 'bullet' ? 15 : 30, // blitz → 30
       },
     });
   };
@@ -167,10 +167,10 @@ export default function Home() {
           </p>
           <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '14px' }}>
             {[
-              { id: 'full',    label: 'Full Auction',  sub: `279 players · ${auctionConfig.franchiseBudget} CR · 20 squad · 15s` },
-              { id: 'bullet',  label: '🔫 Bullet',     sub: '15 players · 8 CR · 3 squad · 8s · scored' },
-              { id: 'blitz30', label: '⚡ Blitz',       sub: '30 players · 15 CR · 6 squad · 8s · scored' },
-              { id: 'rapid',   label: '🚀 Rapid 30',   sub: '50 players · 25 CR · 9 squad · 8s · scored' },
+              { id: 'full',   label: 'Full Auction', sub: `279 players · ${auctionConfig.franchiseBudget} CR · 20 squad · 15s` },
+              { id: 'bullet', label: 'Bullet',        sub: '15 players · 8 CR · 3 squad · 6s · scored' },
+              { id: 'blitz',  label: 'Blitz',         sub: '30 players · 15 CR · 6 squad · 8s · scored' },
+              { id: 'rapid',  label: 'Rapid',         sub: '50 players · 25 CR · 9 squad · 10s · scored' },
             ].map(m => {
               const active = mode === m.id;
               const isBlitz = m.id !== 'full';
@@ -205,10 +205,10 @@ export default function Home() {
           </div>
           {/* Mode info strip */}
           <p style={{ fontSize: '12px', color: c.muted }}>
-            {mode === 'full'    && `279 players · ${auctionConfig.franchiseBudget} CR budget · up to 20 players · 15s timer`}
-            {mode === 'bullet'  && '🔫 15 top-rated players · 8 CR budget · 3 player cap · 8s timer · value-scored results'}
-            {mode === 'blitz30' && '⚡ 30 top-rated players · 15 CR budget · 6 player cap · 8s timer · value-scored results'}
-            {mode === 'rapid'   && '🚀 50 top-rated players · 25 CR budget · 9 player cap · 8s timer · value-scored results'}
+            {mode === 'full'   && `279 players · ${auctionConfig.franchiseBudget} CR budget · up to 20 players · 15s timer`}
+            {mode === 'bullet' && '15 top-rated players · 8 CR budget · 3 player cap · 6s timer · value-scored results'}
+            {mode === 'blitz'  && '30 top-rated players · 15 CR budget · 6 player cap · 8s timer · value-scored results'}
+            {mode === 'rapid'  && '50 top-rated players · 25 CR budget · 9 player cap · 10s timer · value-scored results'}
           </p>
         </motion.div>
       </section>
@@ -367,7 +367,7 @@ export default function Home() {
                     onClick={handleStart}
                     style={{ padding: '12px 32px', fontSize: '15px', background: mode !== 'full' ? '#d97706' : undefined }}
                   >
-                    {mode === 'full' ? 'Start Auction →' : mode === 'blitz30' ? '⚡ Start Blitz 30 →' : '⚡ Start Blitz 50 →'}
+                    {mode === 'full' ? 'Start Auction →' : `Start ${mode.charAt(0).toUpperCase() + mode.slice(1)} →`}
                   </motion.button>
                 </div>
 
@@ -377,17 +377,23 @@ export default function Home() {
                     {' · '}Squad: <strong style={{ color: c.text }}>{auctionConfig.minSquadSize}–{auctionConfig.maxSquadSize}</strong>
                     {' · '}Overseas: <strong style={{ color: c.text }}>{auctionConfig.minOverseasPlayers}–{auctionConfig.maxOverseasPlayers}</strong>
                   </>}
-                  {mode === 'blitz30' && <>
+                  {mode === 'bullet' && <>
+                    Budget: <strong style={{ color: '#fbbf24' }}>8 CR</strong>
+                    {' · '}Players: <strong style={{ color: c.text }}>15</strong>
+                    {' · '}Squad cap: <strong style={{ color: c.text }}>3</strong>
+                    {' · '}Timer: <strong style={{ color: c.text }}>6s</strong>
+                  </>}
+                  {mode === 'blitz' && <>
                     Budget: <strong style={{ color: '#fbbf24' }}>15 CR</strong>
                     {' · '}Players: <strong style={{ color: c.text }}>30</strong>
                     {' · '}Squad cap: <strong style={{ color: c.text }}>6</strong>
                     {' · '}Timer: <strong style={{ color: c.text }}>8s</strong>
                   </>}
-                  {mode === 'blitz50' && <>
+                  {mode === 'rapid' && <>
                     Budget: <strong style={{ color: '#fbbf24' }}>25 CR</strong>
                     {' · '}Players: <strong style={{ color: c.text }}>50</strong>
                     {' · '}Squad cap: <strong style={{ color: c.text }}>9</strong>
-                    {' · '}Timer: <strong style={{ color: c.text }}>8s</strong>
+                    {' · '}Timer: <strong style={{ color: c.text }}>10s</strong>
                   </>}
                 </p>
               </motion.div>
