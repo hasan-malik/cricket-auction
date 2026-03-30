@@ -8,14 +8,15 @@ const ROLE_ICONS = {
   'bowler':        '🎳',
 };
 
-export default function TeamPanel({ team, isUser, isLight, score, ratingTotal, isBlitz, onViewSquad }) {
+const c = {
+  text:    '#fff',
+  muted:   'rgba(255,255,255,0.45)',
+  surface: 'rgba(255,255,255,0.04)',
+  border:  'rgba(255,255,255,0.08)',
+};
+
+export default function TeamPanel({ team, isUser, score, ratingTotal, isBlitz, onViewSquad }) {
   const pctLeft = (team.budget / auctionConfig.franchiseBudget) * 100;
-  const c = {
-    text:    isLight ? '#111' : '#fff',
-    muted:   isLight ? '#6b7280' : 'rgba(255,255,255,0.45)',
-    surface: isLight ? 'rgba(0,0,0,0.04)' : 'rgba(255,255,255,0.04)',
-    border:  isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)',
-  };
   const accentColor = isUser ? '#3b82f6' : '#f59e0b';
 
   return (
