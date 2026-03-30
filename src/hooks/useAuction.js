@@ -286,12 +286,19 @@ export function useAuction({ franchiseId, teamName, mode = 'full', blitzMode = n
       }, delay);
     }
 
-    const quickHammerTimeout = setTimeout(() => {
-      const s = stateRef.current;
-      if (s.phase === 'bidding' && s.bidder !== null) {
-        dispatch({ type: 'QUICK_HAMMER' });
-      }
-    }, 5000);
+    // Quick hammer only fires when an AI (not the user) holds the current bid.
+    // In that case we don't want to wait the full countdown for other AIs to decide.
+    // When the user is the high bidder, the natural timer expiry handles resolution —
+    // we want AIs to be able to bid dramatically late, so we leave them their full window.
+    let quickHammerTimeout;
+    if (!bidderIsUser) {
+      quickHammerTimeout = setTimeout(() => {
+        const s = stateRef.current;
+        if (s.phase === 'bidding' && s.bidder !== null) {
+          dispatch({ type: 'QUICK_HAMMER' });
+        }
+      }, 5000);
+    }
 
     return () => {
       for (const id of aiIds) clearTimeout(aiTimeouts.current[id]);
