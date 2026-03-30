@@ -1,6 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useTheme } from '../contexts/ThemeContext';
 import auctionConfig from '../data/auctionConfig.json';
 
 const ROLE_ICONS = {
@@ -11,6 +10,12 @@ const ROLE_ICONS = {
 };
 
 const ROLE_ORDER = ['wicket-keeper', 'batsman', 'all-rounder', 'bowler'];
+
+const c = {
+  text:   '#fff',
+  muted:  'rgba(255,255,255,0.45)',
+  border: 'rgba(255,255,255,0.08)',
+};
 
 function sortSquad(squad) {
   return [...squad].sort((a, b) => {
@@ -41,8 +46,7 @@ function StatChip({ label, value, accent }) {
   );
 }
 
-function PlayerRow({ player, rank, isLight }) {
-  const c = { text: isLight ? '#111' : '#fff', muted: isLight ? '#6b7280' : 'rgba(255,255,255,0.45)' };
+function PlayerRow({ player, rank }) {
   return (
     <motion.div
       initial={{ opacity: 0, x: -12 }}
@@ -79,12 +83,11 @@ function PlayerRow({ player, rank, isLight }) {
   );
 }
 
-function SquadCard({ team, isUser, isLight }) {
+function SquadCard({ team, isUser }) {
   const sorted = sortSquad(team.squad);
   const spent = Math.round((auctionConfig.franchiseBudget - team.budget) * 1000) / 1000;
   const rating = team.squad.reduce((sum, p) => sum + (p.rating ?? 0), 0);
   const accentColor = isUser ? '#3b82f6' : (team.franchise?.primaryColor ?? '#f59e0b');
-  const c = { text: isLight ? '#111' : '#fff', muted: isLight ? '#6b7280' : 'rgba(255,255,255,0.45)', border: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)' };
 
   const roleCounts = ROLE_ORDER.reduce((acc, role) => {
     acc[role] = sorted.filter(p => p.role === role).length;
@@ -97,7 +100,7 @@ function SquadCard({ team, isUser, isLight }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: isUser ? 0.1 : 0.2 }}
       style={{
-        background: isLight ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.04)',
+        background: 'rgba(255,255,255,0.04)',
         border: `1px solid ${c.border}`,
         borderRadius: '20px',
         padding: '24px',
@@ -114,7 +117,6 @@ function SquadCard({ team, isUser, isLight }) {
           {team.name}
         </div>
 
-        {/* Summary stats */}
         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
           <StatChip label="Players" value={sorted.length} accent />
           <StatChip label="Rating" value={`★ ${rating}`} accent />
@@ -145,7 +147,7 @@ function SquadCard({ team, isUser, isLight }) {
       {/* Player list */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
         {sorted.map((player, i) => (
-          <PlayerRow key={player.id} player={player} rank={i} isLight={isLight} />
+          <PlayerRow key={player.id} player={player} rank={i} />
         ))}
         {sorted.length === 0 && (
           <div style={{ fontSize: '13px', color: c.muted, textAlign: 'center', padding: '24px 0' }}>
@@ -160,10 +162,7 @@ function SquadCard({ team, isUser, isLight }) {
 export default function Results() {
   const { state: routeState } = useLocation();
   const navigate = useNavigate();
-  const { theme } = useTheme();
-  const isLight = theme === 'light';
 
-  // If navigated here without state (e.g., direct URL), redirect home
   if (!routeState?.user) {
     return (
       <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '16px' }}>
@@ -178,8 +177,6 @@ export default function Results() {
   const totalRating = (team) => team.squad.reduce((sum, p) => sum + (p.rating ?? 0), 0);
   const bestAI = aiTeamList.reduce((best, t) => (!best || totalRating(t) > totalRating(best) ? t : best), null);
   const userWon = !bestAI || totalRating(user) >= totalRating(bestAI);
-
-  const c = { text: isLight ? '#111' : '#fff', muted: isLight ? '#6b7280' : 'rgba(255,255,255,0.5)' };
 
   return (
     <div style={{ minHeight: '100vh', paddingTop: '80px', paddingBottom: '80px' }}>
@@ -222,15 +219,15 @@ export default function Results() {
           </div>
         </motion.div>
 
-        {/* Squad comparison — user + all AI teams */}
+        {/* Squad comparison */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
           gap: '24px',
         }}>
-          <SquadCard team={user} isUser isLight={isLight} />
+          <SquadCard team={user} isUser />
           {aiTeamList.map(team => (
-            <SquadCard key={team.id} team={team} isUser={false} isLight={isLight} />
+            <SquadCard key={team.id} team={team} isUser={false} />
           ))}
         </div>
       </div>
