@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import auctionConfig from '../data/auctionConfig.json';
 
 const ROLE_ICONS = {
@@ -24,6 +25,7 @@ function sortSquad(squad) {
   });
 }
 
+/** Single stat chip used in the squad card header. */
 function StatChip({ label, value, accent }) {
   return (
     <div style={{
@@ -46,47 +48,11 @@ function StatChip({ label, value, accent }) {
   );
 }
 
-function PlayerRow({ player, rank }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: -12 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.3, delay: rank * 0.03, ease: [0.22,1,0.36,1] }}
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '12px',
-        padding: '10px 14px',
-        background: 'rgba(255,255,255,0.03)',
-        border: '1px solid rgba(255,255,255,0.06)',
-        borderRadius: '10px',
-      }}
-    >
-      <span style={{ fontSize: '16px', flexShrink: 0 }}>{ROLE_ICONS[player.role]}</span>
-      <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ fontSize: '13px', fontWeight: 700, color: c.text, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-          {player.name}
-        </div>
-        <div style={{ fontSize: '11px', color: c.muted, textTransform: 'capitalize' }}>
-          {player.role.replace('-', ' ')} · {player.nationality}
-        </div>
-      </div>
-      <div style={{ textAlign: 'right', flexShrink: 0 }}>
-        <div style={{ fontSize: '13px', fontWeight: 800, color: '#60a5fa', letterSpacing: '-0.02em' }}>
-          {player.soldPrice?.toFixed(2)} CR
-        </div>
-        <div style={{ fontSize: '10px', color: c.muted }}>
-          base {player.basePrice?.toFixed(2)}
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
-function SquadCard({ team, isUser }) {
-  const sorted = sortSquad(team.squad);
-  const spent = Math.round((auctionConfig.franchiseBudget - team.budget) * 1000) / 1000;
-  const rating = team.squad.reduce((sum, p) => sum + (p.rating ?? 0), 0);
+/** Collapsible squad card. Collapsed shows summary; expanded shows full player list. */
+function SquadCard({ team, isUser, isOpen, onToggle }) {
+  const sorted      = sortSquad(team.squad);
+  const spent       = Math.round((auctionConfig.franchiseBudget - team.budget) * 1000) / 1000;
+  const rating      = team.squad.reduce((sum, p) => sum + (p.rating ?? 0), 0);
   const accentColor = isUser ? '#3b82f6' : (team.franchise?.primaryColor ?? '#f59e0b');
 
   const roleCounts = ROLE_ORDER.reduce((acc, role) => {
@@ -101,60 +67,129 @@ function SquadCard({ team, isUser }) {
       transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: isUser ? 0.1 : 0.2 }}
       style={{
         background: 'rgba(255,255,255,0.04)',
-        border: `1px solid ${c.border}`,
+        border: `1px solid ${isOpen ? accentColor + '44' : c.border}`,
         borderRadius: '20px',
-        padding: '24px',
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
+        overflow: 'hidden',
+        transition: 'border-color 0.2s',
       }}
     >
-      {/* Header */}
-      <div style={{ marginBottom: '20px' }}>
-        <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: accentColor, marginBottom: '4px' }}>
-          {isUser ? 'Your Squad' : `AI · ${team.franchise?.shortName ?? 'AI'}`}
-        </div>
-        <div style={{ fontSize: '22px', fontWeight: 800, color: c.text, letterSpacing: '-0.03em', marginBottom: '16px' }}>
-          {team.name}
-        </div>
-
-        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-          <StatChip label="Players" value={sorted.length} accent />
-          <StatChip label="Rating" value={`★ ${rating}`} accent />
-          <StatChip label="Spent" value={`${spent}CR`} />
-          <StatChip label="Remaining" value={`${team.budget.toFixed(2)}CR`} />
-        </div>
-      </div>
-
-      {/* Role breakdown chips */}
-      <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px' }}>
-        {ROLE_ORDER.map(role => (
-          roleCounts[role] > 0 && (
-            <span key={role} style={{
-              fontSize: '11px',
-              fontWeight: 600,
-              padding: '4px 10px',
-              borderRadius: '9999px',
-              background: 'rgba(255,255,255,0.06)',
-              border: '1px solid rgba(255,255,255,0.1)',
-              color: 'rgba(255,255,255,0.6)',
-            }}>
-              {ROLE_ICONS[role]} {roleCounts[role]} {role.replace('-', ' ')}
-            </span>
-          )
-        ))}
-      </div>
-
-      {/* Player list */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-        {sorted.map((player, i) => (
-          <PlayerRow key={player.id} player={player} rank={i} />
-        ))}
-        {sorted.length === 0 && (
-          <div style={{ fontSize: '13px', color: c.muted, textAlign: 'center', padding: '24px 0' }}>
-            No players acquired
+      {/* Clickable header */}
+      <div
+        onClick={onToggle}
+        style={{
+          padding: '24px',
+          cursor: 'pointer',
+        }}
+      >
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '4px' }}>
+          <div>
+            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: accentColor, marginBottom: '4px' }}>
+              {isUser ? 'Your Squad' : `AI · ${team.franchise?.shortName ?? 'AI'}`}
+            </div>
+            <div style={{ fontSize: '22px', fontWeight: 800, color: c.text, letterSpacing: '-0.03em' }}>
+              {team.name}
+            </div>
           </div>
-        )}
+          <div style={{
+            fontSize: '11px',
+            color: c.muted,
+            marginTop: '4px',
+            transition: 'transform 0.25s',
+            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+          }}>
+            ▾
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: '16px' }}>
+          <StatChip label="Players" value={sorted.length} accent />
+          <StatChip label="Rating"  value={`★ ${rating}`} accent />
+          <StatChip label="Spent"   value={`${spent}CR`} />
+          <StatChip label="Left"    value={`${team.budget.toFixed(2)}CR`} />
+        </div>
       </div>
+
+      {/* Collapsible player list */}
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            key="squad-list"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            style={{ overflow: 'hidden' }}
+          >
+            <div style={{ padding: '0 24px 24px' }}>
+              {/* Role breakdown chips */}
+              <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px' }}>
+                {ROLE_ORDER.map(role => (
+                  roleCounts[role] > 0 && (
+                    <span key={role} style={{
+                      fontSize: '11px',
+                      fontWeight: 600,
+                      padding: '4px 10px',
+                      borderRadius: '9999px',
+                      background: 'rgba(255,255,255,0.06)',
+                      border: '1px solid rgba(255,255,255,0.1)',
+                      color: 'rgba(255,255,255,0.6)',
+                    }}>
+                      {ROLE_ICONS[role]} {roleCounts[role]} {role.replace('-', ' ')}
+                    </span>
+                  )
+                ))}
+              </div>
+
+              {/* Player rows */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                {sorted.length === 0 ? (
+                  <div style={{ fontSize: '13px', color: c.muted, textAlign: 'center', padding: '24px 0' }}>
+                    No players acquired
+                  </div>
+                ) : (
+                  sorted.map((player, i) => (
+                    <motion.div
+                      key={player.id}
+                      initial={{ opacity: 0, x: -12 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.25, delay: i * 0.025, ease: [0.22, 1, 0.36, 1] }}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '12px',
+                        padding: '10px 14px',
+                        background: 'rgba(255,255,255,0.03)',
+                        border: '1px solid rgba(255,255,255,0.06)',
+                        borderRadius: '10px',
+                      }}
+                    >
+                      <span style={{ fontSize: '16px', flexShrink: 0 }}>{ROLE_ICONS[player.role]}</span>
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div style={{ fontSize: '13px', fontWeight: 700, color: c.text, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                          {player.name}
+                        </div>
+                        <div style={{ fontSize: '11px', color: c.muted, textTransform: 'capitalize' }}>
+                          {player.role.replace('-', ' ')} · {player.nationality}
+                        </div>
+                      </div>
+                      <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                        <div style={{ fontSize: '13px', fontWeight: 800, color: '#60a5fa', letterSpacing: '-0.02em' }}>
+                          {player.soldPrice?.toFixed(2)} CR
+                        </div>
+                        <div style={{ fontSize: '10px', color: c.muted }}>
+                          ★ {player.rating ?? '—'} · base {player.basePrice?.toFixed(2)}
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))
+                )}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }
@@ -173,10 +208,23 @@ export default function Results() {
   }
 
   const { user, aiTeams } = routeState;
-  const aiTeamList = Object.values(aiTeams ?? {});
+  const aiTeamList  = Object.values(aiTeams ?? {});
   const totalRating = (team) => team.squad.reduce((sum, p) => sum + (p.rating ?? 0), 0);
-  const bestAI = aiTeamList.reduce((best, t) => (!best || totalRating(t) > totalRating(best) ? t : best), null);
-  const userWon = !bestAI || totalRating(user) >= totalRating(bestAI);
+  const bestAI      = aiTeamList.reduce((best, t) => (!best || totalRating(t) > totalRating(best) ? t : best), null);
+  const userWon     = !bestAI || totalRating(user) >= totalRating(bestAI);
+
+  // All cards open by default so the user sees everything immediately;
+  // individual cards can be collapsed by clicking their header.
+  const allTeams = [user, ...aiTeamList];
+  const [openIds, setOpenIds] = useState(() => new Set(allTeams.map(t => t.id)));
+
+  function toggleTeam(id) {
+    setOpenIds(prev => {
+      const next = new Set(prev);
+      next.has(id) ? next.delete(id) : next.add(id);
+      return next;
+    });
+  }
 
   return (
     <div style={{ minHeight: '100vh', paddingTop: '80px', paddingBottom: '80px' }}>
@@ -219,17 +267,25 @@ export default function Results() {
           </div>
         </motion.div>
 
-        {/* Squad comparison */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '24px',
-        }}>
-          <SquadCard team={user} isUser />
+        {/* Squad list — click any card header to expand / collapse */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <SquadCard
+            team={user}
+            isUser
+            isOpen={openIds.has(user.id)}
+            onToggle={() => toggleTeam(user.id)}
+          />
           {aiTeamList.map(team => (
-            <SquadCard key={team.id} team={team} isUser={false} />
+            <SquadCard
+              key={team.id}
+              team={team}
+              isUser={false}
+              isOpen={openIds.has(team.id)}
+              onToggle={() => toggleTeam(team.id)}
+            />
           ))}
         </div>
+
       </div>
     </div>
   );
