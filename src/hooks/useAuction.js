@@ -252,8 +252,9 @@ export function useAuction({ franchiseId, teamName, mode = 'full', blitzMode = n
 
       let delay;
       if (!bidderIsUser) {
-        // Snappy AI-vs-AI / opening bid timing (unchanged behaviour)
-        delay = Math.max(900, timerMs * 0.07 + Math.random() * timerMs * 0.20);
+        // AI-vs-AI / opening bid: at least 1.5 s so the timer visibly ticks
+        // before the next bid, but no longer than ~55 % of the countdown.
+        delay = Math.max(1500, timerMs * 0.22 + Math.random() * timerMs * 0.33);
       } else {
         // Dramatic: spread across the countdown based on personality
         const { personality } = currentState.aiTeams[id];
