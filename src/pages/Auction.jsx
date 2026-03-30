@@ -418,7 +418,7 @@ export default function Auction() {
   }, [franchiseId]);
 
   const { state, userBid, userPass, nextPlayer, togglePause } = useAuction({ franchiseId, teamName, mode, blitzSize });
-  const { phase, currentPlayer, currentBid, bidder, userPassed, timer, user, aiTeams, queue, paused } = state;
+  const { phase, currentPlayer, currentBid, bidder, userPassed, timer, user, aiTeams, queue, paused, config } = state;
 
   // Modal state
   const [squadModal, setSquadModal] = useState(null); // team object or null
@@ -592,10 +592,10 @@ export default function Auction() {
             <TeamPanel
               team={user}
               isUser
-
               score={userScore}
               ratingTotal={userRatingTotal}
               isBlitz={isBlitz}
+              totalBudget={config.budget}
               onViewSquad={() => setSquadModal(user)}
             />
             {/* Score formula — bottom-left */}
@@ -723,7 +723,7 @@ export default function Auction() {
                 </div>
               </div>
 
-              <BidTimer timer={timer} />
+              <BidTimer timer={timer} timerMax={config.timerSeconds} />
             </div>
 
             {/* Bid controls */}
@@ -811,10 +811,10 @@ export default function Auction() {
           <AIPanel
             aiTeams={aiTeams}
             bidder={bidder}
-            isLight={isLight}
             aiScores={aiScores}
             aiRatings={aiRatingTotals}
             isBlitz={isBlitz}
+            totalBudget={config.budget}
           />
         </div>
       </div>
@@ -887,7 +887,6 @@ export default function Auction() {
         {squadModal && (
           <SquadModal
             team={squadModal}
-            isLight={isLight}
             onClose={() => setSquadModal(null)}
           />
         )}
@@ -899,7 +898,6 @@ export default function Auction() {
           <UpcomingModal
             currentPlayer={currentPlayer}
             queue={queue}
-            isLight={isLight}
             onClose={() => setUpcomingModal(false)}
           />
         )}
@@ -910,7 +908,6 @@ export default function Auction() {
         {upNextPlayer && (
           <PlayerDetailModal
             player={upNextPlayer}
-            isLight={isLight}
             onClose={() => setUpNextPlayer(null)}
           />
         )}
