@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTheme } from '../contexts/ThemeContext';
 import { useAuction } from '../hooks/useAuction';
 import { getDynamicIncrement, scoreBlitzSquad } from '../utils/aiUtils';
 import auctionConfig from '../data/auctionConfig.json';
@@ -38,13 +37,13 @@ const ROLE_ICONS = {
 };
 
 // ── Squad Modal ──────────────────────────────────────────────────────────────
-function SquadModal({ team, isLight, onClose }) {
+function SquadModal({ team, onClose }) {
   if (!team) return null;
   const c = {
-    text:   isLight ? '#111' : '#fff',
-    muted:  isLight ? '#6b7280' : 'rgba(255,255,255,0.5)',
-    surface: isLight ? '#fff' : '#1a1a2e',
-    border: isLight ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)',
+    text:    '#fff',
+    muted:   'rgba(255,255,255,0.5)',
+    surface: '#1a1a2e',
+    border:  'rgba(255,255,255,0.1)',
   };
   const accentColor = team.franchise?.primaryColor ?? '#3b82f6';
 
@@ -148,12 +147,12 @@ function SquadModal({ team, isLight, onClose }) {
 }
 
 // ── Upcoming Players Modal ───────────────────────────────────────────────────
-function UpcomingModal({ currentPlayer, queue, isLight, onClose }) {
+function UpcomingModal({ currentPlayer, queue, onClose }) {
   const c = {
-    text:   isLight ? '#111' : '#fff',
-    muted:  isLight ? '#6b7280' : 'rgba(255,255,255,0.5)',
-    surface: isLight ? '#fff' : '#1a1a2e',
-    border: isLight ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)',
+    text:    '#fff',
+    muted:   'rgba(255,255,255,0.5)',
+    surface: '#1a1a2e',
+    border:  'rgba(255,255,255,0.1)',
   };
   const allRemaining = currentPlayer ? [currentPlayer, ...queue] : queue;
 
@@ -284,13 +283,13 @@ const STAT_LABELS = {
   wickets: 'Wkts', economy: 'Econ', bowlingAvg: 'Avg', highScore: 'HS',
 };
 
-function PlayerDetailModal({ player, isLight, onClose }) {
+function PlayerDetailModal({ player, onClose }) {
   if (!player) return null;
   const c = {
-    text:   isLight ? '#111' : '#fff',
-    muted:  isLight ? '#6b7280' : 'rgba(255,255,255,0.5)',
-    surface: isLight ? '#fff' : '#1a1a2e',
-    border: isLight ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)',
+    text:    '#fff',
+    muted:   'rgba(255,255,255,0.5)',
+    surface: '#1a1a2e',
+    border:  'rgba(255,255,255,0.1)',
   };
   const catColor = CATEGORY_COLORS[player.category] ?? '#888';
   const statKeys = STAT_ROLES[player.role] ?? ['pslMatches'];
@@ -405,9 +404,6 @@ function PlayerDetailModal({ player, isLight, onClose }) {
 export default function Auction() {
   const { state: routeState } = useLocation();
   const navigate = useNavigate();
-  const { theme } = useTheme();
-  const isLight = theme === 'light';
-
   const franchiseId = routeState?.franchiseId ?? 'lahore-qalandars';
   const teamName    = routeState?.teamName    ?? 'My Team';
   const mode        = routeState?.mode        ?? 'full';
@@ -434,10 +430,10 @@ export default function Auction() {
   const bidOptions = [1, 2, 5, 10].map(m => Math.round(inc * m * 1000) / 1000);
 
   const c = {
-    text:   isLight ? '#111' : '#fff',
-    muted:  isLight ? '#6b7280' : 'rgba(255,255,255,0.45)',
-    border: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)',
-    surface: isLight ? 'rgba(0,0,0,0.04)' : 'rgba(255,255,255,0.04)',
+    text:    '#fff',
+    muted:   'rgba(255,255,255,0.45)',
+    border:  'rgba(255,255,255,0.08)',
+    surface: 'rgba(255,255,255,0.04)',
   };
 
   const bidderTeam = bidder && bidder !== 'user' ? aiTeams[bidder] : null;
@@ -596,7 +592,7 @@ export default function Auction() {
             <TeamPanel
               team={user}
               isUser
-              isLight={isLight}
+
               score={userScore}
               ratingTotal={userRatingTotal}
               isBlitz={isBlitz}
