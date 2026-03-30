@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useTheme } from '../../contexts/ThemeContext';
 
 export default function Navbar() {
-  const { theme, toggle } = useTheme();
+  const { theme } = useTheme();
   const { pathname } = useLocation();
   const isLight = theme === 'light';
 
@@ -84,31 +84,6 @@ export default function Navbar() {
           </Link>
         )}
 
-        {/* Theme toggle */}
-        <button
-          onClick={toggle}
-          aria-label="Toggle theme"
-          style={{
-            width: '36px',
-            height: '36px',
-            borderRadius: '50%',
-            border: isLight
-              ? '1px solid rgba(0,0,0,0.1)'
-              : '1px solid rgba(255,255,255,0.1)',
-            background: isLight
-              ? 'rgba(0,0,0,0.04)'
-              : 'rgba(255,255,255,0.06)',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '16px',
-            transition: 'all 0.2s',
-            color: isLight ? '#333' : '#fff',
-          }}
-        >
-          {theme === 'dark' ? '☀️' : '🌙'}
-        </button>
       </div>
     </motion.nav>
   );
