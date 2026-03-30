@@ -1,5 +1,4 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import auctionConfig from '../../data/auctionConfig.json';
 
 const ROLE_ICONS = {
   'batsman':       '🏏',
@@ -15,8 +14,8 @@ const c = {
   border:  'rgba(255,255,255,0.08)',
 };
 
-export default function TeamPanel({ team, isUser, score, ratingTotal, isBlitz, onViewSquad }) {
-  const pctLeft = (team.budget / auctionConfig.franchiseBudget) * 100;
+export default function TeamPanel({ team, isUser, score, ratingTotal, isBlitz, totalBudget, onViewSquad }) {
+  const pctLeft = (team.budget / totalBudget) * 100;
   const accentColor = isUser ? '#3b82f6' : '#f59e0b';
 
   return (
