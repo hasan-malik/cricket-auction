@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTheme } from '../contexts/ThemeContext';
 import franchises from '../data/franchises.json';
 import auctionConfig from '../data/auctionConfig.json';
 
@@ -29,9 +28,7 @@ const stagger = {
 };
 
 export default function Home() {
-  const { theme } = useTheme();
   const navigate = useNavigate();
-  const isLight = theme === 'light';
 
   const [selected, setSelected] = useState(null);
   const [teamName, setTeamName] = useState('');
@@ -62,10 +59,10 @@ export default function Home() {
   };
 
   const c = {
-    text:    isLight ? '#111827' : '#ffffff',
-    muted:   isLight ? '#6b7280' : 'rgba(255,255,255,0.5)',
-    cardBg:  isLight ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.04)',
-    cardBorder: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)',
+    text:       '#ffffff',
+    muted:      'rgba(255,255,255,0.5)',
+    cardBg:     'rgba(255,255,255,0.04)',
+    cardBorder: 'rgba(255,255,255,0.08)',
   };
 
   return (
