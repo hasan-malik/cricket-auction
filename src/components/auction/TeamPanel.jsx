@@ -16,40 +16,72 @@ const c = {
   border:  'rgba(255,255,255,0.08)',
 };
 
-export default function TeamPanel({ team, isUser, score, ratingTotal, isBlitz, totalBudget, requiredSlots, wkCountsAsBatsman, onViewSquad }) {
-  const pctLeft = (team.budget / totalBudget) * 100;
-  const accentColor = isUser ? '#3b82f6' : '#f59e0b';
+// Gold palette for #1 team — mirrors AIPanel
+const GOLD = {
+  border: 'rgba(251,191,36,0.55)',
+  bg:     'rgba(251,191,36,0.07)',
+  glow:   '0 0 18px rgba(251,191,36,0.18)',
+  text:   '#fbbf24',
+};
+
+export default function TeamPanel({ team, isUser, rank, score, ratingTotal, isBlitz, totalBudget, requiredSlots, wkCountsAsBatsman, onViewSquad }) {
+  const pctLeft   = (team.budget / totalBudget) * 100;
+  const isFirst   = rank === 1;
+  const accentColor = isFirst ? GOLD.text : isUser ? '#3b82f6' : '#f59e0b';
 
   return (
-    <div style={{
-      background: c.surface,
-      border: `1px solid ${c.border}`,
-      borderRadius: '16px',
-      padding: '16px',
-      backdropFilter: 'blur(16px)',
-      WebkitBackdropFilter: 'blur(16px)',
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '12px',
-      minWidth: 0,
-      maxHeight: '560px',
-      cursor: onViewSquad ? 'pointer' : 'default',
-    }}
-    onClick={onViewSquad}
+    <div
+      onClick={onViewSquad}
+      style={{
+        background: isFirst ? GOLD.bg : c.surface,
+        border: `1px solid ${isFirst ? GOLD.border : c.border}`,
+        boxShadow: isFirst ? GOLD.glow : undefined,
+        borderRadius: '16px',
+        padding: '16px',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '12px',
+        minWidth: 0,
+        maxHeight: '560px',
+        cursor: onViewSquad ? 'pointer' : 'default',
+        transition: 'background 0.4s, border-color 0.4s, box-shadow 0.4s',
+      }}
     >
       {/* Header */}
       <div>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
           <div>
-            <div style={{
-              fontSize: '10px',
-              fontWeight: 700,
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              color: accentColor,
-              marginBottom: '2px',
-            }}>
-              {isUser ? 'Your Squad' : 'AI Squad'}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '2px' }}>
+              <span style={{
+                fontSize: '10px',
+                fontWeight: 700,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                color: accentColor,
+              }}>
+                {isUser ? 'Your Squad' : 'AI Squad'}
+              </span>
+              {rank != null && (
+                <motion.span
+                  key={rank}
+                  initial={{ opacity: 0, scale: 0.7 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.25 }}
+                  style={{
+                    fontSize: '10px',
+                    fontWeight: 800,
+                    color: isFirst ? GOLD.text : c.muted,
+                    background: isFirst ? 'rgba(251,191,36,0.15)' : 'rgba(255,255,255,0.06)',
+                    border: `1px solid ${isFirst ? 'rgba(251,191,36,0.35)' : 'rgba(255,255,255,0.1)'}`,
+                    borderRadius: '9999px',
+                    padding: '1px 6px',
+                  }}
+                >
+                  #{rank}
+                </motion.span>
+              )}
             </div>
             <div style={{
               fontSize: '14px',
