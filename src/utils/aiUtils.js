@@ -16,6 +16,8 @@ export const AI_FRANCHISES = [
   'multan-sultans',
 ];
 
+// Kept for reference — default personality per franchise.
+// The actual per-auction assignment is randomised by shufflePersonalities().
 export const AI_PERSONALITIES = {
   'islamabad-united':  'aggressive',
   'lahore-qalandars':  'balanced',
@@ -24,6 +26,23 @@ export const AI_PERSONALITIES = {
   'quetta-gladiators': 'balanced',
   'multan-sultans':    'value',
 };
+
+// Fixed pool: 2 of each type so the overall auction economy stays balanced
+// regardless of which team draws which personality.
+const PERSONALITY_POOL = ['aggressive', 'aggressive', 'balanced', 'balanced', 'value', 'value'];
+
+/**
+ * Returns a fresh { franchiseId → personality } map with personalities
+ * randomly shuffled across all six franchises every auction.
+ * The pool is always 2 aggressive / 2 balanced / 2 value.
+ *
+ * @param {string[]} franchiseIds — all six franchise IDs (AI_FRANCHISES)
+ * @returns {{ [franchiseId: string]: string }}
+ */
+export function shufflePersonalities(franchiseIds) {
+  const shuffled = [...PERSONALITY_POOL].sort(() => Math.random() - 0.5);
+  return Object.fromEntries(franchiseIds.map((id, i) => [id, shuffled[i]]));
+}
 
 // ── Bid increment ─────────────────────────────────────────────────────────────
 
