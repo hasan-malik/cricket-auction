@@ -45,7 +45,10 @@ function makeInitialState({ franchiseId, teamName, mode, blitzMode }) {
   const maxFraction = !isBlitz         ? 0.20
     : blitzMode === 'bullet'           ? 0.45
     : blitzMode === 'blitz'            ? 0.35
-    : /* rapid */                        0.30;
+    : blitzMode === 'rapid'            ? 0.30
+    : blitzMode === 'fullXI'           ? 0.25
+    : blitzMode === 'fullXV'           ? 0.22
+    :                                    0.30;
 
   const queue = isBlitz ? buildBlitzQueue(allPlayers, blitzMode) : buildFullQueue(allPlayers);
   const [currentPlayer, ...rest] = queue;
