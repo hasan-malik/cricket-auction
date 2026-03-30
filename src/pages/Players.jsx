@@ -1,6 +1,5 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTheme } from '../contexts/ThemeContext';
 import players from '../data/players.json';
 import FilterBar from '../components/players/FilterBar';
 import PlayerBrowserCard from '../components/players/PlayerBrowserCard';
@@ -26,8 +25,6 @@ const stagger = {
 };
 
 export default function Players() {
-  const { theme } = useTheme();
-  const isLight = theme === 'light';
   const { watchlist, toggle, isStarred } = useWatchlist();
 
   const [filters, setFilters] = useState({
@@ -60,8 +57,8 @@ export default function Players() {
   const hasMore  = visible.length < filtered.length;
 
   const c = {
-    text:  isLight ? '#111827' : '#ffffff',
-    muted: isLight ? '#6b7280' : 'rgba(255,255,255,0.5)',
+    text:  '#ffffff',
+    muted: 'rgba(255,255,255,0.5)',
   };
 
   return (
