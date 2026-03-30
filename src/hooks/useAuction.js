@@ -37,7 +37,7 @@ function makeInitialState({ franchiseId, teamName, mode, blitzSize }) {
   const budget       = isBlitz ? blitzConfig.budgets[sizeKey]      : auctionConfig.franchiseBudget;
   const timerSeconds = isBlitz ? blitzConfig.timerSeconds[sizeKey]  : (auctionConfig.bidTimerSeconds ?? 15);
   const maxSquadSize = isBlitz ? blitzConfig.maxSquadSize[sizeKey]  : auctionConfig.maxSquadSize;
-  const maxFraction  = isBlitz ? 0.30 : 0.20;
+  const maxFraction  = !isBlitz ? 0.20 : blitzSize === 15 ? 0.45 : blitzSize === 30 ? 0.35 : 0.30;
 
   const queue = isBlitz ? buildBlitzQueue(allPlayers, blitzSize ?? 30) : buildQueue(allPlayers);
   const [currentPlayer, ...rest] = queue;
