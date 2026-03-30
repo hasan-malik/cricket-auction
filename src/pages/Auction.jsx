@@ -460,9 +460,6 @@ export default function Auction() {
       : team.squad.reduce((s, p) => s + (p.rating ?? 0), 0);
   }
 
-  // Blitz live score (kept for top bar display)
-  const blitzScore = isBlitz ? userScore : null;
-
   // Blitz: auto-advance overlay after autoAdvanceMs
   const autoAdvanceRef = useRef(null);
   useEffect(() => {
@@ -580,19 +577,6 @@ export default function Auction() {
                 {paused ? 'Paused' : !isBlitz ? 'Live Auction' : (MODE_CONFIGS[blitzMode]?.label ?? 'Blitz')}
               </span>
             </div>
-            {isBlitz && blitzScore !== null && (
-              <div style={{
-                padding: '3px 10px',
-                borderRadius: '9999px',
-                background: 'rgba(245,158,11,0.12)',
-                border: '1px solid rgba(245,158,11,0.3)',
-                fontSize: '12px',
-                fontWeight: 700,
-                color: '#fbbf24',
-              }}>
-                Score: {blitzScore}
-              </div>
-            )}
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
