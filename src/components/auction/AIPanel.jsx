@@ -9,17 +9,17 @@ const ROLE_ICONS = {
   'bowler':        '🎳',
 };
 
-export default function AIPanel({ aiTeams, bidder, isLight, aiScores, aiRatings, isBlitz }) {
-  const [openTeamId, setOpenTeamId] = useState(null);
+const c = {
+  text:       '#fff',
+  muted:      'rgba(255,255,255,0.45)',
+  surface:    'rgba(255,255,255,0.04)',
+  border:     'rgba(255,255,255,0.08)',
+  dropBg:     '#1a1a2e',
+  dropBorder: 'rgba(255,255,255,0.12)',
+};
 
-  const c = {
-    text:    isLight ? '#111' : '#fff',
-    muted:   isLight ? '#6b7280' : 'rgba(255,255,255,0.45)',
-    surface: isLight ? 'rgba(0,0,0,0.04)' : 'rgba(255,255,255,0.04)',
-    border:  isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)',
-    dropBg:  isLight ? '#fff' : '#1a1a2e',
-    dropBorder: isLight ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.12)',
-  };
+export default function AIPanel({ aiTeams, bidder, aiScores, aiRatings, isBlitz }) {
+  const [openTeamId, setOpenTeamId] = useState(null);
 
   const teams = Object.values(aiTeams);
 
@@ -62,7 +62,7 @@ export default function AIPanel({ aiTeams, bidder, isLight, aiScores, aiRatings,
               style={{
                 padding: '9px 11px',
                 borderRadius: isOpen ? '10px 10px 0 0' : '10px',
-                background: isBidding ? `${color}18` : isOpen ? (isLight ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.07)') : 'rgba(255,255,255,0.025)',
+                background: isBidding ? `${color}18` : isOpen ? 'rgba(255,255,255,0.07)' : 'rgba(255,255,255,0.025)',
                 border: isBidding ? `1px solid ${color}55` : isOpen ? `1px solid ${c.dropBorder}` : '1px solid rgba(255,255,255,0.05)',
                 borderBottom: isOpen ? 'none' : undefined,
                 transition: 'background 0.2s, border-color 0.2s',
@@ -152,7 +152,7 @@ export default function AIPanel({ aiTeams, bidder, isLight, aiScores, aiRatings,
                         <div key={p.id} style={{
                           display: 'flex', alignItems: 'center', gap: '7px',
                           padding: '5px 8px',
-                          background: isLight ? 'rgba(0,0,0,0.03)' : 'rgba(255,255,255,0.04)',
+                          background: 'rgba(255,255,255,0.04)',
                           border: `1px solid ${c.dropBorder}`,
                           borderRadius: '7px',
                         }}>
