@@ -5,7 +5,7 @@ const STROKE = 6;
 const R      = (SIZE - STROKE) / 2;
 const CIRC   = 2 * Math.PI * R;
 
-export default function BidTimer({ timer, timerMax, timerKey }) {
+export default function BidTimer({ timer, timerMax }) {
   const pct   = timer / timerMax;
   const dash  = pct * CIRC;
   const color = timer > timerMax * 0.53 ? '#22c55e'
@@ -20,19 +20,6 @@ export default function BidTimer({ timer, timerMax, timerKey }) {
           cx={SIZE / 2} cy={SIZE / 2} r={R}
           fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth={STROKE}
         />
-
-        {/* Flash ring — pulses white on timer reset (key changes) */}
-        <motion.circle
-          key={timerKey}
-          cx={SIZE / 2} cy={SIZE / 2} r={R}
-          fill="none" stroke="rgba(255,255,255,0.8)" strokeWidth={STROKE}
-          strokeDasharray={CIRC}
-          strokeDashoffset={0}
-          initial={{ opacity: 0.75, strokeDashoffset: 0 }}
-          animate={{ opacity: 0 }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-        />
-
         {/* Progress arc */}
         <motion.circle
           cx={SIZE / 2} cy={SIZE / 2} r={R}
