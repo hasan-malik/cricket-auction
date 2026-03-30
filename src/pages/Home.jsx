@@ -33,7 +33,7 @@ export default function Home() {
 
   const [selected, setSelected] = useState(null);
   const [teamName, setTeamName] = useState('');
-  const [mode, setMode] = useState('full'); // 'full' | 'bullet' | 'blitz' | 'rapid'
+  const [mode, setMode] = useState('fullXV'); // 'bullet' | 'blitz' | 'rapid' | 'fullXI' | 'fullXV'
 
   // Switch to team-colored cap cursor on franchise select, restore bat on deselect
   useEffect(() => {
@@ -48,13 +48,12 @@ export default function Home() {
 
   const handleStart = () => {
     if (!selected) return;
-    const isBlitz = mode !== 'full';
     navigate('/auction', {
       state: {
         franchiseId: selected,
         teamName:    teamName.trim() || franchises.find(f => f.id === selected)?.name,
-        mode:        isBlitz ? 'blitz' : 'full',
-        blitzMode:   isBlitz ? mode : null, // 'bullet' | 'blitz' | 'rapid' | null
+        mode:        'blitz',
+        blitzMode:   mode, // 'bullet' | 'blitz' | 'rapid' | 'fullXI' | 'fullXV'
       },
     });
   };
@@ -165,13 +164,13 @@ export default function Home() {
           </p>
           <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '14px' }}>
             {[
-              { id: 'bullet', label: '🔥 Bullet',     sub: `${MODE_CONFIGS.bullet.poolRoles.bat + MODE_CONFIGS.bullet.poolRoles.bowl + MODE_CONFIGS.bullet.poolRoles.ar} players · ${MODE_CONFIGS.bullet.budget} CR · ${MODE_CONFIGS.bullet.exactSquadSize} squad · ${MODE_CONFIGS.bullet.timerSeconds}s` },
-              { id: 'blitz',  label: '⚡ Blitz',      sub: `${MODE_CONFIGS.blitz.poolRoles.bat + MODE_CONFIGS.blitz.poolRoles.bowl + MODE_CONFIGS.blitz.poolRoles.ar} players · ${MODE_CONFIGS.blitz.budget} CR · ${MODE_CONFIGS.blitz.exactSquadSize} squad · ${MODE_CONFIGS.blitz.timerSeconds}s` },
-              { id: 'rapid',  label: '🐇 Rapid',      sub: `${MODE_CONFIGS.rapid.poolRoles.bat + MODE_CONFIGS.rapid.poolRoles.bowl + MODE_CONFIGS.rapid.poolRoles.ar + MODE_CONFIGS.rapid.poolRoles.wk} players · ${MODE_CONFIGS.rapid.budget} CR · ${MODE_CONFIGS.rapid.exactSquadSize} squad · ${MODE_CONFIGS.rapid.timerSeconds}s` },
-              { id: 'full',   label: 'Full Auction', sub: `279 players · ${auctionConfig.franchiseBudget} CR · 20 squad · 15s` },
+              { id: 'bullet', label: '🔥 Bullet'  },
+              { id: 'blitz',  label: '⚡ Blitz'   },
+              { id: 'rapid',  label: '🐇 Rapid'   },
+              { id: 'fullXI', label: 'Full XI'    },
+              { id: 'fullXV', label: 'Full XV'    },
             ].map(m => {
               const active = mode === m.id;
-              const isBlitz = m.id !== 'full';
               return (
                 <motion.button
                   key={m.id}
@@ -181,14 +180,12 @@ export default function Home() {
                     padding: '10px 20px',
                     borderRadius: '9999px',
                     border: active
-                      ? `1px solid ${isBlitz ? 'rgba(245,158,11,0.7)' : 'rgba(59,130,246,0.7)'}`
+                      ? '1px solid rgba(245,158,11,0.7)'
                       : `1px solid ${c.cardBorder}`,
                     background: active
-                      ? isBlitz ? 'rgba(245,158,11,0.12)' : 'rgba(59,130,246,0.12)'
+                      ? 'rgba(245,158,11,0.12)'
                       : c.cardBg,
-                    color: active
-                      ? isBlitz ? '#fbbf24' : '#60a5fa'
-                      : c.muted,
+                    color: active ? '#fbbf24' : c.muted,
                     fontWeight: 700,
                     fontSize: '14px',
                     cursor: 'pointer',
@@ -203,9 +200,8 @@ export default function Home() {
           </div>
           {/* Mode info strip */}
           <p style={{ fontSize: '12px', color: c.muted }}>
-            {mode === 'full' && `279 players · ${auctionConfig.franchiseBudget} CR budget · up to 20 players · 15s timer`}
-            {mode !== 'full' && (() => {
-              const cfg = MODE_CONFIGS[mode];
+            {(() => {
+              const cfg   = MODE_CONFIGS[mode];
               const total = Object.values(cfg.poolRoles).reduce((a, b) => a + b, 0);
               const comp  = Object.entries(cfg.requiredSlots)
                 .map(([s, n]) => `${n} ${SLOT_LABEL[s].toLowerCase()}${n > 1 ? 's' : ''}`)
@@ -368,18 +364,18 @@ export default function Home() {
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
                     onClick={handleStart}
-                    style={{ padding: '12px 32px', fontSize: '15px', background: mode !== 'full' ? '#d97706' : undefined }}
+                    style={{ padding: '12px 32px', fontSize: '15px', background: '#d97706' }}
                   >
-                    {mode === 'full' ? 'Start Auction →' : mode === 'bullet' ? '🔥 Start Bullet →' : mode === 'blitz' ? '⚡ Start Blitz →' : '🐇 Start Rapid →'}
+                    {mode === 'bullet' ? '🔥 Start Bullet →'
+                      : mode === 'blitz'  ? '⚡ Start Blitz →'
+                      : mode === 'rapid'  ? '🐇 Start Rapid →'
+                      : mode === 'fullXI' ? 'Start Full XI →'
+                      : 'Start Full XV →'}
                   </motion.button>
                 </div>
 
                 <p style={{ fontSize: '13px', color: c.muted, marginTop: '14px' }}>
-                  {mode === 'full' ? <>
-                    Budget: <strong style={{ color: c.text }}>{auctionConfig.franchiseBudget} {auctionConfig.currency}</strong>
-                    {' · '}Squad: <strong style={{ color: c.text }}>{auctionConfig.minSquadSize}–{auctionConfig.maxSquadSize}</strong>
-                    {' · '}Overseas: <strong style={{ color: c.text }}>{auctionConfig.minOverseasPlayers}–{auctionConfig.maxOverseasPlayers}</strong>
-                  </> : (() => {
+                  {(() => {
                     const cfg   = MODE_CONFIGS[mode];
                     const total = Object.values(cfg.poolRoles).reduce((a, b) => a + b, 0);
                     return <>
