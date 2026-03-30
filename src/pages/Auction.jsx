@@ -749,7 +749,7 @@ export default function Auction() {
                 </div>
               </div>
 
-              <BidTimer timer={timer} timerMax={config.timerSeconds} />
+              <BidTimer timer={timer} timerMax={config.timerSeconds} timerKey={state.timerKey} />
             </div>
 
             {/* Bid controls */}
