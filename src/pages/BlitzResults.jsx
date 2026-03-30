@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { scoreBlitzSquad } from '../utils/aiUtils';
+import { MODE_CONFIGS } from '../data/modeConfig.js';
 
 const ROLE_ICONS = {
   'batsman':       '🏏',
@@ -34,7 +35,7 @@ export default function BlitzResults() {
     );
   }
 
-  const { user, aiTeams, blitzSize } = routeState;
+  const { user, aiTeams, blitzMode } = routeState;
   const ranked = allTeamScores(user, aiTeams);
   const userRank = ranked.findIndex(t => t.isUser) + 1;
   const { players: scoredPlayers, total: userScore } = scoreBlitzSquad(user.squad);
@@ -62,7 +63,7 @@ export default function BlitzResults() {
           style={{ textAlign: 'center', marginBottom: '56px' }}
         >
           <p className="overline" style={{ marginBottom: '16px', color: '#f59e0b' }}>
-            {blitzSize === 15 ? 'Bullet' : blitzSize === 30 ? 'Blitz' : 'Rapid'} Complete
+            {MODE_CONFIGS[blitzMode]?.label ?? 'Blitz'} Complete
           </p>
           <h1 style={{
             fontSize: 'clamp(40px, 6vw, 72px)',
@@ -86,9 +87,9 @@ export default function BlitzResults() {
             </button>
             <button
               className="btn-ghost"
-              onClick={() => navigate('/auction', { state: { franchiseId: user.franchise?.id, teamName: user.name, mode: 'blitz', blitzSize: blitzSize ?? 30 } })}
+              onClick={() => navigate('/auction', { state: { franchiseId: user.franchise?.id, teamName: user.name, mode: 'blitz', blitzMode: blitzMode ?? 'blitz' } })}
             >
-              {blitzSize === 15 ? 'Bullet Again' : blitzSize === 30 ? 'Blitz Again' : 'Rapid Again'}
+              {(MODE_CONFIGS[blitzMode]?.label ?? 'Blitz')} Again
             </button>
             <button
               className="btn-ghost"
