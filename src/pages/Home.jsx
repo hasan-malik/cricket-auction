@@ -6,8 +6,7 @@ import auctionConfig from '../data/auctionConfig.json';
 import { MODE_CONFIGS, SLOT_ICON, SLOT_LABEL } from '../data/modeConfig.js';
 
 /**
- * Build a side-profile cricket cap cursor (like 🧢 emoji):
- * dome on the left, visor extending right, hotspot at visor tip.
+ * Normal cap cursor — team color, no glow.
  */
 function buildCapCursor(color) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="18" viewBox="0 0 28 18">
@@ -17,6 +16,22 @@ function buildCapCursor(color) {
     <circle cx="12" cy="2.5" r="1.5" fill="rgba(255,255,255,0.5)"/>
   </svg>`;
   return `url('data:image/svg+xml,${encodeURIComponent(svg)}') 27 14, auto`;
+}
+
+/**
+ * Hover cap cursor — same shape with a soft glow halo behind it,
+ * so the user knows they're over a clickable element.
+ */
+function buildCapCursorHover(color) {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="22" viewBox="0 0 32 22">
+    <ellipse cx="13" cy="16" rx="14" ry="7"   fill="${color}" fill-opacity="0.20"/>
+    <ellipse cx="13" cy="16" rx="9"  ry="4.5" fill="${color}" fill-opacity="0.15"/>
+    <path d="M4 14 Q4 1 13 1 Q21 1 21 14 Z" fill="${color}"/>
+    <path d="M4 14 Q2 14 2 15.5 Q2 17 4 16.5 Z" fill="${color}" fill-opacity="0.7"/>
+    <rect x="3" y="13" width="25" height="3" rx="1.5" fill="${color}" fill-opacity="0.8"/>
+    <circle cx="12" cy="2.5" r="1.5" fill="rgba(255,255,255,0.65)"/>
+  </svg>`;
+  return `url('data:image/svg+xml,${encodeURIComponent(svg)}') 27 14, pointer`;
 }
 
 const fadeUp = {
@@ -36,22 +51,35 @@ export default function Home() {
   const [mode, setMode] = useState('fullXV'); // 'bullet' | 'blitz' | 'rapid' | 'fullXI' | 'fullXV'
 
   // Switch to team-colored cap cursor on franchise select, restore default on deselect.
-  // The 'custom-cursor' class forces all child elements to inherit the body cursor
-  // so buttons and links don't revert to the default pointer.
+  // A dynamic <style> tag bakes the hover variant (glowing cap) into CSS so that
+  // clickable elements show the lit-up cursor while everything else shows the plain cap.
   useEffect(() => {
     if (selected) {
       const f = franchises.find(fr => fr.id === selected);
       if (f) {
         document.body.style.cursor = buildCapCursor(f.primaryColor);
         document.body.classList.add('custom-cursor');
+
+        const style = document.createElement('style');
+        style.id = 'cap-cursor-hover-style';
+        style.textContent = `
+          body.custom-cursor button:hover,
+          body.custom-cursor a:hover,
+          body.custom-cursor [role="button"]:hover,
+          body.custom-cursor label:hover,
+          body.custom-cursor select:hover { cursor: ${buildCapCursorHover(f.primaryColor)} !important; }
+        `;
+        document.head.appendChild(style);
       }
     } else {
       document.body.style.cursor = '';
       document.body.classList.remove('custom-cursor');
+      document.getElementById('cap-cursor-hover-style')?.remove();
     }
     return () => {
       document.body.style.cursor = '';
       document.body.classList.remove('custom-cursor');
+      document.getElementById('cap-cursor-hover-style')?.remove();
     };
   }, [selected]);
 
