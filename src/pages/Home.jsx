@@ -22,13 +22,13 @@ function buildCapCursor(color) {
  * Hover cap cursor — same shape with a soft glow halo behind it,
  * so the user knows they're over a clickable element.
  */
-// Hover variant: same shape, lower opacity — the classic OS "dimmed cursor on clickable" cue.
+// Hover variant: dim fill + bright outline — classic "clickable" cue.
 function buildCapCursorHover(color) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="18" viewBox="0 0 28 18">
-    <path d="M4 14 Q4 1 13 1 Q21 1 21 14 Z" fill="${color}" fill-opacity="0.45"/>
-    <path d="M4 14 Q2 14 2 15.5 Q2 17 4 16.5 Z" fill="${color}" fill-opacity="0.30"/>
-    <rect x="3" y="13" width="25" height="3" rx="1.5" fill="${color}" fill-opacity="0.35"/>
-    <circle cx="12" cy="2.5" r="1.5" fill="rgba(255,255,255,0.25)"/>
+    <path d="M4 14 Q4 1 13 1 Q21 1 21 14 Z" fill="${color}" fill-opacity="0.35" stroke="${color}" stroke-width="1" stroke-opacity="0.9"/>
+    <path d="M4 14 Q2 14 2 15.5 Q2 17 4 16.5 Z" fill="${color}" fill-opacity="0.25" stroke="${color}" stroke-width="0.8" stroke-opacity="0.9"/>
+    <rect x="3" y="13" width="25" height="3" rx="1.5" fill="${color}" fill-opacity="0.28" stroke="${color}" stroke-width="0.8" stroke-opacity="0.9"/>
+    <circle cx="12" cy="2.5" r="1.5" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.8)" stroke-width="0.8"/>
   </svg>`;
   return `url('data:image/svg+xml,${encodeURIComponent(svg)}') 27 14, pointer`;
 }
