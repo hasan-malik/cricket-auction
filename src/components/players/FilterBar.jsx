@@ -1,4 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import { GiCricketBat, GiTennisBall, GiBaseballGlove } from 'react-icons/gi';
+import { FaStar, FaMagnifyingGlass } from 'react-icons/fa6';
 
 const CATEGORIES = ['all', 'platinum', 'diamond', 'gold', 'silver', 'emerging'];
 const ROLES      = ['all', 'batsman', 'bowler', 'all-rounder', 'wicket-keeper'];
@@ -13,10 +15,10 @@ const CAT_COLORS = {
 };
 
 const ROLE_ICONS = {
-  batsman:        '🏏',
-  bowler:         '🎳',
-  'all-rounder':  '⭐',
-  'wicket-keeper':'🧤',
+  batsman:        <GiCricketBat />,
+  bowler:         <GiTennisBall />,
+  'all-rounder':  <FaStar />,
+  'wicket-keeper':<GiBaseballGlove />,
 };
 
 function pillLabel(opt) {
@@ -91,7 +93,7 @@ export default function FilterBar({ filters, onChange, total, shown }) {
     >
       {/* ── Search ── */}
       <div style={{ position: 'relative', marginBottom: '20px' }}>
-        <span style={{
+        <FaMagnifyingGlass style={{
           position: 'absolute',
           left: '16px',
           top: '50%',
@@ -100,9 +102,7 @@ export default function FilterBar({ filters, onChange, total, shown }) {
           color: 'rgba(255,255,255,0.28)',
           pointerEvents: 'none',
           userSelect: 'none',
-        }}>
-          🔍
-        </span>
+        }} />
         <input
           type="text"
           placeholder="Search players…"
