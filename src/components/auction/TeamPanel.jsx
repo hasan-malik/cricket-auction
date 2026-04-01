@@ -1,12 +1,21 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { SLOT_ICON, SLOT_LABEL } from '../../data/modeConfig.js';
+import { SLOT_LABEL } from '../../data/modeConfig.js';
 import { countFilledSlots } from '../../utils/aiUtils';
+import { GiCricketBat, GiTennisBall, GiBaseballGlove } from 'react-icons/gi';
+import { FaStar, FaBolt } from 'react-icons/fa6';
+
+const SLOT_ICON = {
+  bat:  <GiCricketBat    style={{ display: 'inline', verticalAlign: 'middle' }} />,
+  bowl: <GiTennisBall    style={{ display: 'inline', verticalAlign: 'middle' }} />,
+  ar:   <FaStar          style={{ display: 'inline', verticalAlign: 'middle' }} />,
+  wk:   <GiBaseballGlove style={{ display: 'inline', verticalAlign: 'middle' }} />,
+};
 
 const ROLE_ICONS = {
-  'batsman':       '🏏',
-  'wicket-keeper': '🧤',
-  'all-rounder':   '⭐',
-  'bowler':        '🎳',
+  'batsman':       <GiCricketBat />,
+  'wicket-keeper': <GiBaseballGlove />,
+  'all-rounder':   <FaStar />,
+  'bowler':        <GiTennisBall />,
 };
 
 const c = {
@@ -111,7 +120,7 @@ export default function TeamPanel({ team, isUser, rank, score, ratingTotal, isBl
                 <>
                   ★ {ratingTotal ?? team.squad.reduce((sum, p) => sum + (p.rating ?? 0), 0)}
                   {' '}·{' '}
-                  ⚡{' '}
+                  <FaBolt style={{ display: 'inline', verticalAlign: 'middle', fontSize: '10px' }} />{' '}
                   <motion.span
                     key={score}
                     initial={{ opacity: 0, y: 4 }}
