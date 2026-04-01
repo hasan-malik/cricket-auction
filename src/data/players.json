@@ -7,7 +7,16 @@
     "bowlingStyle": null,
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 5, "runs": 61, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 99,
+      "runs": 3792,
+      "battingAvg": 45.1,
+      "strikeRate": 124.1,
+      "highScore": 115,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 52
   },
   {
@@ -18,7 +27,16 @@
     "bowlingStyle": "Right-arm leg-break",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 5, "runs": 61, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 9, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 94,
+      "runs": 1413,
+      "battingAvg": 21.1,
+      "strikeRate": 138.4,
+      "highScore": 91,
+      "wickets": 105,
+      "economy": 7.7,
+      "bowlingAvg": 24.2
+    },
     "rating": 83
   },
   {
@@ -29,7 +47,16 @@
     "bowlingStyle": "Left-arm fast",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 5, "runs": 7, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 6, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 84,
+      "runs": 359,
+      "battingAvg": 11.6,
+      "strikeRate": 127.3,
+      "highScore": 55,
+      "wickets": 122,
+      "economy": 8,
+      "bowlingAvg": 20.4
+    },
     "rating": 75
   },
   {
@@ -40,7 +67,16 @@
     "bowlingStyle": "Right-arm off-break",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 5, "runs": 67, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 3, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 40,
+      "runs": 974,
+      "battingAvg": 24.4,
+      "strikeRate": 138.7,
+      "highScore": 88,
+      "wickets": 14,
+      "economy": 8,
+      "bowlingAvg": 26.4
+    },
     "rating": 57
   },
   {
@@ -51,7 +87,16 @@
     "bowlingStyle": null,
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 6, "runs": 302, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 92,
+      "runs": 2770,
+      "battingAvg": 42.6,
+      "strikeRate": 124.7,
+      "highScore": 110,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 78
   },
   {
@@ -62,7 +107,16 @@
     "bowlingStyle": "Right-arm googly",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 4, "runs": 11, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 8, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 29,
+      "runs": 33,
+      "battingAvg": 3.3,
+      "strikeRate": 84.6,
+      "highScore": 12,
+      "wickets": 39,
+      "economy": 7.6,
+      "bowlingAvg": 21.4
+    },
     "rating": 71
   },
   {
@@ -73,7 +127,16 @@
     "bowlingStyle": "Left-arm orthodox",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 2, "runs": 29, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 1, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 31,
+      "runs": 383,
+      "battingAvg": 16.7,
+      "strikeRate": 120.1,
+      "highScore": 52,
+      "wickets": 24,
+      "economy": 8.6,
+      "bowlingAvg": 32.4
+    },
     "rating": 60
   },
   {
@@ -84,7 +147,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 5, "runs": 33, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 10, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 92,
+      "runs": 309,
+      "battingAvg": 10,
+      "strikeRate": 128.8,
+      "highScore": 45,
+      "wickets": 125,
+      "economy": 8.1,
+      "bowlingAvg": 22.6
+    },
     "rating": 85
   },
   {
@@ -95,7 +167,16 @@
     "bowlingStyle": null,
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": 2, "runs": 5, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 3, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 10,
+      "runs": 7,
+      "battingAvg": 7,
+      "strikeRate": 63.6,
+      "highScore": 5,
+      "wickets": 12,
+      "economy": 7.6,
+      "bowlingAvg": 25.2
+    },
     "rating": 68
   },
   {
@@ -106,7 +187,16 @@
     "bowlingStyle": null,
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": 6, "runs": 212, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 25,
+      "runs": 960,
+      "battingAvg": 43.6,
+      "strikeRate": 152.6,
+      "highScore": 120,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 77
   },
   {
@@ -117,7 +207,16 @@
     "bowlingStyle": "Left-arm orthodox",
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": 3, "runs": 6, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 1, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 8,
+      "runs": 16,
+      "battingAvg": 5.3,
+      "strikeRate": 66.7,
+      "highScore": 6,
+      "wickets": 5,
+      "economy": 9.1,
+      "bowlingAvg": 44
+    },
     "rating": 55
   },
   {
@@ -128,7 +227,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 6,
+      "runs": 0,
+      "battingAvg": 0,
+      "strikeRate": 0,
+      "highScore": 0,
+      "wickets": 11,
+      "economy": 9.6,
+      "bowlingAvg": 17.9
+    },
     "rating": 60
   },
   {
@@ -139,7 +247,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": 5, "runs": 36, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 8, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 40,
+      "runs": 140,
+      "battingAvg": 14,
+      "strikeRate": 162.8,
+      "highScore": 34,
+      "wickets": 60,
+      "economy": 9.4,
+      "bowlingAvg": 20.8
+    },
     "rating": 73
   },
   {
@@ -150,7 +267,16 @@
     "bowlingStyle": null,
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": 5, "runs": 161, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 39,
+      "runs": 1068,
+      "battingAvg": 29.7,
+      "strikeRate": 136.1,
+      "highScore": 75,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 66
   },
   {
@@ -161,7 +287,16 @@
     "bowlingStyle": null,
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": 5, "runs": 112, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 5,
+      "runs": 112,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 64
   },
   {
@@ -172,7 +307,16 @@
     "bowlingStyle": "Right-arm off-break",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 4, "runs": 51, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 15,
+      "runs": 427,
+      "battingAvg": 42.7,
+      "strikeRate": 150.9,
+      "highScore": 100,
+      "wickets": 0,
+      "economy": 11,
+      "bowlingAvg": null
+    },
     "rating": 50
   },
   {
@@ -183,7 +327,16 @@
     "bowlingStyle": "Left-arm orthodox",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 5, "runs": 140, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 4, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 70,
+      "runs": 946,
+      "battingAvg": 27,
+      "strikeRate": 137.5,
+      "highScore": 70,
+      "wickets": 31,
+      "economy": 7.7,
+      "bowlingAvg": 23.5
+    },
     "rating": 80
   },
   {
@@ -194,7 +347,16 @@
     "bowlingStyle": "Right-arm off-break",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 5, "runs": 129, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 5, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 34,
+      "runs": 591,
+      "battingAvg": 28.1,
+      "strikeRate": 147,
+      "highScore": 71,
+      "wickets": 20,
+      "economy": 8,
+      "bowlingAvg": 25.1
+    },
     "rating": 72
   },
   {
@@ -205,7 +367,16 @@
     "bowlingStyle": "Right-arm leg-break",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 3, "runs": 44, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 5,
+      "runs": 61,
+      "battingAvg": 15.3,
+      "strikeRate": 169.4,
+      "highScore": 40,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 57
   },
   {
@@ -216,7 +387,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 14,
+      "runs": 34,
+      "battingAvg": 17,
+      "strikeRate": 100,
+      "highScore": 24,
+      "wickets": 12,
+      "economy": 9.2,
+      "bowlingAvg": 38.7
+    },
     "rating": 58
   },
   {
@@ -227,7 +407,16 @@
     "bowlingStyle": "Left-arm fast",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 3, "runs": 0, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 4, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 19,
+      "runs": 7,
+      "battingAvg": 7,
+      "strikeRate": 58.3,
+      "highScore": 7,
+      "wickets": 22,
+      "economy": 9.1,
+      "bowlingAvg": 25.3
+    },
     "rating": 62
   },
   {
@@ -238,7 +427,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 1, "runs": 0, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 35,
+      "runs": 19,
+      "battingAvg": 2.7,
+      "strikeRate": 48.7,
+      "highScore": 6,
+      "wickets": 47,
+      "economy": 9.5,
+      "bowlingAvg": 24.8
+    },
     "rating": 53
   },
   {
@@ -249,7 +447,16 @@
     "bowlingStyle": "Left-arm fast",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 2, "runs": 1, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 39,
+      "runs": 13,
+      "battingAvg": 3.3,
+      "strikeRate": 40.6,
+      "highScore": 6,
+      "wickets": 45,
+      "economy": 8.7,
+      "bowlingAvg": 25.6
+    },
     "rating": 47
   },
   {
@@ -260,7 +467,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 4, "runs": 93, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 4,
+      "runs": 93,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 56
   },
   {
@@ -271,7 +487,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 5, "runs": 42, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 5,
+      "runs": 42,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 44
   },
   {
@@ -282,7 +507,16 @@
     "bowlingStyle": "Left-arm fast-medium",
     "category": "emerging",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 5, "runs": 1, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 7, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 9,
+      "runs": 1,
+      "battingAvg": 1,
+      "strikeRate": 11.1,
+      "highScore": 1,
+      "wickets": 12,
+      "economy": 8.9,
+      "bowlingAvg": 25.3
+    },
     "rating": 70
   },
   {
@@ -293,7 +527,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "emerging",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 50
   },
   {
@@ -304,7 +547,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "emerging",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 2, "runs": 0, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 1, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 2,
+      "runs": 0,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 1,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 44
   },
   {
@@ -315,7 +567,16 @@
     "bowlingStyle": null,
     "category": "emerging",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 2, "runs": 29, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 7,
+      "runs": 70,
+      "battingAvg": 11.7,
+      "strikeRate": 118.6,
+      "highScore": 25,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 51
   },
   {
@@ -326,7 +587,16 @@
     "bowlingStyle": null,
     "category": "emerging",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 3, "runs": 140, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 21,
+      "runs": 496,
+      "battingAvg": 24.8,
+      "strikeRate": 138.2,
+      "highScore": 87,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 76
   },
   {
@@ -337,7 +607,16 @@
     "bowlingStyle": "Right-arm leg-break",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 82
   },
   {
@@ -348,7 +627,16 @@
     "bowlingStyle": "Right-arm off-break",
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 72
   },
   {
@@ -359,7 +647,16 @@
     "bowlingStyle": "Left-arm fast-medium",
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 5,
+      "runs": 1,
+      "battingAvg": 1,
+      "strikeRate": 11.1,
+      "highScore": 1,
+      "wickets": 4,
+      "economy": 7.2,
+      "bowlingAvg": 30.5
+    },
     "rating": 70
   },
   {
@@ -370,7 +667,16 @@
     "bowlingStyle": null,
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 74
   },
   {
@@ -381,7 +687,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 68
   },
   {
@@ -392,7 +707,16 @@
     "bowlingStyle": "Right-arm leg-break",
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 70
   },
   {
@@ -403,7 +727,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": 5, "runs": 31, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 7, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 5,
+      "runs": 31,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 7,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 69
   },
   {
@@ -414,7 +747,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 4, "runs": 25, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 6, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 84,
+      "runs": 966,
+      "battingAvg": 22.5,
+      "strikeRate": 139,
+      "highScore": 55,
+      "wickets": 96,
+      "economy": 8.7,
+      "bowlingAvg": 23.9
+    },
     "rating": 50
   },
   {
@@ -425,7 +767,16 @@
     "bowlingStyle": null,
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 5, "runs": 106, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 5,
+      "runs": 106,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 63
   },
   {
@@ -436,7 +787,16 @@
     "bowlingStyle": null,
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 4, "runs": 93, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 4,
+      "runs": 93,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 62
   },
   {
@@ -447,7 +807,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 5, "runs": 11, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 4, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 70,
+      "runs": 114,
+      "battingAvg": 7.1,
+      "strikeRate": 103.6,
+      "highScore": 19,
+      "wickets": 83,
+      "economy": 9.3,
+      "bowlingAvg": 28.8
+    },
     "rating": 50
   },
   {
@@ -458,7 +827,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 4, "runs": 1, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 5, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 50,
+      "runs": 98,
+      "battingAvg": 7,
+      "strikeRate": 111.4,
+      "highScore": 27,
+      "wickets": 50,
+      "economy": 8.1,
+      "bowlingAvg": 30.3
+    },
     "rating": 65
   },
   {
@@ -469,7 +847,16 @@
     "bowlingStyle": null,
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 4, "runs": 51, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 61,
+      "runs": 1206,
+      "battingAvg": 23.6,
+      "strikeRate": 137,
+      "highScore": 97,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 47
   },
   {
@@ -480,7 +867,16 @@
     "bowlingStyle": null,
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 5, "runs": 236, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 34,
+      "runs": 906,
+      "battingAvg": 30.2,
+      "strikeRate": 129.8,
+      "highScore": 106,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 91
   },
   {
@@ -491,7 +887,16 @@
     "bowlingStyle": "Right-arm leg-break",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 3, "runs": 5, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 8, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 7,
+      "runs": 23,
+      "battingAvg": 5.8,
+      "strikeRate": 95.8,
+      "highScore": 13,
+      "wickets": 13,
+      "economy": 9.3,
+      "bowlingAvg": 17.2
+    },
     "rating": 65
   },
   {
@@ -502,7 +907,16 @@
     "bowlingStyle": "Right-arm off-break",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 5,
+      "runs": 0,
+      "battingAvg": 0,
+      "strikeRate": 0,
+      "highScore": 0,
+      "wickets": 5,
+      "economy": 6.6,
+      "bowlingAvg": 25.2
+    },
     "rating": 50
   },
   {
@@ -513,7 +927,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 52
   },
   {
@@ -524,7 +947,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 3, "runs": 9, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 2, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 3,
+      "runs": 9,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 2,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 50
   },
   {
@@ -535,7 +967,16 @@
     "bowlingStyle": null,
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 2, "runs": 10, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 2,
+      "runs": 10,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 42
   },
   {
@@ -546,7 +987,16 @@
     "bowlingStyle": "Right-arm googly",
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": 5, "runs": 2, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 4, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 50,
+      "runs": 97,
+      "battingAvg": 6.5,
+      "strikeRate": 126,
+      "highScore": 17,
+      "wickets": 63,
+      "economy": 8.4,
+      "bowlingAvg": 23.3
+    },
     "rating": 56
   },
   {
@@ -557,7 +1007,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 2, "runs": 0, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 11,
+      "runs": 88,
+      "battingAvg": 17.6,
+      "strikeRate": 160,
+      "highScore": 45,
+      "wickets": 5,
+      "economy": 10.1,
+      "bowlingAvg": 56.4
+    },
     "rating": 40
   },
   {
@@ -568,7 +1027,16 @@
     "bowlingStyle": "Right-arm off-break",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 2, "runs": 71, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 2,
+      "runs": 71,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 66
   },
   {
@@ -579,7 +1047,16 @@
     "bowlingStyle": null,
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 5, "runs": 204, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 97,
+      "runs": 2969,
+      "battingAvg": 30.6,
+      "strikeRate": 138.3,
+      "highScore": 115,
+      "wickets": 2,
+      "economy": 5.8,
+      "bowlingAvg": 29
+    },
     "rating": 87
   },
   {
@@ -590,7 +1067,16 @@
     "bowlingStyle": "Right-arm medium",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 5, "runs": 208, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 1, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 5,
+      "runs": 208,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 1,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 84
   },
   {
@@ -601,7 +1087,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 1, "runs": 0, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 1,
+      "runs": 0,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 40
   },
   {
@@ -612,7 +1107,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 1, "runs": 0, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 2, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 20,
+      "runs": 28,
+      "battingAvg": 5.6,
+      "strikeRate": 50,
+      "highScore": 11,
+      "wickets": 30,
+      "economy": 8,
+      "bowlingAvg": 18.6
+    },
     "rating": 68
   },
   {
@@ -623,7 +1127,16 @@
     "bowlingStyle": "Left-arm fast",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 4, "runs": 35, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 5, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 82,
+      "runs": 160,
+      "battingAvg": 8.9,
+      "strikeRate": 119.4,
+      "highScore": 30,
+      "wickets": 85,
+      "economy": 7.6,
+      "bowlingAvg": 27.3
+    },
     "rating": 68
   },
   {
@@ -634,7 +1147,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 5, "runs": 3, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 9, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 11,
+      "runs": 21,
+      "battingAvg": 5.3,
+      "strikeRate": 56.8,
+      "highScore": 14,
+      "wickets": 12,
+      "economy": 10.2,
+      "bowlingAvg": 29.3
+    },
     "rating": 84
   },
   {
@@ -645,7 +1167,16 @@
     "bowlingStyle": null,
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 65
   },
   {
@@ -656,7 +1187,16 @@
     "bowlingStyle": null,
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 5, "runs": 190, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 37,
+      "runs": 905,
+      "battingAvg": 26.6,
+      "strikeRate": 159.6,
+      "highScore": 87,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 75
   },
   {
@@ -667,7 +1207,16 @@
     "bowlingStyle": null,
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 1, "runs": 1, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 12,
+      "runs": 234,
+      "battingAvg": 23.4,
+      "strikeRate": 125.1,
+      "highScore": 60,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 43
   },
   {
@@ -678,7 +1227,16 @@
     "bowlingStyle": null,
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 15,
+      "runs": 184,
+      "battingAvg": 15.3,
+      "strikeRate": 138.3,
+      "highScore": 50,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 55
   },
   {
@@ -689,7 +1247,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 1, "runs": 0, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 1,
+      "runs": 0,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 43
   },
   {
@@ -700,7 +1267,16 @@
     "bowlingStyle": null,
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 5, "runs": 43, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 5,
+      "runs": 43,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 44
   },
   {
@@ -711,7 +1287,16 @@
     "bowlingStyle": null,
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 1, "runs": 33, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 1,
+      "runs": 33,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 60
   },
   {
@@ -722,7 +1307,16 @@
     "bowlingStyle": "Right-arm off-break",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 2, "runs": 15, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 2,
+      "runs": 15,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 45
   },
   {
@@ -733,7 +1327,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": 1, "runs": 0, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 1, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 1,
+      "runs": 0,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 1,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 60
   },
   {
@@ -744,7 +1347,16 @@
     "bowlingStyle": "Left-arm fast",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 3, "runs": 0, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 2, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 29,
+      "runs": 25,
+      "battingAvg": 12.5,
+      "strikeRate": 92.6,
+      "highScore": 12,
+      "wickets": 33,
+      "economy": 8.2,
+      "bowlingAvg": 23.6
+    },
     "rating": 63
   },
   {
@@ -755,7 +1367,16 @@
     "bowlingStyle": "Right-arm leg-break",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 72
   },
   {
@@ -766,7 +1387,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 60
   },
   {
@@ -777,7 +1407,16 @@
     "bowlingStyle": "Left-arm wrist-spin",
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 65
   },
   {
@@ -788,7 +1427,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 22,
+      "runs": 127,
+      "battingAvg": 14.1,
+      "strikeRate": 136.6,
+      "highScore": 27,
+      "wickets": 18,
+      "economy": 9.5,
+      "bowlingAvg": 32.6
+    },
     "rating": 48
   },
   {
@@ -799,7 +1447,16 @@
     "bowlingStyle": "Left-arm fast",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 46
   },
   {
@@ -810,7 +1467,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 45
   },
   {
@@ -821,7 +1487,16 @@
     "bowlingStyle": "Left-arm fast",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 44
   },
   {
@@ -832,7 +1507,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 44
   },
   {
@@ -843,7 +1527,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 47
   },
   {
@@ -854,7 +1547,16 @@
     "bowlingStyle": "Left-arm orthodox",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 5,
+      "runs": 43,
+      "battingAvg": 43,
+      "strikeRate": 116.2,
+      "highScore": 19,
+      "wickets": 3,
+      "economy": 7.6,
+      "bowlingAvg": 38
+    },
     "rating": 46
   },
   {
@@ -865,7 +1567,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 45
   },
   {
@@ -876,7 +1587,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 44
   },
   {
@@ -887,7 +1607,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 52
   },
   {
@@ -898,7 +1627,16 @@
     "bowlingStyle": "Right-arm leg-break",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 44
   },
   {
@@ -909,7 +1647,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 23,
+      "runs": 10,
+      "battingAvg": 10,
+      "strikeRate": 58.8,
+      "highScore": 7,
+      "wickets": 26,
+      "economy": 8.7,
+      "bowlingAvg": 27.3
+    },
     "rating": 45
   },
   {
@@ -920,7 +1667,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 44
   },
   {
@@ -931,7 +1687,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 48
   },
   {
@@ -942,7 +1707,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 28,
+      "runs": 137,
+      "battingAvg": 15.2,
+      "strikeRate": 107.9,
+      "highScore": 24,
+      "wickets": 16,
+      "economy": 7.5,
+      "bowlingAvg": 36.4
+    },
     "rating": 55
   },
   {
@@ -953,7 +1727,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 45
   },
   {
@@ -964,7 +1747,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 50
   },
   {
@@ -975,7 +1767,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 60
   },
   {
@@ -986,7 +1787,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 46
   },
   {
@@ -997,7 +1807,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 47
   },
   {
@@ -1008,7 +1827,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 47
   },
   {
@@ -1019,7 +1847,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 46
   },
   {
@@ -1030,7 +1867,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 55
   },
   {
@@ -1041,7 +1887,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 12,
+      "runs": 94,
+      "battingAvg": 11.8,
+      "strikeRate": 97.9,
+      "highScore": 29,
+      "wickets": 0,
+      "economy": 10.7,
+      "bowlingAvg": null
+    },
     "rating": 46
   },
   {
@@ -1052,7 +1907,16 @@
     "bowlingStyle": null,
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": 5, "runs": 186, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 5,
+      "runs": 186,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 88
   },
   {
@@ -1063,7 +1927,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 3, "runs": 0, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 3, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 3,
+      "runs": 0,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 3,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 63
   },
   {
@@ -1074,7 +1947,16 @@
     "bowlingStyle": "Right-arm off-break",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 6, "runs": 81, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 6, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 6,
+      "runs": 81,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 6,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 77
   },
   {
@@ -1085,7 +1967,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 50
   },
   {
@@ -1096,7 +1987,16 @@
     "bowlingStyle": null,
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": 4, "runs": 107, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 4,
+      "runs": 107,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 68
   },
   {
@@ -1107,7 +2007,16 @@
     "bowlingStyle": "Left-arm orthodox",
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": 5, "runs": 0, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 7, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 99,
+      "runs": 1293,
+      "battingAvg": 26.4,
+      "strikeRate": 133.2,
+      "highScore": 92,
+      "wickets": 77,
+      "economy": 7,
+      "bowlingAvg": 29.1
+    },
     "rating": 71
   },
   {
@@ -1118,7 +2027,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 55
   },
   {
@@ -1129,7 +2047,16 @@
     "bowlingStyle": null,
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 56
   },
   {
@@ -1140,7 +2067,16 @@
     "bowlingStyle": "Right-arm off-break",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 6, "runs": 84, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 1, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 78,
+      "runs": 1134,
+      "battingAvg": 23.6,
+      "strikeRate": 127.8,
+      "highScore": 71,
+      "wickets": 13,
+      "economy": 8.5,
+      "bowlingAvg": 37.4
+    },
     "rating": 47
   },
   {
@@ -1151,7 +2087,16 @@
     "bowlingStyle": null,
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 58
   },
   {
@@ -1162,7 +2107,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 4, "runs": 125, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 1, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 22,
+      "runs": 560,
+      "battingAvg": 31.1,
+      "strikeRate": 123.3,
+      "highScore": 88,
+      "wickets": 5,
+      "economy": 7.7,
+      "bowlingAvg": 18.4
+    },
     "rating": 65
   },
   {
@@ -1173,7 +2127,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 2, "runs": 18, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 56,
+      "runs": 1503,
+      "battingAvg": 27.3,
+      "strikeRate": 124.5,
+      "highScore": 88,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 45
   },
   {
@@ -1184,7 +2147,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 46
   },
   {
@@ -1195,7 +2167,16 @@
     "bowlingStyle": null,
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 55
   },
   {
@@ -1206,7 +2187,16 @@
     "bowlingStyle": null,
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 54
   },
   {
@@ -1217,7 +2207,16 @@
     "bowlingStyle": null,
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 52
   },
   {
@@ -1228,7 +2227,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 50
   },
   {
@@ -1239,7 +2247,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 45
   },
   {
@@ -1250,7 +2267,16 @@
     "bowlingStyle": "Right-arm leg-break",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 5, "runs": 6, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 5, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 14,
+      "runs": 19,
+      "battingAvg": 9.5,
+      "strikeRate": 73.1,
+      "highScore": 6,
+      "wickets": 15,
+      "economy": 7,
+      "bowlingAvg": 19.8
+    },
     "rating": 65
   },
   {
@@ -1261,7 +2287,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 1, "runs": 1, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 91,
+      "runs": 1250,
+      "battingAvg": 21.2,
+      "strikeRate": 152.1,
+      "highScore": 75,
+      "wickets": 2,
+      "economy": 9,
+      "bowlingAvg": 13.5
+    },
     "rating": 42
   },
   {
@@ -1272,7 +2307,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 3, "runs": 33, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 49,
+      "runs": 846,
+      "battingAvg": 21.7,
+      "strikeRate": 131,
+      "highScore": 69,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 51
   },
   {
@@ -1283,7 +2327,16 @@
     "bowlingStyle": "Right-arm off-break",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 5, "runs": 142, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 2, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 70,
+      "runs": 1170,
+      "battingAvg": 24.9,
+      "strikeRate": 121,
+      "highScore": 63,
+      "wickets": 20,
+      "economy": 9.2,
+      "bowlingAvg": 29.3
+    },
     "rating": 63
   },
   {
@@ -1294,7 +2347,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 14,
+      "runs": 0,
+      "battingAvg": 0,
+      "strikeRate": 0,
+      "highScore": 0,
+      "wickets": 23,
+      "economy": 7.4,
+      "bowlingAvg": 16.1
+    },
     "rating": 52
   },
   {
@@ -1305,7 +2367,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 6, "runs": 127, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 29,
+      "runs": 578,
+      "battingAvg": 24.1,
+      "strikeRate": 118.9,
+      "highScore": 55,
+      "wickets": 1,
+      "economy": 8.8,
+      "bowlingAvg": 79
+    },
     "rating": 56
   },
   {
@@ -1316,7 +2387,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 2, "runs": 0, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 2, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 44,
+      "runs": 56,
+      "battingAvg": 6.2,
+      "strikeRate": 78.9,
+      "highScore": 22,
+      "wickets": 54,
+      "economy": 9,
+      "bowlingAvg": 26.6
+    },
     "rating": 55
   },
   {
@@ -1327,7 +2407,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 49,
+      "runs": 1128,
+      "battingAvg": 24,
+      "strikeRate": 134.9,
+      "highScore": 117,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 50
   },
   {
@@ -1338,7 +2427,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 1, "runs": 0, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 14,
+      "runs": 280,
+      "battingAvg": 31.1,
+      "strikeRate": 138.6,
+      "highScore": 65,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 43
   },
   {
@@ -1349,7 +2447,16 @@
     "bowlingStyle": "Right-arm off-break",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 48
   },
   {
@@ -1360,7 +2467,16 @@
     "bowlingStyle": "Left-arm fast-medium",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 46
   },
   {
@@ -1371,7 +2487,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 2, "runs": 2, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 5,
+      "runs": 2,
+      "battingAvg": 2,
+      "strikeRate": 100,
+      "highScore": 2,
+      "wickets": 2,
+      "economy": 8.8,
+      "bowlingAvg": 54
+    },
     "rating": 44
   },
   {
@@ -1382,7 +2507,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 11,
+      "runs": 9,
+      "battingAvg": 3,
+      "strikeRate": 56.3,
+      "highScore": 4,
+      "wickets": 8,
+      "economy": 9.5,
+      "bowlingAvg": 29.8
+    },
     "rating": 46
   },
   {
@@ -1393,7 +2527,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 6,
+      "runs": 7,
+      "battingAvg": 7,
+      "strikeRate": 70,
+      "highScore": 7,
+      "wickets": 3,
+      "economy": 8.8,
+      "bowlingAvg": 41.3
+    },
     "rating": 46
   },
   {
@@ -1404,7 +2547,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 52
   },
   {
@@ -1415,7 +2567,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 44
   },
   {
@@ -1426,7 +2587,16 @@
     "bowlingStyle": "Right-arm off-break",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 46
   },
   {
@@ -1437,7 +2607,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 44
   },
   {
@@ -1448,7 +2627,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 1, "runs": 0, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 1, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 1,
+      "runs": 0,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 1,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 68
   },
   {
@@ -1459,7 +2647,16 @@
     "bowlingStyle": "Left-arm orthodox",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 55
   },
   {
@@ -1470,7 +2667,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 44
   },
   {
@@ -1481,7 +2687,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 44
   },
   {
@@ -1492,7 +2707,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 44
   },
   {
@@ -1503,7 +2727,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 44
   },
   {
@@ -1514,7 +2747,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": 5, "runs": 52, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 12, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 5,
+      "runs": 52,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 12,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 95
   },
   {
@@ -1525,7 +2767,16 @@
     "bowlingStyle": null,
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": 5, "runs": 196, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 5,
+      "runs": 196,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 79
   },
   {
@@ -1536,7 +2787,16 @@
     "bowlingStyle": null,
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 4, "runs": 90, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 4,
+      "runs": 90,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 66
   },
   {
@@ -1547,7 +2807,16 @@
     "bowlingStyle": null,
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 5, "runs": 95, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 2, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 5,
+      "runs": 95,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 2,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 64
   },
   {
@@ -1558,7 +2827,16 @@
     "bowlingStyle": null,
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 5, "runs": 107, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 5,
+      "runs": 107,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 58
   },
   {
@@ -1569,7 +2847,16 @@
     "bowlingStyle": "Left-arm orthodox",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 2, "runs": 1, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 4, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 9,
+      "runs": 11,
+      "battingAvg": 11,
+      "strikeRate": 122.2,
+      "highScore": 9,
+      "wickets": 14,
+      "economy": 7.8,
+      "bowlingAvg": 16.6
+    },
     "rating": 72
   },
   {
@@ -1580,7 +2867,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 5, "runs": 72, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 5,
+      "runs": 72,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 50
   },
   {
@@ -1591,7 +2887,16 @@
     "bowlingStyle": "Left-arm fast",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 3, "runs": 10, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 4, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 3,
+      "runs": 10,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 4,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 72
   },
   {
@@ -1602,7 +2907,16 @@
     "bowlingStyle": "Right-arm off-break",
     "category": "diamond",
     "basePrice": 2.2,
-    "stats": { "pslMatches": 3, "runs": 39, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 3, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 31,
+      "runs": 455,
+      "battingAvg": 22.8,
+      "strikeRate": 140.4,
+      "highScore": 67,
+      "wickets": 17,
+      "economy": 7.1,
+      "bowlingAvg": 41
+    },
     "rating": 67
   },
   {
@@ -1613,7 +2927,16 @@
     "bowlingStyle": "Left-arm orthodox",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 1, "runs": 13, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 2, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 1,
+      "runs": 13,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 2,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 57
   },
   {
@@ -1624,7 +2947,16 @@
     "bowlingStyle": null,
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 4, "runs": 38, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 4,
+      "runs": 38,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 42
   },
   {
@@ -1635,7 +2967,16 @@
     "bowlingStyle": "Right-arm off-break",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 2, "runs": 14, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 91,
+      "runs": 2350,
+      "battingAvg": 33.6,
+      "strikeRate": 124.1,
+      "highScore": 73,
+      "wickets": 17,
+      "economy": 7.1,
+      "bowlingAvg": 46.6
+    },
     "rating": 40
   },
   {
@@ -1646,7 +2987,16 @@
     "bowlingStyle": "Left-arm orthodox",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 1, "runs": 0, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 1,
+      "runs": 0,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 42
   },
   {
@@ -1657,7 +3007,16 @@
     "bowlingStyle": "Left-arm fast-medium",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 2, "runs": 18, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 2, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 2,
+      "runs": 18,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 2,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 59
   },
   {
@@ -1668,7 +3027,16 @@
     "bowlingStyle": "Left-arm fast-medium",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 4, "runs": 14, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 4, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 4,
+      "runs": 14,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 4,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 57
   },
   {
@@ -1679,7 +3047,16 @@
     "bowlingStyle": "Left-arm fast-medium",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 3, "runs": 0, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 2, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 3,
+      "runs": 0,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 2,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 50
   },
   {
@@ -1690,7 +3067,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 3, "runs": 0, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 1, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 6,
+      "runs": 24,
+      "battingAvg": 8,
+      "strikeRate": 133.3,
+      "highScore": 24,
+      "wickets": 1,
+      "economy": 12.3,
+      "bowlingAvg": 43
+    },
     "rating": 44
   },
   {
@@ -1701,7 +3087,16 @@
     "bowlingStyle": "Left-arm fast",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 87,
+      "runs": 359,
+      "battingAvg": 10.9,
+      "strikeRate": 121.3,
+      "highScore": 33,
+      "wickets": 111,
+      "economy": 7.7,
+      "bowlingAvg": 22.9
+    },
     "rating": 48
   },
   {
@@ -1712,7 +3107,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 3, "runs": 11, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 3, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 3,
+      "runs": 11,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 3,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 52
   },
   {
@@ -1723,7 +3127,16 @@
     "bowlingStyle": "Right-arm fast",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 2, "runs": 16, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 2,
+      "runs": 16,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 46
   },
   {
@@ -1734,7 +3147,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 1, "runs": 9, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 2, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 1,
+      "runs": 9,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 2,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 68
   },
   {
@@ -1745,7 +3167,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 1, "runs": 0, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 1, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 1,
+      "runs": 0,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 1,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 52
   },
   {
@@ -1756,7 +3187,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "gold",
     "basePrice": 1.1,
-    "stats": { "pslMatches": 1, "runs": 3, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 1, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 1,
+      "runs": 3,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 1,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 50
   },
   {
@@ -1767,7 +3207,16 @@
     "bowlingStyle": null,
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 1, "runs": 6, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 1,
+      "runs": 6,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 42
   },
   {
@@ -1778,7 +3227,16 @@
     "bowlingStyle": "Right-arm fast-medium",
     "category": "silver",
     "basePrice": 0.6,
-    "stats": { "pslMatches": 1, "runs": 0, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": 0, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 1,
+      "runs": 0,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": 0,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 40
   },
   {
@@ -1789,7 +3247,16 @@
     "bowlingStyle": "Right-arm leg-break",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": 28,
+      "runs": 203,
+      "battingAvg": 18.5,
+      "strikeRate": 132.7,
+      "highScore": 27,
+      "wickets": 44,
+      "economy": 6.1,
+      "bowlingAvg": 15.5
+    },
     "rating": 88
   },
   {
@@ -1800,7 +3267,16 @@
     "bowlingStyle": "Left-arm fast",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 82
   },
   {
@@ -1811,7 +3287,16 @@
     "bowlingStyle": "Right-arm off-break",
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 85
   },
   {
@@ -1822,7 +3307,16 @@
     "bowlingStyle": null,
     "category": "platinum",
     "basePrice": 4.2,
-    "stats": { "pslMatches": null, "runs": null, "battingAvg": null, "strikeRate": null, "highScore": null, "wickets": null, "economy": null, "bowlingAvg": null },
+    "stats": {
+      "pslMatches": null,
+      "runs": null,
+      "battingAvg": null,
+      "strikeRate": null,
+      "highScore": null,
+      "wickets": null,
+      "economy": null,
+      "bowlingAvg": null
+    },
     "rating": 84
   }
 ]
