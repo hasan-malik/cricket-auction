@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
+import { GiCricketBat, GiTennisBall, GiBaseballGlove } from 'react-icons/gi';
+import { FaStar, FaGavel, FaBolt } from 'react-icons/fa6';
 
 const ROLE_ICONS = {
-  'batsman':       '🏏',
-  'wicket-keeper': '🧤',
-  'all-rounder':   '⭐',
-  'bowler':        '🎳',
+  'batsman':       <GiCricketBat />,
+  'wicket-keeper': <GiBaseballGlove />,
+  'all-rounder':   <FaStar />,
+  'bowler':        <GiTennisBall />,
 };
 
 const c = {
@@ -129,7 +131,7 @@ export default function AIPanel({ sortedTeams, rankings, bidder, aiScores, aiRat
                     maxWidth: '90px',
                     transition: 'color 0.2s',
                   }}>
-                    {isBidding && <span style={{ marginRight: '4px' }}>🔨</span>}
+                    {isBidding && <FaGavel style={{ marginRight: '4px', fontSize: '10px', verticalAlign: 'middle' }} />}
                     {team.franchise?.shortName ?? team.name}
                   </div>
                 </div>
@@ -160,7 +162,7 @@ export default function AIPanel({ sortedTeams, rankings, bidder, aiScores, aiRat
                 {aiScores && (
                   <div style={{ fontSize: '10px', fontWeight: 700, color: isBidding ? teamColor : c.muted }}>
                     {isBlitz
-                      ? <>★ {aiRatings?.[team.id] ?? 0} · ⚡ <motion.span key={aiScores[team.id]} initial={{ opacity: 0, y: 3 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>{aiScores[team.id] ?? 0}</motion.span> pts</>
+                      ? <>★ {aiRatings?.[team.id] ?? 0} · <FaBolt style={{ display: 'inline', verticalAlign: 'middle', fontSize: '9px' }} /> <motion.span key={aiScores[team.id]} initial={{ opacity: 0, y: 3 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>{aiScores[team.id] ?? 0}</motion.span> pts</>
                       : <>★ <motion.span key={aiScores[team.id]} initial={{ opacity: 0, y: 3 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>{aiScores[team.id] ?? 0}</motion.span></>
                     }
                   </div>
