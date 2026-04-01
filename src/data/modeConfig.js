@@ -31,12 +31,6 @@ export const SLOT_LABEL = {
   wk:   'Wicket-keeper',
 };
 
-export const SLOT_ICON = {
-  bat:  '🏏',
-  bowl: '🎳',
-  ar:   '⭐',
-  wk:   '🧤',
-};
 
 /**
  * Per-blitz-mode configuration.
