@@ -3,7 +3,16 @@ import { useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import franchises from '../data/franchises.json';
 import auctionConfig from '../data/auctionConfig.json';
-import { MODE_CONFIGS, SLOT_ICON, SLOT_LABEL } from '../data/modeConfig.js';
+import { MODE_CONFIGS, SLOT_LABEL } from '../data/modeConfig.js';
+import { GiCricketBat, GiTennisBall, GiBaseballGlove, GiRabbit } from 'react-icons/gi';
+import { FaStar, FaBolt, FaFire } from 'react-icons/fa6';
+
+const SLOT_ICON = {
+  bat:  <GiCricketBat  style={{ display: 'inline', verticalAlign: 'middle' }} />,
+  bowl: <GiTennisBall  style={{ display: 'inline', verticalAlign: 'middle' }} />,
+  ar:   <FaStar        style={{ display: 'inline', verticalAlign: 'middle' }} />,
+  wk:   <GiBaseballGlove style={{ display: 'inline', verticalAlign: 'middle' }} />,
+};
 
 /**
  * Normal cap cursor — team color, no glow.
@@ -18,17 +27,20 @@ function buildCapCursor(color) {
   return `url('data:image/svg+xml,${encodeURIComponent(svg)}') 27 14, auto`;
 }
 
-/**
- * Hover cap cursor — same shape with a soft glow halo behind it,
- * so the user knows they're over a clickable element.
- */
-// Hover variant: dim fill + bright outline — classic "clickable" cue.
+function darkenColor(hex, factor = 0.55) {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `#${Math.round(r * factor).toString(16).padStart(2, '0')}${Math.round(g * factor).toString(16).padStart(2, '0')}${Math.round(b * factor).toString(16).padStart(2, '0')}`;
+}
+
 function buildCapCursorHover(color) {
+  const dark = darkenColor(color);
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="18" viewBox="0 0 28 18">
-    <path d="M4 14 Q4 1 13 1 Q21 1 21 14 Z" fill="${color}" fill-opacity="0.35" stroke="${color}" stroke-width="1" stroke-opacity="0.9"/>
-    <path d="M4 14 Q2 14 2 15.5 Q2 17 4 16.5 Z" fill="${color}" fill-opacity="0.25" stroke="${color}" stroke-width="0.8" stroke-opacity="0.9"/>
-    <rect x="3" y="13" width="25" height="3" rx="1.5" fill="${color}" fill-opacity="0.28" stroke="${color}" stroke-width="0.8" stroke-opacity="0.9"/>
-    <circle cx="12" cy="2.5" r="1.5" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.8)" stroke-width="0.8"/>
+    <path d="M4 14 Q4 1 13 1 Q21 1 21 14 Z" fill="${dark}"/>
+    <path d="M4 14 Q2 14 2 15.5 Q2 17 4 16.5 Z" fill="${dark}" fill-opacity="0.7"/>
+    <rect x="3" y="13" width="25" height="3" rx="1.5" fill="${dark}" fill-opacity="0.8"/>
+    <circle cx="12" cy="2.5" r="1.5" fill="rgba(255,255,255,0.5)"/>
   </svg>`;
   return `url('data:image/svg+xml,${encodeURIComponent(svg)}') 27 14, pointer`;
 }
@@ -46,7 +58,6 @@ export default function Home() {
   const navigate = useNavigate();
 
   const [selected, setSelected] = useState(null);
-  const [teamName, setTeamName] = useState('');
   const [mode, setMode] = useState('fullXV'); // 'bullet' | 'blitz' | 'rapid' | 'fullXI' | 'fullXV'
 
   // Switch to team-colored cap cursor on franchise select, restore default on deselect.
@@ -87,7 +98,7 @@ export default function Home() {
     navigate('/auction', {
       state: {
         franchiseId: selected,
-        teamName:    teamName.trim() || franchises.find(f => f.id === selected)?.name,
+        teamName:    franchises.find(f => f.id === selected)?.name,
         mode:        'blitz',
         blitzMode:   mode, // 'bullet' | 'blitz' | 'rapid' | 'fullXI' | 'fullXV'
       },
@@ -200,9 +211,9 @@ export default function Home() {
           </p>
           <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '14px' }}>
             {[
-              { id: 'bullet', label: '🔥 Bullet'  },
-              { id: 'blitz',  label: '⚡ Blitz'   },
-              { id: 'rapid',  label: '🐇 Rapid'   },
+              { id: 'bullet', label: <><FaFire  style={{ verticalAlign: 'middle', marginRight: 5 }} />Bullet</> },
+              { id: 'blitz',  label: <><FaBolt  style={{ verticalAlign: 'middle', marginRight: 5 }} />Blitz</>  },
+              { id: 'rapid',  label: <><GiRabbit style={{ verticalAlign: 'middle', marginRight: 5 }} />Rapid</>  },
               { id: 'fullXI', label: 'Full XI'    },
               { id: 'fullXV', label: 'Full XV'    },
             ].map(m => {
@@ -375,26 +386,6 @@ export default function Home() {
                   flexWrap: 'wrap',
                   paddingTop: '8px',
                 }}>
-                  <input
-                    type="text"
-                    placeholder="Custom team name (optional)"
-                    value={teamName}
-                    onChange={e => setTeamName(e.target.value)}
-                    onKeyDown={e => e.key === 'Enter' && handleStart()}
-                    maxLength={30}
-                    style={{
-                      background: c.cardBg,
-                      border: `1px solid ${c.cardBorder}`,
-                      borderRadius: '9999px',
-                      padding: '12px 20px',
-                      fontSize: '15px',
-                      color: c.text,
-                      outline: 'none',
-                      backdropFilter: 'blur(16px)',
-                      width: '260px',
-                      transition: 'border-color 0.2s',
-                    }}
-                  />
                   <motion.button
                     className="btn-primary"
                     whileHover={{ scale: 1.03 }}
@@ -402,9 +393,9 @@ export default function Home() {
                     onClick={handleStart}
                     style={{ padding: '12px 32px', fontSize: '15px', background: '#d97706' }}
                   >
-                    {mode === 'bullet' ? '🔥 Start Bullet →'
-                      : mode === 'blitz'  ? '⚡ Start Blitz →'
-                      : mode === 'rapid'  ? '🐇 Start Rapid →'
+                    {mode === 'bullet' ? <><FaFire   style={{ verticalAlign: 'middle', marginRight: 5 }} />Start Bullet →</>
+                      : mode === 'blitz'  ? <><FaBolt   style={{ verticalAlign: 'middle', marginRight: 5 }} />Start Blitz →</>
+                      : mode === 'rapid'  ? <><GiRabbit style={{ verticalAlign: 'middle', marginRight: 5 }} />Start Rapid →</>
                       : mode === 'fullXI' ? 'Start Full XI →'
                       : 'Start Full XV →'}
                   </motion.button>
