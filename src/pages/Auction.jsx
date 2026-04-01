@@ -10,6 +10,9 @@ import PlayerCard from '../components/auction/PlayerCard';
 import BidTimer from '../components/auction/BidTimer';
 import TeamPanel from '../components/auction/TeamPanel';
 import AIPanel from '../components/auction/AIPanel';
+import { GiCricketBat, GiTennisBall, GiBaseballGlove } from 'react-icons/gi';
+import { FaStar, FaGavel, FaCheck, FaBan, FaHandPointUp, FaXmark, FaPause } from 'react-icons/fa6';
+import { HiEye } from 'react-icons/hi2';
 
 function buildCapCursor(color) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="18" viewBox="0 0 28 18">
@@ -21,13 +24,20 @@ function buildCapCursor(color) {
   return `url('data:image/svg+xml,${encodeURIComponent(svg)}') 27 14, auto`;
 }
 
-// Hover variant: dim fill + bright outline — classic "clickable" cue.
+function darkenColor(hex, factor = 0.55) {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `#${Math.round(r * factor).toString(16).padStart(2, '0')}${Math.round(g * factor).toString(16).padStart(2, '0')}${Math.round(b * factor).toString(16).padStart(2, '0')}`;
+}
+
 function buildCapCursorHover(color) {
+  const dark = darkenColor(color);
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="18" viewBox="0 0 28 18">
-    <path d="M4 14 Q4 1 13 1 Q21 1 21 14 Z" fill="${color}" fill-opacity="0.35" stroke="${color}" stroke-width="1" stroke-opacity="0.9"/>
-    <path d="M4 14 Q2 14 2 15.5 Q2 17 4 16.5 Z" fill="${color}" fill-opacity="0.25" stroke="${color}" stroke-width="0.8" stroke-opacity="0.9"/>
-    <rect x="3" y="13" width="25" height="3" rx="1.5" fill="${color}" fill-opacity="0.28" stroke="${color}" stroke-width="0.8" stroke-opacity="0.9"/>
-    <circle cx="12" cy="2.5" r="1.5" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.8)" stroke-width="0.8"/>
+    <path d="M4 14 Q4 1 13 1 Q21 1 21 14 Z" fill="${dark}"/>
+    <path d="M4 14 Q2 14 2 15.5 Q2 17 4 16.5 Z" fill="${dark}" fill-opacity="0.7"/>
+    <rect x="3" y="13" width="25" height="3" rx="1.5" fill="${dark}" fill-opacity="0.8"/>
+    <circle cx="12" cy="2.5" r="1.5" fill="rgba(255,255,255,0.5)"/>
   </svg>`;
   return `url('data:image/svg+xml,${encodeURIComponent(svg)}') 27 14, pointer`;
 }
@@ -41,10 +51,10 @@ const CATEGORY_COLORS = {
 };
 
 const ROLE_ICONS = {
-  'batsman':       '🏏',
-  'wicket-keeper': '🧤',
-  'all-rounder':   '⭐',
-  'bowler':        '🎳',
+  'batsman':       <GiCricketBat />,
+  'wicket-keeper': <GiBaseballGlove />,
+  'all-rounder':   <FaStar />,
+  'bowler':        <GiTennisBall />,
 };
 
 // ── Squad Modal ──────────────────────────────────────────────────────────────
@@ -825,18 +835,20 @@ export default function Auction() {
 
               {/* Status hint + Pass button */}
               <div style={{ textAlign: 'center', fontSize: '12px', color: c.muted, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
-                <span>
-                  {paused
-                    ? '⏸ Auction paused'
-                    : bidBlockReason
-                    ? `🚫 ${bidBlockReason}`
-                    : userPassed
-                    ? '👀 You passed'
-                    : bidder === 'user'
-                    ? '✅ You are winning — wait for the hammer'
-                    : bidder !== null
-                    ? '🔨 AI is leading — raise to outbid'
-                    : '👆 Place the first bid'}
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                  {paused ? (
+                    <><FaPause style={{ fontSize: '11px' }} /> Auction paused</>
+                  ) : bidBlockReason ? (
+                    <><FaBan style={{ fontSize: '11px' }} /> {bidBlockReason}</>
+                  ) : userPassed ? (
+                    <><HiEye style={{ fontSize: '13px' }} /> You passed</>
+                  ) : bidder === 'user' ? (
+                    <><FaCheck style={{ fontSize: '11px', color: '#4ade80' }} /> You are winning — wait for the hammer</>
+                  ) : bidder !== null ? (
+                    <><FaGavel style={{ fontSize: '11px' }} /> AI is leading — raise to outbid</>
+                  ) : (
+                    <><FaHandPointUp style={{ fontSize: '11px' }} /> Place the first bid</>
+                  )}
                 </span>
                 {!userPassed && !paused && bidder !== null && bidder !== 'user' && (
                   <button
@@ -920,7 +932,7 @@ export default function Auction() {
             >
               {phase === 'sold' ? (
                 <>
-                  <div style={{ fontSize: '72px', marginBottom: '8px' }}>🔨</div>
+                  <div style={{ fontSize: '72px', marginBottom: '8px', display: 'flex', justifyContent: 'center' }}><FaGavel /></div>
                   <motion.h2
                     initial={{ scale: 1.3, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
@@ -945,7 +957,7 @@ export default function Auction() {
                 </>
               ) : (
                 <>
-                  <div style={{ fontSize: '72px', marginBottom: '8px' }}>❌</div>
+                  <div style={{ fontSize: '72px', marginBottom: '8px', display: 'flex', justifyContent: 'center', color: '#ef4444' }}><FaXmark /></div>
                   <h2 style={{ fontSize: '52px', fontWeight: 800, letterSpacing: '-0.04em', margin: '0 0 8px', color: '#fff' }}>
                     UNSOLD
                   </h2>
