@@ -3,12 +3,14 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { scoreBlitzSquad } from '../utils/aiUtils';
 import { MODE_CONFIGS } from '../data/modeConfig.js';
+import { GiCricketBat, GiTennisBall, GiBaseballGlove } from 'react-icons/gi';
+import { FaStar } from 'react-icons/fa6';
 
 const ROLE_ICONS = {
-  'batsman':       '🏏',
-  'wicket-keeper': '🧤',
-  'all-rounder':   '⭐',
-  'bowler':        '🎳',
+  'batsman':       <GiCricketBat />,
+  'wicket-keeper': <GiBaseballGlove />,
+  'all-rounder':   <FaStar />,
+  'bowler':        <GiTennisBall />,
 };
 
 const MEDALS = ['🥇', '🥈', '🥉'];
