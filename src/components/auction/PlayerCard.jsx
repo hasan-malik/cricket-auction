@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
+import { GiCricketBat, GiTennisBall, GiBaseballGlove } from 'react-icons/gi';
+import { FaStar } from 'react-icons/fa6';
 
 const ROLE_ICONS = {
-  'batsman':        '🏏',
-  'wicket-keeper':  '🧤',
-  'all-rounder':    '⭐',
-  'bowler':         '🎳',
+  'batsman':       <GiCricketBat />,
+  'wicket-keeper': <GiBaseballGlove />,
+  'all-rounder':   <FaStar />,
+  'bowler':        <GiTennisBall />,
 };
 
 const CATEGORY_COLORS = {
